@@ -18,6 +18,8 @@ export PATH=$HOME/bin/datatools:$HOME/bin:/usr/local/haxe/bin:$PATH
 # prefer usr/local
 export PATH=/usr/local/bin:$PATH
 
+#git branch in prompt
+PS1='\h:\W$(__git_ps1 "(%s)") \u\$ '
 
 # bash
 # No ttyctl, so we need to save and then restore terminal settings
