@@ -50,34 +50,46 @@ filetype plugin indent on     " required!
 """ pasting
 set pastetoggle=<F2>
 
+
 " Key Mappings
 cmap w!! w !sudo tee % >/dev/null
+map <s-J> <c-w>j<c-w>
+map <s-K> <c-w>k<c-w>
+map <s-h> <c-w>h<c-w>
+map <s-l> <c-w>l<c-w>
 
-map <c-J> <c-w>j<c-w>
-map <c-K> <c-w>k<c-w>
-map <c-h> <c-w>h<c-w>
-map <c-l> <c-w>l<c-w>
+
+" emacs movement keybindings in insert mode
+imap <C-a> <C-o>0
+imap <C-e> <C-o>$
+map <C-e> $
+map <C-a> 0
+
 noremap <silent> <C-S>          :update<CR>
 vnoremap <silent> <C-S>         <C-C>:update<CR>
 inoremap <silent> <C-S>         <C-O>:update<CR>
-inoremap jj <Esc>
+
+map <leader>1 :TagbarToggle <CR>
+map <leader>2 :ToggleNERDTree <CR>
+map <leader>3 :GundoToggle <CR>
 " sources $MYVIMRC 
 nmap <Leader>s :source $MYVIMRC
 " 
 " opens $MYVIMRC for editing, or use :tabedit $MYVIMRC
 nmap <Leader>v :e $MYVIMRC
-"
+
+map <Leader>l V:w !sh<CR>
 
 map <space> /
 map <c-space> ?
 nmap <silent> ,/ :nohlsearch<CR>
 
-
+" echo current syntax scope
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
-
+map <c-1> call haxe#BuildHXMLPath()
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
@@ -86,11 +98,16 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " original repos on github
+Bundle 'vim-scripts/a.vim'
+Bundle 'scrooloose/snipmate-snippets'
+Bundle 'tpope/vim-surround'
+Bundle 'majutsushi/tagbar'
+Bundle 'vim-scripts/taglist.vim'
+Bundle 'scrooloose/syntastic'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'MarcWeber/vim-addon-manager'
 Bundle 'MarcWeber/vim-addon-actions'
 Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'tlib'
 Bundle 'MarcWeber/vim-addon-views'
 Bundle 'MarcWeber/vim-addon-goto-thing-at-cursor'
 Bundle 'MarcWeber/vim-addon-background-cmd'
@@ -101,8 +118,15 @@ Bundle 'jdonaldson/vim-haxe'
 Bundle 'mileszs/ack.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+Bundle 'wincent/Command-T'
+Bundle 'tsaleh/vim-supertab' 
+"let g:SuperTabDefaultCompletionType = "<c-x><c-u>"
+Bundle 'msanders/snipmate.vim'
+Bundle 'vim-scripts/Wombat.git'
+Bundle 'tpope/vim-unimpaired' 
 
 " vim-scripts repos
+Bundle 'Gundo'
 Bundle 'The-NERD-tree'
 Bundle 'NERD_tree-Project'
 Bundle 'The-NERD-Commenter'
@@ -111,16 +135,11 @@ Bundle 'Color-Sampler-Pack'
 Bundle 'vimomni'
 Bundle 'L9'
 Bundle 'FuzzyFinder'
+Bundle 'tlib'
 
-" non github repos
-Bundle 'git://git.wincent.com/command-t.git'
-func! CommandTInstaller() abort
-	:cd `g:bundle_dir`."/command-t/ruby/command-t/"
-	:r ! ruby extconf.rb
-	:r ! make
-	:cd -
-endf
-com! -nargs=0 CommandTInstall call CommandTInstaller()
+" vim-omni 
+"improve autocomplete menu color
+highlight Pmenu ctermbg=238 gui=bold
 
 filetype plugin indent on " required!
 "
@@ -139,5 +158,14 @@ filetype plugin indent on " required!
 " or wiki for FAQ
 " Note: comments after Bundle command are not allowed..
 
-" let g:Powerline_symbols = 'fancy'
-" set guifont=Menlo\ for\ Powerline:h11
+let g:Powerline_symbols = 'fancy'
+set guifont=Menlo\ for\ Powerline:h11
+let g:tagbar_type_haxe = {
+    \ 'ctagstype' : 'haxe',
+    \ 'kinds'     : [
+        \ 'c:classes',
+        \ 'v:variables',
+        \ 'f:functions',
+    \ ]
+	\ }
+

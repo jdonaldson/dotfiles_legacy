@@ -18,8 +18,6 @@ export PATH=$HOME/bin/datatools:$HOME/bin:/usr/local/haxe/bin:$PATH
 # prefer usr/local
 export PATH=/usr/local/bin:$PATH
 
-#git branch in prompt
-PS1='\h:\W$(__git_ps1 "(%s)") \u\$ '
 
 # bash
 # No ttyctl, so we need to save and then restore terminal settings
@@ -56,8 +54,4 @@ export EC2_HOME="/usr/local/Cellar/ec2-api-tools/1.3-62308/jars"
 # rvm for managing ruby
 # if [[ -s /Users/jjdonald/.rvm/scripts/rvm ]] ; then source /Users/jjdonald/.rvm/scripts/rvm ; fi
 
-# site testing:
-export SKY_TEST_URL="localhost:1025"
-export SKY_TEST_USERNAME='ciskoo'
-export SKY_TEST_PASSWORD='cisko'
 
