@@ -72,6 +72,7 @@ inoremap <silent> <C-S>         <C-O>:update<CR>
 map <leader>1 :TagbarToggle <CR>
 map <leader>2 :ToggleNERDTree <CR>
 map <leader>3 :GundoToggle <CR>
+map <leader>4 :BufExplorer<CR>
 " sources $MYVIMRC 
 nmap <Leader>s :source $MYVIMRC
 " 
@@ -98,6 +99,8 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " original repos on github
+Bundle 'tyru/open-browser.vim'
+Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'vim-scripts/a.vim'
 Bundle 'scrooloose/snipmate-snippets'
 Bundle 'tpope/vim-surround'
@@ -126,6 +129,7 @@ Bundle 'vim-scripts/Wombat.git'
 Bundle 'tpope/vim-unimpaired' 
 
 " vim-scripts repos
+Bundle 'bufexplorer.zip'
 Bundle 'Gundo'
 Bundle 'The-NERD-tree'
 Bundle 'NERD_tree-Project'
@@ -168,4 +172,35 @@ let g:tagbar_type_haxe = {
         \ 'f:functions',
     \ ]
 	\ }
+
+
+function! GetBufferList()
+  redir =>buflist
+  silent! ls
+  redir END
+  return buflist
+endfunction
+
+function! ToggleList(bufname, pfx)
+  let buflist = GetBufferList()
+  for bufnum in map(filter(split(buflist, '\n'), 'v:val =~ "'.a:bufname.'"'), 'str2nr(matchstr(v:val, "\\d\\+"))')
+    if bufwinnr(bufnum) != -1
+      exec(a:pfx.'close')
+      return
+    endif
+  endfor
+  if a:pfx == 'l' && len(getloclist(0)) == 0
+      echohl ErrorMsg
+      echo "Location List is Empty."
+      return
+  endif
+  let winnr = winnr()
+  exec(a:pfx.'open')
+  if winnr() != winnr
+    wincmd p
+  endif
+endfunction
+
+nmap <silent> <leader>5 :call ToggleList("Location List", 'l')<CR>
+nmap <silent> <leader>6 :call ToggleList("Quickfix List", 'c')<CR>
 
