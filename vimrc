@@ -6,7 +6,7 @@ vmap Q gq
 nmap Q gqap
 nnoremap ; :
 autocmd VimEnter * wincmd p
- 
+  
 syntax on
 
 """ BASIC OPTIONS 
@@ -69,17 +69,16 @@ noremap <silent> <C-S>          :update<CR>
 vnoremap <silent> <C-S>         <C-C>:update<CR>
 inoremap <silent> <C-S>         <C-O>:update<CR>
 
-map <leader>1 :TagbarToggle <CR>
-map <leader>2 :ToggleNERDTree <CR>
-map <leader>3 :GundoToggle <CR>
+map <leader>1 :TagbarToggle<CR>
+map <leader>2 :ToggleNERDTree<CR>
+map <leader>3 :GundoToggle<CR>
 map <leader>4 :BufExplorer<CR>
 " sources $MYVIMRC 
 nmap <Leader>s :source $MYVIMRC
 " 
 " opens $MYVIMRC for editing, or use :tabedit $MYVIMRC
-nmap <Leader>v :e $MYVIMRC
-
-map <Leader>l V:w !sh<CR>
+nmap <Leader>ev :e $MYVIMRC<CR>
+nmap <Leader>sv :so $MYVIMRC<CR>
 
 map <space> /
 map <c-space> ?
@@ -99,6 +98,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " original repos on github
+Bundle 'ervandew/screen'
 Bundle 'tyru/open-browser.vim'
 Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'vim-scripts/a.vim'
@@ -127,8 +127,10 @@ Bundle 'tsaleh/vim-supertab'
 Bundle 'msanders/snipmate.vim'
 Bundle 'vim-scripts/Wombat.git'
 Bundle 'tpope/vim-unimpaired' 
+Bundle 'rson/vim-conque'
 
 " vim-scripts repos
+Bundle 'localvimrc'
 Bundle 'bufexplorer.zip'
 Bundle 'Gundo'
 Bundle 'The-NERD-tree'

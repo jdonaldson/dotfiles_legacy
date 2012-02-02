@@ -19,15 +19,16 @@ export PATH=$HOME/bin/datatools:$HOME/bin:/usr/local/haxe/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 
 
-# bash
-# No ttyctl, so we need to save and then restore terminal settings
-vim()
-{
-    local STTYOPTS="$(stty -g)"
-    stty stop '' -ixoff
-    command vim "$@"
-    stty "$STTYOPTS"
+function parse_git_dirty {
+   [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo "*"
 }
+
+function parse_git_branch {
+   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/[\1$(parse_git_dirty)]/"
+}
+
+export PS1="\[\e[01;32m\]\h \[\e[01;34m\]\W \$(parse_git_branch)\[\e[01;34m\]$\[\e[00m\] "
+
 export NODE_PATH="/usr/local/lib/node"
 export PKG_CONFIG_PATH
 export LSCOLORS="gxfxcxdxbxegedabagacad"
