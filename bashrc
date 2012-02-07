@@ -18,6 +18,20 @@ export PATH=$HOME/bin/datatools:$HOME/bin:/usr/local/haxe/bin:$PATH
 # prefer usr/local
 export PATH=/usr/local/bin:~/.local/bin:$PATH
 
+function setdsm() { 
+    export PYTHONPATH=$PYTHONPATH:$PWD/..
+    export PYTHONPATH=$PYTHONPATH:$PWD
+    if [ -z "$1" ]; then
+        x=${PWD/\/[^\/]*\/}
+        export DJANGO_SETTINGS_MODULE=$x.settings
+    else
+        export DJANGO_SETTINGS_MODULE=$1
+    fi
+    
+    echo "DJANGO_SETTINGS_MODULE set to $DJANGO_SETTINGS_MODULE"
+}
+
+
 
 function parse_git_dirty {
    [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo "*"
