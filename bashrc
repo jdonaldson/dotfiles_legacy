@@ -16,7 +16,7 @@ alias ..='cd ..'
 export PATH=$HOME/bin/datatools:$HOME/bin:/usr/local/haxe/bin:$PATH
 
 # prefer usr/local
-export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/bin:~/.local/bin:$PATH
 
 
 function parse_git_dirty {
