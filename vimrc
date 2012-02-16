@@ -11,6 +11,7 @@ syntax on
 
 """ BASIC OPTIONS 
 set background=dark
+set encoding=utf-8
 set visualbell
 set nocompatible
 set laststatus=2 " Always show the statusline
@@ -23,6 +24,8 @@ set backspace=indent,eol,start
                   " allow backspacing over everything in insert mode
 set autoindent    " always set autoindenting on
 set copyindent    " copy the previous indentation on autoindenting
+set smartindent   " use smart indenting for c/c++
+set cindent       " useful for python
 set number        " always show line numbers
 set shiftwidth=4  " number of spaces to use for autoindenting
 set shiftround    " use multiple of shiftwidth when indenting with '<' and '>'
@@ -206,3 +209,5 @@ endfunction
 nmap <silent> <leader>5 :call ToggleList("Location List", 'l')<CR>
 nmap <silent> <leader>6 :call ToggleList("Quickfix List", 'c')<CR>
 
+" python specific settings:
+au FileType python setlocal tabstop=4 expandtab shiftwidth=4 softtabstop=4
