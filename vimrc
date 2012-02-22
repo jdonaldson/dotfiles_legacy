@@ -18,13 +18,15 @@ set t_Co=256 " Explicitly tell vim that the terminal has 256 colors
 " set t_Co=16 " Explicitly tell vim that the terminal has 256 colors
 set number
 set nowrap        " don't wrap lines
-set tabstop=4     " a tab is four spaces
+set tabstop=8     " a tab is four spaces
+set shiftwidth=4  " number of spaces to use for autoindenting
+set autoindent
+set expandtab
 set backspace=indent,eol,start
                   " allow backspacing over everything in insert mode
 set autoindent    " always set autoindenting on
 set copyindent    " copy the previous indentation on autoindenting
 set number        " always show line numbers
-set shiftwidth=4  " number of spaces to use for autoindenting
 set shiftround    " use multiple of shiftwidth when indenting with '<' and '>'
 set showmatch     " set show matching parenthesis
 set ignorecase    " ignore case when searching
@@ -72,7 +74,6 @@ inoremap <silent> <C-S>         <C-O>:update<CR>
 map <leader>1 :TagbarToggle<CR>
 map <leader>2 :ToggleNERDTree<CR>
 map <leader>3 :GundoToggle<CR>
-map <leader>4 :BufExplorer<CR>
 " sources $MYVIMRC 
 nmap <Leader>s :source $MYVIMRC
 " 
@@ -83,6 +84,12 @@ nmap <Leader>sv :so $MYVIMRC<CR>
 map <space> /
 map <c-space> ?
 nmap <silent> ,/ :nohlsearch<CR>
+
+"Vim 7 specific mappings
+if version >= 700
+  map <C-t> <Esc>:tabnew<CR>
+  map <C-F4> <Esc>:tabclose<CR>
+endif
 
 " echo current syntax scope
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
@@ -98,11 +105,12 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " original repos on github
+Bundle 'xolox/vim-session'
 Bundle 'ervandew/screen'
 Bundle 'tyru/open-browser.vim'
 Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'vim-scripts/a.vim'
-Bundle 'scrooloose/snipmate-snippets'
+Bundle 'honza/snipmate-snippets'
 Bundle 'tpope/vim-surround'
 Bundle 'majutsushi/tagbar'
 Bundle 'vim-scripts/taglist.vim'
@@ -119,16 +127,16 @@ Bundle 'MarcWeber/vim-addon-swfmill'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'jdonaldson/vim-haxe'
 Bundle 'mileszs/ack.vim'
-Bundle 'tpope/vim-fugitive'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'wincent/Command-T'
 Bundle 'tsaleh/vim-supertab' 
-"let g:SuperTabDefaultCompletionType = "<c-x><c-u>"
-Bundle 'msanders/snipmate.vim'
+let g:SuperTabDefaultCompletionType = "context"
+Bundle 'garbas/vim-snipmate'
 Bundle 'vim-scripts/Wombat.git'
 Bundle 'tpope/vim-unimpaired' 
+Bundle 'tpope/vim-fugitive'
 Bundle 'rson/vim-conque'
-
+Bundle "tomtom/tlib_vim"
 " vim-scripts repos
 Bundle 'localvimrc'
 Bundle 'bufexplorer.zip'
@@ -141,7 +149,6 @@ Bundle 'Color-Sampler-Pack'
 Bundle 'vimomni'
 Bundle 'L9'
 Bundle 'FuzzyFinder'
-Bundle 'tlib'
 
 " vim-omni 
 "improve autocomplete menu color

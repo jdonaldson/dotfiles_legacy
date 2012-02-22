@@ -55,9 +55,9 @@ export GIT_EDITOR=emacs
 
 # haxe specific path/env mods
 
-export HAXE_LIBRARY_PATH=/usr/lib/haxe/std:. # the ':.' part is important
-export HAXE_HOME=/usr/lib/haxe
-PATH=$PATH:$HAXE_LIBRARY_PATH:$HAXE_HOME/bin
+#export HAXE_LIBRARY_PATH=/usr/lib/haxe/std:. # the ':.' part is important
+#export HAXE_HOME=/usr/lib/haxe
+#PATH=$PATH:$HAXE_LIBRARY_PATH:$HAXE_HOME/bin
 
 #prefer local path
 PATH=/usr/local/bin:$PATH
