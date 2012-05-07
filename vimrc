@@ -1,4 +1,4 @@
-syntax enable
+source .vimrc_vundles
 " change the mapleader from \ to ,
 let mapleader=","
 " Use Q for formatting the current paragraph (or selection)
@@ -49,9 +49,6 @@ set noerrorbells         " don't beep
 set nobackup
 set noswapfile
 
-
-filetype plugin indent on     " required! 
-
 """ pasting
 set pastetoggle=<F2>
 
@@ -97,82 +94,6 @@ map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 map <c-1> call haxe#BuildHXMLPath()
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-" let Vundle manage Vundle
-" required!
-Bundle 'gmarik/vundle'
-
-" original repos on github
-"Bundle 'xolox/vim-session'
-"Bundle 'ervandew/screen'
-Bundle 'tyru/open-browser.vim'
-Bundle 'cakebaker/scss-syntax.vim'
-Bundle 'vim-scripts/a.vim'
-Bundle 'honza/snipmate-snippets'
-Bundle 'tpope/vim-surround'
-Bundle 'majutsushi/tagbar'
-Bundle 'vim-scripts/taglist.vim'
-Bundle 'scrooloose/syntastic'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'MarcWeber/vim-addon-manager'
-Bundle 'MarcWeber/vim-addon-actions'
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'MarcWeber/vim-addon-views'
-Bundle 'MarcWeber/vim-addon-goto-thing-at-cursor'
-Bundle 'MarcWeber/vim-addon-background-cmd'
-Bundle 'MarcWeber/vim-addon-completion'
-Bundle 'MarcWeber/vim-addon-swfmill'
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'vim-haxe-sugar'
-Bundle 'mileszs/ack.vim'
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-Bundle 'wincent/Command-T'
-"Bundle 'tsaleh/vim-supertab' 
-"let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
-Bundle 'garbas/vim-snipmate'
-Bundle 'vim-scripts/Wombat.git'
-Bundle 'tpope/vim-unimpaired' 
-Bundle 'tpope/vim-fugitive'
-"Bundle 'rson/vim-conque'
-Bundle "tomtom/tlib_vim"
-Bundle "Shougo/neocomplcache"
-
-" vim-scripts repos
-Bundle 'localvimrc'
-Bundle 'bufexplorer.zip'
-Bundle 'Gundo'
-Bundle 'The-NERD-tree'
-Bundle 'NERD_tree-Project'
-Bundle 'The-NERD-Commenter'
-Bundle 'desert.vim'
-Bundle 'Color-Sampler-Pack'
-
-Bundle 'vimomni'
-"improve autocomplete menu color
-highlight Pmenu ctermbg=238 gui=bold
-
-Bundle 'L9'
-Bundle 'FuzzyFinder'
-
-
-filetype plugin indent on " required!
-"
-" Brief help
-"
-" :BundleInstall - install bundles (won't update installed)
-" :BundleInstall! - update if installed
-"
-" :Bundles foo - search for foo
-" :Bundles! foo - refresh cached list and search for foo
-"
-" :BundleClean - confirm removal of unused bundles
-" :BundleClean! - remove without confirmation
-"
-" see :h vundle for more details
-" or wiki for FAQ
-" Note: comments after Bundle command are not allowed..
 
 let g:Powerline_symbols = 'fancy'
 set guifont=Menlo\ for\ Powerline:h11
