@@ -1,4 +1,4 @@
-source .vimrc_vundles
+source ~/.vimrc_vundles
 " change the mapleader from \ to ,
 let mapleader=","
 " Use Q for formatting the current paragraph (or selection)
@@ -79,7 +79,6 @@ nmap <Leader>ev :e $MYVIMRC<CR>
 nmap <Leader>sv :so $MYVIMRC<CR>
 
 map <space> /
-map <c-space> ?
 nmap <silent> ,/ :nohlsearch<CR>
 
 "Vim 7 specific mappings
@@ -97,15 +96,6 @@ map <c-1> call haxe#BuildHXMLPath()
 
 let g:Powerline_symbols = 'fancy'
 set guifont=Menlo\ for\ Powerline:h11
-let g:tagbar_type_haxe = {
-    \ 'ctagstype' : 'haxe',
-    \ 'kinds'     : [
-        \ 'c:classes',
-        \ 'v:variables',
-        \ 'f:functions',
-    \ ]
-	\ }
-
 
 function! GetBufferList()
   redir =>buflist
