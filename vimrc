@@ -6,7 +6,7 @@ vmap Q gq
 nmap Q gqap
 nnoremap ; :
 autocmd VimEnter * wincmd p
-  
+
 syntax on
 
 """ BASIC OPTIONS 
@@ -136,8 +136,8 @@ Bundle 'vim-scripts/Wombat.git'
 Bundle 'tpope/vim-unimpaired' 
 Bundle 'tpope/vim-fugitive'
 "Bundle 'rson/vim-conque'
-"Bundle "tomtom/tlib_vim"
-"Bundle "Shougo/neocomplcache"
+Bundle "tomtom/tlib_vim"
+Bundle "Shougo/neocomplcache"
 
 " vim-scripts repos
 Bundle 'localvimrc'
@@ -215,10 +215,8 @@ endfunction
 
 nmap <silent> <leader>5 :call ToggleList("Location List", 'l')<CR>
 nmap <silent> <leader>6 :call ToggleList("Quickfix List", 'c')<CR>
-
-" python specific settings:
-au FileType python setlocal tabstop=4 expandtab shiftwidth=4 softtabstop=4
-" Disable AutoComplPop.
+"disable AutoComplPop.
+  
 let g:acp_enableAtStartup = 0
 " Use neocomplcache.
 let g:neocomplcache_enable_at_startup = 1
@@ -235,6 +233,7 @@ let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 " Define dictionary.
 let g:neocomplcache_dictionary_filetype_lists = {
     \ 'default' : '',
+    \ 'vimshell' : $HOME.'/.vimshell_hist',
     \ 'scheme' : $HOME.'/.gosh_completions'
     \ }
 
@@ -251,23 +250,21 @@ inoremap <expr><C-g>     neocomplcache#undo_completion()
 inoremap <expr><C-l>     neocomplcache#complete_common_string()
 
 " SuperTab like snippets behavior.
-"imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+"imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(nsseocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " Recommended key-mappings.
 " <CR>: close popup and save indent.
 inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-"<C-h>, <BS>: close popup and delete backword char.
+" <C-h>, <BS>: close popup and delete backword char.
 inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y>  neocomplcache#close_popup()
-
-
 inoremap <expr><C-e>  neocomplcache#cancel_popup()
 
 " AutoComplPop like behavior.
-let g:neocomplcache_enable_auto_select = 1
+"let g:neocomplcache_enable_auto_select = 1
 
 " Shell like behavior(not recommended).
 "set completeopt+=longest
@@ -282,9 +279,6 @@ autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-autocmd BufNewFile,BufRead *.hx setlocal omnifunc=haxe#CompleteHAXE
-
-
 
 " Enable heavy omni completion.
 if !exists('g:neocomplcache_omni_patterns')
