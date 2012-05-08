@@ -1,4 +1,4 @@
-source ~/.vimrc_vundles
+source ~/.vimrc_vundle
 " change the mapleader from \ to ,
 let mapleader=","
 " Use Q for formatting the current paragraph (or selection)
