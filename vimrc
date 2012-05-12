@@ -71,9 +71,13 @@ noremap <silent> <C-S>          :update<CR>
 vnoremap <silent> <C-S>         <C-C>:update<CR>
 inoremap <silent> <C-S>         <C-O>:update<CR>
 inoremap jj <Esc>
-map <leader>1 :TagbarToggle<CR>
+
+nmap <silent> <leader>1 :call ToggleList("Quickfix List", 'c')<CR>
 map <leader>2 :ToggleNERDTree<CR>
 map <leader>3 :GundoToggle<CR>
+map <leader>4 :TagbarToggle<CR>
+nmap <silent> <leader>5 :call ToggleList("Location List", 'l')<CR>
+
 " opens $MYVIMRC for editing, or use :tabedit $MYVIMRC
 nmap <Leader>ev :e $MYVIMRC<CR>
 nmap <Leader>sv :so $MYVIMRC<CR>
@@ -92,10 +96,11 @@ map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
-map <c-1> call haxe#BuildHXMLPath()
-
 let g:Powerline_symbols = 'fancy'
 set guifont=Menlo\ for\ Powerline:h11
+
+autocmd QuickFixCmdPost [^l]* nested cwindow
+autocmd QuickFixCmdPost    l* nested lwindow
 
 function! GetBufferList()
   redir =>buflist
@@ -124,8 +129,6 @@ function! ToggleList(bufname, pfx)
   endif
 endfunction
 
-nmap <silent> <leader>5 :call ToggleList("Location List", 'l')<CR>
-nmap <silent> <leader>6 :call ToggleList("Quickfix List", 'c')<CR>
 "disable AutoComplPop.
   
 let g:acp_enableAtStartup = 0
