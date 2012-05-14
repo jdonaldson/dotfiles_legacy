@@ -77,6 +77,4 @@ filetype plugin indent on " required!
 " see :h vundle for more details
 " or wiki for FAQ
 " Note: comments after Bundle command are not allowed..
-filetype plugin indent on     " required! 
-
 

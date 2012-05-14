@@ -2,8 +2,9 @@
 if [ -f `brew --prefix`/etc/bash_completion ]; then
   . `brew --prefix`/etc/bash_completion
 fi
-
-source ~/.auth
+if [ -f ~/.auth ]; then
+    source ~/.auth
+fi
 export WORKON_HOME=$HOME/.virtualenvs
 source /usr/local/bin/virtualenvwrapper.sh
 

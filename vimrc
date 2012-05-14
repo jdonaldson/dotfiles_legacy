@@ -49,6 +49,12 @@ set noerrorbells         " don't beep
 set nobackup
 set noswapfile
 
+highlight OverWidth ctermbg=red ctermfg=white guibg=#59292
+match OverWidth /\%81v.\+/
+
+highlight GarbageWhitespace ctermbg=red ctermfg=white guibg=#59292
+match GarbageWhitespace /\s\+$/
+
 """ pasting
 set pastetoggle=<F2>
 
