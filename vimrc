@@ -9,7 +9,7 @@ autocmd VimEnter * wincmd p
 
 syntax on
 
-""" BASIC OPTIONS 
+""" BASIC OPTIONS
 set background=dark
 set encoding=utf-8
 set visualbell
@@ -136,7 +136,7 @@ function! ToggleList(bufname, pfx)
 endfunction
 
 "disable AutoComplPop.
-  
+
 let g:acp_enableAtStartup = 0
 " Use neocomplcache.
 let g:neocomplcache_enable_at_startup = 1

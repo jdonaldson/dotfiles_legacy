@@ -10,7 +10,6 @@ Bundle 'gmarik/vundle'
 " original repos on github
 "Bundle 'xolox/vim-session'
 "Bundle 'ervandew/screen'
-Bundle 'kchmck/vim-coffee-script'
 Bundle 'tyru/open-browser.vim'
 Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'vim-scripts/a.vim'
@@ -20,24 +19,15 @@ Bundle 'majutsushi/tagbar'
 Bundle 'vim-scripts/taglist.vim'
 "Bundle 'scrooloose/syntastic'
 Bundle 'Lokaltog/vim-powerline'
-Bundle 'MarcWeber/vim-addon-manager'
-Bundle 'MarcWeber/vim-addon-actions'
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'MarcWeber/vim-addon-views'
-Bundle 'MarcWeber/vim-addon-goto-thing-at-cursor'
-Bundle 'MarcWeber/vim-addon-background-cmd'
-Bundle 'MarcWeber/vim-addon-completion'
-Bundle 'MarcWeber/vim-addon-swfmill'
-Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'jdonaldson/vihxen'
 Bundle 'mileszs/ack.vim'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'wincent/Command-T'
-"Bundle 'tsaleh/vim-supertab' 
+"Bundle 'tsaleh/vim-supertab'
 "let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
 Bundle 'garbas/vim-snipmate'
 Bundle 'vim-scripts/Wombat.git'
-Bundle 'tpope/vim-unimpaired' 
+Bundle 'tpope/vim-unimpaired'
 Bundle 'tpope/vim-fugitive'
 "Bundle 'rson/vim-conque'
 Bundle "tomtom/tlib_vim"
@@ -46,6 +36,7 @@ Bundle "Shougo/neocomplcache"
 " vim-scripts repos
 Bundle 'localvimrc'
 Bundle 'bufexplorer.zip'
+Bundle 'vim-addon-mw-utils'
 Bundle 'Gundo'
 Bundle 'The-NERD-tree'
 Bundle 'NERD_tree-Project'
@@ -53,7 +44,7 @@ Bundle 'The-NERD-Commenter'
 Bundle 'desert.vim'
 Bundle 'Color-Sampler-Pack'
 
-Bundle 'vimomni'
+"Bundle 'vimomni'
 "improve autocomplete menu color
 highlight Pmenu ctermbg=238 gui=bold
 
