@@ -82,7 +82,8 @@ nmap <silent> <leader>1 :call ToggleList("Quickfix List", 'c')<CR>
 map <leader>2 :ToggleNERDTree<CR>
 map <leader>3 :GundoToggle<CR>
 map <leader>4 :TagbarToggle<CR>
-nmap <silent> <leader>5 :call ToggleList("Location List", 'l')<CR>
+map <leader>5 :BuffergatorToggle <CR>
+"nmap <silent> <leader>5 :call ToggleList("Location List", 'l')<CR>
 
 " opens $MYVIMRC for editing, or use :tabedit $MYVIMRC
 nmap <Leader>ev :e $MYVIMRC<CR>
