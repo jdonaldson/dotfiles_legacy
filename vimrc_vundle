@@ -10,6 +10,7 @@ Bundle 'gmarik/vundle'
 " original repos on github
 "Bundle 'xolox/vim-session'
 "Bundle 'ervandew/screen'
+Bundle 'jeetsukumaran/vim-buffergator'
 Bundle 'tyru/open-browser.vim'
 Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'vim-scripts/a.vim'
@@ -22,7 +23,8 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'jdonaldson/vihxen'
 Bundle 'mileszs/ack.vim'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-Bundle 'wincent/Command-T'
+Bundle 'kien/ctrlp.vim'
+"Bundle 'wincent/Command-T'
 "Bundle 'tsaleh/vim-supertab'
 "let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
 Bundle 'garbas/vim-snipmate'
