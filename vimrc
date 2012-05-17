@@ -83,7 +83,6 @@ map <leader>2 :ToggleNERDTree<CR>
 map <leader>3 :GundoToggle<CR>
 map <leader>4 :TagbarToggle<CR>
 map <leader>5 :BuffergatorToggle <CR>
-"nmap <silent> <leader>5 :call ToggleList("Location List", 'l')<CR>
 
 " opens $MYVIMRC for editing, or use :tabedit $MYVIMRC
 nmap <Leader>ev :e $MYVIMRC<CR>
@@ -137,7 +136,6 @@ function! ToggleList(bufname, pfx)
 endfunction
 
 "disable AutoComplPop.
-
 let g:acp_enableAtStartup = 0
 " Use neocomplcache.
 let g:neocomplcache_enable_at_startup = 1
@@ -171,21 +169,20 @@ inoremap <expr><C-g>     neocomplcache#undo_completion()
 inoremap <expr><C-l>     neocomplcache#complete_common_string()
 
 " SuperTab like snippets behavior.
-"imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(nsseocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
-
+imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(nsseocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
 " Recommended key-mappings.
 " <CR>: close popup and save indent.
 inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
 " <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-" <C-h>, <BS>: close popup and delete backword char.
+"inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+"<C-h>, <BS>: close popup and delete backword char.
 inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y>  neocomplcache#close_popup()
 inoremap <expr><C-e>  neocomplcache#cancel_popup()
 
 " AutoComplPop like behavior.
-"let g:neocomplcache_enable_auto_select = 1
+let g:neocomplcache_enable_auto_select = 1
 
 " Shell like behavior(not recommended).
 "set completeopt+=longest
@@ -206,7 +203,7 @@ if !exists('g:neocomplcache_omni_patterns')
   let g:neocomplcache_omni_patterns = {}
 endif
 let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
-"autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
 let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
