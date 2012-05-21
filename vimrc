@@ -10,6 +10,7 @@ autocmd VimEnter * wincmd p
 syntax on
 
 """ BASIC OPTIONS
+set shell=bash
 set background=dark
 set encoding=utf-8
 set visualbell
@@ -45,7 +46,7 @@ set undolevels=1000      " use many muchos levels of undo
 set wildignore=*.swp,*.bak,*.pyc,*.class
 set title                " change the terminal's title
 set visualbell           " don't beep
-set noerrorbells         " don't beep
+set noerrorbells         " no, seriously, don't beep
 set nobackup
 set noswapfile
 
@@ -174,7 +175,7 @@ imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>
 " <CR>: close popup and save indent.
 inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
 " <TAB>: completion.
-"inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 "<C-h>, <BS>: close popup and delete backword char.
 inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
@@ -207,6 +208,6 @@ autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
 let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
-let g:neocomplcache_omni_patterns.haxe = '\v([\]''"]|\w)\.'
+let g:neocomplcache_omni_patterns.haxe = '\v([\]''"]|\w)(\.|\()'
 
 
