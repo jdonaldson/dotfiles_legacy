@@ -9,7 +9,9 @@ fi
 export PATH=$HOME/bin:/usr/local/haxe/bin:$PATH
 
 # prefer usr/local
-export PATH=/usr/local/share/python:/usr/local/share:/usr/local/bin:~/.local/bin:$PATH
+export PATH=/usr/local/share/python:/usr/local/share:/usr/local/bin:~/.local/bin:/usr/local/sbin:$PATH
+
+
 
 export WORKON_HOME=$HOME/.virtualenvs
 source /usr/local/bin/virtualenvwrapper.sh
