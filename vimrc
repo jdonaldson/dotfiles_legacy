@@ -105,8 +105,8 @@ map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 let g:Powerline_symbols = 'fancy'
 set guifont=Menlo\ for\ Powerline:h11
 
-autocmd QuickFixCmdPost [^l]* nested cwindow
-autocmd QuickFixCmdPost    l* nested lwindow
+"autocmd QuickFixCmdPost [^l]* nested cwindow
+"autocmd QuickFixCmdPost    l* nested lwindow
 
 function! GetBufferList()
   redir =>buflist
@@ -165,6 +165,7 @@ let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 " Plugin key-mappings.
 imap <C-b>     <Plug>(neocomplcache_snippets_expand)
 smap <C-b>     <Plug>(neocomplcache_snippets_expand)
+vmap <C-b>     <Plug>(neocomplcache_snippets_expand)
 inoremap <expr><C-g>     neocomplcache#undo_completion()
 inoremap <expr><C-l>     neocomplcache#complete_common_string()
 
@@ -207,6 +208,6 @@ autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
 let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
-let g:neocomplcache_omni_patterns.haxe = '\v([\]''"]|\w)(\.|\\()'
+let g:neocomplcache_omni_patterns.haxe = '\v([\]''"]|\w)[\.\(]'
 
 
