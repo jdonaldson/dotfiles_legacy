@@ -69,6 +69,9 @@ map <s-K> <c-w>k<c-w>
 map <s-h> <c-w>h<c-w>
 map <s-l> <c-w>l<c-w>
 
+" vihxen
+map <leader>eb :call haxe#OpenHxml()<CR>
+map <leader>th : call haxe#Ctags()<CR>
 
 " emacs movement keybindings in insert mode
 imap <C-a> <C-o>0
