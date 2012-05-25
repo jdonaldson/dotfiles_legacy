@@ -10,6 +10,7 @@ Bundle 'gmarik/vundle'
 " original repos on github
 "Bundle 'xolox/vim-session'
 "Bundle 'ervandew/screen'
+Bundle 'Shougo/unite.vim'
 Bundle 'jeetsukumaran/vim-buffergator'
 Bundle 'tyru/open-browser.vim'
 Bundle 'cakebaker/scss-syntax.vim'
