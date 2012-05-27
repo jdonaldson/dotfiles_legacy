@@ -24,13 +24,13 @@ set number
 set nowrap        " don't wrap lines
 set tabstop=8     " a tab is four spaces
 set shiftwidth=4  " number of spaces to use for autoindenting
-set autoindent
 set expandtab
 set backspace=indent,eol,start
                   " allow backspacing over everything in insert mode
 set autoindent    " always set autoindenting on
 set copyindent    " copy the previous indentation on autoindenting
-set smartindent   " use smart indenting for c/c++
+"set smartindent   " use smart indenting for c/c++
+set nosmartindent
 set cindent       " useful for python
 set number        " always show line numbers
 set shiftround    " use multiple of shiftwidth when indenting with '<' and '>'
@@ -58,8 +58,6 @@ match OverWidth /\%81v.\+/
 highlight GarbageWhitespace ctermbg=red ctermfg=white guibg=#59292
 match GarbageWhitespace /\s\+$/
 
-""" pasting
-set pastetoggle=<F2>
 
 
 " Key Mappings
