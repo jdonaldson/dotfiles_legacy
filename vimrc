@@ -23,7 +23,7 @@ set t_Co=256 " Explicitly tell vim that the terminal has 256 colors
 " set t_Co=16 " Explicitly tell vim that the terminal has 256 colors
 set number
 set nowrap        " don't wrap lines
-set tabstop=8     " a tab is four spaces
+set tabstop=8     " a tab is eight spaces
 set shiftwidth=4  " number of spaces to use for autoindenting
 set expandtab
 set backspace=indent,eol,start
@@ -168,9 +168,8 @@ endif
 let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 
 " Plugin key-mappings.
-imap <C-b>     <Plug>(neocomplcache_snippets_expand)
-smap <C-b>     <Plug>(neocomplcache_snippets_expand)
-vmap <C-b>     <Plug>(neocomplcache_snippets_expand)
+imap <C-k>     <Plug>(neocomplcache_snippets_expand)
+smap <C-k>     <Plug>(neocomplcache_snippets_expand)
 inoremap <expr><C-g>     neocomplcache#undo_completion()
 inoremap <expr><C-l>     neocomplcache#complete_common_string()
 
@@ -180,7 +179,7 @@ imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>
 " <CR>: close popup and save indent.
 inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
 " <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+"inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 "<C-h>, <BS>: close popup and delete backword char.
 inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"

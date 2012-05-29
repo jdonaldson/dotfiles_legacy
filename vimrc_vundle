@@ -15,11 +15,10 @@ Bundle 'jeetsukumaran/vim-buffergator'
 Bundle 'tyru/open-browser.vim'
 Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'vim-scripts/a.vim'
-"Bundle 'honza/snipmate-snippets'
+Bundle 'tpope/vim-markdown'
 Bundle 'Shougo/neocomplcache-snippets-complete'
 Bundle 'tpope/vim-surround'
 Bundle 'majutsushi/tagbar'
-Bundle 'vim-scripts/taglist.vim'
 Bundle 'sjl/splice.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'jdonaldson/vim-powerline'
@@ -27,15 +26,9 @@ Bundle 'jdonaldson/vihxen'
 Bundle 'mileszs/ack.vim'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'kien/ctrlp.vim'
-"Bundle 'wincent/Command-T'
-"Bundle 'tsaleh/vim-supertab'
-"let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
 Bundle "Shougo/neocomplcache"
-"Bundle 'garbas/vim-snipmate'
-Bundle 'vim-scripts/Wombat.git'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tpope/vim-fugitive'
-"Bundle 'rson/vim-conque'
 Bundle "tomtom/tlib_vim"
 
 " vim-scripts repos
@@ -49,12 +42,10 @@ Bundle 'The-NERD-Commenter'
 Bundle 'desert.vim'
 Bundle 'Color-Sampler-Pack'
 
-"Bundle 'vimomni'
 "improve autocomplete menu color
 highlight Pmenu ctermbg=238 gui=bold
 
 Bundle 'L9'
-Bundle 'FuzzyFinder'
 
 
 filetype plugin indent on " required!
