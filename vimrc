@@ -10,6 +10,7 @@ autocmd VimEnter * wincmd p
 syntax on
 set tags=./tags;/
 
+call Pl#Theme#InsertSegment('vihxen_build', 'after', 'fileinfo')
 
 """ BASIC OPTIONS
 set shell=bash
@@ -70,8 +71,8 @@ map <s-h> <c-w>h<c-w>
 map <s-l> <c-w>l<c-w>
 
 " vihxen
-map <leader>eb :call haxe#OpenHxml()<CR>
-map <leader>th : call haxe#Ctags()<CR>
+map <leader>eb :call vihxen#OpenHxml()<CR>
+map <leader>th : call vihxen#Ctags()<CR>
 
 " emacs movement keybindings in insert mode
 imap <C-a> <C-o>0

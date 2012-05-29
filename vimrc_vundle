@@ -22,7 +22,7 @@ Bundle 'majutsushi/tagbar'
 Bundle 'vim-scripts/taglist.vim'
 Bundle 'sjl/splice.vim'
 Bundle 'scrooloose/syntastic'
-Bundle 'Lokaltog/vim-powerline'
+Bundle 'jdonaldson/vim-powerline'
 Bundle 'jdonaldson/vihxen'
 Bundle 'mileszs/ack.vim'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
