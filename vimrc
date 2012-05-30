@@ -1,18 +1,26 @@
+" source all of the included vundles
 source ~/.vimrc_vundle
+
 " change the mapleader from \ to ,
 let mapleader=","
+
 " Use Q for formatting the current paragraph (or selection)
 vmap Q gq
 nmap Q gqap
+
+"lazy commands
 nnoremap ; :
+
+" handle direcory links with nerdtree
 autocmd VimEnter * wincmd p
 
-syntax on
+syntax on " syntax highlighting, natch
+
 set tags=./tags;/
 
 """ BASIC OPTIONS
 set shell=bash
-set background=dark
+"set background=dark
 set encoding=utf-8
 set visualbell
 set nocompatible
@@ -58,13 +66,17 @@ highlight GarbageWhitespace ctermbg=red ctermfg=white guibg=#59292
 match GarbageWhitespace /\s\+$/
 
 
-
 " Key Mappings
 cmap w!! w !sudo tee % >/dev/null
 
 " vihxen
 map <leader>eb :call vihxen#OpenHxml()<CR>
 map <leader>th : call vihxen#Ctags()<CR>
+
+" clean up shortcuts
+nnoremap <leader>W :%s/\s\+$//<CR>:let @/=''<CR>
+
+
 
 " emacs movement keybindings in insert mode
 imap <C-a> <C-o>0
@@ -87,7 +99,8 @@ map <leader>5 :BuffergatorToggle <CR>
 nmap <Leader>ev :e $MYVIMRC<CR>
 nmap <Leader>sv :so $MYVIMRC<CR>
 
-map <space> /
+nnoremap <space> /\v
+vnoremap <space> /\v
 nmap <silent> ,/ :nohlsearch<CR>
 
 "Vim 7 specific mappings
@@ -102,7 +115,7 @@ map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 let g:Powerline_symbols = 'fancy'
-set guifont=Menlo\ for\ Powerline:h11
+set guifont=Menlo\ for\ Powerline:h13
 
 "autocmd QuickFixCmdPost [^l]* nested cwindow
 "autocmd QuickFixCmdPost    l* nested lwindow
@@ -133,6 +146,17 @@ function! ToggleList(bufname, pfx)
     wincmd p
   endif
 endfunction
+
+" monokai-options
+colorscheme monokai
+
+" ack-options
+nnoremap <leader>a :Ack
+
+" ctrlp-options
+let g:ctrlp_follow_symlinks = 1
+
+" neocomplcache-options
 
 "disable AutoComplPop.
 let g:acp_enableAtStartup = 0
@@ -182,13 +206,6 @@ inoremap <expr><C-e>  neocomplcache#cancel_popup()
 
 " AutoComplPop like behavior.
 let g:neocomplcache_enable_auto_select = 1
-
-" Shell like behavior(not recommended).
-"set completeopt+=longest
-"let g:neocomplcache_enable_auto_select = 1
-"let g:neocomplcache_disable_auto_complete = 1
-"inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<TAB>"
-"inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
 
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
