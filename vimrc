@@ -1,37 +1,69 @@
 " source all of the included vundles
 source ~/.vimrc_vundle
 
+"MODE/LEADER SWITCHING
 " change the mapleader from \ to ,
 let mapleader=","
-
-" Use Q for formatting the current paragraph (or selection)
-vmap Q gq
-nmap Q gqap
-
 "lazy commands
 nnoremap ; :
+" lazy insert mode escape
+inoremap jj <Esc>
 
-" handle direcory links with nerdtree
-autocmd VimEnter * wincmd p
+"SEARCHING/MOVING
+set ignorecase
+set smartcase
+set gdefault
+set incsearch
+set showmatch
+set hlsearch
+nnoremap <tab> %
+vnoremap <tab> %
+nnoremap <space> /\v
+vnoremap <space> /\v
+nmap <silent> ,<space> :nohlsearch<CR>
+" requires ack plugin
+nnoremap <leader>a :Ack
+" requires ctrlp plugin
+let g:ctrlp_follow_symlinks = 1
 
-syntax on " syntax highlighting, natch
+"REFORMATTING
+" reformat paragraph
+nnoremap <leader>q gqip
+" strip whitespace
+nnoremap <leader>W :%s/\s\+$//<CR>:let @/=''<CR>
 
+
+"GLOBAL AUTOMATIC ACTIONS
+" autosave on lost focus
+au FocusLost * :wa
+" open directory in NerdTree mode
+au VimEnter * wincmd p
+
+
+"SPLIT WINDOW MANAGEMENT
+" vertical split
+nnoremap <leader>w <C-w>v<C-w>l
+" easier split navigation
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+
+"BASIC OPTIONS
+syntax on         " syntax highlighting, natch
 set tags=./tags;/
-
-""" BASIC OPTIONS
 set shell=bash
-"set background=dark
 set encoding=utf-8
-set visualbell
 set nocompatible
-set laststatus=2 " Always show the statusline
+set laststatus=2  " Always show the statusline
 set t_Co=256 " Explicitly tell vim that the terminal has 256 colors
 " set t_Co=16 " Explicitly tell vim that the terminal has 256 colors
-set number
+set number        " show line numbers
 set nowrap        " don't wrap lines
 set tabstop=8     " a tab is eight spaces
 set shiftwidth=4  " number of spaces to use for autoindenting
-set expandtab
+set expandtab     " expand tabs to spaces
 set backspace=indent,eol,start
                   " allow backspacing over everything in insert mode
 set autoindent    " always set autoindenting on
@@ -42,53 +74,37 @@ set cindent       " useful for python
 set number        " always show line numbers
 set shiftround    " use multiple of shiftwidth when indenting with '<' and '>'
 set showmatch     " set show matching parenthesis
-set ignorecase    " ignore case when searching
-set smartcase     " ignore case if search pattern is all lowercase,
-                  "    case-sensitive otherwise
 set smarttab      " insert tabs on the start of a line according to
                   "    shiftwidth, not tabstop
-set hlsearch      " highlight search terms
-set incsearch     " show search matches as you type
-
 set history=1000         " remember more commands and search history
 set undolevels=1000      " use many muchos levels of undo
 set wildignore=*.swp,*.bak,*.pyc,*.class
 set title                " change the terminal's title
 set visualbell           " don't beep
 set noerrorbells         " no, seriously, don't beep
-set nobackup
-set noswapfile
-
-highlight OverWidth ctermbg=red ctermfg=white guibg=#59292
-match OverWidth /\%81v.\+/
-
-highlight GarbageWhitespace ctermbg=red ctermfg=white guibg=#59292
-match GarbageWhitespace /\s\+$/
+set nobackup             " I'm using autosave/git, don't need backup files
+set noswapfile           " I'm on a modern machine, don't need swapfiles
+set colorcolumn=85       " give me a line for max column width
 
 
-" Key Mappings
+" DISPLAY STYLE OPTIONS
+" requires vim-powerline and fonts
+let g:Powerline_symbols = 'fancy'
+set guifont=Menlo\ for\ Powerline:h12
+" requires monokai theme
+colorscheme monokai
+
+
+" MISC KEY MAPPING
+" force write a file
 cmap w!! w !sudo tee % >/dev/null
-
-" vihxen
+" insert a newline in normal mode
+nnoremap <C-J> a<CR><Esc>k$
+" requires vihxen
 map <leader>eb :call vihxen#OpenHxml()<CR>
 map <leader>th : call vihxen#Ctags()<CR>
 
-" clean up shortcuts
-nnoremap <leader>W :%s/\s\+$//<CR>:let @/=''<CR>
-
-
-
-" emacs movement keybindings in insert mode
-imap <C-a> <C-o>0
-imap <C-e> <C-o>$
-map <C-e> $
-map <C-a> 0
-
-noremap <silent> <C-S>          :update<CR>
-vnoremap <silent> <C-S>         <C-C>:update<CR>
-inoremap <silent> <C-S>         <C-O>:update<CR>
-inoremap jj <Esc>
-
+" All of my 'panels'
 nmap <silent> <leader>1 :call ToggleList("Quickfix List", 'c')<CR>
 map <leader>2 :ToggleNERDTree<CR>
 map <leader>3 :GundoToggle<CR>
@@ -99,10 +115,6 @@ map <leader>5 :BuffergatorToggle <CR>
 nmap <Leader>ev :e $MYVIMRC<CR>
 nmap <Leader>sv :so $MYVIMRC<CR>
 
-nnoremap <space> /\v
-vnoremap <space> /\v
-nmap <silent> ,/ :nohlsearch<CR>
-
 "Vim 7 specific mappings
 if version >= 700
   map <C-t> <Esc>:tabnew<CR>
@@ -110,16 +122,11 @@ if version >= 700
 endif
 
 " echo current syntax scope
-map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+map <Leader>css :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
-let g:Powerline_symbols = 'fancy'
-set guifont=Menlo\ for\ Powerline:h13
-
-"autocmd QuickFixCmdPost [^l]* nested cwindow
-"autocmd QuickFixCmdPost    l* nested lwindow
-
+" Functions to open a buffer as a toggle-able tab
 function! GetBufferList()
   redir =>buflist
   silent! ls
@@ -147,16 +154,10 @@ function! ToggleList(bufname, pfx)
   endif
 endfunction
 
-" monokai-options
-colorscheme monokai
 
-" ack-options
-nnoremap <leader>a :Ack
 
-" ctrlp-options
-let g:ctrlp_follow_symlinks = 1
-
-" neocomplcache-options
+" NEOCOMPLCACHE OPTIONS
+" requires neocomplcache, obviously
 
 "disable AutoComplPop.
 let g:acp_enableAtStartup = 0

@@ -32,6 +32,7 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'tpope/vim-fugitive'
 Bundle "tomtom/tlib_vim"
 Bundle "rickharris/vim-monokai"
+Bundle "sjl/vitality.vim"
 
 " vim-scripts repos
 Bundle 'localvimrc'
