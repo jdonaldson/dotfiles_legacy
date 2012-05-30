@@ -1,3 +1,6 @@
+" A great overview of the rationale behind some of these options is given here:
+" http://stevelosh.com/blog/2010/09/coming-home-to-vim/
+
 " source all of the included vundles
 source ~/.vimrc_vundle
 
@@ -58,7 +61,7 @@ set encoding=utf-8
 set nocompatible
 set laststatus=2  " Always show the statusline
 set t_Co=256 " Explicitly tell vim that the terminal has 256 colors
-" set t_Co=16 " Explicitly tell vim that the terminal has 256 colors
+"set t_Co=16 " Explicitly tell vim that the terminal has 256 colors
 set number        " show line numbers
 set nowrap        " don't wrap lines
 set tabstop=8     " a tab is eight spaces
@@ -84,16 +87,21 @@ set visualbell           " don't beep
 set noerrorbells         " no, seriously, don't beep
 set nobackup             " I'm using autosave/git, don't need backup files
 set noswapfile           " I'm on a modern machine, don't need swapfiles
-set colorcolumn=85       " give me a line for max column width
 
 
 " DISPLAY STYLE OPTIONS
+colorscheme molokai
 " requires vim-powerline and fonts
 let g:Powerline_symbols = 'fancy'
 set guifont=Menlo\ for\ Powerline:h12
-" requires monokai theme
-colorscheme monokai
-
+" color too-wide columns
+if exists('+colorcolumn')
+  set colorcolumn=80
+else
+    au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+endif
+highlight ColorColumn ctermbg=16
+highlight ColorColumn guibg=Black
 
 " MISC KEY MAPPING
 " force write a file
@@ -122,9 +130,14 @@ if version >= 700
 endif
 
 " echo current syntax scope
-map <Leader>css :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
-\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
-\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+map <Leader>css :echo "hi<" . synIDattr(
+            \. synID(line("."), col("."), 1), "name") 
+            \. "> trans<"
+            \. synIDattr(synID(line("."),col("."),0),"name") 
+            \. "> lo<"
+            \. synIDattr(synIDtrans(synID(line("."),col("."),1))
+            \.,"name") 
+            \. ">"<CR>
 
 " Functions to open a buffer as a toggle-able tab
 function! GetBufferList()
@@ -136,7 +149,8 @@ endfunction
 
 function! ToggleList(bufname, pfx)
   let buflist = GetBufferList()
-  for bufnum in map(filter(split(buflist, '\n'), 'v:val =~ "'.a:bufname.'"'), 'str2nr(matchstr(v:val, "\\d\\+"))')
+  for bufnum in map(filter(split(buflist, '\n'), 'v:val =~ "'.a:bufname.'"'),
+      \ 'str2nr(matchstr(v:val, "\\d\\+"))')
     if bufwinnr(bufnum) != -1
       exec(a:pfx.'close')
       return
@@ -193,7 +207,10 @@ inoremap <expr><C-g>     neocomplcache#undo_completion()
 inoremap <expr><C-l>     neocomplcache#complete_common_string()
 
 " SuperTab like snippets behavior.
-imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? 
+            \"\<Plug>(neocomplcache_snippets_expand)" 
+            \: pumvisible() ? "\<C-n>" : "\<TAB>"
+
 " Recommended key-mappings.
 " <CR>: close popup and save indent.
 inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
@@ -225,5 +242,4 @@ let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
 let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.haxe = '\v([\]''"]|\w)(\.|\()'
-
 
