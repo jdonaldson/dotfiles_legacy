@@ -12,6 +12,7 @@ nnoremap ; :
 " lazy insert mode escape
 inoremap jj <Esc>
 
+
 "SEARCHING/MOVING
 set ignorecase
 set smartcase
@@ -106,8 +107,9 @@ highlight ColorColumn guibg=Black
 " MISC KEY MAPPING
 " force write a file
 cmap w!! w !sudo tee % >/dev/null
-" insert a newline in normal mode
-nnoremap <C-J> a<CR><Esc>k$
+" insert a newline  below in normal mode
+nnoremap <C-J> hmao<esc>`a
+
 " requires vihxen
 map <leader>eb :call vihxen#OpenHxml()<CR>
 map <leader>th : call vihxen#Ctags()<CR>
@@ -131,12 +133,12 @@ endif
 
 " echo current syntax scope
 map <Leader>css :echo "hi<" . synIDattr(
-            \. synID(line("."), col("."), 1), "name") 
+            \. synID(line("."), col("."), 1), "name")
             \. "> trans<"
-            \. synIDattr(synID(line("."),col("."),0),"name") 
+            \. synIDattr(synID(line("."),col("."),0),"name")
             \. "> lo<"
             \. synIDattr(synIDtrans(synID(line("."),col("."),1))
-            \.,"name") 
+            \.,"name")
             \. ">"<CR>
 
 " Functions to open a buffer as a toggle-able tab
@@ -207,8 +209,8 @@ inoremap <expr><C-g>     neocomplcache#undo_completion()
 inoremap <expr><C-l>     neocomplcache#complete_common_string()
 
 " SuperTab like snippets behavior.
-imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? 
-            \"\<Plug>(neocomplcache_snippets_expand)" 
+imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ?
+            \"\<Plug>(neocomplcache_snippets_expand)"
             \: pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " Recommended key-mappings.
