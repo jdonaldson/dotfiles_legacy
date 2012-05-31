@@ -100,9 +100,11 @@ endif
 if has("gui_running") || &term == "xterm-256color"
     colors molokai
     "set t_Co=256 " Explicitly tell vim that the terminal has 256 colors
-    " requires vim-powerline and fonts
+    " requires vim-powerline 
     let g:Powerline_symbols = 'fancy'
-    set guifont=Monaco\ for\ Powerline:h14
+    set guifont=Monaco\ for\ Powerline:h13
+    " hide the toolbar for macvim
+    set guioptions=egmrt
     highlight ColorColumn ctermbg=16
     highlight ColorColumn guibg=Black
 else
