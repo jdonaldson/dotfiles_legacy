@@ -61,8 +61,6 @@ set shell=bash
 set encoding=utf-8
 set nocompatible
 set laststatus=2  " Always show the statusline
-set t_Co=256 " Explicitly tell vim that the terminal has 256 colors
-"set t_Co=16 " Explicitly tell vim that the terminal has 256 colors
 set number        " show line numbers
 set nowrap        " don't wrap lines
 set tabstop=8     " a tab is eight spaces
@@ -91,18 +89,25 @@ set noswapfile           " I'm on a modern machine, don't need swapfiles
 
 
 " DISPLAY STYLE OPTIONS
-colorscheme molokai
-" requires vim-powerline and fonts
-let g:Powerline_symbols = 'fancy'
-set guifont=Menlo\ for\ Powerline:h12
+if &term == "builtin_gui" || &term == "xterm-256color"
+    colors molokai
+    set t_Co=256 " Explicitly tell vim that the terminal has 256 colors
+    " requires vim-powerline and fonts
+    let g:Powerline_symbols = 'fancy'
+    set guifont=Menlo\ for\ Powerline:h12
+    highlight ColorColumn ctermbg=16
+    highlight ColorColumn guibg=Black
+else
+    highlight ColorColumn ctermbg=8
+    set t_Co=16
+    colors desert
+endif
 " color too-wide columns
 if exists('+colorcolumn')
   set colorcolumn=80
 else
     au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 endif
-highlight ColorColumn ctermbg=16
-highlight ColorColumn guibg=Black
 
 " MISC KEY MAPPING
 " force write a file
