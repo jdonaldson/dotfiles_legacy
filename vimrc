@@ -55,7 +55,6 @@ nnoremap <C-l> <C-w>l
 
 
 "BASIC OPTIONS
-syntax on         " syntax highlighting, natch
 set tags=./tags;/
 set shell=bash
 set encoding=utf-8
@@ -89,25 +88,29 @@ set noswapfile           " I'm on a modern machine, don't need swapfiles
 
 
 " DISPLAY STYLE OPTIONS
-if &term == "builtin_gui" || &term == "xterm-256color"
-    colors molokai
-    set t_Co=256 " Explicitly tell vim that the terminal has 256 colors
-    " requires vim-powerline and fonts
-    let g:Powerline_symbols = 'fancy'
-    set guifont=Menlo\ for\ Powerline:h12
-    highlight ColorColumn ctermbg=16
-    highlight ColorColumn guibg=Black
-else
-    highlight ColorColumn ctermbg=8
-    set t_Co=16
-    colors desert
-endif
 " color too-wide columns
+syntax on         " syntax highlighting, natch
 if exists('+colorcolumn')
   set colorcolumn=80
 else
     au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 endif
+
+
+if has("gui_running") || &term == "xterm-256color"
+    colors molokai
+    "set t_Co=256 " Explicitly tell vim that the terminal has 256 colors
+    " requires vim-powerline and fonts
+    let g:Powerline_symbols = 'fancy'
+    set guifont=Monaco\ for\ Powerline:h14
+    highlight ColorColumn ctermbg=16
+    highlight ColorColumn guibg=Black
+else
+    highlight ColorColumn ctermbg=8
+    "set t_Co=16
+    colors desert
+endif
+
 
 " MISC KEY MAPPING
 " force write a file
