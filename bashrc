@@ -6,12 +6,14 @@ if [ -f ~/.auth ]; then
     source ~/.auth
 fi
 
-export PATH=$HOME/bin:/usr/local/haxe/bin:$PATH
+export PATH=$HOME/bin:$PATH
 
 # prefer usr/local
 export PATH=/usr/local/share/python:/usr/local/share:/usr/local/bin:~/.local/bin:/usr/local/sbin:$PATH
 
-
+# work with haxe nightlies
+export HAXE_LIBRARY_PATH=~/bin/haxe_nightly/std:.
+export PATH=~/bin/haxe_nightly:$PATH
 
 export WORKON_HOME=$HOME/.virtualenvs
 source /usr/local/bin/virtualenvwrapper.sh
