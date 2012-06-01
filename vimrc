@@ -98,7 +98,7 @@ endif
 
 
 if has("gui_running") || &term == "xterm-256color"
-    colors molokai
+    colors molokai 
     "set t_Co=256 " Explicitly tell vim that the terminal has 256 colors
     " requires vim-powerline 
     let g:Powerline_symbols = 'fancy'
@@ -115,6 +115,7 @@ endif
 
 
 " MISC KEY MAPPING
+
 " force write a file
 cmap w!! w !sudo tee % >/dev/null
 " insert a newline  below in normal mode

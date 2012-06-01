@@ -8,14 +8,11 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " original repos on github
-"Bundle 'xolox/vim-session'
-"Bundle 'ervandew/screen'
 Bundle 'greyblake/vim-preview'
 Bundle 'Shougo/unite.vim'
 Bundle 'jeetsukumaran/vim-buffergator'
 Bundle 'tyru/open-browser.vim'
 Bundle 'cakebaker/scss-syntax.vim'
-Bundle 'vim-scripts/a.vim'
 Bundle 'tpope/vim-markdown'
 Bundle 'Shougo/neocomplcache-snippets-complete'
 Bundle 'tpope/vim-surround'
@@ -25,7 +22,8 @@ Bundle 'scrooloose/syntastic'
 Bundle 'jdonaldson/vim-powerline'
 Bundle 'jdonaldson/vihxen'
 Bundle 'mileszs/ack.vim'
-"Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+Bundle 'tomasr/molokai'
+Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'kien/ctrlp.vim'
 Bundle "Shougo/neocomplcache"
 Bundle 'tpope/vim-unimpaired'
@@ -35,14 +33,11 @@ Bundle "sjl/vitality.vim"
 
 " vim-scripts repos
 Bundle 'localvimrc'
-Bundle 'bufexplorer.zip'
 Bundle 'vim-addon-mw-utils'
 Bundle 'Gundo'
 Bundle 'The-NERD-tree'
-Bundle 'NERD_tree-Project'
 Bundle 'The-NERD-Commenter'
 Bundle 'desert.vim'
-Bundle 'Color-Sampler-Pack'
 
 "improve autocomplete menu color
 highlight Pmenu ctermbg=238 gui=bold
