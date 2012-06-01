@@ -98,6 +98,7 @@ endif
 
 
 if has("gui_running") || &term == "xterm-256color"
+    let g:molokai_original = 1 
     colors molokai 
     "set t_Co=256 " Explicitly tell vim that the terminal has 256 colors
     " requires vim-powerline 
@@ -120,6 +121,10 @@ endif
 cmap w!! w !sudo tee % >/dev/null
 " insert a newline  below in normal mode
 nnoremap <C-J> hmao<esc>`a
+" execute the current line as a shell command, insert
+" results below the line
+nnoremap <leader>r :exe ':r ! '.getline('.') <CR>
+
 
 " requires vihxen
 map <leader>eb :call vihxen#OpenHxml()<CR>
@@ -255,4 +260,3 @@ let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
 let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.haxe = '\v([\]''"]|\w)(\.|\()'
-
