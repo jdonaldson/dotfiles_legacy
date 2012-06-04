@@ -114,6 +114,7 @@ else
     colors desert
 endif
 
+set mouse=a
 
 " MISC KEY MAPPING
 
