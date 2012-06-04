@@ -132,7 +132,7 @@ map <leader>th : call vihxen#Ctags()<CR>
 
 " All of my 'panels'
 nmap <silent> <leader>1 :call ToggleList("Quickfix List", 'c')<CR>
-map <leader>2 :ToggleNERDTree<CR>
+map <leader>2 :NERDTreeToggle<CR>
 map <leader>3 :GundoToggle<CR>
 map <leader>4 :TagbarToggle<CR>
 map <leader>5 :BuffergatorToggle <CR>
