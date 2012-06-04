@@ -26,7 +26,7 @@ nnoremap <space> /\v
 vnoremap <space> /\v
 nmap <silent> ,<space> :nohlsearch<CR>
 " requires ack plugin
-nnoremap <leader>a :Ack
+nnoremap <leader>a :Ack 
 " requires ctrlp plugin
 let g:ctrlp_follow_symlinks = 1
 
