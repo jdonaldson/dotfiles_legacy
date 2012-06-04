@@ -26,7 +26,7 @@ nnoremap <space> /\v
 vnoremap <space> /\v
 nmap <silent> ,<space> :nohlsearch<CR>
 " requires ack plugin
-nnoremap <leader>a :Ack
+nnoremap <leader>a :Ack 
 " requires ctrlp plugin
 let g:ctrlp_follow_symlinks = 1
 
@@ -133,7 +133,7 @@ map <leader>th : call vihxen#Ctags()<CR>
 
 " All of my 'panels'
 nmap <silent> <leader>1 :call ToggleList("Quickfix List", 'c')<CR>
-map <leader>2 :ToggleNERDTree<CR>
+map <leader>2 :NERDTreeToggle<CR>
 map <leader>3 :GundoToggle<CR>
 map <leader>4 :TagbarToggle<CR>
 map <leader>5 :BuffergatorToggle <CR>
@@ -260,5 +260,5 @@ endif
 let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
 let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
-let g:neocomplcache_omni_patterns.haxe = '\v([\]''"\)]|\w)(\.|\()'
+let g:neocomplcache_omni_patterns.haxe = '\%([\]''") ]\|\w\)\%(\.\|(\)'
 

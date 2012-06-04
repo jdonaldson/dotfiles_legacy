@@ -8,6 +8,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " original repos on github
+Bundle 'Lokaltog/vim-easymotion'
 Bundle 'greyblake/vim-preview'
 Bundle 'Shougo/unite.vim'
 Bundle 'jeetsukumaran/vim-buffergator'
@@ -30,13 +31,13 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'tpope/vim-fugitive'
 Bundle "tomtom/tlib_vim"
 Bundle "sjl/vitality.vim"
+Bundle "jdonaldson/nerdcommenter"
 
 " vim-scripts repos
 Bundle 'localvimrc'
 Bundle 'vim-addon-mw-utils'
 Bundle 'Gundo'
 Bundle 'The-NERD-tree'
-Bundle 'The-NERD-Commenter'
 Bundle 'desert.vim'
 
 "improve autocomplete menu color
