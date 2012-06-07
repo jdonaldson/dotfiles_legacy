@@ -25,6 +25,8 @@ vnoremap <space> /\v
 nmap <silent> ,<space> :nohlsearch<CR>
 " requires ack plugin
 nnoremap <leader>a :Ack 
+let g:ackprg="ack -H --nocolor --nogroup --follow --column"
+
 " requires ctrlp plugin
 let g:ctrlp_follow_symlinks = 1
 
@@ -112,6 +114,7 @@ else
     colors desert
 endif
 
+set mouse=a
 
 " MISC KEY MAPPING
 
@@ -133,7 +136,8 @@ nmap <silent> <leader>1 :call ToggleList("Quickfix List", 'c')<CR>
 map <leader>2 :NERDTreeToggle<CR>
 map <leader>3 :GundoToggle<CR>
 map <leader>4 :TagbarToggle<CR>
-map <leader>5 :BuffergatorToggle <CR>
+map <leader>5 :BuffergatorToggle<CR>
+map <leader>6 :YRShow<CR>
 
 " opens $MYVIMRC for editing, or use :tabedit $MYVIMRC
 nmap <Leader>ev :e $MYVIMRC<CR>

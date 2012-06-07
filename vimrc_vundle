@@ -8,6 +8,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " original repos on github
+Bundle 'vim-scripts/YankRing.vim'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'greyblake/vim-preview'
 Bundle 'Shougo/unite.vim'
