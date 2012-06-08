@@ -11,6 +11,8 @@ let mapleader=","
 nnoremap ; :
 " lazy insert mode escape
 inoremap jj <Esc>
+
+
 "SEARCHING/MOVING
 set ignorecase
 set smartcase
@@ -29,6 +31,7 @@ let g:ackprg="ack -H --nocolor --nogroup --follow --column"
 
 " requires ctrlp plugin
 let g:ctrlp_follow_symlinks = 1
+
 
 "REFORMATTING
 " reformat paragraph
@@ -85,7 +88,7 @@ set visualbell           " don't beep
 set noerrorbells         " no, seriously, don't beep
 set nobackup             " I'm using autosave/git, don't need backup files
 set noswapfile           " I'm on a modern machine, don't need swapfiles
-
+set autowrite            " automatically write before make, tag, etc.
 
 " DISPLAY STYLE OPTIONS
 " color too-wide columns
