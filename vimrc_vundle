@@ -8,6 +8,8 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " original repos on github
+Bundle 'honza/snipmate-snippets'
+Bundle 'garbas/vim-snipmate'
 Bundle 'vim-scripts/YankRing.vim'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'greyblake/vim-preview'
@@ -16,7 +18,7 @@ Bundle 'jeetsukumaran/vim-buffergator'
 Bundle 'tyru/open-browser.vim'
 Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'tpope/vim-markdown'
-Bundle 'Shougo/neocomplcache-snippets-complete'
+"Bundle 'Shougo/neocomplcache-snippets-complete'
 Bundle 'tpope/vim-surround'
 Bundle 'majutsushi/tagbar'
 Bundle 'sjl/splice.vim'
