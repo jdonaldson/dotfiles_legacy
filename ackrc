@@ -1,0 +1,5 @@
+--type-set
+latte=.latte
+
+--type-set
+feature=.feature
