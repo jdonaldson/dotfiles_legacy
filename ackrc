@@ -3,3 +3,10 @@ latte=.latte
 
 --type-set
 feature=.feature
+
+--ignore-dir=compiled
+--ignore-dir=compressed
+
+--ignore-dir=venv
+--ignore-dir=build
+
