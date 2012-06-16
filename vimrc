@@ -42,7 +42,7 @@ nnoremap <leader>W :%s/\s\+$//<CR>:let @/=''<CR>
 
 "GLOBAL AUTOMATIC ACTIONS
 " autosave on lost focus
-au FocusLost * :wa
+"au FocusLost * :wa
 " open directory in NerdTree mode
 au VimEnter * wincmd p
 
