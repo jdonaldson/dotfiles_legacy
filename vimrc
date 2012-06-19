@@ -131,8 +131,8 @@ nnoremap <leader>r :exe ':r ! '.getline('.') <CR>
 
 
 " requires vihxen
-map <leader>eb :call vihxen#OpenHxml()<CR>
-map <leader>th : call vihxen#Ctags()<CR>
+map <leader>oh :call vihxen#OpenHxml()<CR>
+map <leader>ct : call vihxen#Ctags()<CR>
 
 " All of my 'panels'
 nmap <silent> <leader>1 :call ToggleList("Quickfix List", 'c')<CR>
