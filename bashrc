@@ -5,6 +5,9 @@ fi
 if [ -f ~/.auth ]; then
     source ~/.auth
 fi
+if [ -f ~/.bigmlrc ]; then
+    source ~/.bigmlrc
+fi
 
 export PATH=$HOME/bin:$PATH
 

@@ -26,7 +26,7 @@ nnoremap <space> /\v
 vnoremap <space> /\v
 nmap <silent> ,<space> :nohlsearch<CR>
 " requires ack plugin
-nnoremap <leader>a :Ack 
+nnoremap <leader>a :Ack
 let g:ackprg="ack -H --nocolor --nogroup --follow --column"
 
 " requires ctrlp plugin
@@ -101,10 +101,10 @@ endif
 
 
 if has("gui_running") || &term == "xterm-256color"
-    let g:molokai_original = 1 
-    colors molokai 
+    let g:molokai_original = 1
+    colors molokai
     "set t_Co=256 " Explicitly tell vim that the terminal has 256 colors
-    " requires vim-powerline 
+    " requires vim-powerline
     let g:Powerline_symbols = 'fancy'
     set guifont=Monaco\ for\ Powerline:h13
     " hide the toolbar for macvim
@@ -191,7 +191,18 @@ function! ToggleList(bufname, pfx)
   endif
 endfunction
 
+" convert scss to css when you write
+au! BufWriteCmd *.scss call SCSStocss()
 
+if !exists('*SCSStocss')
+    function! SCSStocss()
+        let src = tempname()
+        let dst = substitute( bufname('%'),'.scss','.css','g' )
+        echo 'writing css to ' . dst
+        execute "w ! sass --scss -s " . dst
+        w
+    endfunction
+endif
 
 " NEOCOMPLCACHE OPTIONS
 " requires neocomplcache, obviously
