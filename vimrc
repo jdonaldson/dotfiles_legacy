@@ -82,7 +82,7 @@ set smarttab      " insert tabs on the start of a line according to
                   "    shiftwidth, not tabstop
 set history=1000         " remember more commands and search history
 set undolevels=1000      " use many muchos levels of undo
-set wildignore=*.swp,*.bak,*.pyc,*.class
+set wildignore=*.swp,*.bak,*.pyc,*.class,*.sass-cache
 set title                " change the terminal's title
 set visualbell           " don't beep
 set noerrorbells         " no, seriously, don't beep
@@ -130,9 +130,11 @@ nnoremap <C-J> hmao<esc>`a
 nnoremap <leader>r :exe ':r ! '.getline('.') <CR>
 
 
+map <leader>pc :call ToggleEnablePreview()<CR>
+
 " requires vihxen
 map <leader>oh :call vihxen#OpenHxml()<CR>
-map <leader>ct : call vihxen#Ctags()<CR>
+map <leader>ct :call vihxen#Ctags()<CR>
 
 " All of my 'panels'
 nmap <silent> <leader>1 :call ToggleList("Quickfix List", 'c')<CR>
@@ -146,14 +148,9 @@ map <leader>6 :YRShow<CR>
 nmap <Leader>ev :e $MYVIMRC<CR>
 nmap <Leader>sv :so $MYVIMRC<CR>
 
-"Vim 7 specific mappings
-if version >= 700
-  map <C-t> <Esc>:tabnew<CR>
-  map <C-F4> <Esc>:tabclose<CR>
-endif
 
 " echo current syntax scope
-map <Leader>css :echo "hi<" . synIDattr(
+map <Leader>ss :echo "hi<" . synIDattr(
             \. synID(line("."), col("."), 1), "name")
             \. "> trans<"
             \. synIDattr(synID(line("."),col("."),0),"name")
@@ -191,7 +188,23 @@ function! ToggleList(bufname, pfx)
   endif
 endfunction
 
-" convert scss to css when you write
+function! ToggleEnablePreview()
+    if &l:completeopt == ''
+        return
+    else
+        let opts = split(&l:completeopt, ',')
+        if  &l:completeopt =~ 'preview'
+            let opts = filter(opts, 'v:val != "preview"')
+            echo 'disabling omnifunc preview'
+        else
+            let opts += ['preview']
+            echo 'enabling omnifunc preview'
+        endif
+        let &l:completeopt = join(opts,',')
+    endif
+endfunction
+
+" convert scss to css when the buffer is written
 au! BufWriteCmd *.scss call SCSStocss()
 
 if !exists('*SCSStocss')
