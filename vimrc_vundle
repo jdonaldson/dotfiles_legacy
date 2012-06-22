@@ -25,7 +25,7 @@ Bundle 'majutsushi/tagbar'
 Bundle 'sjl/splice.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'jdonaldson/vim-powerline'
-Bundle 'jdonaldson/vihxen'
+Bundle 'jdonaldson/vaxe'
 Bundle 'mileszs/ack.vim'
 Bundle 'tomasr/molokai'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}

@@ -89,6 +89,7 @@ set noerrorbells         " no, seriously, don't beep
 set nobackup             " I'm using autosave/git, don't need backup files
 set noswapfile           " I'm on a modern machine, don't need swapfiles
 set autowrite            " automatically write before make, tag, etc.
+set completeopt=menuone
 
 " DISPLAY STYLE OPTIONS
 " color too-wide columns
@@ -132,9 +133,9 @@ nnoremap <leader>r :exe ':r ! '.getline('.') <CR>
 
 map <leader>pc :call ToggleEnablePreview()<CR>
 
-" requires vihxen
-map <leader>oh :call vihxen#OpenHxml()<CR>
-map <leader>ct :call vihxen#Ctags()<CR>
+" requires vaxe
+map <leader>oh :call vaxe#OpenHxml()<CR>
+map <leader>ct :call vaxe#Ctags()<CR>
 
 " All of my 'panels'
 nmap <silent> <leader>1 :call ToggleList("Quickfix List", 'c')<CR>
