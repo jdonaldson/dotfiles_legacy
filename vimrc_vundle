@@ -38,7 +38,7 @@ Bundle "sjl/vitality.vim"
 Bundle "jdonaldson/nerdcommenter"
 
 " vim-scripts repos
-Bundle 'localvimrc'
+"Bundle 'localvimrc'
 Bundle 'vim-addon-mw-utils'
 Bundle 'Gundo'
 Bundle 'The-NERD-tree'
