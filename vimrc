@@ -136,6 +136,8 @@ map <leader>pc :call ToggleEnablePreview()<CR>
 " requires vaxe
 map <leader>oh :call vaxe#OpenHxml()<CR>
 map <leader>ct :call vaxe#Ctags()<CR>
+map <leader>ic :call vaxe#ImportClass()<CR>
+map <leader>pj :call vaxe#ProjectHxml()<CR>
 
 " All of my 'panels'
 nmap <silent> <leader>1 :call ToggleList("Quickfix List", 'c')<CR>
@@ -289,5 +291,5 @@ endif
 let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
 let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
-let g:neocomplcache_omni_patterns.haxe = '\%([\]''") ]\|\w\)\%(\.\|(\)'
+let g:neocomplcache_omni_patterns.haxe = '\%([\]''") ]\|\w\)\%(\.\|(\|:\)'
 
