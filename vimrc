@@ -151,6 +151,8 @@ map <leader>6 :YRShow<CR>
 nmap <Leader>ev :e $MYVIMRC<CR>
 nmap <Leader>sv :so $MYVIMRC<CR>
 
+" browser refresh settings
+let g:RefreshRunningBrowserDefault = 'chrome'
 
 " echo current syntax scope
 map <Leader>ss :echo "hi<" . synIDattr(
