@@ -26,7 +26,7 @@ nnoremap <space> /\v
 vnoremap <space> /\v
 nmap <silent> ,<space> :nohlsearch<CR>
 " requires ack plugin
-nnoremap <leader>a :Ack
+nnoremap <leader>a :Ack<space>
 let g:ackprg="ack -H --nocolor --nogroup --follow --column"
 
 " requires ctrlp plugin
