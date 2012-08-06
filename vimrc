@@ -1,6 +1,7 @@
 " A great overview of the rationale behind some of these options is given here:
 " http://stevelosh.com/blog/2010/09/coming-home-to-vim/
 
+vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 " source all of the included vundles
 source ~/.vimrc_vundle
 
@@ -9,10 +10,6 @@ source ~/.vimrc_vundle
 let mapleader=","
 "lazy commands
 nnoremap ; :
-" lazy insert mode escape
-inoremap jj <Esc>
-
-
 "SEARCHING/MOVING
 set ignorecase
 set smartcase
@@ -27,7 +24,7 @@ vnoremap <space> /\v
 nmap <silent> ,<space> :nohlsearch<CR>
 " requires ack plugin
 nnoremap <leader>a :Ack<space>
-let g:ackprg="ack -H --nocolor --nogroup --follow --column"
+let g:ackprg="ack -Hi --nocolor --nogroup --follow --column"
 
 " requires ctrlp plugin
 let g:ctrlp_follow_symlinks = 1
@@ -104,7 +101,7 @@ endif
 if has("gui_running") || &term == "xterm-256color"
     let g:molokai_original = 1
     colors molokai
-    "set t_Co=256 " Explicitly tell vim that the terminal has 256 colors
+    set t_Co=256 " Explicitly tell vim that the terminal has 256 colors
     " requires vim-powerline
     let g:Powerline_symbols = 'fancy'
     set guifont=Monaco\ for\ Powerline:h13
@@ -221,6 +218,12 @@ if !exists('*SCSStocss')
         w
     endfunction
 endif
+
+"showmarks
+highlight ShowMarksHLl   cterm=bold ctermfg=1 ctermbg=12 gui=bold guifg=black guibg=lightblue
+highlight ShowMarksHLu   cterm=bold ctermfg=1 ctermbg=12 gui=bold guifg=darkblue guibg=lightblue
+highlight ShowMarksHLo   cterm=bold ctermfg=8 ctermbg=12 gui=bold guifg=darkgray guibg=lightblue
+highlight ShowMarksHLm   cterm=bold ctermfg=1 ctermbg=4 gui=bold guifg=white guibg=lightblue
 
 " NEOCOMPLCACHE OPTIONS
 " requires neocomplcache, obviously
