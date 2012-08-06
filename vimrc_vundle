@@ -8,6 +8,8 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " original repos on github
+Bundle 'zakj/vim-showmarks'
+Bundle 'benmills/vimux'
 Bundle 'Raimondi/delimitMate'
 Bundle 'honza/snipmate-snippets'
 Bundle 'garbas/vim-snipmate'
