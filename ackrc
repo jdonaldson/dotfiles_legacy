@@ -4,9 +4,15 @@ latte=.latte
 --type-set
 feature=.feature
 
+--type-set
+haxe=.hx
+
+--type-set
+hxml=.hxml
+
 --ignore-dir=compiled
 --ignore-dir=compressed
 
 --ignore-dir=venv
 --ignore-dir=build
-
+--ignore-dir=bin
