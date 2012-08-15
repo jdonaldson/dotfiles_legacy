@@ -24,7 +24,7 @@ vnoremap <space> /\v
 nmap <silent> ,<space> :nohlsearch<CR>
 " requires ack plugin
 nnoremap <leader>a :Ack<space>
-let g:ackprg="ack -Hi --nocolor --nogroup --follow --column"
+let g:ackprg="ack -Hi --nocolor --ignore-dir=bin --nogroup --follow --column"
 
 " requires ctrlp plugin
 let g:ctrlp_follow_symlinks = 1
@@ -98,7 +98,7 @@ else
 endif
 
 
-if has("gui_running") || &term == "xterm-256color"
+if has("gui_running") || &term == "xterm-256color" || &term == 'screen'
     let g:molokai_original = 1
     colors molokai
     set t_Co=256 " Explicitly tell vim that the terminal has 256 colors
@@ -109,6 +109,7 @@ if has("gui_running") || &term == "xterm-256color"
     set guioptions=egmrt
     highlight ColorColumn ctermbg=16
     highlight ColorColumn guibg=Black
+    set background=dark
 else
     highlight ColorColumn ctermbg=8
     "set t_Co=16
@@ -161,6 +162,7 @@ map <Leader>ss :echo "hi<" . synIDattr(
             \.,"name")
             \. ">"<CR>
 
+
 " Functions to open a buffer as a toggle-able tab
 function! GetBufferList()
   redir =>buflist
@@ -206,6 +208,7 @@ function! ToggleEnablePreview()
     endif
 endfunction
 
+
 " convert scss to css when the buffer is written
 au! BufWriteCmd *.scss call SCSStocss()
 
@@ -219,11 +222,33 @@ if !exists('*SCSStocss')
     endfunction
 endif
 
+function! LoadCheatSheet()
+    let cheatdir = '~/.vim/cheat/'
+    let path = cheatdir.&ft
+    echomsg path
+    if path != cheatdir && filereadable(glob(path))
+        set splitright
+        execute ':vsplit +setlocal\ noma\ ro '. path
+        normal <C-w>h
+    endif
+endfunction
+
+map <leader>lc :call LoadCheatSheet()<CR>
+
+
+
 "showmarks
 highlight ShowMarksHLl   cterm=bold ctermfg=1 ctermbg=12 gui=bold guifg=black guibg=lightblue
 highlight ShowMarksHLu   cterm=bold ctermfg=1 ctermbg=12 gui=bold guifg=darkblue guibg=lightblue
 highlight ShowMarksHLo   cterm=bold ctermfg=8 ctermbg=12 gui=bold guifg=darkgray guibg=lightblue
 highlight ShowMarksHLm   cterm=bold ctermfg=1 ctermbg=4 gui=bold guifg=white guibg=lightblue
+
+"vimux
+map <Leader>vp :VimuxPromptCommand<CR>
+map <Leader>vl :VimuxRunLastCommand<CR>
+map <Leader>vi :VimuxInspectRunner<CR>
+map <Leader>vq :VimuxCloseRunner<CR>
+
 
 " NEOCOMPLCACHE OPTIONS
 " requires neocomplcache, obviously
