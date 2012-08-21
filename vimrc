@@ -17,8 +17,8 @@ set gdefault
 set incsearch
 set showmatch
 set hlsearch
-nnoremap <tab> %
-vnoremap <tab> %
+"nnoremap <tab> %
+"vnoremap <tab> %
 nnoremap <space> /\v
 vnoremap <space> /\v
 nmap <silent> ,<space> :nohlsearch<CR>
@@ -287,13 +287,13 @@ let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 "inoremap <expr><C-l>     neocomplcache#complete_common_string()
 " SuperTab like snippets behavior.
 "imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ?
-"            \"\<Plug>(neocomplcache_snippets_expand)"
-"            \: pumvisible() ? "\<C-n>" : "\<TAB>"
+            "\"\<Plug>(neocomplcache_snippets_expand)"
+            "\: pumvisible() ? "\<C-n>" : "\<TAB>"
 " Recommended key-mappings.
 " <CR>: close popup and save indent.
-"inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
-"imap <expr><CR> pumvisible() ? "\<C-k>" : "\<CR>"
-"imap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
+imap <expr><CR> pumvisible() ? "\<C-k>" : "\<CR>"
+imap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 " <TAB>: completion.
 "inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 "<C-h>, <BS>: close popup and delete backword char.
