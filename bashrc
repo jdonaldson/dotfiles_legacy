@@ -1,7 +1,4 @@
 # bash completion!
-if [ -f `brew --prefix`/etc/bash_completion ]; then
-  . `brew --prefix`/etc/bash_completion
-fi
 if [ -f ~/.auth ]; then
     source ~/.auth
 fi
@@ -24,6 +21,9 @@ source /usr/local/bin/virtualenvwrapper.sh
 alias ls='ls -G'
 alias ll='ls -al'
 alias ..='cd ..'
+
+#hadoop opts
+export HADOOP_OPTS="-Djava.security.krb5.realm=OX.AC.UK -Djava.security.krb5.kdc=kdc0.ox.ac.uk:kdc1.ox.ac.uk"
 
 
 # personal scripts
