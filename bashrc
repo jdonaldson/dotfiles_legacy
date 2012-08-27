@@ -1,12 +1,12 @@
-# bash completion!
+# auth/creds
 if [ -f ~/.auth ]; then
     source ~/.auth
 fi
+
+# bigml settings
 if [ -f ~/.bigmlrc ]; then
     source ~/.bigmlrc
 fi
-
-export PATH=$HOME/bin:$PATH
 
 # prefer usr/local
 export PATH=/usr/local/share/python:/usr/local/share:/usr/local/bin:~/.local/bin:/usr/local/sbin:$PATH
@@ -15,20 +15,11 @@ export PATH=/usr/local/share/python:/usr/local/share:/usr/local/bin:~/.local/bin
 #export HAXE_LIBRARY_PATH=~/bin/haxe_nightly/std:.
 #export PATH=~/bin/haxe_nightly:$PATH
 
+# virtualenv
 export WORKON_HOME=$HOME/.virtualenvs
 source /usr/local/bin/virtualenvwrapper.sh
 
-alias ls='ls -G'
-alias ll='ls -al'
-alias ..='cd ..'
-
-#hadoop opts
-export HADOOP_OPTS="-Djava.security.krb5.realm=OX.AC.UK -Djava.security.krb5.kdc=kdc0.ox.ac.uk:kdc1.ox.ac.uk"
-
-
-# personal scripts
-
-
+# django
 function setdsm() { 
     export PYTHONPATH=$PYTHONPATH:$PWD/..
     export PYTHONPATH=$PYTHONPATH:$PWD
@@ -38,38 +29,21 @@ function setdsm() {
     else
         export DJANGO_SETTINGS_MODULE=$1
     fi
-    
     echo "DJANGO_SETTINGS_MODULE set to $DJANGO_SETTINGS_MODULE"
 }
 
+# hadoop
+export HADOOP_OPTS="-Djava.security.krb5.realm=OX.AC.UK -Djava.security.krb5.kdc=kdc0.ox.ac.uk:kdc1.ox.ac.uk"
 
 
-function parse_git_dirty {
-   [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo "*"
-}
-
-function parse_git_branch {
-   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/[\1$(parse_git_dirty)]/"
-}
-
-export PS1="\[\e[01;32m\]\h \[\e[01;34m\]\W \$(parse_git_branch)\[\e[01;34m\]$\[\e[00m\] "
-
+# node.js
 export NODE_PATH="/usr/local/lib/node"
 export PKG_CONFIG_PATH
-export LSCOLORS="gxfxcxdxbxegedabagacad"
-export CVSEDITOR=emacs
-export EDITOR=emacs
+
+# java
 export JAVA_OPTS=-Xmx2500m
-export SVN_EDITOR=emacs
-export GIT_EDITOR=emacs
-# ML=~/Projects/BigML/
 
-# haxe specific path/env mods
-
-
-#AWS/EC2 specific tools
+# aws/ec2 specific tools
 export JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Home"
 export EC2_HOME="/usr/local/Cellar/ec2-api-tools/1.3-62308/jars"
-
-
 
