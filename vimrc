@@ -1,15 +1,17 @@
 " A great overview of the rationale behind some of these options is given here:
 " http://stevelosh.com/blog/2010/09/coming-home-to-vim/
 
-vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
-" source all of the included vundles
-source ~/.vimrc_vundle
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+source ~/.vim/settings/vundle.vim
 
 "MODE/LEADER SWITCHING
 " change the mapleader from \ to ,
 let mapleader=","
+
 "lazy commands
 nnoremap ; :
+
 "SEARCHING/MOVING
 set ignorecase
 set smartcase
@@ -17,8 +19,6 @@ set gdefault
 set incsearch
 set showmatch
 set hlsearch
-"nnoremap <tab> %
-"vnoremap <tab> %
 nnoremap <space> /\v
 vnoremap <space> /\v
 nmap <silent> ,<space> :nohlsearch<CR>
@@ -31,8 +31,6 @@ let g:ctrlp_follow_symlinks = 1
 
 
 "REFORMATTING
-" reformat paragraph
-nnoremap <leader>q gqip
 " strip whitespace
 nnoremap <leader>W :%s/\s\+$//<CR>:let @/=''<CR>
 
@@ -142,12 +140,11 @@ map <leader>ic :call vaxe#ImportClass()<CR>
 map <leader>pj :call vaxe#ProjectHxml()<CR>
 
 " All of my 'panels'
-nmap <silent> <leader>1 :call ToggleList("Quickfix List", 'c')<CR>
-map <leader>2 :NERDTreeToggle<CR>
-map <leader>3 :GundoToggle<CR>
-map <leader>4 :TagbarToggle<CR>
-map <leader>5 :BuffergatorToggle<CR>
-map <leader>6 :YRShow<CR>
+nmap <silent> <leader>q :call ToggleList("Quickfix List", 'c')<CR>
+map <leader>w :NERDTreeToggle<CR>
+map <leader>z :GundoToggle<CR>
+map <leader>g :TagbarToggle<CR>
+"map <leader>y :YRShow<CR>
 
 " opens $MYVIMRC for editing, or use :tabedit $MYVIMRC
 nmap <Leader>ev :e $MYVIMRC<CR>

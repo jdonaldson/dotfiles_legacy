@@ -1,7 +1,5 @@
 syntax enable
 filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
 
 " let Vundle manage Vundle
 " required!
@@ -9,6 +7,7 @@ Bundle 'gmarik/vundle'
 
 " original repos on github
 "Bundle 'Shougo/neocomplcache-snippets-complete'
+"Bundle 'vim-scripts/YankRing.vim'
 "Bundle 'zakj/vim-showmarks'
 Bundle "Shougo/neocomplcache"
 Bundle "scrooloose/nerdcommenter"
@@ -39,35 +38,17 @@ Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tyru/open-browser.vim'
-"Bundle 'vim-scripts/YankRing.vim'
 
 " vim-scripts repos
 "Bundle 'localvimrc'
-Bundle 'vim-addon-mw-utils'
 Bundle 'Gundo'
+Bundle 'L9'
 Bundle 'The-NERD-tree'
 Bundle 'desert.vim'
+Bundle 'vim-addon-mw-utils'
 
 "improve autocomplete menu color
 highlight Pmenu ctermbg=238 gui=bold
 
-Bundle 'L9'
-
-
 filetype plugin indent on " required!
-"
-" Brief help
-"
-" :BundleInstall - install bundles (won't update installed)
-" :BundleInstall! - update if installed
-"
-" :Bundles foo - search for foo
-" :Bundles! foo - refresh cached list and search for foo
-"
-" :BundleClean - confirm removal of unused bundles
-" :BundleClean! - remove without confirmation
-"
-" see :h vundle for more details
-" or wiki for FAQ
-" Note: comments after Bundle command are not allowed..
 
