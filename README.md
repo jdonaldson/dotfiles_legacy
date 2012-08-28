@@ -14,11 +14,11 @@ As Ryan notes, I am running on Mac OS X, but it will likely work on Linux as wel
 Run the following commands in your terminal. It will prompt you before it does
 anything destructive. Check the Rakefile to see exactly what it is doing.
 
-``terminal
+```bash
 git clone git://github.com/jdonaldson/dotfiles ~/.dotfiles
 cd ~/.dotfiles
 rake install
-``
+```
 
 After installing, open a new terminal window to see the effects.
 
@@ -30,7 +30,7 @@ settings.  It is helpful to also check the link targets in your home directory
 ``ls -l``.  If any of them are pointing to your ``.dotfiles`` directory, they
 will need to be removed.
 
-``terminal
+```bash
 unlink ~/.bin
 unlink ~/.gitignore
 unlink ~/.gemrc
@@ -40,6 +40,6 @@ unlink ~/.vim
 unlink ~/.vimrc
 rm ~/.gitconfig
 rm -rf ~/.dotfiles
-``
+```
 
 Then open a new terminal window to see the effects.
