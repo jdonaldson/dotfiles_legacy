@@ -1,7 +1,11 @@
 " different 'toggle' type functions
 
 " Functions to open a buffer as a toggle-able tab
-function! GetBufferList() redir =>buflist silent! ls redir END return buflist
+function! GetBufferList()
+    redir =>buflist
+    silent! ls
+    redir END
+    return buflist
 endfunction
 
 function! ToggleList(bufname, pfx)
