@@ -6,7 +6,8 @@ But, I've changed a lot as well.  For one, I've disabled the zsh related
 configs, and modified the vim configurations to work with vundle.  I've also
 added a lot of misc utility vim plugins, they might be useful to others.
 
-As Ryan notes, I am running on Mac OS X, but it will likely work on Linux as well.
+As Ryan notes, this is working on Mac OS X, but it will likely work on Linux as
+well.
 
 
 ## Installation
@@ -19,8 +20,6 @@ git clone git://github.com/jdonaldson/dotfiles ~/.dotfiles
 cd ~/.dotfiles
 rake install
 ```
-
-After installing, open a new terminal window to see the effects.
 
 ## Uninstall
 
@@ -41,5 +40,3 @@ unlink ~/.vimrc
 rm ~/.gitconfig
 rm -rf ~/.dotfiles
 ```
-
-Then open a new terminal window to see the effects.
