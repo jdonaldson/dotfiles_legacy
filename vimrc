@@ -149,6 +149,7 @@ map <leader>g :TagbarToggle<CR>
 " opens $MYVIMRC for editing, or use :tabedit $MYVIMRC
 nmap <Leader>ev :e $MYVIMRC<CR>
 nmap <Leader>sv :so $MYVIMRC<CR>
+nmap <Leader>vu :e ~/.vim/settings/vundle.vim<CR>
 
 " browser refresh settings
 let g:RefreshRunningBrowserDefault = 'chrome'
