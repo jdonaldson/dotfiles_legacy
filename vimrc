@@ -1,38 +1,45 @@
 " A great overview of the rationale behind some of these options is given here:
 " http://stevelosh.com/blog/2010/09/coming-home-to-vim/
 
+" First, make the leader and command characters easier to type
+let mapleader=","
+nnoremap ; :
+
+" Add some commands to quickly open or source this file
+nmap <Leader>ev :e $MYVIMRC<CR>
+nmap <Leader>sv :so $MYVIMRC<CR>
+
+" Now we need to load vundle, it manages all of the extra plugins for vim
+" It must be done first
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 source ~/.vim/settings/vundle.vim
 
-"MODE/LEADER SWITCHING
-" change the mapleader from \ to ,
-let mapleader=","
+" Vundle configs are stored in a separate file, source it.
+nmap <Leader>vu :e ~/.vim/settings/vundle.vim<CR>
 
-"lazy commands
-nnoremap ; :
 
-"SEARCHING/MOVING
+" These are all options releated to searching
 set ignorecase
 set smartcase
 set gdefault
 set incsearch
 set showmatch
 set hlsearch
+" Use 'extra magic' for regex searches
 nnoremap <space> /\v
 vnoremap <space> /\v
 nmap <silent> ,<space> :nohlsearch<CR>
 " requires ack plugin
-nnoremap <leader>a :Ack<space>
+nnoremap <Leader>a :Ack<space>
 let g:ackprg="ack -Hi --nocolor --ignore-dir=bin --nogroup --follow --column"
-
 " requires ctrlp plugin
 let g:ctrlp_follow_symlinks = 1
 
 
-"REFORMATTING
+" Some  general reformatting command(s)
 " strip whitespace
-nnoremap <leader>W :%s/\s\+$//<CR>:let @/=''<CR>
+nnoremap <Leader>W :%s/\s\+$//<CR>:let @/=''<CR>
 
 
 "GLOBAL AUTOMATIC ACTIONS
@@ -41,19 +48,42 @@ nnoremap <leader>W :%s/\s\+$//<CR>:let @/=''<CR>
 " open directory in NerdTree mode
 au VimEnter * wincmd p
 
+" Window/buffer management courtesy of dwm.
+" Override basic behavior
+let g:dwm_map_keys = 0
 
-"SPLIT WINDOW MANAGEMENT
-" vertical split
-nnoremap <leader>w <C-w>v<C-w>l
-" easier split navigation
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+" Cleans up the window layout if dwm buffer is closed arbitrarily
+function! DWM_Fix()
+    :exe 1 . "wincmd w"
+    wincmd H
+endfunction
 
+" Split the current buffer
+function! DWM_Split()
+  " Move current master pane to the stack
+  call DWM_Stack(1)
+  " Create a vertical split
+  vert topleft split
+  let b:dwm_pane = 1
+  call DWM_ResizeMasterPaneWidth()
+endfunction
+
+map <silent> <C-J> <C-W>w
+map <silent> <C-K> <C-W>W
+"map <silent> <C-,> :call DWM_Rotate(0)<CR>
+"map <silent> <C-.> :call DWM_Rotate(1)<CR>
+map <silent> <C-M> :call DWM_Split()<CR>
+map <silent> <C-N> :call DWM_New()<CR>
+map <silent> <C-X> :call DWM_Close()<CR>
+map <silent> <C-Space> :call DWM_Focus()<CR>
+map <silent> <C-@> :call DWM_Focus()<CR>
+
+map <silent> <C-H> :call DWM_GrowMaster()<CR>
+map <silent> <C-L> :call DWM_ShrinkMaster()<CR>
 " BUFFER MANAGEMENT
-nnoremap <Tab> :bnext<CR>
-nnoremap <S-Tab> :bprevious<CR>
+nnoremap <Tab> :call DWM_Rotate(0)<CR>
+nnoremap <S-Tab> :call DWM_Rotate(1)<CR>
+map <Leader>df :call DWM_Fix()<CR>
 
 
 "BASIC OPTIONS
@@ -128,28 +158,24 @@ cmap w!! w !sudo tee % >/dev/null
 nnoremap <C-J> hmao<esc>`a
 " execute the current line as a shell command, insert
 " results below the line
-nnoremap <leader>r :exe ':r ! '.getline('.') <CR>
+nnoremap <Leader>r :exe ':r ! '.getline('.') <CR>
 
 
-map <leader>pc :call ToggleEnablePreview()<CR>
+map <Leader>pc :call ToggleEnablePreview()<CR>
 
 " requires vaxe
-map <leader>oh :call vaxe#OpenHxml()<CR>
-map <leader>ct :call vaxe#Ctags()<CR>
-map <leader>ic :call vaxe#ImportClass()<CR>
-map <leader>pj :call vaxe#ProjectHxml()<CR>
+map <Leader>oh :call vaxe#OpenHxml()<CR>
+map <Leader>ct :call vaxe#Ctags()<CR>
+map <Leader>ic :call vaxe#ImportClass()<CR>
+map <Leader>pj :call vaxe#ProjectHxml()<CR>
 
 " All of my 'panels'
 nmap <silent> <leader>q :call ToggleList("Quickfix List", 'c')<CR>
-map <leader>w :NERDTreeToggle<CR>
-map <leader>z :GundoToggle<CR>
-map <leader>g :TagbarToggle<CR>
-"map <leader>y :YRShow<CR>
+map <Leader>w :NERDTreeToggle<CR>
+map <Leader>z :GundoToggle<CR>
+map <Leader>g :TagbarToggle<CR>
+"map <Leader>y :YRShow<CR>
 
-" opens $MYVIMRC for editing, or use :tabedit $MYVIMRC
-nmap <Leader>ev :e $MYVIMRC<CR>
-nmap <Leader>sv :so $MYVIMRC<CR>
-nmap <Leader>vu :e ~/.vim/settings/vundle.vim<CR>
 
 " browser refresh settings
 let g:RefreshRunningBrowserDefault = 'chrome'
