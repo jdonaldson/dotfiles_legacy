@@ -1,13 +1,11 @@
-" A great overview of the rationale behind some of these options is given here:
-" http://stevelosh.com/blog/2010/09/coming-home-to-vim/
 
 " First, make the leader and command characters easier to type
 let mapleader=","
 nnoremap ; :
 
 " Add some commands to quickly open or source this file
-nmap <Leader>ev :e $MYVIMRC<CR>
-nmap <Leader>sv :so $MYVIMRC<CR>
+nmap <Leader>1 :e $MYVIMRC<CR>
+nmap <Leader>so :so %<CR>
 
 " Now we need to load vundle, it manages all of the extra plugins for vim
 " It must be done first
@@ -56,6 +54,7 @@ let g:dwm_map_keys = 0
 function! DWM_Fix()
     :exe 1 . "wincmd w"
     wincmd H
+    call DWM_ResizeMasterPaneWidth()
 endfunction
 
 " Split the current buffer
@@ -64,26 +63,18 @@ function! DWM_Split()
   call DWM_Stack(1)
   " Create a vertical split
   vert topleft split
-  let b:dwm_pane = 1
   call DWM_ResizeMasterPaneWidth()
 endfunction
 
-map <silent> <C-J> <C-W>w
-map <silent> <C-K> <C-W>W
-"map <silent> <C-,> :call DWM_Rotate(0)<CR>
-"map <silent> <C-.> :call DWM_Rotate(1)<CR>
-map <silent> <C-M> :call DWM_Split()<CR>
-map <silent> <C-N> :call DWM_New()<CR>
-map <silent> <C-X> :call DWM_Close()<CR>
-map <silent> <C-Space> :call DWM_Focus()<CR>
-map <silent> <C-@> :call DWM_Focus()<CR>
-
+map <silent> <Leader>wf :call DWM_Fix()<CR>
+map <silent> <Leader>ws :call DWM_Split()<CR>
+map <silent> <Leader>wo :call DWM_New()<CR>
+map <silent> <Leader>vq :call DWM_Close()<CR>
+nnoremap <silent> <C-M> :call DWM_Focus()<CR>
 map <silent> <C-H> :call DWM_GrowMaster()<CR>
 map <silent> <C-L> :call DWM_ShrinkMaster()<CR>
-" BUFFER MANAGEMENT
-nnoremap <Tab> :call DWM_Rotate(0)<CR>
-nnoremap <S-Tab> :call DWM_Rotate(1)<CR>
-map <Leader>df :call DWM_Fix()<CR>
+map <silent> <TAB> <C-W>w
+map <silent> <S-TAB> <C-W>W
 
 
 "BASIC OPTIONS
@@ -181,7 +172,7 @@ map <Leader>g :TagbarToggle<CR>
 let g:RefreshRunningBrowserDefault = 'chrome'
 
 " echo current syntax scope
-map <Leader>ss :echo "hi<" . synIDattr(synID(line("."), col("."), 1), "name")
+map <Leader>syn :echo "hi<" . synIDattr(synID(line("."), col("."), 1), "name")
             \. "> trans<"
             \. synIDattr(synID(line("."),col("."),0),"name")
             \. "> lo<"
