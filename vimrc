@@ -66,11 +66,12 @@ function! DWM_Split()
   call DWM_ResizeMasterPaneWidth()
 endfunction
 
+"imap <expr><CR> pumvisible() ? "\<C-k>" : "\<CR>"
 map <silent> <Leader>wf :call DWM_Fix()<CR>
 map <silent> <Leader>ws :call DWM_Split()<CR>
 map <silent> <Leader>wo :call DWM_New()<CR>
-map <silent> <Leader>vq :call DWM_Close()<CR>
-nnoremap <silent> <C-M> :call DWM_Focus()<CR>
+map <silent> <Leader>wq :call DWM_Close()<CR>
+nnoremap <expr><CR> &bt == '' ? ":call DWM_Focus()\<CR>" : "\<CR>"
 map <silent> <C-H> :call DWM_GrowMaster()<CR>
 map <silent> <C-L> :call DWM_ShrinkMaster()<CR>
 map <silent> <TAB> <C-W>w
