@@ -89,15 +89,17 @@ map <silent> <C-L> :call DWM_ShrinkMaster()<CR>
 map <expr><TAB> winnr("$") == 1 ? ":call DWM_Split()\<CR>" : "\<C-W>w"
 map <silent> <S-TAB> <C-W>W
 
+nmap <expr><silent> q winnr("$") != 1 ? ":bd\<CR>" : "q"
+
 function! DWMOpenFunc(action,line)
-   1wincmd w
-   if &buftype == ''
-       call DWM_Split()
-       call call('ctrlp#acceptfile', [a:action, a:line])
-       call DWM_Focus()
-   else
-       call call('ctrlp#acceptfile', [a:action, a:line])
-   endif
+    1wincmd w
+    if &buftype == '' && !bufexists(bufname(a:line))
+        call DWM_Split()
+        call call('ctrlp#acceptfile', [a:action, a:line])
+        call DWM_Focus()
+    else
+        call call('ctrlp#acceptfile', [a:action, a:line])
+    endif
 endfunction
 
 
