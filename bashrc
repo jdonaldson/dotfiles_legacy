@@ -38,7 +38,9 @@ export HADOOP_OPTS="-Djava.security.krb5.realm=OX.AC.UK -Djava.security.krb5.kdc
 
 # node.js
 export NODE_PATH="/usr/local/lib/node"
-export PKG_CONFIG_PATH
+export NODE_PATH="/usr/local/lib/node_modules":$NODE_PATH # node modules
+export NODE_PATH=/usr/local/lib/jsctags/:$NODE_PATH # jsctags
+export PKG_CONFIG_PATH # ?
 
 # java
 export JAVA_OPTS=-Xmx2500m
