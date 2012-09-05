@@ -45,9 +45,13 @@ nnoremap <Leader>W :%s/\s\+$//<CR>:let @/=''<CR>
 
 "GLOBAL AUTOMATIC ACTIONS
 " autosave on lost focus
-"au FocusLost * :wa
-" open directory in NerdTree mode
-au VimEnter * wincmd p
+au FocusLost * :wa
+if len(argv())==0 || argv()[0] == '.'
+    " If I open a directory, assume I want to hard set a working path
+    let g:ctrlp_working_path_mode = ''
+endif
+
+
 
 " Window/buffer management courtesy of dwm.
 " Override basic behavior

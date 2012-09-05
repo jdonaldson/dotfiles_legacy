@@ -16,6 +16,13 @@ alias ls='ls -G'
 alias ll='ls -al'
 alias ..='cd ..'
 
+# z
+if [ -f `brew --prefix`/etc/profile.d/z.sh ]; then
+   . `brew --prefix`/etc/profile.d/z.sh
+fi
+
+
+# git utilities
 function parse_git_dirty {
    [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo "*"
 }
