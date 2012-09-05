@@ -89,6 +89,19 @@ map <silent> <C-L> :call DWM_ShrinkMaster()<CR>
 map <expr><TAB> winnr("$") == 1 ? ":call DWM_Split()\<CR>" : "\<C-W>w"
 map <silent> <S-TAB> <C-W>W
 
+function! DWMOpenFunc(action,line)
+   1wincmd w
+   if &buftype == ''
+       call DWM_Split()
+       call call('ctrlp#acceptfile', [a:action, a:line])
+       call DWM_Focus()
+   else
+       call call('ctrlp#acceptfile', [a:action, a:line])
+   endif
+endfunction
+
+
+let g:ctrlp_open_func = { 'files': 'DWMOpenFunc' }
 
 "BASIC OPTIONS
 set tags=./tags;/
