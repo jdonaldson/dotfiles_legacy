@@ -1,3 +1,5 @@
+" A great overview of the rationale behind some of these options is given
+" here: http://stevelosh.com/blog/2010/09/coming-home-to-vim/
 
 " First, make the leader and command characters easier to type
 let mapleader=","
@@ -52,8 +54,16 @@ let g:dwm_map_keys = 0
 
 " Cleans up the window layout if dwm buffer is closed arbitrarily
 function! DWM_Fix()
-    :exe 1 . "wincmd w"
+    let w = 1
+    " stack all windows
+    while (w <= winnr("$"))
+        exe w . "wincmd w"
+        wincmd K
+        let w+=1
+    endwhile
+    " make the last current window the main window
     wincmd H
+    " resize according to user preference
     call DWM_ResizeMasterPaneWidth()
 endfunction
 
@@ -66,6 +76,7 @@ function! DWM_Split()
   call DWM_ResizeMasterPaneWidth()
 endfunction
 
+
 "imap <expr><CR> pumvisible() ? "\<C-k>" : "\<CR>"
 map <silent> <Leader>wf :call DWM_Fix()<CR>
 map <silent> <Leader>ws :call DWM_Split()<CR>
@@ -74,7 +85,7 @@ map <silent> <Leader>wq :call DWM_Close()<CR>
 nnoremap <expr><CR> &bt == '' ? ":call DWM_Focus()\<CR>" : "\<CR>"
 map <silent> <C-H> :call DWM_GrowMaster()<CR>
 map <silent> <C-L> :call DWM_ShrinkMaster()<CR>
-map <silent> <TAB> <C-W>w
+map <expr><TAB> winnr("$") == 1 ? ":call DWM_Split()\<CR>" : "\<C-W>w"
 map <silent> <S-TAB> <C-W>W
 
 
