@@ -1,4 +1,5 @@
 " A great overview of the rationale behind some of these options is given
+
 " here: http://stevelosh.com/blog/2010/09/coming-home-to-vim/
 
 " First, make the leader and command characters easier to type
@@ -82,7 +83,7 @@ map <silent> <Leader>wf :call DWM_Fix()<CR>
 map <silent> <Leader>ws :call DWM_Split()<CR>
 map <silent> <Leader>wo :call DWM_New()<CR>
 map <silent> <Leader>wq :call DWM_Close()<CR>
-nnoremap <expr><CR> &bt == '' ? ":call DWM_Focus()\<CR>" : "\<CR>"
+nnoremap <expr><CR> &bt == '' && winnr() != 1 ? ":call DWM_Focus()\<CR>" : "\<CR>"
 map <silent> <C-H> :call DWM_GrowMaster()<CR>
 map <silent> <C-L> :call DWM_ShrinkMaster()<CR>
 map <expr><TAB> winnr("$") == 1 ? ":call DWM_Split()\<CR>" : "\<C-W>w"
