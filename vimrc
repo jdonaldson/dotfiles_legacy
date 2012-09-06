@@ -109,6 +109,9 @@ endfunction
 
 let g:ctrlp_open_func = { 'files': 'DWMOpenFunc' }
 
+" Show cheats
+map <leader>ch :call ToggleCheatSheet()<CR>
+
 "BASIC OPTIONS
 set tags=./tags;/
 set shell=bash

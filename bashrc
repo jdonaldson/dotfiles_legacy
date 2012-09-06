@@ -8,6 +8,8 @@ if [ -f ~/.bigmlrc ]; then
     source ~/.bigmlrc
 fi
 
+export HISTSIZE=100000
+
 # prefer usr/local
 export PATH=/usr/local/share/python:/usr/local/share:/usr/local/bin:~/.local/bin:/usr/local/sbin:$PATH
 
