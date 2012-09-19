@@ -57,31 +57,6 @@ endif
 " Override basic behavior
 let g:dwm_map_keys = 0
 
-" Cleans up the window layout if dwm buffer is closed arbitrarily
-function! DWM_Fix()
-    let w = 1
-    " stack all windows
-    while (w <= winnr("$"))
-        exe w . "wincmd w"
-        wincmd K
-        let w+=1
-    endwhile
-    " make the last current window the main window
-    wincmd H
-    " resize according to user preference
-    call DWM_ResizeMasterPaneWidth()
-endfunction
-
-" Split the current buffer
-function! DWM_Split()
-  " Move current master pane to the stack
-  call DWM_Stack(1)
-  " Create a vertical split
-  vert topleft split
-  call DWM_ResizeMasterPaneWidth()
-endfunction
-
-
 "imap <expr><CR> pumvisible() ? "\<C-k>" : "\<CR>"
 map <silent> <Leader>wf :call DWM_Fix()<CR>
 map <silent> <Leader>ws :call DWM_Split()<CR>
@@ -93,7 +68,7 @@ map <silent> <C-L> :call DWM_ShrinkMaster()<CR>
 map <expr><TAB> winnr("$") == 1 ? ":call DWM_Split()\<CR>" : "\<C-W>w"
 map <silent> <S-TAB> <C-W>W
 
-nmap <expr><silent> q winnr("$") != 1 ? ":bd\<CR>" : "q"
+"nmap <expr><silent> q winnr("$") != 1 ? ":bd\<CR>" : "q"
 
 function! DWMOpenFunc(action,line)
     1wincmd w
