@@ -35,7 +35,7 @@ nmap <silent> ,<space> :nohlsearch<CR>
 nnoremap <Leader>a :Ack<space>
 let g:ackprg="ack -Hi --nocolor --ignore-dir=bin --nogroup --follow --column"
 " requires ctrlp plugin
-let g:ctrlp_follow_symlinks = 1
+let g:ctrlp_follow_symlinks = 2
 
 
 " Some  general reformatting command(s)
@@ -83,6 +83,9 @@ endfunction
 
 
 let g:ctrlp_open_func = { 'files': 'DWMOpenFunc' }
+
+" Show cheats
+map <leader>ch :call ToggleCheatSheet()<CR>
 
 "BASIC OPTIONS
 set tags=./tags;/

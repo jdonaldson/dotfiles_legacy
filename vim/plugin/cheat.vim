@@ -5,7 +5,7 @@ else
     let g:loaded_cheat = 1
 endif
 
-function! LoadCheatSheet()
+function! ToggleCheatSheet()
     let pathname = 'cheat/'.&ft
     let paths = split(globpath(&rtp,pathname),'\n')
     let path = ''
@@ -17,11 +17,15 @@ function! LoadCheatSheet()
         let path = paths[0] 
     endif
 
-    if filereadable(path)
+    if buflisted(expand(path))
+        exe 'buffer '.bufname(expand(path))
+        bd
+    elseif filereadable(path)
         set splitright
         execute ':vsplit +setlocal\ noma\ ro '. path
-        normal <C-w>h
+        wincmd h
+    else
+        echomsg "file not readable: ".path
     endif
 endfunction
 
-map <leader>lc :call LoadCheatSheet()<CR>
