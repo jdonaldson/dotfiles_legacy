@@ -93,7 +93,7 @@ map <silent> <C-L> :call DWM_ShrinkMaster()<CR>
 map <expr><TAB> winnr("$") == 1 ? ":call DWM_Split()\<CR>" : "\<C-W>w"
 map <silent> <S-TAB> <C-W>W
 
-nmap <expr><silent> q winnr("$") != 1 ? ":bd\<CR>" : "q"
+nmap <expr><silent> q winnr("$") != 1 ? ":q\<CR>" : "q"
 
 function! DWMOpenFunc(action,line)
     1wincmd w
