@@ -51,3 +51,13 @@ export JAVA_OPTS=-Xmx2500m
 export JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Home"
 export EC2_HOME="/usr/local/Cellar/ec2-api-tools/1.3-62308/jars"
 
+# git utilities
+function parse_git_dirty {
+   [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo "*"
+}
+
+function parse_git_branch {
+   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/[\1$(parse_git_dirty)]/"
+}
+
+export PS1="\[\e[01;32m\]\h \[\e[01;34m\]\W \$(parse_git_branch)\[\e[01;34m\]$\[\e[00m\] "
