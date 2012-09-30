@@ -1,21 +1,21 @@
 # auth/creds
-if [ -f ~/.auth ]; then
-    source ~/.auth
+if [ -f $HOME/.auth ]; then
+    source $HOME/.auth
 fi
 
 # bigml settings
-if [ -f ~/.bigmlrc ]; then
-    source ~/.bigmlrc
+if [ -f $HOME/.bigmlrc ]; then
+    source $HOME/.bigmlrc
 fi
 
 export HISTSIZE=100000
 
 # prefer usr/local
-export PATH=/usr/local/share/python:/usr/local/share:/usr/local/bin:~/.local/bin:/usr/local/sbin:$PATH
+export PATH=$HOME/.local/bin:/usr/local/share:/usr/local/bin:/usr/local/sbin:$PATH
 
 # work with haxe nightlies
-#export HAXE_LIBRARY_PATH=~/bin/haxe_nightly/std:.
-#export PATH=~/bin/haxe_nightly:$PATH
+#export HAXE_LIBRARY_PATH=$HOME/bin/haxe_nightly/std:.
+#export PATH=$HOME/bin/haxe_nightly:$PATH
 
 # virtualenv
 export WORKON_HOME=$HOME/.virtualenvs
