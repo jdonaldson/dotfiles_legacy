@@ -36,8 +36,8 @@ let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 " Plugin key-mappings.
 "imap <C-k>     <Plug>(neocomplcache_snippets_expand)
 "smap <C-k>     <Plug>(neocomplcache_snippets_expand)
-"inoremap <expr><C-g>     neocomplcache#undo_completion()
-"inoremap <expr><C-l>     neocomplcache#complete_common_string()
+inoremap <expr><C-g>     neocomplcache#undo_completion()
+inoremap <expr><C-l>     neocomplcache#complete_common_string()
 " SuperTab like snippets behavior.
 "imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ?
             "\"\<Plug>(neocomplcache_snippets_expand)"
@@ -46,9 +46,9 @@ let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 " <CR>: close popup and save indent.
 inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
 imap <expr><CR> pumvisible() ? "\<C-k>" : "\<CR>"
-imap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+"imap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 " <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+"inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 "<C-h>, <BS>: close popup and delete backword char.
 inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
