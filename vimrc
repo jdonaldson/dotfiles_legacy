@@ -33,7 +33,7 @@ vnoremap <space> /\v
 nmap <silent> ,<space> :nohlsearch<CR>
 " requires ack plugin
 nnoremap <Leader>a :Ack<space>
-let g:ackprg="ack -Hi --nocolor --ignore-dir=bin --nogroup --follow --column"
+let g:ackprg="ack -Hia --nocolor --ignore-dir=bin --nogroup --follow --column"
 " requires ctrlp plugin
 let g:ctrlp_follow_symlinks = 2
 
