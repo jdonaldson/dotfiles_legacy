@@ -17,6 +17,9 @@ echo "[1/4] Grabbing virtualenv $VERSION"
 # Create the first "bootstrap" environment.
 
 echo "[2/4] Creating new virtualenv in $INITIAL_ENV"
+    if [ ! -f $INITIAL_ENV ]; then
+        mkdir -p $INITIAL_ENV
+    fi
     $PYTHON virtualenv-$VERSION/virtualenv.py $ENV_OPTS $INITIAL_ENV
 
 echo "[3/4] Installing virtualenv package to $INITIAL_ENV"
