@@ -25,7 +25,7 @@ if [ -f $HOME/.bashrc.virtualenvwrapper.sh ]; then
 fi
 
 # django
-function setdsm() { 
+function setdsm() {
     export PYTHONPATH=$PYTHONPATH:$PWD/..
     export PYTHONPATH=$PYTHONPATH:$PWD
     if [ -z "$1" ]; then
@@ -37,9 +37,13 @@ function setdsm() {
     echo "DJANGO_SETTINGS_MODULE set to $DJANGO_SETTINGS_MODULE"
 }
 
+#ruby
+export GEM_HOME=$HOME/.gems
+export GEM_PATH=$HOME/.gems:/usr/lib/ruby/gems/1.8/
+export PATH=$PATH:$HOME/.gems/bin
+
 # hadoop
 export HADOOP_OPTS="-Djava.security.krb5.realm=OX.AC.UK -Djava.security.krb5.kdc=kdc0.ox.ac.uk:kdc1.ox.ac.uk"
-
 
 # node.js
 export NODE_PATH="/usr/local/lib/node"
