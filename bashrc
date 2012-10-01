@@ -18,11 +18,8 @@ export PATH=$HOME/.local/bin:/usr/local/share:/usr/local/bin:/usr/local/sbin:$PA
 #export PATH=$HOME/bin/haxe_nightly:$PATH
 
 # virtualenv
-if [ -f $HOME/.bashrc.virtualenvwrapper.sh ]; then
-    export WORKON_HOME=$HOME/.virtualenvs
-    #source /usr/local/bin/virtualenvwrapper.sh
-    source $HOME/.bashrc.virtualenvwrapper.sh
-fi
+export WORKON_HOME=$HOME/.virtualenvs
+source virtualenvwrapper_lazy.sh
 
 # django
 function setdsm() {
