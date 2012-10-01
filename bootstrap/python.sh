@@ -11,21 +11,25 @@ PYTHON=$(which python)
 
 # --- Real work starts here ---
 
-echo "[1/4] Grabbing virtualenv $VERSION"
+echo "[1/5] Grabbing virtualenv $VERSION"
     curl -O $URL_BASE/virtualenv-$VERSION.tar.gz
     tar xzf virtualenv-$VERSION.tar.gz
 # Create the first "bootstrap" environment.
 
-echo "[2/4] Creating new virtualenv in $INITIAL_ENV"
+echo "[2/5] Creating new virtualenv in $INITIAL_ENV"
     if [ ! -f $INITIAL_ENV ]; then
         mkdir -p $INITIAL_ENV
     fi
     $PYTHON virtualenv-$VERSION/virtualenv.py $ENV_OPTS $INITIAL_ENV
 
-echo "[3/4] Installing virtualenv package to $INITIAL_ENV"
+echo "[3/5] Installing virtualenv package to $INITIAL_ENV"
 # Install virtualenv into the environment.
     $INITIAL_ENV/bin/pip install virtualenv-$VERSION.tar.gz
 
-echo "[4/4] Cleaning up"
+echo "[4/5] Installing default pip packages"
+    $INITIAL_ENV/bin/pip install -r pip_freeze.txt
+
+echo "[5/5] Cleaning up"
 # Don't need this anymore.
     rm -rf virtualenv-$VERSION*
+
