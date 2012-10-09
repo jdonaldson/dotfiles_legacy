@@ -19,6 +19,10 @@ source ~/.vim/settings/vundle.vim
 " Vundle configs are stored in a separate file, source it.
 nmap <Leader>vu :e ~/.vim/settings/vundle.vim<CR>
 
+augroup mine
+    au BufWinEnter * sign define mysign
+    au BufWinEnter * exe "sign place 1337 line=1 name=mysign buffer=" . bufnr('%')
+augroup END
 
 " These are all options releated to searching
 set ignorecase
@@ -146,6 +150,11 @@ set noswapfile           " I'm on a modern machine, don't need swapfiles
 set autowrite            " automatically write before make, tag, etc.
 set completeopt=menuone
 
+augroup thx
+    autocmd BufEnter */dhx/* set noexpandtab | set tabstop=4
+    autocmd BufEnter */thx/* set noexpandtab | set tabstop=4
+augroup END
+
 " DISPLAY STYLE OPTIONS
 " color too-wide columns
 syntax on         " syntax highlighting, natch
@@ -154,7 +163,8 @@ if exists('+colorcolumn')
 else
     au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 endif
-
+let g:syntastic_error_symbol='✗'
+let g:syntastic_warning_symbol='⚠' 
 
 if has("gui_running") || &term == "xterm-256color" || &term == 'screen'
     let g:molokai_original = 1
