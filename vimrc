@@ -55,63 +55,13 @@ if len(argv())==0 || argv()[0] == '.'
     let g:ctrlp_working_path_mode = ''
 endif
 
+map <Leader>b :MiniBufExplorer<cr>
 
-
-" Window/buffer management courtesy of dwm.
-" Override basic behavior
-let g:dwm_map_keys = 0
-
-" Cleans up the window layout if dwm buffer is closed arbitrarily
-function! DWM_Fix()
-    let w = 1
-    " stack all windows
-    while (w <= winnr("$"))
-        exe w . "wincmd w"
-        wincmd K
-        let w+=1
-    endwhile
-    " make the last current window the main window
-    wincmd H
-    " resize according to user preference
-    call DWM_ResizeMasterPaneWidth()
-endfunction
-
-" Split the current buffer
-function! DWM_Split()
-  " Move current master pane to the stack
-  call DWM_Stack(1)
-  " Create a vertical split
-  vert topleft split
-  call DWM_ResizeMasterPaneWidth()
-endfunction
-
-
-"imap <expr><CR> pumvisible() ? "\<C-k>" : "\<CR>"
-map <silent> <Leader>wf :call DWM_Fix()<CR>
-map <silent> <Leader>ws :call DWM_Split()<CR>
-map <silent> <Leader>wo :call DWM_New()<CR>
-map <silent> <Leader>wq :call DWM_Close()<CR>
-nnoremap <expr><CR> &bt == '' && winnr() != 1 ? ":call DWM_Focus()\<CR>" : "\<CR>"
-map <silent> <C-H> :call DWM_GrowMaster()<CR>
-map <silent> <C-L> :call DWM_ShrinkMaster()<CR>
-map <expr><TAB> winnr("$") == 1 ? ":call DWM_Split()\<CR>" : "\<C-W>w"
+" tab through buffers in normal mode
 map <silent> <S-TAB> <C-W>W
 
 nmap <expr><silent> q winnr("$") != 1 ? ":q\<CR>" : "q"
 
-function! DWMOpenFunc(action,line)
-    1wincmd w
-    if &buftype == '' && !bufexists(bufname(a:line))
-        call DWM_Split()
-        call call('ctrlp#acceptfile', [a:action, a:line])
-        call DWM_Focus()
-    else
-        call call('ctrlp#acceptfile', [a:action, a:line])
-    endif
-endfunction
-
-
-let g:ctrlp_open_func = { 'files': 'DWMOpenFunc' }
 
 " Show cheats
 map <leader>ch :call ToggleCheatSheet()<CR>
@@ -148,7 +98,11 @@ set noerrorbells         " no, seriously, don't beep
 set nobackup             " I'm using autosave/git, don't need backup files
 set noswapfile           " I'm on a modern machine, don't need swapfiles
 set autowrite            " automatically write before make, tag, etc.
+
+" better completion popup options
+highlight Pmenu ctermbg=238 gui=bold
 set completeopt=menuone
+
 
 augroup thx
     autocmd BufEnter */dhx/* set noexpandtab | set tabstop=4
@@ -196,6 +150,8 @@ nnoremap <C-J> hmao<esc>`a
 " results below the line
 nnoremap <Leader>r :exe ':r ! '.getline('.') <CR>
 
+" stamp paste with capital S
+nnoremap S "_diwP"
 
 map <Leader>pc :call ToggleEnablePreview()<CR>
 
