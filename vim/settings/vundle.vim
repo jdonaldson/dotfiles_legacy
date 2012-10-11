@@ -9,7 +9,6 @@ Bundle 'gmarik/vundle'
 "Bundle 'Shougo/neocomplcache-snippets-complete'
 "Bundle 'vim-scripts/YankRing.vim'
 "Bundle 'zakj/vim-showmarks'
-Bundle 'MarcWeber/vim-addon-local-vimrc'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'Raimondi/delimitMate'
 Bundle 'Shougo/unite.vim'
@@ -22,7 +21,7 @@ Bundle 'jcfaria/Vim-R-plugin'
 Bundle 'jdonaldson/ack.vim'
 Bundle 'jdonaldson/vaxe'
 Bundle 'jdonaldson/vim-powerline'
-Bundle 'jeetsukumaran/vim-buffergator'
+Bundle 'fholgado/minibufexpl.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'michalliu/jsoncodecs.vim'
@@ -44,7 +43,6 @@ Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tyru/open-browser.vim'
-
 Bundle 'Shougo/neocomplcache'
 
 " vim-scripts repos
@@ -54,9 +52,7 @@ Bundle 'L9'
 Bundle 'The-NERD-tree'
 Bundle 'desert.vim'
 Bundle 'vim-addon-mw-utils'
-
-"improve autocomplete menu color
-highlight Pmenu ctermbg=238 gui=bold
+Bundle 'jdonaldson/vim-addon-local-vimrc'
 
 filetype plugin indent on " required!
 
