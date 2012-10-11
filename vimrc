@@ -60,7 +60,7 @@ map <Leader>b :MiniBufExplorer<cr>
 " tab through buffers in normal mode
 map <silent> <S-TAB> <C-W>W
 
-nmap <expr><silent> q winnr("$") != 1 ? ":q\<CR>" : "q"
+nmap <expr><silent> q winnr() != 1 ? ":q\<CR>" : "q"
 
 
 " Show cheats
@@ -139,6 +139,31 @@ else
 endif
 
 set mouse=a
+function! DoWindowSwap()
+    "Mark destination
+    let curNum = winnr()
+    let curBuf = bufnr( "%" )
+    let targetWin =  1
+    exe targetWin."wincmd w"
+    let foo = 0
+    while winwidth('%') < 5 || winheight('%') < 5 || targetWin > bufnr("$")
+        let targetWin = targetWin + 1
+        exe targetWin."wincmd w"
+    endwhile
+
+    "Switch to source and shuffle dest->source
+    let markedBuf = bufnr( "%" )
+    "Hide and open so that we aren't prompted and keep history
+    exe 'hide buf' curBuf
+    "Switch to dest and shuffle source->dest
+    exe curNum . "wincmd w"
+    "Hide and open so that we aren't prompted and keep history
+    exe 'hide buf' markedBuf 
+    exe targetWin."wincmd w"
+endfunction
+
+nmap <silent> <expr><CR> winnr() != 1 ? ":call DoWindowSwap()\<CR>" : "\<CR>"
+nmap <silent> <tab> :wincmd w<CR>
 
 " MISC KEY MAPPING
 
