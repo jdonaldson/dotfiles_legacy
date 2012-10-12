@@ -162,7 +162,7 @@ function! DoWindowSwap()
     exe targetWin."wincmd w"
 endfunction
 
-nmap <silent> <expr><CR> winnr() != 1 ? ":call DoWindowSwap()\<CR>" : "\<CR>"
+nmap <silent> <expr><CR> winnr() != 1 && &buftype =='' ? ":call DoWindowSwap()\<CR>" : "\<CR>"
 nmap <silent> <tab> :wincmd w<CR>
 
 " MISC KEY MAPPING
