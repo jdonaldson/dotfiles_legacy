@@ -43,9 +43,12 @@ let g:ctrlp_follow_symlinks = 2
 
 
 " Some  general reformatting command(s)
-" strip whitespace
-nnoremap <Leader>W :%s/\s\+$//<CR>:let @/=''<CR>
-
+" strip whitespace at end of line
+nnoremap <Leader>f$ :%s/\s\+$//<CR>:let @/=''<CR>
+" fix comma spacing
+nnoremap <Leader>f, :%s/\s*,\s*\n\@!/, / <CR> :let @/=''<CR>
+" fix operator/type declaration spacing (single space each side)
+nnoremap <Leader>f: :%s/\v\s*([%+*-=^&\|\/]\=?\|[&\|]{2}\|[\>\<]{1,3}\=?)\s*</ \1 / <CR> :let @/=''<CR>
 
 "GLOBAL AUTOMATIC ACTIONS
 " autosave on lost focus
@@ -118,7 +121,7 @@ else
     au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 endif
 let g:syntastic_error_symbol='✗'
-let g:syntastic_warning_symbol='⚠' 
+let g:syntastic_warning_symbol='⚠'
 
 if has("gui_running") || &term == "xterm-256color" || &term == 'screen'
     let g:molokai_original = 1
@@ -158,7 +161,7 @@ function! DoWindowSwap()
     "Switch to dest and shuffle source->dest
     exe curNum . "wincmd w"
     "Hide and open so that we aren't prompted and keep history
-    exe 'hide buf' markedBuf 
+    exe 'hide buf' markedBuf
     exe targetWin."wincmd w"
 endfunction
 
