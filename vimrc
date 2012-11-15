@@ -45,10 +45,17 @@ let g:ctrlp_follow_symlinks = 2
 " Some  general reformatting command(s)
 " strip whitespace at end of line
 nnoremap <Leader>f$ :%s/\s\+$//<CR>:let @/=''<CR>
-" fix comma spacing
-nnoremap <Leader>f, :%s/\s*,\s*\n\@!/, / <CR> :let @/=''<CR>
-" fix operator/type declaration spacing (single space each side)
-nnoremap <Leader>f: :%s/\v\s*([%+*-=^&\|\/]\=?\|[&\|]{2}\|[\>\<]{1,3}\=?)\s*</ \1 / <CR> :let @/=''<CR>
+" fix operator/type declaration spacing (single space each side) on line
+nnoremap <Leader>fl :call FixLine()<CR>
+
+function! FixLine()
+    " commas
+    exe "s/\\s*,\\s*\\n\\@!/, /e"
+    " operators/assignment/declaration
+    exe "s/\\v\\s*([+*\\-\\/%^&\\|:><=]+)\\s*/ \\1 /e"
+    " hide the matches
+    exe "let \@/=''"
+endfunction
 
 "GLOBAL AUTOMATIC ACTIONS
 " autosave on lost focus
