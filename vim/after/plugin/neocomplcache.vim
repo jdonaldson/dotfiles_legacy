@@ -44,8 +44,8 @@ inoremap <expr><C-l>     neocomplcache#complete_common_string()
             "\: pumvisible() ? "\<C-n>" : "\<TAB>"
 " Recommended key-mappings.
 " <CR>: close popup and save indent.
-inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
-imap <expr><CR> pumvisible() ? "\<C-k>" : "\<CR>"
+"inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
+"imap <expr><CR> pumvisible() ? "\<C-k>" : "\<CR>"
 "imap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 " <TAB>: completion.
 "inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
