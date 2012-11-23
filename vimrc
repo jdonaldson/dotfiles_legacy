@@ -15,7 +15,6 @@ nmap <Leader>so :so %<CR>
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 source ~/.vim/settings/vundle.vim
-
 " Vundle configs are stored in a separate file, source it.
 nmap <Leader>vu :e ~/.vim/settings/vundle.vim<CR>
 
@@ -41,21 +40,45 @@ let g:ackprg="ack --with-filename --ignore-case --all --nocolor --nogroup --foll
 " requires ctrlp plugin
 let g:ctrlp_follow_symlinks = 2
 
+" requires delimitMate
+let g:delimitMate_expand_cr = 1
 
 " Some  general reformatting command(s)
 " strip whitespace at end of line
 nnoremap <Leader>f$ :%s/\s\+$//<CR>:let @/=''<CR>
 " fix operator/type declaration spacing (single space each side) on line
+vnoremap <Leader>fl :call FixLine()<CR>
 nnoremap <Leader>fl :call FixLine()<CR>
+nnoremap <Leader>ds :DelimitMateSwitch<CR>
+nnoremap <Leader>ml :call ExpandDelimited()<CR>
+vnoremap <Leader>ml :call ExpandDelimited()<CR>
 
 function! FixLine()
-    " commas
-    exe "s/\\s*,\\s*\\n\\@!/, /e"
-    " operators/assignment/declaration
-    exe "s/\\v\\s*([+*\\-\\/%^&\\|:><=]+)\\s*/ \\1 /e"
+    " colons in type declrations a:Float (no space)
+    exe "s/\\v\\s*:\\s*([A-Z])\\s*/:\\1/e"
+    " normal colons (single space)
+    exe "s/\\v\\s*:\\s*([^A-Z])\\s*/: \\1/e"
+    " commas (single space after: a, b, c)
+    exe "s/\\s*\\([,]\\)\\s*\\n\\@!/\\1 /e"
+    " operators, assignments (space on either side: a = b)
+    exe "s/\\v(\\S)\\s*([!+*\\-\\/%^&\\|><=]+)\\s*(\\S)/\\1 \\2 \\3/e"
+    " fix type declarations (no spaces: Array<Int>)
+    exe "s/\\v\\s*\\<\\s*(\\w+)\\s*\\>/<\\1>/e"
+    " fix function declarations (no spaces: func:A->B)
+    exe "s/\\v\\s*(\\-\\>)\\s*/\\1/e"
     " hide the matches
     exe "let \@/=''"
 endfunction
+
+function! ExpandDelimited()
+    " new line after opening paren/bracket
+    :s/{/{\r/e
+    :s/\[/\[\r/e
+    :s/,/,\r/e
+    exe "normal :vi[="
+    exe "normal :vi{="
+endfunction
+
 
 "GLOBAL AUTOMATIC ACTIONS
 " autosave on lost focus
@@ -172,7 +195,7 @@ function! DoWindowSwap()
     exe targetWin."wincmd w"
 endfunction
 
-nmap <silent> <expr><CR> winnr() != 1 && &buftype =='' ? ":call DoWindowSwap()\<CR>" : "\<CR>"
+"nmap <silent> <expr><CR> winnr() != 1 && &buftype =='' ? ":call DoWindowSwap()\<CR>" : "\<CR>"
 nmap <silent> <tab> :wincmd w<CR>
 
 " MISC KEY MAPPING
