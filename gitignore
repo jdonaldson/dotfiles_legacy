@@ -2,3 +2,6 @@
 tags
 .vimrc
 *.swp
+.haxedoc
+.tmbuild
+bin/
