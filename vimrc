@@ -46,13 +46,17 @@ let g:delimitMate_expand_cr = 1
 " Some  general reformatting command(s)
 " strip whitespace at end of line
 nnoremap <Leader>f$ :%s/\s\+$//<CR>:let @/=''<CR>
+
+"fix line (or visual block lines)
+nnoremap <Leader>fl :normal gqq==<CR>
+vnoremap <Leader>fl :normal gvgqgv=<CR>
 " fix operator/type declaration spacing (single space each side) on line
 nnoremap <Leader>ds :DelimitMateSwitch<CR>
 nnoremap <Leader>ml :call ExpandDelimited()<CR>
 vnoremap <Leader>ml :call ExpandDelimited()<CR>
 
 "autocmd BufNewFile,BufRead *.hx set formatprg=astyle\ --style=java\ -A2p
-autocmd BufNewFile,BufRead *.hx set formatprg=uncrustify\ -l\ java\ --no-backup\ 2>/dev/null
+autocmd BufNewFile,BufRead *.hx set formatprg=uncrustify\ -l\ cs\ --no-backup\ 2>/dev/null
 
 
 function! ExpandDelimited()
