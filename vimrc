@@ -47,28 +47,13 @@ let g:delimitMate_expand_cr = 1
 " strip whitespace at end of line
 nnoremap <Leader>f$ :%s/\s\+$//<CR>:let @/=''<CR>
 " fix operator/type declaration spacing (single space each side) on line
-vnoremap <Leader>fl :call FixLine()<CR>
-nnoremap <Leader>fl :call FixLine()<CR>
 nnoremap <Leader>ds :DelimitMateSwitch<CR>
 nnoremap <Leader>ml :call ExpandDelimited()<CR>
 vnoremap <Leader>ml :call ExpandDelimited()<CR>
 
-function! FixLine()
-    " colons in type declrations a:Float (no space)
-    exe "s/\\v\\s*:\\s*([A-Z])\\s*/:\\1/e"
-    " normal colons (single space)
-    exe "s/\\v\\s*:\\s*([^A-Z])\\s*/: \\1/e"
-    " commas (single space after: a, b, c)
-    exe "s/\\s*\\([,]\\)\\s*\\n\\@!/\\1 /e"
-    " operators, assignments (space on either side: a = b)
-    exe "s/\\v(\\S)\\s*([!+*\\-\\/%^&\\|><=]+)\\s*(\\S)/\\1 \\2 \\3/e"
-    " fix type declarations (no spaces: Array<Int>)
-    exe "s/\\v\\s*\\<\\s*(\\w+)\\s*\\>/<\\1>/e"
-    " fix function declarations (no spaces: func:A->B)
-    exe "s/\\v\\s*(\\-\\>)\\s*/\\1/e"
-    " hide the matches
-    exe "let \@/=''"
-endfunction
+"autocmd BufNewFile,BufRead *.hx set formatprg=astyle\ --style=java\ -A2p
+autocmd BufNewFile,BufRead *.hx set formatprg=uncrustify\ -l\ java\ --no-backup\ 2>/dev/null
+
 
 function! ExpandDelimited()
     " new line after opening paren/bracket
