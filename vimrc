@@ -110,7 +110,7 @@ set noerrorbells         " no, seriously, don't beep
 set nobackup             " I'm using autosave/git, don't need backup files
 set noswapfile           " I'm on a modern machine, don't need swapfiles
 set autowrite            " automatically write before make, tag, etc.
-
+set clipboard=unnamed    " use system clipboard
 " better completion popup options
 highlight Pmenu ctermbg=238 gui=bold
 set completeopt=menuone
