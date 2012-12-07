@@ -129,15 +129,9 @@ if exists('+colorcolumn')
 else
     au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 endif
-let g:syntastic_error_symbol='✗'
-let g:syntastic_warning_symbol='⚠'
-
 if has("gui_running") || &term == "xterm-256color" || &term == 'screen'
-    let g:molokai_original = 1
-    colors molokai
     set t_Co=256 " Explicitly tell vim that the terminal has 256 colors
     " requires vim-powerline
-    let g:Powerline_symbols = 'fancy'
     set guifont=Monaco\ for\ Powerline:h13
     " hide the toolbar for macvim
     set guioptions=egmrt
@@ -201,7 +195,6 @@ map <Leader>pj :call vaxe#ProjectHxml()<CR>
 " All of my 'panels'
 nmap <silent> <leader>q :call ToggleList("Quickfix List", 'c')<CR>
 map <Leader>w :NERDTreeToggle<CR>
-map <Leader>z :GundoToggle<CR>
 map <Leader>g :TagbarToggle<CR>
 "map <Leader>y :YRShow<CR>
 
