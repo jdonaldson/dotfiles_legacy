@@ -34,14 +34,6 @@ set hlsearch
 nnoremap <space> /\v
 vnoremap <space> /\v
 nmap <silent> ,<space> :nohlsearch<CR>
-" requires ack plugin
-nnoremap <Leader>a :Ack<space>
-let g:ackprg="ack --with-filename --ignore-case --all --nocolor --nogroup --follow --column"
-" requires ctrlp plugin
-let g:ctrlp_follow_symlinks = 2
-
-" requires delimitMate
-let g:delimitMate_expand_cr = 1
 
 " Some  general reformatting command(s)
 " strip whitespace at end of line
@@ -51,7 +43,6 @@ nnoremap <Leader>f$ :%s/\s\+$//<CR>:let @/=''<CR>
 nnoremap <Leader>fl :normal gqq==<CR>
 vnoremap <Leader>fl :normal gvgqgv=<CR>
 " fix operator/type declaration spacing (single space each side) on line
-nnoremap <Leader>ds :DelimitMateSwitch<CR>
 nnoremap <Leader>ml :call ExpandDelimited()<CR>
 vnoremap <Leader>ml :call ExpandDelimited()<CR>
 
@@ -77,7 +68,6 @@ if len(argv())==0 || argv()[0] == '.'
     let g:ctrlp_working_path_mode = ''
 endif
 
-map <Leader>b :MiniBufExplorer<cr>
 
 " tab through buffers in normal mode
 map <silent> <S-TAB> <C-W>W
