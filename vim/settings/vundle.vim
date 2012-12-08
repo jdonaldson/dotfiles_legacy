@@ -11,15 +11,16 @@ endif
 " required!
 Bundle 'gmarik/vundle'
 Bundle 'xolox/vim-session'
-let g:session_autoload = 'yes'
+    let g:session_autoload = 'yes'
 " original repos on github
 "Bundle 'Shougo/neocomplcache-snippets-complete'
 "Bundle 'vim-scripts/YankRing.vim'
 "Bundle 'zakj/vim-showmarks'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'Raimondi/delimitMate'
-nnoremap <Leader>ds :DelimitMateSwitch<CR>
-let g:delimitMate_expand_cr = 1
+    nnoremap <Leader>ds :DelimitMateSwitch<CR>
+    let g:delimitMate_expand_cr = 1
+Bundle 'Rip-Rip/clang_complete'
 Bundle 'Shougo/unite.vim'
 Bundle 'benmills/vimux'
 Bundle 'cakebaker/scss-syntax.vim'
@@ -29,11 +30,11 @@ Bundle 'honza/snipmate-snippets'
 Bundle 'hsitz/VimOrganizer'
 Bundle 'jcfaria/Vim-R-plugin'
 Bundle 'mileszs/ack.vim'
-nnoremap <Leader>a :Ack<space>
-let g:ackprg="ack --with-filename --ignore-case --all --nocolor --nogroup --follow --column"
+    nnoremap <Leader>a :Ack<space>
+    let g:ackprg="ack --with-filename --ignore-case --all --nocolor --nogroup --follow --column"
 Bundle 'jdonaldson/vaxe'
 Bundle 'jdonaldson/vim-powerline'
-    if(g:fancyterm)
+    if g:fancy_term
         let g:Powerline_symbols = 'fancy'
     endif
 "Bundle 'fholgado/minibufexpl.vim'
@@ -43,7 +44,7 @@ Bundle 'jdonaldson/vim-powerline'
 "let g:miniBufExplMapCTabSwitchBufs = 1
 "let g:miniBufExplModSelTarget = 1
 Bundle 'kien/ctrlp.vim'
-let g:ctrlp_follow_symlinks = 2
+    let g:ctrlp_follow_symlinks = 2
 Bundle 'majutsushi/tagbar'
 Bundle 'michalliu/jsoncodecs.vim'
 Bundle 'michalliu/jsruntime.vim'
@@ -53,13 +54,13 @@ Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/syntastic'
-let g:syntastic_error_symbol='✗'
-let g:syntastic_warning_symbol='⚠'
+    let g:syntastic_error_symbol='✗'
+    let g:syntastic_warning_symbol='⚠'
 Bundle 'sjl/splice.vim'
 Bundle 'sjl/vitality.vim'
 Bundle 'suan/vim-instant-markdown'
 Bundle 'tomasr/molokai'
-    if (g:fancy_term)
+    if g:fancy_term
         let g:molokai_original = 1
         colors molokai
     endif
