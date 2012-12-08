@@ -23,6 +23,7 @@ augroup mine
     au BufWinEnter * exe "sign place 1337 line=1 name=mysign buffer=" . bufnr('%')
 augroup END
 
+
 " These are all options releated to searching
 set ignorecase
 set smartcase
@@ -115,6 +116,8 @@ set clipboard=unnamed    " use system clipboard
 highlight Pmenu ctermbg=238 gui=bold
 set completeopt=menuone
 
+
+autocmd BufEnter Makefile set noexpandtab | set tabstop=4
 
 augroup thx
     autocmd BufEnter */dhx/* set noexpandtab | set tabstop=4
