@@ -1,5 +1,0 @@
-
-me: $HOME/.gems
-gempath:
-- $HOME/.gems
-- /usr/lib/ruby/gems/1.8
