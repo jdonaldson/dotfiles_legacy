@@ -34,10 +34,15 @@ function setdsm() {
     echo "DJANGO_SETTINGS_MODULE set to $DJANGO_SETTINGS_MODULE"
 }
 
+# android
+export ANDROID_SDK_ROOT=/usr/local/opt/android-sdk
+export ANDROID_HOME=`brew --prefix android`
+
 #ruby
-export GEM_HOME=$HOME/.gems
-export GEM_PATH=$HOME/.gems:/usr/lib/ruby/gems/1.8/
-export PATH=$PATH:$HOME/.gems/bin
+#export GEM_HOME=$HOME/.gems
+#export GEM_PATH=$HOME/.gems:/usr/lib/ruby/gems/1.8/
+#export PATH=$PATH:$HOME/.gems/bin
+#PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # hadoop
 export HADOOP_OPTS="-Djava.security.krb5.realm=OX.AC.UK -Djava.security.krb5.kdc=kdc0.ox.ac.uk:kdc1.ox.ac.uk"
@@ -59,7 +64,5 @@ function _update_ps1()
 {
    export PS1="$(~/lib/powerline-bash/powerline-bash.py $?)"
 }
-
 export PROMPT_COMMAND="_update_ps1"
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
