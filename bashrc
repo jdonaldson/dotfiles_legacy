@@ -8,6 +8,7 @@ if [ -f $HOME/.bigmlrc ]; then
     source $HOME/.bigmlrc
 fi
 
+#export TMUX_POWERLINE_DEBUG_MODE_ENABLED=true
 export HISTSIZE=100000
 
 # prefer usr/local
@@ -59,6 +60,8 @@ export JAVA_OPTS=-Xmx2500m
 # aws/ec2 specific tools
 export JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Home"
 export EC2_HOME="/usr/local/Cellar/ec2-api-tools/1.3-62308/jars"
+
+#PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
 
 function _update_ps1()
 {
