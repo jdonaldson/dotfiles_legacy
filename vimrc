@@ -103,6 +103,7 @@ set shiftround    " use multiple of shiftwidth when indenting with '<' and '>'
 set showmatch     " set show matching parenthesis
 set smarttab      " insert tabs on the start of a line according to
                   "    shiftwidth, not tabstop
+set hidden               " hide the old buffer when switching
 set history=1000         " remember more commands and search history
 set undolevels=1000      " use many muchos levels of undo
 set wildignore=*.swp,*.bak,*.pyc,*.class,*.sass-cache
