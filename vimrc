@@ -48,7 +48,8 @@ nnoremap <Leader>ml :call ExpandDelimited()<CR>
 vnoremap <Leader>ml :call ExpandDelimited()<CR>
 
 "autocmd BufNewFile,BufRead *.hx set formatprg=astyle\ --style=java\ -A2p
-autocmd BufNewFile,BufRead *.hx set formatprg=uncrustify\ -l\ cs\ --no-backup\ 2>/dev/null
+autocmd BufNewFile,BufRead *.hx setlocal formatprg=uncrustify\ -l\ cs\ --no-backup\ 2>/dev/null
+autocmd BufNewFile,BufRead *.cpp setlocal formatprg=uncrustify\ --no-backup\ 2>/dev/null
 
 
 function! ExpandDelimited()
