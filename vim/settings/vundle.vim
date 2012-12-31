@@ -59,7 +59,7 @@ Bundle 'scrooloose/syntastic'
 "Bundle 'sjl/splice.vim'
 Bundle 'sjl/vitality.vim'
 Bundle 'suan/vim-instant-markdown'
-Bundle 'tomasr/molokai'
+Bundle 'jdonaldson/molokai'
     if g:fancy_term
         let g:molokai_original = 1
         colors molokai
