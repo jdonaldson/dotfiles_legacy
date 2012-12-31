@@ -22,7 +22,7 @@ augroup mine
     au BufWinEnter * sign define mysign
     au BufWinEnter * exe "sign place 1337 line=1 name=mysign buffer=" . bufnr('%')
 augroup END
-
+nnoremap <Leader>e :make run<CR>
 
 " These are all options releated to searching
 set ignorecase
