@@ -140,7 +140,7 @@ if has("gui_running") || &term == "xterm-256color" || &term == 'screen'
     set guifont=Monaco\ for\ Powerline:h13
     " hide the toolbar for macvim
     set guioptions=egmrt
-    highlight ColorColumn ctermbg=16
+    highlight ColorColumn ctermbg=0
     highlight ColorColumn guibg=Black
     set background=dark
 else
