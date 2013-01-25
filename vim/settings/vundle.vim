@@ -52,7 +52,6 @@ Bundle 'michalliu/sourcebeautify.vim'
 Bundle 'mkitt/browser-refresh.vim'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/syntastic'
     let g:syntastic_error_symbol='✗'
     let g:syntastic_warning_symbol='⚠'
