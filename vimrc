@@ -37,6 +37,7 @@ set hlsearch
 nnoremap <space> ?
 vnoremap <space> ?
 
+
 " Some  general reformatting command(s)
 " strip whitespace at end of line
 nnoremap <Leader>f$ :%s/\s\+$//<CR>:let @/=''<CR>
