@@ -16,6 +16,7 @@ export HISTSIZE=100000
 # prefer usr/local
 export PATH=$HOME/.local/bin:/usr/local/share:/usr/local/bin:/usr/local/sbin:$PATH
 
+alias vim="mvim -v"
 
 alias munit="haxelib run munit"
 alias mlib="haxelib run mlib"
