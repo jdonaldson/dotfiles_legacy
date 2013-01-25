@@ -25,3 +25,8 @@ fi
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 export HAXE_LIBRARY_PATH=/usr/lib/haxe/std:.
+
+# work with haxe nightlies
+#export HAXE_LIBRARY_PATH=$HOME/bin/haxe_nightly/std:.
+#export HAXE_LIBRARY_PATH=/Users/jjd/bin/haxe_nightly/haxe/std:.
+#export PATH=$HOME/bin/haxe_nightly/haxe:$PATH
