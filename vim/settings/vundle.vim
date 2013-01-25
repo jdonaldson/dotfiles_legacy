@@ -65,6 +65,7 @@ Bundle 'jdonaldson/molokai'
         colors molokai
     endif
 Bundle 'tomtom/tlib_vim'
+Bundle 'tpope/vim-sensible'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-surround'

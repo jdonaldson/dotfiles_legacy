@@ -17,24 +17,25 @@ call vundle#rc()
 source ~/.vim/settings/vundle.vim
 " Vundle configs are stored in a separate file, source it.
 nmap <Leader>vu :e ~/.vim/settings/vundle.vim<CR>
+:autocmd BufNewFile,BufRead *.hx set statusline+=\ build:%{vaxe#CurrentBuild()}
 
+" syntastic gutter
 augroup mine
     au BufWinEnter * sign define mysign
     au BufWinEnter * exe "sign place 1337 line=1 name=mysign buffer=" . bufnr('%')
 augroup END
+
 nnoremap <Leader>e :make run<CR>
 
 " These are all options releated to searching
 set ignorecase
 set smartcase
 set gdefault
-set incsearch
-set showmatch
 set hlsearch
+
 " Use 'extra magic' for regex searches
-nnoremap <space> /\v
-vnoremap <space> /\v
-nmap <silent> ,<space> :nohlsearch<CR>
+nnoremap <space> ?
+vnoremap <space> ?
 
 " Some  general reformatting command(s)
 " strip whitespace at end of line
@@ -85,26 +86,18 @@ set tags=./tags;/
 set shell=bash
 set encoding=utf-8
 set nocompatible
-set laststatus=2  " Always show the statusline
 set number        " show line numbers
 set nowrap        " don't wrap lines
 set tabstop=8     " a tab is eight spaces
 set shiftwidth=4  " number of spaces to use for autoindenting
 set expandtab     " expand tabs to spaces
-set backspace=indent,eol,start
-                  " allow backspacing over everything in insert mode
-set autoindent    " always set autoindenting on
 set copyindent    " copy the previous indentation on autoindenting
 "set smartindent   " use smart indenting for c/c++
 set nosmartindent
 set cindent       " useful for python
 set number        " always show line numbers
 set shiftround    " use multiple of shiftwidth when indenting with '<' and '>'
-set showmatch     " set show matching parenthesis
-set smarttab      " insert tabs on the start of a line according to
-                  "    shiftwidth, not tabstop
 set hidden               " hide the old buffer when switching
-set history=1000         " remember more commands and search history
 set undolevels=1000      " use many muchos levels of undo
 set wildignore=*.swp,*.bak,*.pyc,*.class,*.sass-cache
 set title                " change the terminal's title
@@ -112,7 +105,6 @@ set visualbell           " don't beep
 set noerrorbells         " no, seriously, don't beep
 set nobackup             " I'm using autosave/git, don't need backup files
 set noswapfile           " I'm on a modern machine, don't need swapfiles
-set autowrite            " automatically write before make, tag, etc.
 set clipboard=unnamed    " use system clipboard
 " better completion popup options
 highlight Pmenu ctermbg=238 gui=bold
@@ -182,6 +174,7 @@ nmap <silent> <tab> :wincmd w<CR>
 cmap w!! w !sudo tee % >/dev/null
 " insert a newline  below in normal mode
 nnoremap <C-J> hmao<esc>`a
+
 " execute the current line as a shell command, insert
 " results below the line
 nnoremap <Leader>r :exe ':r ! '.getline('.') <CR>
