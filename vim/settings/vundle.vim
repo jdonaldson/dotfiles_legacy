@@ -59,11 +59,16 @@ Bundle 'scrooloose/syntastic'
 "Bundle 'sjl/splice.vim'
 Bundle 'sjl/vitality.vim'
 Bundle 'suan/vim-instant-markdown'
-Bundle 'jdonaldson/molokai'
+" Bundle 'jdonaldson/molokai'
     if g:fancy_term
         let g:molokai_original = 1
-        colors molokai
     endif
+Bundle 'altercation/vim-colors-solarized'
+    " solarized options
+    let g:solarized_termcolors = 16
+    let g:solarized_termtrans = 1
+    set background=dark
+    colorscheme solarized
 Bundle 'tomtom/tlib_vim'
 Bundle 'tpope/vim-commentary'
     map <c-\> \\\
