@@ -104,8 +104,6 @@ set wildignore=*.swp,*.bak,*.pyc,*.class,*.sass-cache
 set title                " change the terminal's title
 set visualbell           " don't beep
 set noerrorbells         " no, seriously, don't beep
-set nobackup             " I'm using autosave/git, don't need backup files
-set noswapfile           " I'm on a modern machine, don't need swapfiles
 set clipboard+=unnamed    " use system clipboard
 " better completion popup options
 highlight Pmenu ctermbg=238 gui=bold
@@ -122,11 +120,13 @@ augroup END
 " DISPLAY STYLE OPTIONS
 " color too-wide columns
 syntax on         " syntax highlighting, natch
+
 if exists('+colorcolumn')
   set colorcolumn=80
 else
     au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 endif
+
 if has("gui_running") || &term == "xterm-256color" || &term == 'screen'
     set t_Co=256 " Explicitly tell vim that the terminal has 256 colors
     " requires vim-powerline
