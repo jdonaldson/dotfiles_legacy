@@ -80,6 +80,8 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tyru/open-browser.vim'
 Bundle 'Shougo/neocomplcache'
+Bundle 'tsaleh/vim-matchit'
+
 
 " vim-scripts repos
 "Bundle 'localvimrc'
