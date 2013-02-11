@@ -32,7 +32,8 @@ Bundle 'hsitz/VimOrganizer'
 Bundle 'jcfaria/Vim-R-plugin'
 Bundle 'mileszs/ack.vim'
     nnoremap <Leader>a :Ack<space>
-    let g:ackprg="ack --with-filename --ignore-case --all --nocolor --nogroup --follow --column"
+    let g:ackprg = 'ag --nogroup --nocolor --column'
+    " let g:ackprg="ack --with-filename --ignore-case --all --nocolor --nogroup --follow --column"
 Bundle 'jdonaldson/vaxe'
 Bundle 'jdonaldson/vim-powerline'
     if g:fancy_term
