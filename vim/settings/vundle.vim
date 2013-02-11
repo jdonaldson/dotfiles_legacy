@@ -71,6 +71,7 @@ Bundle 'altercation/vim-colors-solarized'
     set background=dark
     colorscheme solarized
 Bundle 'tomtom/tlib_vim'
+Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-commentary'
     map <c-\> \\\
 Bundle 'tpope/vim-repeat'
