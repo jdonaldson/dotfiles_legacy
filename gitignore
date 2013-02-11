@@ -4,5 +4,6 @@ tags
 *.swp
 .haxedoc
 .tmbuild
+*.js.map
 bin/
 vim/sessions
