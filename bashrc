@@ -55,6 +55,7 @@ export HADOOP_OPTS="-Djava.security.krb5.realm=OX.AC.UK -Djava.security.krb5.kdc
 export NODE_PATH="/usr/local/lib/node"
 export NODE_PATH="/usr/local/lib/node_modules":$NODE_PATH # node modules
 export NODE_PATH=/usr/local/lib/jsctags/:$NODE_PATH # jsctags
+export PATH=/usr/local/share/npm/bin:$PATH # npm
 export PKG_CONFIG_PATH # ?
 
 # java
@@ -71,4 +72,8 @@ function _update_ps1()
    export PS1="$(~/lib/powerline-bash/powerline-bash.py $?)"
 }
 export PROMPT_COMMAND="_update_ps1"
+
+# export LC_ALL=en_US.UTF-8
+# export LANG=en_US.UTF-8
+# . /Users/jjd/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
 
