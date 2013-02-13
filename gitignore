@@ -6,4 +6,5 @@ tags
 .tmbuild
 *.js.map
 bin/
+haxedoc.xml
 vim/sessions
