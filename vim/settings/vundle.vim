@@ -47,6 +47,10 @@ Bundle 'jdonaldson/vim-powerline'
 "let g:miniBufExplModSelTarget = 1
 Bundle 'kien/ctrlp.vim'
     let g:ctrlp_follow_symlinks = 2
+    if len(argv())==0 || argv()[0] == '.'
+        " If I open a directory, assume I want to hard set a working path
+        let g:ctrlp_working_path_mode = ''
+    endif
 Bundle 'majutsushi/tagbar'
 Bundle 'michalliu/jsoncodecs.vim'
 Bundle 'michalliu/jsruntime.vim'
@@ -55,15 +59,22 @@ Bundle 'mkitt/browser-refresh.vim'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'scrooloose/syntastic'
+    let g:syntastic_javascript_syntax_checker="gjslint"
     let g:syntastic_error_symbol='✗'
     let g:syntastic_warning_symbol='⚠'
-"Bundle 'sjl/splice.vim'
+    " syntastic gutter
+    augroup mine
+        au BufWinEnter * sign define mysign
+        au BufWinEnter * exe "sign place 1337 line=1 name=mysign buffer=" . bufnr('%')
+    augroup END
+" Bundle 'sjl/splice.vim'
+" Bundle 'sjl/splice.vim'
 Bundle 'sjl/vitality.vim'
 Bundle 'suan/vim-instant-markdown'
 " Bundle 'jdonaldson/molokai'
-    if g:fancy_term
-        let g:molokai_original = 1
-    endif
+"     if g:fancy_term
+"         let g:molokai_original = 1
+"     endif
 Bundle 'altercation/vim-colors-solarized'
     " solarized options
     let g:solarized_termcolors = 16

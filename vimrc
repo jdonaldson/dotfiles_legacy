@@ -19,11 +19,6 @@ source ~/.vim/settings/vundle.vim
 nmap <Leader>vu :e ~/.vim/settings/vundle.vim<CR>
 :autocmd BufNewFile,BufRead *.hx set statusline+=\ build:%{vaxe#CurrentBuild()}
 
-" syntastic gutter
-augroup mine
-    au BufWinEnter * sign define mysign
-    au BufWinEnter * exe "sign place 1337 line=1 name=mysign buffer=" . bufnr('%')
-augroup END
 
 nnoremap <Leader>e :make run<CR>
 
@@ -36,7 +31,6 @@ set hlsearch
 " Use 'extra magic' for regex searches
 nnoremap <space> ?
 vnoremap <space> ?
-
 
 " Some  general reformatting command(s)
 " strip whitespace at end of line
@@ -67,17 +61,11 @@ endfunction
 "GLOBAL AUTOMATIC ACTIONS
 " autosave on lost focus
 au FocusLost * :wa
-if len(argv())==0 || argv()[0] == '.'
-    " If I open a directory, assume I want to hard set a working path
-    let g:ctrlp_working_path_mode = ''
-endif
-
 
 " tab through buffers in normal mode
 map <silent> <S-TAB> <C-W>W
 
 nmap <expr><silent> q winnr() != 1 ? ":q\<CR>" : "q"
-
 
 " Show cheats
 map <leader>ch :call ToggleCheatSheet()<CR>
@@ -105,6 +93,8 @@ set title                " change the terminal's title
 set visualbell           " don't beep
 set noerrorbells         " no, seriously, don't beep
 set clipboard+=unnamed    " use system clipboard
+set lazyredraw
+
 " better completion popup options
 highlight Pmenu ctermbg=238 gui=bold
 set completeopt=menuone
@@ -138,7 +128,7 @@ if has("gui_running") || &term == "xterm-256color" || &term == 'screen'
     set background=dark
 else
     highlight ColorColumn ctermbg=8
-    "set t_Co=16
+    " set t_Co=16
     colors desert
 endif
 
@@ -166,7 +156,7 @@ function! DoWindowSwap()
     exe targetWin."wincmd w"
 endfunction
 
-"nmap <silent> <expr><CR> winnr() != 1 && &buftype =='' ? ":call DoWindowSwap()\<CR>" : "\<CR>"
+" nmap <silent> <expr><CR> winnr() != 1 && &buftype =='' ? ":call DoWindowSwap()\<CR>" : "\<CR>"
 nmap <silent> <tab> :wincmd w<CR>
 
 " MISC KEY MAPPING
