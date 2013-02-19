@@ -8,3 +8,9 @@
 --regex-haxe=/^[ \t]*typedef[ \t]+([A-Za-z0-9_]+)/\1/t,typedef/
 --regex-haxe=/^[ \t]*enum[ \t]+([A-Za-z0-9_]+)/\1/e,enum/
 
+
+--langdef=markdown
+--langmap=markdown:.md
+--regex-markdown=/^#\s*([^#]+)/\1/h,Heading_L1/
+--regex-markdown=/^##\s*([^#]+)/\1/i,Heading_L2/
+--regex-markdown=/^###\s*([^#]+)/\1/k,Heading_L3/
