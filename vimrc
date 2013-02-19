@@ -16,7 +16,8 @@ call vundle#rc()
 source ~/.vim/settings/vundle.vim
 " Vundle configs are stored in a separate file, source it.
 nmap <Leader>vu :e ~/.vim/settings/vundle.vim<CR>
-:autocmd BufNewFile,BufRead *.hx set statusline+=\ build:%{vaxe#CurrentBuild()}
+" :autocmd BufNewFile,BufRead *.hx set statusline+=\ build:%{vaxe#CurrentBuild()}
+:autocmd BufNewFile,BufRead *.md set tw=80
 
 
 nnoremap <Leader>e :make run<CR>
@@ -87,7 +88,8 @@ set number        " always show line numbers
 set shiftround    " use multiple of shiftwidth when indenting with '<' and '>'
 set hidden               " hide the old buffer when switching
 set undolevels=1000      " use many muchos levels of undo
-set wildignore=*.swp,*.bak,*.pyc,*.class,*.sass-cache
+" set wildignore=*.swp,*.bak,*.pyc,*.class,*.sass-cache,
+set wildignore=*.swp,*.bak,*.pyc,*.class,*.sass-cache,*/_site/*
 set title                " change the terminal's title
 set visualbell           " don't beep
 set noerrorbells         " no, seriously, don't beep
