@@ -1,6 +1,12 @@
 .DS_Store
+.tm-autocomplete.hxml
+.tmbuild
 tags
+.sass-cache
 .vimrc
+_site/
+_cache
+*/__chxdoctmp
 *.swp
 .haxedoc
 .tmbuild
