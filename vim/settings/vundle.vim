@@ -1,12 +1,12 @@
 syntax enable
 filetype off
-
 if has("gui_running") || &term == "xterm-256color" || &term == 'screen'
     let g:fancy_term = 1
 else
     let g:fancy_term = 0
 endif
-
+Bundle 'vim-addon-mw-utils'
+Bundle 'benmills/vimux'
 " let Vundle manage Vundle
 " required!
 Bundle 'gmarik/vundle'
@@ -17,12 +17,14 @@ Bundle 'xolox/vim-session'
 "Bundle 'vim-scripts/YankRing.vim'
 "Bundle 'zakj/vim-showmarks'
 Bundle 'Lokaltog/vim-easymotion'
-Bundle 'Raimondi/delimitMate'
-    nnoremap <Leader>ds :DelimitMateSwitch<CR>
-    let g:delimitMate_expand_cr = 1
+
+" Bundle 'Raimondi/delimitMate'
+    " nnoremap <Leader>ds :DelimitMateSwitch<CR>
+    " let g:delimitMate_expand_cr = 1
 Bundle 'Rip-Rip/clang_complete'
+Bundle 'mattn/gist-vim'
+Bundle 'PProvost/vim-markdown-jekyll'
 Bundle 'Shougo/unite.vim'
-Bundle 'benmills/vimux'
 Bundle 'goldfeld/vim-seek'
 Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'garbas/vim-snipmate'
