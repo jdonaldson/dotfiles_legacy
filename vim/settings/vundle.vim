@@ -103,6 +103,16 @@ Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tyru/open-browser.vim'
+" Bundle 'Valloric/YouCompleteMe'
+" let g:ycm_semantic_triggers =  {
+"     \   'c' : ['->', '.'],
+"     \   'objc' : ['->', '.'],
+"     \   'cpp,objcpp' : ['->', '.', '::'],
+"     \   'perl,php' : ['->'],
+"     \   'cs,java,javascript,d,vim,ruby,python,perl6,scala,vb,elixir' : ['.'],
+"     \   'lua' : ['.', ':'],
+"     \   'erlang' : [':'],
+"     \}
 Bundle 'Shougo/neocomplcache'
 Bundle 'tsaleh/vim-matchit'
 
