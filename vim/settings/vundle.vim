@@ -54,6 +54,15 @@ Bundle 'kien/ctrlp.vim'
         let g:ctrlp_working_path_mode = ''
     endif
 Bundle 'majutsushi/tagbar'
+" Extending tabar to support markdown (additionally to the ~/.ctags-file!)
+   let g:tagbar_type_markdown = {
+   \ 'ctagstype' : 'markdown',
+   \ 'kinds' : [
+      \ 'h:Heading_L1',
+      \ 'i:Heading_L2',
+      \ 'k:Heading_L3'
+   \ ]
+   \ }
 Bundle 'michalliu/jsoncodecs.vim'
 Bundle 'michalliu/jsruntime.vim'
 Bundle 'michalliu/sourcebeautify.vim'
