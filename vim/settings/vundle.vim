@@ -124,7 +124,7 @@ Bundle 'Gundo'
 Bundle 'L9'
 Bundle 'The-NERD-tree'
 Bundle 'desert.vim'
-Bundle 'vim-addon-mw-utils'
+Bundle 'closetag.vim'
 Bundle 'jdonaldson/vim-addon-local-vimrc'
 
 filetype plugin indent on " required!

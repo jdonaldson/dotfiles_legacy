@@ -5,7 +5,6 @@
 " First, make the leader and command characters easier to type
 let mapleader=","
 nnoremap ; :
-
 " Add some commands to quickly open or source this file
 nmap <Leader>1 :e $MYVIMRC<CR>
 nmap <Leader>so :so %<CR>
