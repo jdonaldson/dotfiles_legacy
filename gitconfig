@@ -18,3 +18,5 @@
 	dstat = "!git diff --stat"
 [push]
 	default = matching
+[github]
+	user = jdonaldson
