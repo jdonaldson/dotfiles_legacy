@@ -2,7 +2,7 @@
 " NEOCOMPLCACHE OPTIONS
 
 if !exists('g:loaded_neocomplcache')
-    echomsg "neocomplcache not installed!"
+    " echomsg "neocomplcache not installed!"
     finish
 endif
 
