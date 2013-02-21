@@ -11,14 +11,23 @@ nmap <Leader>so :so %<CR>
 
 " Now we need to load vundle, it manages all of the extra plugins for vim
 " It must be done first
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-source ~/.vim/settings/vundle.vim
-" Vundle configs are stored in a separate file, source it.
-nmap <Leader>vu :e ~/.vim/settings/vundle.vim<CR>
-" :autocmd BufNewFile,BufRead *.hx set statusline+=\ build:%{vaxe#CurrentBuild()}
-:autocmd BufNewFile,BufRead *.md set tw=80
+" Bootstrap
+let root = '~/.vim/bundle/'
+let src = 'http://github.com/gmarik/vundle.git'
 
+if !isdirectory(expand(root, 1).'/vundle')
+  exec '!git clone '.src.' '.shellescape(root, 1).'/vundle'
+endif
+
+exec 'set rtp+='.root.'/vundle'
+
+call vundle#rc(root)
+
+" Vundle configs are stored in a separate file, source it.
+source ~/.vim/settings/vundle.vim
+nmap <Leader>vu :e ~/.vim/settings/vundle.vim<CR>
+
+:autocmd BufNewFile,BufRead *.md set tw=80
 
 nnoremap <Leader>e :make run<CR>
 
@@ -118,20 +127,7 @@ else
     au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 endif
 
-if has("gui_running") || &term == "xterm-256color" || &term == 'screen'
-    set t_Co=256 " Explicitly tell vim that the terminal has 256 colors
-    " requires vim-powerline
-    set guifont=Monaco\ for\ Powerline:h13
-    " hide the toolbar for macvim
-    set guioptions=egmrt
-    highlight ColorColumn ctermbg=0
-    highlight ColorColumn guibg=Black
-    set background=dark
-else
-    highlight ColorColumn ctermbg=8
-    " set t_Co=16
-    colors desert
-endif
+set guifont=Monaco\ for\ Powerline:h13
 
 set mouse=a
 function! DoWindowSwap()

@@ -23,6 +23,7 @@ Bundle 'Lokaltog/vim-easymotion'
     " let g:delimitMate_expand_cr = 1
 Bundle 'Rip-Rip/clang_complete'
 Bundle 'mattn/gist-vim'
+Bundle 'ap/vim-css-color'
 Bundle 'PProvost/vim-markdown-jekyll'
 Bundle 'Shougo/unite.vim'
 Bundle 'goldfeld/vim-seek'
@@ -55,14 +56,14 @@ Bundle 'kien/ctrlp.vim'
     endif
 Bundle 'majutsushi/tagbar'
 " Extending tabar to support markdown (additionally to the ~/.ctags-file!)
-   let g:tagbar_type_markdown = {
-   \ 'ctagstype' : 'markdown',
-   \ 'kinds' : [
-      \ 'h:Heading_L1',
-      \ 'i:Heading_L2',
-      \ 'k:Heading_L3'
-   \ ]
-   \ }
+    let g:tagbar_type_markdown = {
+        \ 'ctagstype' : 'markdown',
+        \ 'kinds' : [
+            \ 'h:Heading_L1',
+            \ 'i:Heading_L2',
+            \ 'k:Heading_L3'
+        \ ]
+    \ }
 Bundle 'michalliu/jsoncodecs.vim'
 Bundle 'michalliu/jsruntime.vim'
 Bundle 'michalliu/sourcebeautify.vim'
@@ -74,7 +75,7 @@ Bundle 'scrooloose/syntastic'
     let g:syntastic_error_symbol='✗'
     let g:syntastic_warning_symbol='⚠'
     " syntastic gutter
-    augroup mine
+    augroup syn_gutter
         au BufWinEnter * sign define mysign
         au BufWinEnter * exe "sign place 1337 line=1 name=mysign buffer=" . bufnr('%')
     augroup END
