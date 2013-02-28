@@ -66,7 +66,8 @@ export JAVA_OPTS=-Xmx2500m
 export JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Home"
 export EC2_HOME="/usr/local/Cellar/ec2-api-tools/1.3-62308/jars"
 
-#PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
+# export LC_ALL=en_US.UTF-8
+# export LANG=en_US.UTF-8
 
 function _update_ps1()
 {
@@ -74,7 +75,9 @@ function _update_ps1()
 }
 export PROMPT_COMMAND="_update_ps1"
 
-# export LC_ALL=en_US.UTF-8
-# export LANG=en_US.UTF-8
+# old tmux powerline
+# PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
+
+# new powerline
 # . /Users/jjd/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
 
