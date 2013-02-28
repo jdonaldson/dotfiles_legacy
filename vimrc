@@ -6,8 +6,8 @@
 let mapleader=","
 nnoremap ; :
 " Add some commands to quickly open or source this file
-nmap <Leader>1 :e $MYVIMRC<CR>
-nmap <Leader>so :so %<CR>
+    nmap <Leader>1 :e $MYVIMRC<CR>
+    nmap <Leader>so :so %<CR>
 
 " Now we need to load vundle, it manages all of the extra plugins for vim
 " It must be done first

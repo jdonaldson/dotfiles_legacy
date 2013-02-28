@@ -22,7 +22,8 @@ Bundle 'Lokaltog/vim-easymotion'
     " nnoremap <Leader>ds :DelimitMateSwitch<CR>
     " let g:delimitMate_expand_cr = 1
 Bundle 'Rip-Rip/clang_complete'
-Bundle 'mattn/gist-vim'
+Bundle 'airblade/vim-gitgutter'
+" Bundle 'mattn/gist-vim'
 Bundle 'ap/vim-css-color'
 Bundle 'PProvost/vim-markdown-jekyll'
 Bundle 'Shougo/unite.vim'
@@ -80,7 +81,6 @@ Bundle 'scrooloose/syntastic'
         au BufWinEnter * exe "sign place 1337 line=1 name=mysign buffer=" . bufnr('%')
     augroup END
 " Bundle 'sjl/splice.vim'
-" Bundle 'sjl/splice.vim'
 Bundle 'sjl/vitality.vim'
 Bundle 'suan/vim-instant-markdown'
 " Bundle 'jdonaldson/molokai'
@@ -89,7 +89,7 @@ Bundle 'suan/vim-instant-markdown'
 "     endif
 Bundle 'altercation/vim-colors-solarized'
     " solarized options
-    let g:solarized_termcolors = 16
+    " let g:solarized_termcolors = 16
     let g:solarized_termtrans = 1
     set background=dark
     colorscheme solarized
