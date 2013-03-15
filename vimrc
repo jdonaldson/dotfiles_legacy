@@ -27,15 +27,50 @@ call vundle#rc(root)
 source ~/.vim/settings/vundle.vim
 nmap <Leader>vu :e ~/.vim/settings/vundle.vim<CR>
 
-:autocmd BufNewFile,BufRead *.md set tw=80
 
-nnoremap <Leader>e :make run<CR>
+
+
+"BASIC OPTIONS
+set tags=./tags;/
+set shell=bash
+set encoding=utf-8
+set nocompatible
+set number        " show line numbers
+set nowrap        " don't wrap lines
+set tabstop=8     " a tab is eight spaces
+set shiftwidth=4  " number of spaces to use for autoindenting
+set expandtab     " expand tabs to spaces
+set copyindent    " copy the previous indentation on autoindenting
+set nosmartindent
+set cindent       " useful for python
+set number        " always show line numbers
+set shiftround    " use multiple of shiftwidth when indenting with '<' and '>'
+set hidden               " hide the old buffer when switching
+set undolevels=1000      " use many muchos levels of undo
+set wildignore=*.swp,*.bak,*.pyc,*.class,*.sass-cache,*/_site/*
+set title                " change the terminal's title
+set visualbell           " don't beep
+set noerrorbells         " no, seriously, don't beep
+set clipboard+=unnamed    " use system clipboard
+set lazyredraw
+set mouse=a             " use mouse in nvich modes
+set autowrite
 
 " These are all options releated to searching
 set ignorecase
 set smartcase
 set gdefault
 set hlsearch
+
+" color too-wide columns
+syntax on         " syntax highlighting, natch
+
+" better completion popup options
+highlight Pmenu ctermbg=238 gui=bold
+set completeopt=menuone
+
+
+autocmd BufEnter Makefile set noexpandtab | set tabstop=4
 
 " Use 'extra magic' for regex searches
 nnoremap <space> ?
@@ -56,6 +91,10 @@ vnoremap <Leader>ml :call ExpandDelimited()<CR>
 autocmd BufNewFile,BufRead *.hx setlocal formatprg=uncrustify\ -l\ cs\ --no-backup\ 2>/dev/null
 autocmd BufNewFile,BufRead *.js setlocal makeprg=phantomjs\ %
 autocmd BufNewFile,BufRead *.cpp setlocal formatprg=uncrustify\ --no-backup\ 2>/dev/null
+
+:autocmd BufNewFile,BufRead *.md set tw=80
+
+nnoremap <Leader>e :make run<CR>
 
 function! ExpandDelimited()
     " new line after opening paren/bracket
@@ -78,48 +117,11 @@ nmap <expr><silent> q winnr() != 1 ? ":q\<CR>" : "q"
 
 " Show cheats
 map <leader>ch :call ToggleCheatSheet()<CR>
-
-"BASIC OPTIONS
-set tags=./tags;/
-set shell=bash
-set encoding=utf-8
-set nocompatible
-set number        " show line numbers
-set nowrap        " don't wrap lines
-set tabstop=8     " a tab is eight spaces
-set shiftwidth=4  " number of spaces to use for autoindenting
-set expandtab     " expand tabs to spaces
-set copyindent    " copy the previous indentation on autoindenting
-"set smartindent   " use smart indenting for c/c++
-set nosmartindent
-set cindent       " useful for python
-set number        " always show line numbers
-set shiftround    " use multiple of shiftwidth when indenting with '<' and '>'
-set hidden               " hide the old buffer when switching
-set undolevels=1000      " use many muchos levels of undo
-" set wildignore=*.swp,*.bak,*.pyc,*.class,*.sass-cache,
-set wildignore=*.swp,*.bak,*.pyc,*.class,*.sass-cache,*/_site/*
-set title                " change the terminal's title
-set visualbell           " don't beep
-set noerrorbells         " no, seriously, don't beep
-set clipboard+=unnamed    " use system clipboard
-set lazyredraw
-
-" better completion popup options
-highlight Pmenu ctermbg=238 gui=bold
-set completeopt=menuone
-
-
-autocmd BufEnter Makefile set noexpandtab | set tabstop=4
-
 augroup thx
     autocmd BufEnter */dhx/* set noexpandtab | set tabstop=4
     autocmd BufEnter */thx/* set noexpandtab | set tabstop=4
 augroup END
 
-" DISPLAY STYLE OPTIONS
-" color too-wide columns
-syntax on         " syntax highlighting, natch
 
 if exists('+colorcolumn')
   set colorcolumn=80
@@ -129,7 +131,6 @@ endif
 
 set guifont=Monaco\ for\ Powerline:h13
 
-set mouse=a
 function! DoWindowSwap()
     "Mark destination
     let curNum = winnr()
