@@ -24,24 +24,22 @@ fi
 
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-export HXSTABLE=true
 export HAXE_LIBRARY_PATH=/usr/lib/haxe/std:.
+
 export OLDPATH=$PATH
-
+export HAXE_NIGHTLY=$HOME/bin/haxe_nightly
 hxn(){
-    if  $HXSTABLE; then
-        echo "Changing to Haxe nightlies"
-        export HAXE_LIBRARY_PATH=/Users/jjd/bin/haxe_nightly/haxe/std:.
-        export OLDPATH=$PATH
-        export PATH=$HOME/bin/haxe_nightly/haxe:$PATH
-        export HXSTABLE=false
-    else
+    if  [ -z "$USE_HAXE_NIGHTLY" ] || $USE_HAXE_NIGHTLY; then
         echo "Changing to Haxe stable version"
-        export HAXE_LIBRARY_PATH=/usr/lib/haxe/std:.
+        export HAXE_STD_PATH=$OLD_HAXE_STD
         export PATH=$OLDPATH
-        export HXSTABLE=true
+        export USE_HAXE_NIGHTLY=false
+    else
+        echo "Changing to Haxe nightly at: $HAXE_NIGHTLY"
+        export OLD_HAXE_STD=$HAXE_STD_PATH
+        export HAXE_STD_PATH=$HAXE_NIGHTLY/haxe/std:.
+        export OLDPATH=$PATH
+        export PATH=$HAXE_NIGHTLY/haxe:$PATH
+        export USE_HAXE_NIGHTLY=true
     fi
-
 }
-# work with haxe nightlies
-#export HAXE_LIBRARY_PATH=$HOME/bin/haxe_nightly/std:.
