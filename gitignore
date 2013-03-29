@@ -8,9 +8,9 @@ _site/
 _cache
 */__chxdoctmp
 *.swp
+.hg/
 .haxedoc
 .tmbuild
 *.js.map
-bin/
 haxedoc.xml
 vim/sessions
