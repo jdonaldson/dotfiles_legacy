@@ -66,7 +66,7 @@ set hlsearch
 syntax on         " syntax highlighting, natch
 
 " better completion popup options
-highlight Pmenu ctermbg=238 gui=bold
+" highlight Pmenu ctermbg=238 gui=bold
 set completeopt=menuone
 
 

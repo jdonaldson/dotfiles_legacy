@@ -26,12 +26,14 @@ Bundle 'airblade/vim-gitgutter'
 " Bundle 'mattn/gist-vim'
 Bundle 'ap/vim-css-color'
 Bundle 'PProvost/vim-markdown-jekyll'
-Bundle 'Shougo/unite.vim'
+" Bundle 'Shougo/unite.vim'
 Bundle 'goldfeld/vim-seek'
 Bundle 'cakebaker/scss-syntax.vim'
-Bundle 'garbas/vim-snipmate'
+" Bundle 'garbas/vim-snipmate'
 Bundle 'pangloss/vim-javascript'
-Bundle 'honza/snipmate-snippets'
+Bundle 'UltiSnips'
+    let g:UltiSnipsSnippetDirectories=["bundle/UltiSnips/UltiSnips"]
+
 Bundle 'hsitz/VimOrganizer'
 Bundle 'jcfaria/Vim-R-plugin'
 Bundle 'mileszs/ack.vim'
@@ -65,6 +67,7 @@ Bundle 'majutsushi/tagbar'
             \ 'k:Heading_L3'
         \ ]
     \ }
+Bundle 'Align'
 Bundle 'michalliu/jsoncodecs.vim'
 Bundle 'michalliu/jsruntime.vim'
 Bundle 'michalliu/sourcebeautify.vim'
@@ -104,17 +107,18 @@ Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tyru/open-browser.vim'
-" Bundle 'Valloric/YouCompleteMe'
-" let g:ycm_semantic_triggers =  {
-"     \   'c' : ['->', '.'],
-"     \   'objc' : ['->', '.'],
-"     \   'cpp,objcpp' : ['->', '.', '::'],
-"     \   'perl,php' : ['->'],
-"     \   'cs,java,javascript,d,vim,ruby,python,perl6,scala,vb,elixir' : ['.'],
-"     \   'lua' : ['.', ':'],
-"     \   'erlang' : [':'],
-"     \}
-Bundle 'Shougo/neocomplcache'
+Bundle 'Valloric/YouCompleteMe'
+let g:ycm_semantic_triggers =  {
+    \   'c' : ['->', '.'],
+    \   'haxe' : ['.', '('],
+    \   'objc' : ['->', '.'],
+    \   'cpp,objcpp' : ['->', '.', '::'],
+    \   'perl,php' : ['->'],
+    \   'cs,java,javascript,d,vim,ruby,python,perl6,scala,vb,elixir' : ['.'],
+    \   'lua' : ['.', ':'],
+    \   'erlang' : [':'],
+    \}
+" Bundle 'Shougo/neocomplcache'
 Bundle 'tsaleh/vim-matchit'
 
 
