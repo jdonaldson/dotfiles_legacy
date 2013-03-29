@@ -11,12 +11,13 @@ fi
 export MACOSX_DEPLOYMENT_TARGET=10.8
 
 #export TMUX_POWERLINE_DEBUG_MODE_ENABLED=true
-export HISTSIZE=100000
+# export HISTSIZE=100000
 
 # prefer usr/local
 export PATH=$HOME/.local/bin:/usr/local/share:/usr/local/bin:/usr/local/sbin:$PATH
 
 alias vim="mvim -v"
+alias serve="python -m SimpleHTTPServer 9040"
 
 alias munit="haxelib run munit"
 alias mlib="haxelib run mlib"
