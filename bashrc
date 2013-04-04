@@ -16,8 +16,11 @@ export MACOSX_DEPLOYMENT_TARGET=10.8
 # prefer usr/local
 export PATH=$HOME/.local/bin:/usr/local/share:/usr/local/bin:/usr/local/sbin:$PATH
 
-alias vim="mvim -v"
+# alias vim="mvim -v"
 alias serve="python -m SimpleHTTPServer 9040"
+alias sapt="sudo apt-get install"
+alias apts="apt-cache search"
+export TERM=xterm-256color
 
 alias munit="haxelib run munit"
 alias mlib="haxelib run mlib"
@@ -40,8 +43,8 @@ function setdsm() {
 }
 
 # android
-export ANDROID_SDK_ROOT=/usr/local/opt/android-sdk
-export ANDROID_HOME=`brew --prefix android`
+#export ANDROID_SDK_ROOT=/usr/local/opt/android-sdk
+#export ANDROID_HOME=`brew --prefix android`
 
 #ruby
 #export GEM_HOME=$HOME/.gems
@@ -71,7 +74,7 @@ export EC2_HOME="/usr/local/Cellar/ec2-api-tools/1.3-62308/jars"
 
 function _update_ps1()
 {
-   export PS1="$(~/lib/powerline-bash/powerline-bash.py $?)"
+   export PS1="$(~/bin/powerline-shell/powerline-shell.py $?)"
 }
 export PROMPT_COMMAND="_update_ps1"
 
