@@ -12,11 +12,11 @@ nnoremap ; :
 " Now we need to load vundle, it manages all of the extra plugins for vim
 " It must be done first
 " Bootstrap
-let root = '~/.vim/bundle/'
+let root = '~/.vim/bundle'
 let src = 'http://github.com/gmarik/vundle.git'
 
 if !isdirectory(expand(root, 1).'/vundle')
-  exec '!git clone '.src.' '.shellescape(root, 1).'/vundle'
+  exec '!git clone '.src.' '.shellescape(expand(root.'/vundle', 1))
 endif
 
 exec 'set rtp+='.root.'/vundle'
