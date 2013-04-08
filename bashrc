@@ -26,8 +26,8 @@ alias munit="haxelib run munit"
 alias mlib="haxelib run mlib"
 
 # virtualenv
-export WORKON_HOME=$HOME/.virtualenvs
-source virtualenvwrapper_lazy.sh
+# export WORKON_HOME=$HOME/.virtualenvs
+# source virtualenvwrapper_lazy.sh
 
 # django
 function setdsm() {
