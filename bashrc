@@ -3,11 +3,6 @@ if [ -f $HOME/.auth ]; then
     source $HOME/.auth
 fi
 
-# bigml settings
-if [ -f $HOME/.bigmlrc ]; then
-    source $HOME/.bigmlrc
-fi
-
 export MACOSX_DEPLOYMENT_TARGET=10.8
 
 #export TMUX_POWERLINE_DEBUG_MODE_ENABLED=true
@@ -24,6 +19,8 @@ export TERM=xterm-256color
 
 alias munit="haxelib run munit"
 alias mlib="haxelib run mlib"
+
+source $HOME/.privaterc
 
 # virtualenv
 # export WORKON_HOME=$HOME/.virtualenvs
