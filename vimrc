@@ -52,6 +52,7 @@ set title                " change the terminal's title
 set visualbell           " don't beep
 set noerrorbells         " no, seriously, don't beep
 set clipboard+=unnamed    " use system clipboard
+set clipboard+=unnamedplus    " use X Window clipboard
 set lazyredraw
 set mouse=a             " use mouse in nvich modes
 set autowrite
