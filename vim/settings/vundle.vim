@@ -17,6 +17,7 @@ Bundle 'xolox/vim-session'
 "Bundle 'vim-scripts/YankRing.vim'
 "Bundle 'zakj/vim-showmarks'
 Bundle 'Lokaltog/vim-easymotion'
+Bundle 'jceb/vim-orgmode'
 
 " Bundle 'Raimondi/delimitMate'
     " nnoremap <Leader>ds :DelimitMateSwitch<CR>
@@ -104,6 +105,7 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-sensible'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-markdown'
+Bundle 'tpope/vim-speeddating'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tyru/open-browser.vim'
@@ -128,9 +130,10 @@ Bundle 'Gundo'
     map <Leader>z :GundoToggle<CR>
 Bundle 'L9'
 Bundle 'The-NERD-tree'
+Bundle 'utl.vim'
 Bundle 'desert.vim'
 Bundle 'closetag.vim'
-Bundle 'jdonaldson/vim-addon-local-vimrc'
+" Bundle 'jdonaldson/vim-addon-local-vimrc'
 
 filetype plugin indent on " required!
 
