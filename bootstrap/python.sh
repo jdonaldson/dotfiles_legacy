@@ -7,7 +7,7 @@ INITIAL_ENV=~/.venv_bootstrap
 ENV_OPTS='--no-site-packages --distribute'
 # Set to whatever python interpreter you want for your first environment:
 PYTHON=$(which python)
-    URL_BASE=http://pypi.python.org/packages/source/v/virtualenv
+URL_BASE=http://pypi.python.org/packages/source/v/virtualenv
 
 # --- Real work starts here ---
 
@@ -34,3 +34,4 @@ echo "[5/5] Cleaning up"
 # Don't need this anymore.
     rm -rf virtualenv-$VERSION*
 
+echo "Don't forget to add $INITIAL_ENV/bin to your PATH"

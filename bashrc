@@ -3,7 +3,6 @@ if [ -f $HOME/.auth ]; then
     source $HOME/.auth
 fi
 
-export MACOSX_DEPLOYMENT_TARGET=10.8
 
 #export TMUX_POWERLINE_DEBUG_MODE_ENABLED=true
 # export HISTSIZE=100000
@@ -11,11 +10,17 @@ export MACOSX_DEPLOYMENT_TARGET=10.8
 # prefer usr/local
 export PATH=$HOME/.local/bin:/usr/local/share:/usr/local/bin:/usr/local/sbin:$PATH
 
-# alias vim="mvim -v"
+unamestr=`uname`
+if [[ "$unamestr" == 'Linux' ]]; then
+    export TERM=xterm-256color
+elif [[ "$unamestr" == 'Darwin' ]]; then
+    alias vim="mvim -v"
+    # export MACOSX_DEPLOYMENT_TARGET=10.8
+fi
+
 alias serve="python -m SimpleHTTPServer 9040"
-alias sapt="sudo apt-get install"
-alias apts="apt-cache search"
-export TERM=xterm-256color
+alias gimme="sudo apt-get install"
+alias isthere="apt-cache search"
 
 alias munit="haxelib run munit"
 alias mlib="haxelib run mlib"
@@ -23,8 +28,9 @@ alias mlib="haxelib run mlib"
 source $HOME/.privaterc
 
 # virtualenv
-# export WORKON_HOME=$HOME/.virtualenvs
-# source virtualenvwrapper_lazy.sh
+export PATH=$HOME/.venv_bootstrap/bin:$PATH
+export WORKON_HOME=$HOME/.virtualenvs
+source virtualenvwrapper_lazy.sh
 
 # django
 function setdsm() {
