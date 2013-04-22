@@ -1,3 +1,18 @@
+#!/bin/sh
+
+# Build the neko VM
+# =================
+# Important: run the script as root with "sudo ./installneko.sh"
+
+# ------- User Configuration BEGIN -----------
+
+# $RELEASE: release or cvs?
+#
+# - If you want to build neko with a official release you have to define the
+# release version
+# - If you want to build neko from CVS you have to comment out the following
+# line
+
 # RELEASE="neko-1.8.2"
 
 # -------- User Configuration END ------------
