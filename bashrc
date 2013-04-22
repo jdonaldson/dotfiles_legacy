@@ -3,6 +3,10 @@ if [ -f $HOME/.auth ]; then
     source $HOME/.auth
 fi
 
+if [ -f $HOME/.comrc ]; then
+    source $HOME/.comrc
+fi
+
 
 #export TMUX_POWERLINE_DEBUG_MODE_ENABLED=true
 # export HISTSIZE=100000
