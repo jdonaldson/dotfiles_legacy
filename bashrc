@@ -17,6 +17,7 @@ export PATH=$HOME/.local/bin:/usr/local/share:/usr/local/bin:/usr/local/sbin:$PA
 unamestr=`uname`
 if [[ "$unamestr" == 'Linux' ]]; then
     export TERM=xterm-256color
+    alias ack="ack-grep"
 elif [[ "$unamestr" == 'Darwin' ]]; then
     alias vim="mvim -v"
     # export MACOSX_DEPLOYMENT_TARGET=10.8
