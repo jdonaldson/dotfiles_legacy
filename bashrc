@@ -91,3 +91,5 @@ export PROMPT_COMMAND="_update_ps1"
 # new powerline
 # . /Users/jjd/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
 
+shopt -s histappend
+PROMPT_COMMAND='history -a'
