@@ -21,6 +21,14 @@ if [[ "$unamestr" == 'Linux' ]]; then
 elif [[ "$unamestr" == 'Darwin' ]]; then
     alias vim="mvim -v"
     # export MACOSX_DEPLOYMENT_TARGET=10.8
+    if [ -f `brew --prefix`/etc/bash_completion ]; then
+    . `brew --prefix`/etc/bash_completion
+    fi
+
+    # z
+    if [ -f `brew --prefix`/etc/profile.d/z.sh ]; then
+    . `brew --prefix`/etc/profile.d/z.sh
+    fi
 fi
 
 alias serve="python -m SimpleHTTPServer 9040"
@@ -58,19 +66,11 @@ export EDITOR=vim
 export SVN_EDITOR=vim
 export GIT_EDITOR=vim
 
-if [ -f `brew --prefix`/etc/bash_completion ]; then
-  . `brew --prefix`/etc/bash_completion
-fi
-
 
 alias ls='ls -G'
 alias ll='ls -al'
 alias ..='cd ..'
 
-# z
-if [ -f `brew --prefix`/etc/profile.d/z.sh ]; then
-   . `brew --prefix`/etc/profile.d/z.sh
-fi
 
 
 
