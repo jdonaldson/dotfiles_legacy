@@ -19,7 +19,9 @@ if [[ "$unamestr" == 'Linux' ]]; then
     export TERM=xterm-256color
     alias ack="ack-grep"
 elif [[ "$unamestr" == 'Darwin' ]]; then
+    echo "Darwin config"
     alias vim="mvim -v"
+
     # export MACOSX_DEPLOYMENT_TARGET=10.8
     if [ -f `brew --prefix`/etc/bash_completion ]; then
     . `brew --prefix`/etc/bash_completion
