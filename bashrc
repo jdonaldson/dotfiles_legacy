@@ -126,9 +126,13 @@ export EC2_HOME="/usr/local/Cellar/ec2-api-tools/1.3-62308/jars"
 # export LC_ALL=en_US.UTF-8
 # export LANG=en_US.UTF-8
 
+# append to history
+shopt -s histappend
+
 function _update_ps1()
 {
    export PS1="$(~/bin/powerline-shell/powerline-shell.py $?)"
+   history -a
 }
 export PROMPT_COMMAND="_update_ps1"
 
@@ -138,5 +142,3 @@ export PROMPT_COMMAND="_update_ps1"
 # new powerline
 # . /Users/jjd/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
 
-shopt -s histappend
-PROMPT_COMMAND='history -a'
