@@ -19,7 +19,6 @@ if [[ "$unamestr" == 'Linux' ]]; then
     export TERM=xterm-256color
     alias ack="ack-grep"
 elif [[ "$unamestr" == 'Darwin' ]]; then
-    echo "Darwin config"
     alias vim="mvim -v"
 
     # export MACOSX_DEPLOYMENT_TARGET=10.8
@@ -126,9 +125,13 @@ export JAVA_OPTS=-Xmx2500m
 # export LC_ALL=en_US.UTF-8
 # export LANG=en_US.UTF-8
 
+# append to history
+shopt -s histappend
+
 function _update_ps1()
 {
    export PS1="$(~/bin/powerline-shell/powerline-shell.py $?)"
+   history -a
 }
 export PROMPT_COMMAND="_update_ps1"
 
@@ -138,5 +141,3 @@ export PROMPT_COMMAND="_update_ps1"
 # new powerline
 # . /Users/jjd/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
 
-shopt -s histappend
-PROMPT_COMMAND='history -a'

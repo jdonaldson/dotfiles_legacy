@@ -5,6 +5,7 @@ if has("gui_running") || &term == "xterm-256color" || &term == 'screen'
 else
     let g:fancy_term = 0
 endif
+Bundle 'freitass/todo.txt-vim'
 Bundle 'vim-addon-mw-utils'
 Bundle 'benmills/vimux'
 " let Vundle manage Vundle
@@ -13,9 +14,8 @@ Bundle 'gmarik/vundle'
 Bundle 'xolox/vim-session'
     let g:session_autoload = 'yes'
 " original repos on github
-"Bundle 'Shougo/neocomplcache-snippets-complete'
-"Bundle 'vim-scripts/YankRing.vim'
-"Bundle 'zakj/vim-showmarks'
+" Bundle 'vim-scripts/YankRing.vim'
+" Bundle 'zakj/vim-showmarks'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'jceb/vim-orgmode'
 
@@ -24,6 +24,7 @@ Bundle 'jceb/vim-orgmode'
     " let g:delimitMate_expand_cr = 1
 Bundle 'Rip-Rip/clang_complete'
 Bundle 'airblade/vim-gitgutter'
+Bundle 'mhinz/vim-startify'
 " Bundle 'mattn/gist-vim'
 Bundle 'ap/vim-css-color'
 Bundle 'PProvost/vim-markdown-jekyll'
@@ -33,7 +34,10 @@ Bundle 'cakebaker/scss-syntax.vim'
 " Bundle 'garbas/vim-snipmate'
 Bundle 'pangloss/vim-javascript'
 Bundle 'UltiSnips'
-    let g:UltiSnipsSnippetDirectories=["bundle/UltiSnips/UltiSnips"]
+    let g:UltiSnipsSnippetDirectories=["bundle/UltiSnips/UltiSnips", "bundle/vaxe/ultisnips"]
+    let g:UltiSnipsExpandTrigger="<c-j>"
+    let g:UltiSnipsJumpForwardTrigger="<c-j>"
+    let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 Bundle 'hsitz/VimOrganizer'
 Bundle 'jcfaria/Vim-R-plugin'
@@ -109,7 +113,7 @@ Bundle 'tpope/vim-speeddating'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tyru/open-browser.vim'
-Bundle 'Valloric/YouCompleteMe'
+" Bundle 'Valloric/YouCompleteMe'
 let g:ycm_semantic_triggers =  {
     \   'c' : ['->', '.'],
     \   'haxe' : ['.', '('],
@@ -120,7 +124,7 @@ let g:ycm_semantic_triggers =  {
     \   'lua' : ['.', ':'],
     \   'erlang' : [':'],
     \}
-" Bundle 'Shougo/neocomplcache'
+Bundle 'Shougo/neocomplcache'
 Bundle 'tsaleh/vim-matchit'
 
 

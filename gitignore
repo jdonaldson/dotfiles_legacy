@@ -2,6 +2,7 @@
 .tm-autocomplete.hxml
 .tmbuild
 tags
+.metadata
 .sass-cache
 .vimrc
 _site/

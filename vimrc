@@ -63,6 +63,9 @@ set smartcase
 set gdefault
 set hlsearch
 
+" Experimental
+set nrformats=octal,hex,alpha " increment letters in addition to numbers
+
 " color too-wide columns
 syntax on         " syntax highlighting, natch
 
