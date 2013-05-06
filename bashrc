@@ -31,6 +31,9 @@ elif [[ "$unamestr" == 'Darwin' ]]; then
     if [ -f `brew --prefix`/etc/profile.d/z.sh ]; then
     . `brew --prefix`/etc/profile.d/z.sh
     fi
+    # aws/ec2 specific tools
+    export JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Home"
+    export EC2_HOME="/usr/local/Cellar/ec2-api-tools/1.3-62308/jars"
 fi
 
 alias serve="python -m SimpleHTTPServer 9040"
@@ -119,9 +122,6 @@ export PKG_CONFIG_PATH # ?
 # java
 export JAVA_OPTS=-Xmx2500m
 
-# aws/ec2 specific tools
-export JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Home"
-export EC2_HOME="/usr/local/Cellar/ec2-api-tools/1.3-62308/jars"
 
 # export LC_ALL=en_US.UTF-8
 # export LANG=en_US.UTF-8
