@@ -20,6 +20,7 @@ if [[ "$unamestr" == 'Linux' ]]; then
     alias ack="ack-grep"
 elif [[ "$unamestr" == 'Darwin' ]]; then
     alias vim="mvim -v"
+    export ANDROID_SDK_ROOT=/usr/local/opt/android-sdk
 
     # export MACOSX_DEPLOYMENT_TARGET=10.8
     if [ -f `brew --prefix`/etc/bash_completion ]; then
@@ -31,7 +32,7 @@ elif [[ "$unamestr" == 'Darwin' ]]; then
     . `brew --prefix`/etc/profile.d/z.sh
     fi
     # aws/ec2 specific tools
-    export JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Home"
+    export JAVA_HOME=/Library/Java/Home
     export EC2_HOME="/usr/local/Cellar/ec2-api-tools/1.3-62308/jars"
 fi
 
