@@ -132,7 +132,7 @@ Bundle 'Shougo/neocomplcache'
     let g:neocomplcache_enable_auto_select = 1
     let g:neocomplcache_omni_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
     let g:neocomplcache_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
-    let g:neocomplcache_omni_patterns.haxe = '\v([\]''"]|\w)(\.|\()'
+    let g:neocomplcache_omni_patterns.haxe = '\v([\]''"]|\w)(\.|\()\w*'
     let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 Bundle 'tsaleh/vim-matchit'
 
