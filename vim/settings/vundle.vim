@@ -5,16 +5,20 @@ if has("gui_running") || &term == "xterm-256color" || &term == 'screen'
 else
     let g:fancy_term = 0
 endif
+
+Bundle 'aura'
 Bundle 'freitass/todo.txt-vim'
 Bundle 'vim-addon-mw-utils'
 Bundle 'benmills/vimux'
 " let Vundle manage Vundle
 " required!
 Bundle 'gmarik/vundle'
-Bundle 'xolox/vim-session'
-    let g:session_autoload = 'yes'
+" Bundle 'xolox/vim-session'
+"     let g:session_autoload = 'yes'
 " original repos on github
 " Bundle 'vim-scripts/YankRing.vim'
+Bundle 'vim-scripts/perforce'
+Bundle 'vim-scripts/genutils'
 " Bundle 'zakj/vim-showmarks'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'jceb/vim-orgmode'
