@@ -129,6 +129,15 @@ let g:ycm_semantic_triggers =  {
     \   'erlang' : [':'],
     \}
 Bundle 'Shougo/neocomplcache'
+    let g:neocomplcache_enable_at_startup = 1
+    if !exists('g:neocomplcache_omni_patterns')
+        let g:neocomplcache_omni_patterns = {}
+    endif
+    let g:neocomplcache_enable_auto_select = 1
+    let g:neocomplcache_omni_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+    let g:neocomplcache_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+    let g:neocomplcache_omni_patterns.haxe = '\v([\]''"]|\w)(\.|\()\w*'
+    let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 Bundle 'tsaleh/vim-matchit'
 
 
