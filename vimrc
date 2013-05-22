@@ -37,7 +37,8 @@ set encoding=utf-8
 set nocompatible
 set number        " show line numbers
 set nowrap        " don't wrap lines
-set tabstop=8     " a tab is eight spaces
+" set tabstop=8     " a tab is eight spaces
+set tabstop=4     " a tab is eight spaces
 set shiftwidth=4  " number of spaces to use for autoindenting
 set expandtab     " expand tabs to spaces
 set copyindent    " copy the previous indentation on autoindenting
@@ -213,7 +214,7 @@ highlight ShowMarksHLu   cterm=bold ctermfg=1 ctermbg=12 gui=bold guifg=darkblue
 highlight ShowMarksHLo   cterm=bold ctermfg=8 ctermbg=12 gui=bold guifg=darkgray guibg=lightblue
 highlight ShowMarksHLm   cterm=bold ctermfg=1 ctermbg=4 gui=bold guifg=white guibg=lightblue
 
-highlight ExtraWhitespace ctermbg=red guibg=red
-match ExtraWhitespace /\s\+\%#\@<!$/
-au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-au InsertLeave * match ExtraWhitespace /\s\+$/
+" highlight ExtraWhitespace ctermbg=red guibg=red
+" match ExtraWhitespace /\s\+\%#\@<!$/
+" au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+" au InsertLeave * match ExtraWhitespace /\s\+$/
