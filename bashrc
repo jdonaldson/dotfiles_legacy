@@ -3,6 +3,7 @@ if [ -f $HOME/.auth ]; then
     source $HOME/.auth
 fi
 
+# com specific config
 if [ -f $HOME/.comrc ]; then
     source $HOME/.comrc
 fi
@@ -32,7 +33,7 @@ elif [[ "$unamestr" == 'Darwin' ]]; then
     . `brew --prefix`/etc/profile.d/z.sh
     fi
     # aws/ec2 specific tools
-    export JAVA_HOME=/Library/Java/Home
+    # export JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Home"
     export EC2_HOME="/usr/local/Cellar/ec2-api-tools/1.3-62308/jars"
 fi
 
