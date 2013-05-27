@@ -46,6 +46,12 @@ Bundle 'mileszs/ack.vim'
     let g:ackprg = 'ag --nogroup --nocolor --column'
     " let g:ackprg="ack --with-filename --ignore-case --all --nocolor --nogroup --follow --column"
 Bundle 'jdonaldson/vaxe'
+    let g:vaxe_cache_server_enable = 1
+    let g:vaxe_haxe_version = 3
+    map <Leader>oh :call vaxe#OpenHxml()<CR>
+    map <Leader>ct :call vaxe#Ctags()<CR>
+    map <Leader>ic :call vaxe#ImportClass()<CR>
+    map <Leader>pj :call vaxe#ProjectHxml()<CR>
 Bundle 'jdonaldson/vim-powerline'
     if g:fancy_term
         let g:Powerline_symbols = 'fancy'
