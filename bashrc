@@ -76,6 +76,7 @@ export GIT_EDITOR=vim
 alias ls='ls -G'
 alias ll='ls -al'
 alias ..='cd ..'
+alias ssh='ssh -X'
 
 
 
