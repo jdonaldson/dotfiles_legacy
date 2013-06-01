@@ -2,6 +2,7 @@
 *.swp
 *.un~
 */__chxdoctmp
+.netrwhist
 .DS_Store
 .haxedoc
 .hg/
