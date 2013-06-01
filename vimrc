@@ -23,6 +23,8 @@ exec 'set rtp+='.root.'/vundle'
 
 call vundle#rc(root)
 
+
+
 " Vundle configs are stored in a separate file, source it.
 source ~/.vim/settings/vundle.vim
 nmap <Leader>vu :e ~/.vim/settings/vundle.vim<CR>
@@ -37,9 +39,10 @@ set encoding=utf-8
 set nocompatible
 set number        " show line numbers
 set nowrap        " don't wrap lines
-set tabstop=8     " a tab is eight spaces
-set shiftwidth=4  " number of spaces to use for autoindenting
-set expandtab     " expand tabs to spaces
+set tabstop=4     " a tab is eight spaces
+" set tabstop=8     " a tab is eight spaces
+" set shiftwidth=4  " number of spaces to use for autoindenting
+" set expandtab     " expand tabs to spaces
 set copyindent    " copy the previous indentation on autoindenting
 set nosmartindent
 set cindent       " useful for python
@@ -124,14 +127,6 @@ au FocusLost * :wa
 map <silent> <S-TAB> <C-W>W
 
 nmap <expr><silent> q winnr() != 1 ? ":q\<CR>" : "q"
-
-" Show cheats
-map <leader>ch :call ToggleCheatSheet()<CR>
-augroup thx
-    autocmd BufEnter */dhx/* set noexpandtab | set tabstop=4
-    autocmd BufEnter */thx/* set noexpandtab | set tabstop=4
-augroup END
-
 
 if exists('+colorcolumn')
   set colorcolumn=80
