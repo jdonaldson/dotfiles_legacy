@@ -7,6 +7,7 @@ else
 endif
 
 Bundle 'aura'
+Bundle 'jdonaldson/vim-cheat'
 Bundle 'altercation/vim-colors-solarized'
     " solarized options
     " let g:solarized_termcolors = 16
