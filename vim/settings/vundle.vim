@@ -7,6 +7,13 @@ else
 endif
 
 Bundle 'vim-aura'
+Bundle 'jdonaldson/vim-cheat'
+Bundle 'altercation/vim-colors-solarized'
+    " solarized options
+    " let g:solarized_termcolors = 16
+    let g:solarized_termtrans = 1
+    set background=dark
+    colorscheme solarized
 Bundle 'freitass/todo.txt-vim'
 Bundle 'vim-addon-mw-utils'
 Bundle 'benmills/vimux'
@@ -17,7 +24,7 @@ Bundle 'gmarik/vundle'
 "     let g:session_autoload = 'yes'
 " original repos on github
 " Bundle 'vim-scripts/YankRing.vim'
-Bundle 'vim-scripts/perforce'
+" Bundle 'vim-scripts/perforce'
 Bundle 'vim-scripts/genutils'
 " Bundle 'zakj/vim-showmarks'
 Bundle 'Lokaltog/vim-easymotion'
@@ -50,6 +57,14 @@ Bundle 'mileszs/ack.vim'
     let g:ackprg = 'ag --nogroup --nocolor --column'
     " let g:ackprg="ack --with-filename --ignore-case --all --nocolor --nogroup --follow --column"
 Bundle 'jdonaldson/vaxe'
+    let g:vaxe_cache_server_enable = 1
+    let g:vaxe_default_parent_search_patterns = ["*.nmml", "*.hxml"]
+    let g:vaxe_haxe_version = 3
+    map <Leader>oh :call vaxe#OpenHxml()<CR>
+    map <Leader>ct :call vaxe#Ctags()<CR>
+    map <Leader>ic :call vaxe#ImportClass()<CR>
+    map <Leader>pj :call vaxe#ProjectHxml()<CR>
+    map <Leader>jd :call vaxe#JumpToDefinition()<CR>
 Bundle 'jdonaldson/vim-powerline'
     if g:fancy_term
         let g:Powerline_symbols = 'fancy'
@@ -99,20 +114,15 @@ Bundle 'suan/vim-instant-markdown'
 "     if g:fancy_term
 "         let g:molokai_original = 1
 "     endif
-Bundle 'altercation/vim-colors-solarized'
-    " solarized options
-    " let g:solarized_termcolors = 16
-    let g:solarized_termtrans = 1
-    set background=dark
-    colorscheme solarized
 Bundle 'tomtom/tlib_vim'
-Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-commentary'
     map <c-\> \\\
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-sensible'
+Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-markdown'
+Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-sensible'
+Bundle 'tpope/vim-sleuth'
 Bundle 'tpope/vim-speeddating'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
@@ -136,7 +146,7 @@ Bundle 'Shougo/neocomplcache'
     let g:neocomplcache_enable_auto_select = 1
     let g:neocomplcache_omni_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
     let g:neocomplcache_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
-    let g:neocomplcache_omni_patterns.haxe = '\v([\]''"]|\w)(\.|\()\w*'
+    let g:neocomplcache_omni_patterns.haxe = '\v([\]''"\)]|\w|(^\s*))(\.|\()'
     let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 Bundle 'tsaleh/vim-matchit'
 

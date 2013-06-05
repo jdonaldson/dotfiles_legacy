@@ -1,4 +1,4 @@
-" A great overview of the rationale behind some of these options is given
+"  great overview of the rationale behind some of these options is given
 
 " here: http://stevelosh.com/blog/2010/09/coming-home-to-vim/
 
@@ -23,6 +23,8 @@ exec 'set rtp+='.root.'/vundle'
 
 call vundle#rc(root)
 
+
+
 " Vundle configs are stored in a separate file, source it.
 source ~/.vim/settings/vundle.vim
 nmap <Leader>vu :e ~/.vim/settings/vundle.vim<CR>
@@ -37,10 +39,10 @@ set encoding=utf-8
 set nocompatible
 set number        " show line numbers
 set nowrap        " don't wrap lines
-" set tabstop=8     " a tab is eight spaces
 set tabstop=4     " a tab is eight spaces
-set shiftwidth=4  " number of spaces to use for autoindenting
-set expandtab     " expand tabs to spaces
+" set tabstop=8     " a tab is eight spaces
+" set shiftwidth=4  " number of spaces to use for autoindenting
+" set expandtab     " expand tabs to spaces
 set copyindent    " copy the previous indentation on autoindenting
 set nosmartindent
 set cindent       " useful for python
@@ -126,14 +128,6 @@ map <silent> <S-TAB> <C-W>W
 
 nmap <expr><silent> q winnr() != 1 ? ":q\<CR>" : "q"
 
-" Show cheats
-map <leader>ch :call ToggleCheatSheet()<CR>
-augroup thx
-    autocmd BufEnter */dhx/* set noexpandtab | set tabstop=4
-    autocmd BufEnter */thx/* set noexpandtab | set tabstop=4
-augroup END
-
-
 if exists('+colorcolumn')
   set colorcolumn=80
 else
@@ -175,6 +169,7 @@ cmap w!! w !sudo tee % >/dev/null
 " insert a newline  below in normal mode
 nnoremap <C-J> hmao<esc>`a
 
+
 " execute the current line as a shell command, insert
 " results below the line
 nnoremap <Leader>r :exe ':r ! '.getline('.') <CR>
@@ -184,11 +179,7 @@ nnoremap S "_diwP"
 
 map <Leader>pc :call ToggleEnablePreview()<CR>
 
-" requires vaxe
-map <Leader>oh :call vaxe#OpenHxml()<CR>
-map <Leader>ct :call vaxe#Ctags()<CR>
-map <Leader>ic :call vaxe#ImportClass()<CR>
-map <Leader>pj :call vaxe#ProjectHxml()<CR>
+map <leader>a exe ":Ack "
 
 " All of my 'panels'
 nmap <silent> <leader>q :call ToggleList("Quickfix List", 'c')<CR>

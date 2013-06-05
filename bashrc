@@ -71,15 +71,12 @@ export EDITOR=vim
 export SVN_EDITOR=vim
 export GIT_EDITOR=vim
 
-
 alias ls='ls -G'
 alias ll='ls -al'
 alias ..='cd ..'
 alias p4_untracked='find . -type f -print0 | xargs -0 p4 fstat >/dev/null'
 alias cdp="cd -P"
-
-
-
+alias ssh='ssh -X'
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 export HAXE_LIBRARY_PATH=/usr/lib/haxe/std:.
