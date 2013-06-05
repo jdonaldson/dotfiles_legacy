@@ -6,7 +6,7 @@ else
     let g:fancy_term = 0
 endif
 
-Bundle 'aura'
+Bundle 'vim-aura'
 Bundle 'freitass/todo.txt-vim'
 Bundle 'vim-addon-mw-utils'
 Bundle 'benmills/vimux'
@@ -32,7 +32,7 @@ Bundle 'mhinz/vim-startify'
 " Bundle 'mattn/gist-vim'
 Bundle 'ap/vim-css-color'
 Bundle 'PProvost/vim-markdown-jekyll'
-" Bundle 'Shougo/unite.vim'
+Bundle 'Shougo/unite.vim'
 Bundle 'goldfeld/vim-seek'
 Bundle 'cakebaker/scss-syntax.vim'
 " Bundle 'garbas/vim-snipmate'
