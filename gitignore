@@ -4,6 +4,7 @@
 */__chxdoctmp
 .DS_Store
 .haxedoc
+.netrwhist
 .hg/
 .metadata
 .sass-cache
