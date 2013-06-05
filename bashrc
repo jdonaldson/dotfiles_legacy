@@ -14,7 +14,6 @@ fi
 
 # prefer usr/local
 export PATH=$HOME/.local/bin:/usr/local/share:/usr/local/bin:/usr/local/sbin:$PATH
-
 unamestr=`uname`
 if [[ "$unamestr" == 'Linux' ]]; then
     export TERM=xterm-256color
@@ -76,6 +75,8 @@ export GIT_EDITOR=vim
 alias ls='ls -G'
 alias ll='ls -al'
 alias ..='cd ..'
+alias p4_untracked='find . -type f -print0 | xargs -0 p4 fstat >/dev/null'
+alias cdp="cd -P"
 
 
 
