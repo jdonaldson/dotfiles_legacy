@@ -58,7 +58,7 @@ Bundle 'mileszs/ack.vim'
     " let g:ackprg="ack --with-filename --ignore-case --all --nocolor --nogroup --follow --column"
 Bundle 'jdonaldson/vaxe'
     let g:vaxe_cache_server_enable = 1
-    let g:vaxe_default_parent_search_patterns = ["*.nmml", "*.hxml"]
+    let g:vaxe_default_parent_search_patterns = ["project.xml", "*.nmml", "*.hxml"]
     let g:vaxe_haxe_version = 3
     map <Leader>oh :call vaxe#OpenHxml()<CR>
     map <Leader>ct :call vaxe#Ctags()<CR>
