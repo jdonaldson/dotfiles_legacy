@@ -7,6 +7,8 @@ else
 endif
 
 Bundle 'vim-aura'
+Bundle 'miripiruni/CSScomb-for-Vim'
+Bundle 'elzr/vim-json'
 Bundle 'jdonaldson/vim-cheat'
 Bundle 'altercation/vim-colors-solarized'
     " solarized options
