@@ -56,7 +56,7 @@ Bundle 'hsitz/VimOrganizer'
 Bundle 'jcfaria/Vim-R-plugin'
 Bundle 'mileszs/ack.vim'
     nnoremap <Leader>a :Ack<space>
-    let g:ackprg = 'ag --nogroup --nocolor --column'
+    let g:ackprg = 'ag --follow --nogroup --nocolor --column'
     " let g:ackprg="ack --with-filename --ignore-case --all --nocolor --nogroup --follow --column"
 Bundle 'jdonaldson/vaxe'
     let g:vaxe_cache_server_enable = 1
