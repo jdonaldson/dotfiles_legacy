@@ -6,6 +6,8 @@ else
     let g:fancy_term = 0
 endif
 
+let s:is_windows = has('win32') || has('win64')
+
 Bundle 'vim-aura'
 Bundle 'miripiruni/CSScomb-for-Vim'
 Bundle 'elzr/vim-json'
