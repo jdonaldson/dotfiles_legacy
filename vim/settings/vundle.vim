@@ -176,16 +176,19 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tyru/open-browser.vim'
 " Bundle 'Valloric/YouCompleteMe'
-let g:ycm_semantic_triggers =  {
-    \   'c' : ['->', '.'],
-    \   'haxe' : ['.', '('],
-    \   'objc' : ['->', '.'],
-    \   'cpp,objcpp' : ['->', '.', '::'],
-    \   'perl,php' : ['->'],
-    \   'cs,java,javascript,d,vim,ruby,python,perl6,scala,vb,elixir' : ['.'],
-    \   'lua' : ['.', ':'],
-    \   'erlang' : [':'],
-    \}
+" let g:ycm_semantic_triggers =  {
+"     \   'c' : ['->', '.'],
+"     \   'haxe' : ['.', '('],
+"     \   'objc' : ['->', '.'],
+"     \   'cpp,objcpp' : ['->', '.', '::'],
+"     \   'perl,php' : ['->'],
+"     \   'cs,java,javascript,d,vim,ruby,python,perl6,scala,vb,elixir' : ['.'],
+"     \   'lua' : ['.', ':'],
+"     \   'erlang' : [':'],
+"     \}
+
+
+Bundle 'Shougo/vimproc.vim'
 Bundle 'Shougo/neocomplcache'
     let g:neocomplcache_enable_at_startup = 1
     if !exists('g:neocomplcache_omni_patterns')
