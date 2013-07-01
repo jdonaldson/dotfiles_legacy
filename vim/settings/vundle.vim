@@ -7,7 +7,6 @@ else
 endif
 
 Bundle 'vim-aura'
-Bundle 'miripiruni/CSScomb-for-Vim'
 Bundle 'elzr/vim-json'
 Bundle 'jdonaldson/vim-cheat'
 Bundle 'altercation/vim-colors-solarized'
@@ -26,7 +25,7 @@ Bundle 'gmarik/vundle'
 "     let g:session_autoload = 'yes'
 " original repos on github
 " Bundle 'vim-scripts/YankRing.vim'
-" Bundle 'vim-scripts/perforce'
+Bundle 'vim-scripts/perforce'
 Bundle 'vim-scripts/genutils'
 " Bundle 'zakj/vim-showmarks'
 Bundle 'Lokaltog/vim-easymotion'
@@ -82,6 +81,9 @@ Bundle 'kien/ctrlp.vim'
     if len(argv())==0 || argv()[0] == '.'
         " If I open a directory, assume I want to hard set a working path
         let g:ctrlp_working_path_mode = ''
+        let g:ctrlp_use_caching=1
+        let g:ctrlp_clear_cache_on_exit=0
+        let g:ctrlp_max_files = 0 
     endif
 Bundle 'majutsushi/tagbar'
 " Extending tabar to support markdown (additionally to the ~/.ctags-file!)
@@ -141,6 +143,7 @@ let g:ycm_semantic_triggers =  {
     \   'erlang' : [':'],
     \}
 Bundle 'Shougo/neocomplcache'
+    let g:EclimCompletionMethod = 'omnifunc' " make neo play nice with eclim
     let g:neocomplcache_enable_at_startup = 1
     if !exists('g:neocomplcache_omni_patterns')
         let g:neocomplcache_omni_patterns = {}
