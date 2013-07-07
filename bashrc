@@ -8,6 +8,10 @@ if [ -f $HOME/.comrc ]; then
     source $HOME/.comrc
 fi
 
+# private specific config
+if [ -f $HOME/.privaterc ]; then
+   source $HOME/.privaterc
+fi
 
 #export TMUX_POWERLINE_DEBUG_MODE_ENABLED=true
 # export HISTSIZE=100000
@@ -43,7 +47,7 @@ alias isthere="apt-cache search"
 alias munit="haxelib run munit"
 alias mlib="haxelib run mlib"
 
-source $HOME/.privaterc
+
 
 # virtualenv
 export PATH=$HOME/.venv_bootstrap/bin:$PATH
