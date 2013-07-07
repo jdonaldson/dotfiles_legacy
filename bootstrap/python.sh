@@ -1,13 +1,13 @@
 #!/bin/bash
 # Select current version of virtualenv:
-VERSION=1.6.4
+VERSION=1.9.1
 # Name your first "bootstrap" environment:
 INITIAL_ENV=~/.venv_bootstrap
 # Options for your first environment:
 ENV_OPTS='--no-site-packages --distribute'
 # Set to whatever python interpreter you want for your first environment:
 PYTHON=$(which python)
-URL_BASE=http://pypi.python.org/packages/source/v/virtualenv
+URL_BASE=https://pypi.python.org/packages/source/v/virtualenv
 
 # --- Real work starts here ---
 
