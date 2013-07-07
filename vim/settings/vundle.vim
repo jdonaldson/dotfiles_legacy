@@ -27,7 +27,9 @@ Bundle 'gmarik/vundle'
 "     let g:session_autoload = 'yes'
 " original repos on github
 " Bundle 'vim-scripts/YankRing.vim'
-Bundle 'vim-scripts/perforce'
+if executable("p4")
+    Bundle 'vim-scripts/perforce'
+endif
 Bundle 'vim-scripts/genutils'
 " Bundle 'zakj/vim-showmarks'
 Bundle 'Lokaltog/vim-easymotion'
