@@ -11,6 +11,7 @@ let s:is_windows = has('win32') || has('win64')
 Bundle 'vim-aura'
 Bundle 'elzr/vim-json'
 Bundle 'jdonaldson/vim-cheat'
+Bundle 'csscomb/CSScomb-for-Vim'
 Bundle 'altercation/vim-colors-solarized'
     " solarized options
     " let g:solarized_termcolors = 16
@@ -126,6 +127,7 @@ Bundle 'jdonaldson/vim-powerline'
 Bundle 'kien/ctrlp.vim'
     let g:ctrlp_follow_symlinks = 2
     let g:ctrlp_custom_ignore = '\v(build|test|htdocs|apex|conf|class)\/'
+    let g:ctrlp_user_command = 'find %s -type f -follow'
     if len(argv())==0 || argv()[0] == '.'
         " If I open a directory, assume I want to hard set a working path
         let g:ctrlp_working_path_mode = ''
