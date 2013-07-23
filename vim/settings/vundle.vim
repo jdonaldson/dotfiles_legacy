@@ -8,7 +8,10 @@ endif
 
 let s:is_windows = has('win32') || has('win64')
 
-Bundle 'vim-aura'
+let hostname = substitute(system('hostname'), '\n', '', '')
+if hostname == "jdonaldson-wsl"
+    Bundle 'vim-aura'
+endif
 Bundle 'elzr/vim-json'
 Bundle 'jdonaldson/vim-cheat'
 Bundle 'csscomb/CSScomb-for-Vim'
@@ -28,7 +31,9 @@ Bundle 'gmarik/vundle'
 "     let g:session_autoload = 'yes'
 " original repos on github
 " Bundle 'vim-scripts/YankRing.vim'
-Bundle 'vim-scripts/perforce'
+if executable("p4")
+    Bundle 'vim-scripts/perforce'
+endif
 Bundle 'vim-scripts/genutils'
 " Bundle 'zakj/vim-showmarks'
 Bundle 'Lokaltog/vim-easymotion'
@@ -106,7 +111,7 @@ Bundle 'mileszs/ack.vim'
     let g:ackprg = 'ag --follow --nogroup --nocolor --column'
     " let g:ackprg="ack --with-filename --ignore-case --all --nocolor --nogroup --follow --column"
 Bundle 'jdonaldson/vaxe'
-    let g:vaxe_cache_server_enable = 1
+    " let g:vaxe_cache_server_enable = 1
     let g:vaxe_default_parent_search_patterns = ["project.xml", "*.nmml", "*.hxml"]
     let g:vaxe_haxe_version = 3
     map <Leader>oh :call vaxe#OpenHxml()<CR>
@@ -114,10 +119,14 @@ Bundle 'jdonaldson/vaxe'
     map <Leader>ic :call vaxe#ImportClass()<CR>
     map <Leader>pj :call vaxe#ProjectHxml()<CR>
     map <Leader>jd :call vaxe#JumpToDefinition()<CR>
-Bundle 'jdonaldson/vim-powerline'
-    if g:fancy_term
-        let g:Powerline_symbols = 'fancy'
-    endif
+" Bundle 'jdonaldson/vim-powerline'
+"     if g:fancy_term
+"         let g:Powerline_symbols = 'fancy'
+    " endif
+Bundle 'Lokaltog/powerline', {'rtp':'powerline/bindings/vim'}
+    set guifont=Inconsolata\ for\ Powerline
+    set laststatus=2
+    let g:Powerline_symbols = 'fancy'
 "Bundle 'fholgado/minibufexpl.vim'
 "map <Leader>b :MiniBufExplorer<cr>
 "let g:miniBufExplMapWindowNavVim = 1

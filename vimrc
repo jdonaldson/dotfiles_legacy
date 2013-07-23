@@ -137,8 +137,6 @@ else
     au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 endif
 
-set guifont=Monaco\ for\ Powerline:h13
-
 function! DoWindowSwap()
     "Mark destination
     let curNum = winnr()
