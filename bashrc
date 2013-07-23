@@ -1,11 +1,11 @@
 # auth/creds
-if [ -f $HOME/.auth ]; then
-    source $HOME/.auth
+if [ -f $HOME/.auth.sh ]; then
+    source $HOME/.auth.sh
 fi
 
 # com specific config
-if [ -f $HOME/.comrc ]; then
-    source $HOME/.comrc
+if [ -f $HOME/.comrc.sh ]; then
+    source $HOME/.comrc.sh
 fi
 
 # private specific config
