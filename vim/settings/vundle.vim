@@ -124,9 +124,8 @@ Bundle 'jdonaldson/vaxe'
 "         let g:Powerline_symbols = 'fancy'
     " endif
 Bundle 'Lokaltog/powerline', {'rtp':'powerline/bindings/vim'}
-    set guifont=Inconsolata\ for\ Powerline
     set laststatus=2
-    let g:Powerline_symbols = 'fancy'
+Bundle 'zhaocai/linepower.vim'
 "Bundle 'fholgado/minibufexpl.vim'
 "map <Leader>b :MiniBufExplorer<cr>
 "let g:miniBufExplMapWindowNavVim = 1
