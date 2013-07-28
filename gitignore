@@ -13,6 +13,7 @@
 .tmbuild
 .tmbuild
 .vimrc
+*.pyc
 _cache
 _site/
 haxedoc.xml
