@@ -13,14 +13,13 @@ if [ -f $HOME/.privaterc ]; then
    source $HOME/.privaterc
 fi
 
-#export TMUX_POWERLINE_DEBUG_MODE_ENABLED=true
 # export HISTSIZE=100000
 
 # prefer usr/local
 export PATH=$HOME/.local/bin:/usr/local/share:/usr/local/bin:/usr/local/sbin:$PATH
 unamestr=`uname`
+export TERM=xterm-256color
 if [[ "$unamestr" == 'Linux' ]]; then
-    export TERM=xterm-256color
     alias ack="ack-grep"
 elif [[ "$unamestr" == 'Darwin' ]]; then
     alias vim="mvim -v"
@@ -51,7 +50,7 @@ alias mlib="haxelib run mlib"
 
 # virtualenv
 export PATH=$HOME/.venv_bootstrap/bin:$PATH
-export WORKON_HOME=$HOME/.virtualenvs
+# export WORKON_HOME=$HOME/.virtualenvs
 source virtualenvwrapper_lazy.sh
 
 # django
@@ -141,16 +140,8 @@ export JAVA_OPTS=-Xmx2500m
 # append to history
 shopt -s histappend
 
-function _update_ps1()
-{
-   export PS1="$(~/bin/powerline-shell/powerline-shell.py $?)"
-   history -a
-}
-export PROMPT_COMMAND="_update_ps1"
-
-# old tmux powerline
-# PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
-
-# new powerline
-# . /Users/jjd/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
+# powerline
+if [ -f ~/bin/powerline/powerline/bindings/bash/powerline.sh ]; then
+   . ~/bin/powerline/powerline/bindings/bash/powerline.sh
+fi
 
