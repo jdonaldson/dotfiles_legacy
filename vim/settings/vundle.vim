@@ -125,7 +125,7 @@ Bundle 'jdonaldson/vaxe'
     " endif
 Bundle 'Lokaltog/powerline', {'rtp':'powerline/bindings/vim'}
     set laststatus=2
-Bundle 'zhaocai/linepower.vim'
+Bundle 'jdonaldson/linepower.vim'
 "Bundle 'fholgado/minibufexpl.vim'
 "map <Leader>b :MiniBufExplorer<cr>
 "let g:miniBufExplMapWindowNavVim = 1
