@@ -22,7 +22,7 @@ Bundle 'altercation/vim-colors-solarized'
     set background=dark
     colorscheme solarized
 Bundle 'freitass/todo.txt-vim'
-Bundle 'vim-addon-mw-utils'
+Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'benmills/vimux'
 " let Vundle manage Vundle
 " required!
