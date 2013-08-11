@@ -27,7 +27,7 @@ if [[ "$unamestr" == 'Linux' ]]; then
     alias gimme="sudo apt-get install"
     alias isthere="apt-cache search"
 elif [[ "$unamestr" == 'Darwin' ]]; then
-    alias vim="mvim -v"
+    # alias vim="mvim -v"
     alias gimme="brew install"
     alias isthere="brew search"
     export ANDROID_SDK_ROOT=/usr/local/opt/android-sdk

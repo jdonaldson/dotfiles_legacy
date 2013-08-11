@@ -200,31 +200,20 @@ Bundle 'tpope/vim-speeddating'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tyru/open-browser.vim'
-" Bundle 'Valloric/YouCompleteMe'
-" let g:ycm_semantic_triggers =  {
-"     \   'c' : ['->', '.'],
-"     \   'haxe' : ['.', '('],
-"     \   'objc' : ['->', '.'],
-"     \   'cpp,objcpp' : ['->', '.', '::'],
-"     \   'perl,php' : ['->'],
-"     \   'cs,java,javascript,d,vim,ruby,python,perl6,scala,vb,elixir' : ['.'],
-"     \   'lua' : ['.', ':'],
-"     \   'erlang' : [':'],
-"     \}
-
+Bundle 'Valloric/YouCompleteMe'
 
 Bundle 'Shougo/vimproc.vim'
-Bundle 'Shougo/neocomplcache'
-    let g:EclimCompletionMethod = 'omnifunc' " make neo play nice with eclim
-    let g:neocomplcache_enable_at_startup = 1
-    if !exists('g:neocomplcache_omni_patterns')
-        let g:neocomplcache_omni_patterns = {}
-    endif
-    let g:neocomplcache_enable_auto_select = 1
-    let g:neocomplcache_omni_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
-    let g:neocomplcache_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
-    let g:neocomplcache_omni_patterns.haxe = '\v([\]''"\)]|\w|(^\s*))(\.|\()'
-    let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+" Bundle 'Shougo/neocomplcache'
+"     let g:EclimCompletionMethod = 'omnifunc' " make neo play nice with eclim
+"     let g:neocomplcache_enable_at_startup = 1
+"     if !exists('g:neocomplcache_omni_patterns')
+"         let g:neocomplcache_omni_patterns = {}
+"     endif
+"     let g:neocomplcache_enable_auto_select = 1
+"     let g:neocomplcache_omni_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+"     let g:neocomplcache_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+"     let g:neocomplcache_omni_patterns.haxe = '\v([\]''"\)]|\w|(^\s*))(\.|\()'
+"     let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 Bundle 'tsaleh/vim-matchit'
 
 
