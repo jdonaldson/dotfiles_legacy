@@ -146,7 +146,7 @@ export JAVA_OPTS=-Xmx2500m
 shopt -s histappend
 
 # powerline
-if [ -f ~/bin/powerline/powerline/bindings/bash/powerline.sh ]; then
-   . ~/bin/powerline/powerline/bindings/bash/powerline.sh
+if [ -f ~/.vim/bundle/powerline/powerline/bindings/bash/powerline.sh ]; then
+   .  ~/.vim/bundle/powerline/powerline/bindings/bash/powerline.sh
 fi
 
