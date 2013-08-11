@@ -98,7 +98,7 @@ Bundle 'goldfeld/vim-seek'
 Bundle 'cakebaker/scss-syntax.vim'
 " Bundle 'garbas/vim-snipmate'
 Bundle 'pangloss/vim-javascript'
-Bundle 'UltiSnips'
+Bundle 'SirVer/ultisnips' 
     let g:UltiSnipsSnippetDirectories=["bundle/UltiSnips/UltiSnips", "bundle/vaxe/ultisnips", "bundle/vim-aura/ultisnips"]
     let g:UltiSnipsExpandTrigger="<c-j>"
     let g:UltiSnipsJumpForwardTrigger="<c-j>"
@@ -112,8 +112,9 @@ Bundle 'mileszs/ack.vim'
     " let g:ackprg="ack --with-filename --ignore-case --all --nocolor --nogroup --follow --column"
 Bundle 'jdonaldson/vaxe'
     " let g:vaxe_cache_server_enable = 1
-    let g:vaxe_default_parent_search_patterns = ["project.xml", "*.nmml", "*.hxml"]
+    let g:vaxe_default_parent_search_patterns = ["project.xml", "*.nmml", "build.hxml"]
     let g:vaxe_haxe_version = 3
+    let g:vaxe_completion_write_compiler_output = 1
     map <Leader>oh :call vaxe#OpenHxml()<CR>
     map <Leader>ct :call vaxe#Ctags()<CR>
     map <Leader>ic :call vaxe#ImportClass()<CR>
@@ -123,10 +124,20 @@ Bundle 'jdonaldson/vaxe'
 "     if g:fancy_term
 "         let g:Powerline_symbols = 'fancy'
     " endif
-Bundle 'Lokaltog/powerline', {'rtp':'powerline/bindings/vim'}
-    set laststatus=2
-Bundle 'jdonaldson/linepower.vim'
+" Bundle 'Lokaltog/powerline', {'rtp':'powerline/bindings/vim'}
+"     set laststatus=2
+" Bundle 'jdonaldson/linepower.vim'
 "Bundle 'fholgado/minibufexpl.vim'
+Bundle 'jdonaldson/vim-airline'
+    let g:airline_detect_whitespace=2 "icon only
+    let g:airline_powerline_fonts = 1
+    let g:airline_left_sep = ''
+    let g:airline_left_alt_sep = ''
+    let g:airline_right_sep = ''
+    let g:airline_right_alt_sep = ''
+    let g:airline_branch_prefix = ' '
+    let g:airline_readonly_symbol = ''
+    let g:airline_linecolumn_prefix = ' '
 "map <Leader>b :MiniBufExplorer<cr>
 "let g:miniBufExplMapWindowNavVim = 1
 "let g:miniBufExplMapWindowNavArrows = 1
@@ -141,7 +152,7 @@ Bundle 'kien/ctrlp.vim'
         let g:ctrlp_working_path_mode = ''
         let g:ctrlp_use_caching=1
         let g:ctrlp_clear_cache_on_exit=0
-        let g:ctrlp_max_files = 0 
+        let g:ctrlp_max_files = 0
     endif
 Bundle 'majutsushi/tagbar'
 " Extending tabar to support markdown (additionally to the ~/.ctags-file!)
