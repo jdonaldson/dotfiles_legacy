@@ -14,6 +14,9 @@ if [ -f $HOME/.privaterc ]; then
 fi
 
 # export HISTSIZE=100000
+export GIT_PS1_SHOWDIRTYSTATE=1
+export GIT_PS1_SHOWSTASHSTATE=1
+export GIT_PS1_SHOWUNTRACKEDFILES=1
 
 # prefer usr/local
 export PATH=$HOME/.local/bin:/usr/local/share:/usr/local/bin:/usr/local/sbin:$PATH
@@ -21,8 +24,12 @@ unamestr=`uname`
 export TERM=xterm-256color
 if [[ "$unamestr" == 'Linux' ]]; then
     alias ack="ack-grep"
+    alias gimme="sudo apt-get install"
+    alias isthere="apt-cache search"
 elif [[ "$unamestr" == 'Darwin' ]]; then
     alias vim="mvim -v"
+    alias gimme="brew install"
+    alias isthere="brew search"
     export ANDROID_SDK_ROOT=/usr/local/opt/android-sdk
 
     # export MACOSX_DEPLOYMENT_TARGET=10.8
@@ -40,8 +47,6 @@ elif [[ "$unamestr" == 'Darwin' ]]; then
 fi
 
 alias serve="python -m SimpleHTTPServer 9040"
-alias gimme="sudo apt-get install"
-alias isthere="apt-cache search"
 
 alias munit="haxelib run munit"
 alias mlib="haxelib run mlib"
