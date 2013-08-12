@@ -128,7 +128,8 @@ Bundle 'jdonaldson/vaxe'
 "     set laststatus=2
 " Bundle 'jdonaldson/linepower.vim'
 "Bundle 'fholgado/minibufexpl.vim'
-Bundle 'jdonaldson/vim-airline'
+Bundle 'bling/vim-airline'
+    let g:airline_theme = "solarized"
     let g:airline_detect_whitespace=2 "icon only
     let g:airline_powerline_fonts = 1
     let g:airline_left_sep = ''
