@@ -31,7 +31,7 @@ Bundle 'gmarik/vundle'
 "     let g:session_autoload = 'yes'
 " original repos on github
 " Bundle 'vim-scripts/YankRing.vim'
-if executable("p4")
+if executable("p4") && getcwd() =~ "blt"
     Bundle 'vim-scripts/perforce'
 endif
 Bundle 'vim-scripts/genutils'
