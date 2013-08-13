@@ -21,8 +21,12 @@ unamestr=`uname`
 export TERM=xterm-256color
 if [[ "$unamestr" == 'Linux' ]]; then
     alias ack="ack-grep"
+    alias gimme="sudo apt-get install"
+    alias isthere="apt-cache search"
 elif [[ "$unamestr" == 'Darwin' ]]; then
     alias vim="mvim -v"
+    alias gimme="brew install"
+    alias isthere="brew search"
     export ANDROID_SDK_ROOT=/usr/local/opt/android-sdk
 
     # export MACOSX_DEPLOYMENT_TARGET=10.8
@@ -40,8 +44,6 @@ elif [[ "$unamestr" == 'Darwin' ]]; then
 fi
 
 alias serve="python -m SimpleHTTPServer 9040"
-alias gimme="sudo apt-get install"
-alias isthere="apt-cache search"
 
 alias munit="haxelib run munit"
 alias mlib="haxelib run mlib"
@@ -50,7 +52,7 @@ alias mlib="haxelib run mlib"
 
 # virtualenv
 export PATH=$HOME/.venv_bootstrap/bin:$PATH
-# export WORKON_HOME=$HOME/.virtualenvs
+export WORKON_HOME=$HOME/.virtualenvs
 source virtualenvwrapper_lazy.sh
 
 # django
@@ -141,7 +143,7 @@ export JAVA_OPTS=-Xmx2500m
 shopt -s histappend
 
 # powerline
-if [ -f ~/bin/powerline/powerline/bindings/bash/powerline.sh ]; then
-   . ~/bin/powerline/powerline/bindings/bash/powerline.sh
+if [ -f ~/.vim/bundle/powerline/powerline/bindings/bash/powerline.sh ]; then
+   .  ~/.vim/bundle/powerline/powerline/bindings/bash/powerline.sh
 fi
 
