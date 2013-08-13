@@ -14,6 +14,9 @@ if [ -f $HOME/.privaterc ]; then
 fi
 
 # export HISTSIZE=100000
+export GIT_PS1_SHOWDIRTYSTATE=1
+export GIT_PS1_SHOWSTASHSTATE=1
+export GIT_PS1_SHOWUNTRACKEDFILES=1
 
 # prefer usr/local
 export PATH=$HOME/.local/bin:/usr/local/share:/usr/local/bin:/usr/local/sbin:$PATH
@@ -24,7 +27,7 @@ if [[ "$unamestr" == 'Linux' ]]; then
     alias gimme="sudo apt-get install"
     alias isthere="apt-cache search"
 elif [[ "$unamestr" == 'Darwin' ]]; then
-    alias vim="mvim -v"
+    # alias vim="mvim -v"
     alias gimme="brew install"
     alias isthere="brew search"
     export ANDROID_SDK_ROOT=/usr/local/opt/android-sdk
