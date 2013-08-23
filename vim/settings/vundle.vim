@@ -13,7 +13,7 @@ if hostname == "jdonaldson-wsl"
     Bundle 'vim-aura'
 endif
 Bundle 'elzr/vim-json'
-Bundle 'jdonaldson/vim-cheat'
+Bundle 'jdonaldson/vim-cheat-x-in-y'
 Bundle 'csscomb/CSScomb-for-Vim'
 Bundle 'altercation/vim-colors-solarized'
     " solarized options
