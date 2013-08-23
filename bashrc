@@ -28,6 +28,9 @@ if [[ "$unamestr" == 'Linux' ]]; then
     alias isthere="apt-cache search"
 elif [[ "$unamestr" == 'Darwin' ]]; then
     # alias vim="mvim -v"
+    if [ -f `brew --prefix`/etc/profile.d/z.sh ]; then
+       . `brew --prefix`/etc/profile.d/z.sh
+    fi
     alias gimme="brew install"
     alias isthere="brew search"
     export ANDROID_SDK_ROOT=/usr/local/opt/android-sdk
