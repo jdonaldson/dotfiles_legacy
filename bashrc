@@ -58,7 +58,7 @@ alias mlib="haxelib run mlib"
 
 # virtualenv
 export PATH=$HOME/.venv_bootstrap/bin:$PATH
-# export WORKON_HOME=$HOME/.virtualenvs
+export WORKON_HOME=$HOME/.virtualenvs
 source virtualenvwrapper_lazy.sh
 
 # django
