@@ -90,34 +90,9 @@ alias cdp="cd -P"
 alias ssh='ssh -X'
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-export HAXE_LIBRARY_PATH=/usr/lib/haxe/std:.
 
-export OLD_PATH=$PATH
-if [ -z "$NEKOPATH" ]; then
-    export OLD_NEKOPATH=$NEKOPATH
-fi
-export HAXE_NIGHTLY_PATH=$HOME/bin/haxe_nightly/haxe
-export NEKO_2_PATH=$HOME/bin/neko-2.0.0-osx
-export USE_HAXE_NIGHTLY_PATH=false
-hxn(){
-    if  $USE_HAXE_NIGHTLY_PATH; then
-        echo "Changing to Haxe stable version"
-        export HAXE_STD_PATH=$OLD_HAXE_STD
-        export PATH=$OLD_PATH
-        export NEKOPATH=$OLD_NEKOPATH
-        export USE_HAXE_NIGHTLY_PATH=false
-    else
-        echo "Changing to Haxe nightly at: $HAXE_NIGHTLY_PATH"
-        echo "Changing to Neko 2 at: $NEKO_2_PATH"
-        export OLD_HAXE_STD=$HAXE_STD_PATH
-        export HAXE_STD_PATH=$HAXE_NIGHTLY_PATH/std:.
-        export OLD_PATH=$PATH
-        export OLD_NEKOPATH=$NEKOPATH
-        export PATH=$HAXE_NIGHTLY_PATH:$NEKO_2_PATH:$PATH
-        export NEKOPATH=$NEKO_2_PATH
-        export USE_HAXE_NIGHTLY_PATH=true
-    fi
-}
+export HAXE_STD_PATH="/usr/local/lib/haxe/std"
+
 # android
 #export ANDROID_SDK_ROOT=/usr/local/opt/android-sdk
 #export ANDROID_HOME=`brew --prefix android`
