@@ -61,7 +61,8 @@ Bundle 'kien/ctrlp.vim'
         let g:ctrlp_max_files = 0
     endif
 Bundle 'mileszs/ack.vim'
-    nnoremap <Leader>a :Ack<space>
+    " nnoremap <Leader>a :Ack<space>
+    map <c-@> :Ack<space>
     " use silver searcher instead of ack:
     let g:ackprg = 'ag --follow --nogroup --nocolor --column'
 
