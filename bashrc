@@ -26,10 +26,14 @@ if [[ "$unamestr" == 'Linux' ]]; then
     alias ack="ack-grep"
     alias gimme="sudo apt-get install"
     alias isthere="apt-cache search"
+    alias updateme="sudo apt-get update"
+    alias upgrademe="sudo apt-get upgrade"
 elif [[ "$unamestr" == 'Darwin' ]]; then
     # alias vim="mvim -v"
     alias gimme="brew install"
     alias isthere="brew search"
+    alias updateme="brew update"
+    alias upgrademe="brew upgrade"
     export ANDROID_SDK_ROOT=/usr/local/opt/android-sdk
 
     # export MACOSX_DEPLOYMENT_TARGET=10.8

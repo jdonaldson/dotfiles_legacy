@@ -39,12 +39,11 @@ set encoding=utf-8
 set nocompatible
 set number        " show line numbers
 set nowrap        " don't wrap lines
-set tabstop=4     " a tab is eight spaces
-" set tabstop=8     " a tab is eight spaces
-" set shiftwidth=4  " number of spaces to use for autoindenting
-" set expandtab     " expand tabs to spaces
+set ts=4     " a tab is four spaces
+set sts=4
+set sw=4
 set copyindent    " copy the previous indentation on autoindenting
-set nosmartindent
+set smartindent
 set cindent       " useful for python
 set number        " always show line numbers
 set shiftround    " use multiple of shiftwidth when indenting with '<' and '>'
