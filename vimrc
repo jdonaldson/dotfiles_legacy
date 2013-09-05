@@ -42,6 +42,7 @@ set nowrap        " don't wrap lines
 set ts=4     " a tab is four spaces
 set sts=4
 set sw=4
+set expandtab " expand tabs to spaces
 set copyindent    " copy the previous indentation on autoindenting
 set smartindent
 set cindent       " useful for python
