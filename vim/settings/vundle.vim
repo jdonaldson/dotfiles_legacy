@@ -89,6 +89,7 @@ Bundle 'majutsushi/tagbar'
             \ 'k:Heading_L3'
         \ ]
     \ }
+Bundle 'Lokaltog/powerline'
 Bundle 'Align'
 Bundle 'jdonaldson/vim-cheat-x-in-y'
 Bundle 'SirVer/ultisnips'
@@ -129,10 +130,11 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'tyru/open-browser.vim'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'tsaleh/vim-matchit'
-Bundle 'Gundo'
+Bundle 'sjl/gundo.vim'
     map <Leader>z :GundoToggle<CR>
-Bundle 'The-NERD-tree'
+Bundle 'scrooloose/nerdtree'
 Bundle 'closetag.vim'
+Bundle 'christoomey/vim-tmux-navigator'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Bundles that provide vimscript libraries for other bundles
