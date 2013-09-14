@@ -13,21 +13,36 @@ if [ -f $HOME/.privaterc ]; then
    source $HOME/.privaterc
 fi
 
+
 # export HISTSIZE=100000
 export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_PS1_SHOWSTASHSTATE=1
 export GIT_PS1_SHOWUNTRACKEDFILES=1
 
+
+
 # prefer usr/local
-export PATH=$HOME/.local/bin:/usr/local/share:/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=/usr/local/share:/usr/local/bin:/usr/local/sbin:$PATH
 unamestr=`uname`
 export TERM=xterm-256color
+
 if [[ "$unamestr" == 'Linux' ]]; then
     alias ack="ack-grep"
     alias gimme="sudo apt-get install"
     alias isthere="apt-cache search"
     alias updateme="sudo apt-get update"
     alias upgrademe="sudo apt-get upgrade"
+
+    # if I have a local pip install, add it to path
+    if [ -d "$HOME/.local/bin" ]; then
+        PATH="$HOME/.local/bin:$PATH"
+    fi
+
+    if [ -f ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh ]; then
+        source ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
+    fi
+
+
 elif [[ "$unamestr" == 'Darwin' ]]; then
     # alias vim="mvim -v"
     if [ -f `brew --prefix`/etc/profile.d/z.sh ]; then
@@ -51,6 +66,16 @@ elif [[ "$unamestr" == 'Darwin' ]]; then
     # aws/ec2 specific tools
     # export JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Home"
     export EC2_HOME="/usr/local/Cellar/ec2-api-tools/1.3-62308/jars"
+
+    # if I have a local pip install, add it to path
+    if [ -d "$HOME/Library/Python/2.7/bin" ]; then
+        PATH="$HOME/Library/Python/2.7/bin:$PATH"
+    fi
+
+    if [ -f "/Library/Python/2.7/site-packages/powerline/bindings/bash/powerline.sh" ] && [ -n "$TMUX"  ]; then
+        source "/Library/Python/2.7/site-packages/powerline/bindings/bash/powerline.sh"
+    fi
+
 fi
 
 alias serve="python -m SimpleHTTPServer 9040"
@@ -61,22 +86,9 @@ alias mlib="haxelib run mlib"
 
 
 # virtualenv
-export PATH=$HOME/.venv_bootstrap/bin:$PATH
-export WORKON_HOME=$HOME/.virtualenvs
-source virtualenvwrapper_lazy.sh
-
-# django
-function setdsm() {
-    export PYTHONPATH=$PYTHONPATH:$PWD/..
-    export PYTHONPATH=$PYTHONPATH:$PWD
-    if [ -z "$1" ]; then
-        x=${PWD/\/[^\/]*\/}
-        export DJANGO_SETTINGS_MODULE=$x.settings
-    else
-        export DJANGO_SETTINGS_MODULE=$1
-    fi
-    echo "DJANGO_SETTINGS_MODULE set to $DJANGO_SETTINGS_MODULE"
-}
+# export PATH=$HOME/.venv_bootstrap/bin:$PATH
+# export WORKON_HOME=$HOME/.virtualenvs
+# source virtualenvwrapper_lazy.sh
 
 # export CLICOLOR=1
 # export LSCOLORS=GxFxCxDxBxegedabagaced
@@ -127,8 +139,4 @@ export JAVA_OPTS=-Xmx2500m
 # append to history
 shopt -s histappend
 
-# powerline
-if [ -f ~/.vim/bundle/powerline/powerline/bindings/bash/powerline.sh ]; then
-   .  ~/.vim/bundle/powerline/powerline/bindings/bash/powerline.sh
-fi
 
