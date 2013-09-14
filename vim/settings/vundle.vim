@@ -115,7 +115,6 @@ Bundle 'scrooloose/syntastic'
     augroup END
 Bundle 'suan/vim-instant-markdown'
 Bundle 'tpope/vim-commentary'
-    map <c-\> \\\
 " Most of Tim Pope's awesome bundles:
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
