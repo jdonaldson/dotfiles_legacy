@@ -84,6 +84,10 @@ alias serve="python -m SimpleHTTPServer 9040"
 alias munit="haxelib run munit"
 alias mlib="haxelib run mlib"
 
+authme(){ ssh-keygen -t rsa -C "$@"; }
+authmeonserver(){ ssh $@ "echo `cat ~/.ssh/id_rsa.pub` >> ~/.ssh/authorized_keys"; }
+authtoclipboard(){ pbcopy < ~/.ssh/id_rsa.pub; }
+
 
 
 # virtualenv
