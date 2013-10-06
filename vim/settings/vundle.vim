@@ -125,6 +125,7 @@ Bundle 'tpope/vim-sensible'
 Bundle 'tpope/vim-speeddating'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
+Bundle 'tpope/vim-dispatch'
 
 Bundle 'tyru/open-browser.vim'
 Bundle 'Valloric/YouCompleteMe'

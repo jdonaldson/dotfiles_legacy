@@ -73,8 +73,8 @@ elif [[ "$unamestr" == 'Darwin' ]]; then
         PATH="$HOME/Library/Python/2.7/bin:$PATH"
     fi
 
-    if [ -f ~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/bash/powerline.sh ] && [ -n "$TMUX"  ]; then
-        source ~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/bash/powerline.sh
+    if [ -f /Library/Python/2.7/site-packages/powerline/bindings/bash/powerline.sh ] && [ -n "$TMUX"  ]; then
+        source /Library/Python/2.7/site-packages/powerline/bindings/bash/powerline.sh
     fi
 
 fi
