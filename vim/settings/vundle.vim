@@ -139,6 +139,7 @@ Bundle 'christoomey/vim-tmux-navigator'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Bundles that provide vimscript libraries for other bundles
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Bundle 'tomtom/tlib_vim'
 Bundle 'vim-scripts/genutils'
 Bundle 'michalliu/jsoncodecs.vim'
 Bundle 'michalliu/jsruntime.vim'

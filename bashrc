@@ -109,6 +109,7 @@ alias ..='cd ..'
 alias p4_untracked='find . -type f -print0 | xargs -0 p4 fstat >/dev/null'
 alias cdp="cd -P"
 alias ssh='ssh -X'
+alias tnuke="killall tmux"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
