@@ -73,8 +73,8 @@ elif [[ "$unamestr" == 'Darwin' ]]; then
         PATH="$HOME/Library/Python/2.7/bin:$PATH"
     fi
 
-    if [ -f ~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/bash/powerline.sh ] && [ -n "$TMUX"  ]; then
-        source ~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/bash/powerline.sh
+    if [ -f /Library/Python/2.7/site-packages/powerline/bindings/bash/powerline.sh ] && [ -n "$TMUX"  ]; then
+        source /Library/Python/2.7/site-packages/powerline/bindings/bash/powerline.sh
     fi
 
 fi
@@ -109,6 +109,7 @@ alias ..='cd ..'
 alias p4_untracked='find . -type f -print0 | xargs -0 p4 fstat >/dev/null'
 alias cdp="cd -P"
 alias ssh='ssh -X'
+alias tnuke="killall tmux"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 

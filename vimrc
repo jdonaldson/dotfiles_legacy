@@ -122,6 +122,15 @@ function! ExpandDelimited()
     exe "normal :vi{="
 endfunction
 
+call plug#begin()
+
+Plug 'junegunn/seoul256'
+Plug 'junegunn/vim-easy-align'
+" Plug 'user/repo', 'branch_or_tag'
+" Plug 'git@github.com:junegunn/vim-github-dashboard.git'
+" ...
+
+call plug#end()
 
 "GLOBAL AUTOMATIC ACTIONS
 " autosave on lost focus

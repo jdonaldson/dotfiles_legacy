@@ -125,6 +125,7 @@ Bundle 'tpope/vim-sensible'
 Bundle 'tpope/vim-speeddating'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
+Bundle 'tpope/vim-dispatch'
 
 Bundle 'tyru/open-browser.vim'
 Bundle 'Valloric/YouCompleteMe'
@@ -138,6 +139,7 @@ Bundle 'christoomey/vim-tmux-navigator'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Bundles that provide vimscript libraries for other bundles
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Bundle 'tomtom/tlib_vim'
 Bundle 'vim-scripts/genutils'
 Bundle 'michalliu/jsoncodecs.vim'
 Bundle 'michalliu/jsruntime.vim'
