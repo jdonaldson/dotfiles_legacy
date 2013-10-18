@@ -138,6 +138,16 @@ else
     au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 endif
 
+function! ToggleSet(toggle)
+    execute "let x = &".a:toggle
+
+    if x
+        execute "set no".a:toggle
+    else
+        execute "set ".a:toggle
+    endif
+endfunction
+
 function! DoWindowSwap()
     "Mark destination
     let curNum = winnr()
@@ -184,10 +194,16 @@ map <Leader>pc :call ToggleEnablePreview()<CR>
 map <leader>a exe ":Ack "
 
 " All of my 'panels'
-nmap <silent> <leader>q :call ToggleList("Quickfix List", 'c')<CR>
-map <Leader>w :NERDTreeToggle<CR>
-map <Leader>g :TagbarToggle<CR>
 "map <Leader>y :YRShow<CR>
+
+
+
+" Show stuff
+nmap <silent><Leader>sw :call ToggleSet("list")<CR>
+nmap <silent><Leader>sn :NERDTreeToggle<CR>
+nmap <silent><Leader>st :TagbarToggle<CR>
+nmap <silent><Leader>sq :call ToggleList("Quickfix List", 'c')<CR>
+
 
 
 " browser refresh settings

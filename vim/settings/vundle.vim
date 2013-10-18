@@ -98,7 +98,7 @@ Bundle 'SirVer/ultisnips'
     let g:UltiSnipsJumpForwardTrigger="<c-j>"
     let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 "include perforce if I have a p4 client
-if executable("p4") && getcwd() =~ "blt\\|projectone\\|main\\|patch"
+if executable("p4") && getcwd() =~ "blt\\|projectone\\|main\\|patch\\|freeze"
     Bundle 'vim-scripts/perforce'
 endif
 Bundle 'michalliu/sourcebeautify.vim'
