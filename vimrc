@@ -209,6 +209,7 @@ map <leader>a exe ":Ack "
 
 " Show stuff
 nmap <silent><Leader>sw :call ToggleSet("list")<CR>
+nmap <silent><Leader>sh :call ToggleSet("hlsearch")<CR>
 nmap <silent><Leader>sn :NERDTreeToggle<CR>
 nmap <silent><Leader>st :TagbarToggle<CR>
 nmap <silent><Leader>sq :call ToggleList("Quickfix List", 'c')<CR>
