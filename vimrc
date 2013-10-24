@@ -208,6 +208,7 @@ map <leader>a exe ":Ack "
 
 
 " Show stuff
+nmap <silent><Leader>ss :redraw!<CR>
 nmap <silent><Leader>sw :call ToggleSet("list")<CR>
 nmap <silent><Leader>sh :call ToggleSet("hlsearch")<CR>
 nmap <silent><Leader>sn :NERDTreeToggle<CR>
