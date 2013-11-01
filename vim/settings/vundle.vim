@@ -29,7 +29,7 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'elzr/vim-json'
 Bundle 'PProvost/vim-markdown-jekyll'
 Bundle 'ap/vim-css-color'
-Bundle 'csscomb/CSScomb-for-Vim'
+Bundle 'batsuev/csscomb-vim'
 Bundle 'jdonaldson/vaxe'
     let g:vaxe_default_parent_search_patterns = ["project.xml", "*.nmml", "build.hxml"]
     let g:vaxe_haxe_version = 3
