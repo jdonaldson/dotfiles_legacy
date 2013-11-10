@@ -95,8 +95,8 @@ nnoremap <Leader>f$ :%s/\s\+$//<CR>:let @/=''<CR>
 nnoremap <Leader>fl :normal gqq==<CR>
 vnoremap <Leader>fl :normal gvgqgv=<CR>
 " fix operator/type declaration spacing (single space each side) on line
-nnoremap <Leader>ml :call ExpandDelimited()<CR>
-vnoremap <Leader>ml :call ExpandDelimited()<CR>
+nnoremap <Leader>fd :call ExpandDelimited()<CR>
+vnoremap <Leader>fd :call ExpandDelimited()<CR>
 
 "autocmd BufNewFile,BufRead *.hx set formatprg=astyle\ --style=java\ -A2p
 autocmd BufNewFile,BufRead *.hx setlocal formatprg=uncrustify\ -l\ cs\ --no-backup\ 2>/dev/null
@@ -111,8 +111,6 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 :autocmd BufNewFile,BufRead *.md set tw=80
 
-nnoremap <Leader>e :make run<CR>
-
 function! ExpandDelimited()
     " new line after opening paren/bracket
     :s/{/{\r/e
@@ -121,16 +119,6 @@ function! ExpandDelimited()
     exe "normal :vi[="
     exe "normal :vi{="
 endfunction
-
-call plug#begin()
-
-Plug 'junegunn/seoul256'
-Plug 'junegunn/vim-easy-align'
-" Plug 'user/repo', 'branch_or_tag'
-" Plug 'git@github.com:junegunn/vim-github-dashboard.git'
-" ...
-
-call plug#end()
 
 "GLOBAL AUTOMATIC ACTIONS
 " autosave on lost focus
@@ -158,13 +146,18 @@ function! ToggleSet(toggle)
 endfunction
 
 function! DoWindowSwap()
+    "If window is already leftmost, or the buftype is 'special', ignore it.
+    if winnr() == 1 || &buftype != ''
+        return
+    endif
+
     "Mark destination
     let curNum = winnr()
     let curBuf = bufnr( "%" )
     let targetWin =  1
     exe targetWin."wincmd w"
     let foo = 0
-    while winwidth('%') < 5 || winheight('%') < 5 || targetWin > bufnr("$")
+    while winwidth('%') < 5 || winheight('%') < 5 || targetWin > bufnr("$") || &buftype != ''
         let targetWin = targetWin + 1
         exe targetWin."wincmd w"
     endwhile
@@ -180,13 +173,16 @@ function! DoWindowSwap()
     exe targetWin."wincmd w"
 endfunction
 
-" nmap <silent> <expr><CR> winnr() != 1 && &buftype =='' ? ":call DoWindowSwap()\<CR>" : "\<CR>"
+
+" swaps the current window with the left-most window
+nmap <silent> <expr><CR> ":call DoWindowSwap()\<CR>"
 nmap <silent> <tab> :wincmd w<CR>
 
 " MISC KEY MAPPING
 
 " force write a file
 cmap w!! w !sudo tee % >/dev/null
+
 " insert a newline  below in normal mode
 nnoremap <C-J> hmao<esc>`a
 
@@ -207,18 +203,16 @@ map <leader>a exe ":Ack "
 
 
 
-" Show stuff
+" Show stuff: <Leader>s + letter
+" refresh screen
 nmap <silent><Leader>ss :redraw!<CR>
+" Show whitespace characters
 nmap <silent><Leader>sw :call ToggleSet("list")<CR>
+" show highlights from last search
 nmap <silent><Leader>sh :call ToggleSet("hlsearch")<CR>
-nmap <silent><Leader>sn :NERDTreeToggle<CR>
-nmap <silent><Leader>st :TagbarToggle<CR>
+" show the quickfix window
 nmap <silent><Leader>sq :call ToggleList("Quickfix List", 'c')<CR>
 
-
-
-" browser refresh settings
-let g:RefreshRunningBrowserDefault = 'chrome'
 
 " echo current syntax scope
 map <Leader>syn :echo "hi<" . synIDattr(synID(line("."), col("."), 1), "name")
