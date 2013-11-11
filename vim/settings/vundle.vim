@@ -29,7 +29,7 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'elzr/vim-json'
 Bundle 'PProvost/vim-markdown-jekyll'
 Bundle 'ap/vim-css-color'
-Bundle 'csscomb/CSScomb-for-Vim'
+Bundle 'batsuev/csscomb-vim'
 Bundle 'jdonaldson/vaxe'
     let g:vaxe_default_parent_search_patterns = ["project.xml", "*.nmml", "build.hxml"]
     let g:vaxe_haxe_version = 3
@@ -80,15 +80,16 @@ Bundle 'bling/vim-airline'
     let g:airline_readonly_symbol = ''
     let g:airline_linecolumn_prefix = ' '
 Bundle 'majutsushi/tagbar'
-" Extending tabar to support markdown (additionally to the ~/.ctags-file!)
-    let g:tagbar_type_markdown = {
-        \ 'ctagstype' : 'markdown',
-        \ 'kinds' : [
-            \ 'h:Heading_L1',
-            \ 'i:Heading_L2',
-            \ 'k:Heading_L3'
-        \ ]
-    \ }
+    nmap <silent><Leader>st :TagbarToggle<CR>
+    " Extending tabar to support markdown (additionally to the ~/.ctags-file!)
+        let g:tagbar_type_markdown = {
+            \ 'ctagstype' : 'markdown',
+            \ 'kinds' : [
+                \ 'h:Heading_L1',
+                \ 'i:Heading_L2',
+                \ 'k:Heading_L3'
+            \ ]
+        \ }
 Bundle 'Lokaltog/powerline'
 Bundle 'Align'
 Bundle 'jdonaldson/vim-cheat-x-in-y'
@@ -103,6 +104,8 @@ if executable("p4") && getcwd() =~ "blt\\|projectone\\|main\\|patch\\|freeze"
 endif
 Bundle 'michalliu/sourcebeautify.vim'
 Bundle 'mkitt/browser-refresh.vim'
+    " browser refresh settings
+    let g:RefreshRunningBrowserDefault = 'chrome'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'scrooloose/syntastic'
     let g:syntastic_javascript_syntax_checker="gjslint"
@@ -126,13 +129,15 @@ Bundle 'tpope/vim-speeddating'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tpope/vim-dispatch'
-
+    map <Leader>dm :Make<CR>
+    
 Bundle 'tyru/open-browser.vim'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'tsaleh/vim-matchit'
 Bundle 'sjl/gundo.vim'
-    map <Leader>z :GundoToggle<CR>
+    map <Leader>su :GundoToggle<CR>
 Bundle 'scrooloose/nerdtree'
+    nmap <silent><Leader>sn :NERDTreeToggle<CR>
 Bundle 'closetag.vim'
 Bundle 'christoomey/vim-tmux-navigator'
 

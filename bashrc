@@ -115,7 +115,7 @@ alias tnuke="killall tmux"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
-export HAXE_STD_PATH="/usr/local/lib/haxe/std"
+# export HAXE_STD_PATH="/usr/local/lib/haxe/std"
 
 # android
 #export ANDROID_SDK_ROOT=/usr/local/opt/android-sdk
