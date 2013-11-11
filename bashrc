@@ -33,6 +33,8 @@ if [[ "$unamestr" == 'Linux' ]]; then
     alias updateme="sudo apt-get update"
     alias upgrademe="sudo apt-get upgrade"
 
+    alias jslint='~/.npm/jslint/0.2.0/package/bin/jslint.js'
+
     # if I have a local pip install, add it to path
     if [ -d "$HOME/.local/bin" ]; then
         PATH="$HOME/.local/bin:$PATH"
@@ -69,9 +71,9 @@ elif [[ "$unamestr" == 'Darwin' ]]; then
     export EC2_HOME="/usr/local/Cellar/ec2-api-tools/1.3-62308/jars"
 
     # if I have a local pip install, add it to path
-    if [ -d "$HOME/Library/Python/2.7/bin" ]; then
-        PATH="$HOME/Library/Python/2.7/bin:$PATH"
-    fi
+    # if [ -d "$HOME/Library/Python/2.7/bin" ]; then
+    #     PATH="$HOME/Library/Python/2.7/bin:$PATH"
+    # fi
 
     if [ -f /Library/Python/2.7/site-packages/powerline/bindings/bash/powerline.sh ] && [ -n "$TMUX"  ]; then
         source /Library/Python/2.7/site-packages/powerline/bindings/bash/powerline.sh
