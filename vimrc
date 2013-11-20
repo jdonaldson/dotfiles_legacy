@@ -126,7 +126,7 @@ au FocusLost * :wa
 " tab through buffers in normal mode
 map <silent> <S-TAB> <C-W>W
 
-nmap <expr><silent> q winnr() != 1 ? ":q\<CR>" : "q"
+" nmap <expr><silent> q winnr() != 1 ? ":q\<CR>" : "q"
 
 if exists('+colorcolumn')
   set colorcolumn=80
@@ -145,8 +145,8 @@ function! ToggleSet(toggle)
 endfunction
 
 function! DoWindowSwap()
-    "If window is already leftmost, or the buftype is 'special', ignore it.
-    if winnr() == 1 || &buftype != ''
+    "If window is already leftmost, ignore it
+    if winnr() == 1
         return
     endif
 
@@ -174,7 +174,7 @@ endfunction
 
 
 " swaps the current window with the left-most window
-nmap <silent> <expr><CR> ":call DoWindowSwap()\<CR>"
+nmap <silent> <expr><CR> &buftype == '' ?  ":call DoWindowSwap()\<CR>" : "\<CR>"
 nmap <silent> <tab> :wincmd w<CR>
 
 " MISC KEY MAPPING
