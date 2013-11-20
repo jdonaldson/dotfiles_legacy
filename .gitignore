@@ -1,6 +1,7 @@
 .DS_Store
 vim/bundle/*
 vim/viminfo*
+vim/viminfz.tmp
 eclim*
 .netrwhist
 
