@@ -70,13 +70,8 @@ elif [[ "$unamestr" == 'Darwin' ]]; then
     # export JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Home"
     export EC2_HOME="/usr/local/Cellar/ec2-api-tools/1.3-62308/jars"
 
-    # if I have a local pip install, add it to path
-    # if [ -d "$HOME/Library/Python/2.7/bin" ]; then
-    #     PATH="$HOME/Library/Python/2.7/bin:$PATH"
-    # fi
-
-    if [ -f /Library/Python/2.7/site-packages/powerline/bindings/bash/powerline.sh ] && [ -n "$TMUX"  ]; then
-        source /Library/Python/2.7/site-packages/powerline/bindings/bash/powerline.sh
+    if [ -f /usr/local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh ] && [ -n "$TMUX"  ]; then
+        source /usr/local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
     fi
 
 fi
