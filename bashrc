@@ -73,6 +73,7 @@ elif [[ "$unamestr" == 'Darwin' ]]; then
     if [ -f /usr/local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh ] && [ -n "$TMUX"  ]; then
         source /usr/local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
     fi
+    alias xchrome="open '/Applications/Google Chrome.app' --new --args -allow-file-access-from-files"
 
 fi
 
