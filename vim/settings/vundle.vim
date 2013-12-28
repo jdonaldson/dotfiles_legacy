@@ -51,7 +51,7 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle 'goldfeld/vim-seek'
 Bundle 'kien/ctrlp.vim'
     let g:ctrlp_follow_symlinks = 2
-    let g:ctrlp_custom_ignore = '\v(build|test|htdocs|apex|conf|class)\/'
+    let g:ctrlp_custom_ignore = '\v(build|bin|test|htdocs|apex|conf|class)\/'
     let g:ctrlp_user_command = 'find %s -type f -follow'
     if len(argv())==0 || argv()[0] == '.'
         " If I open a directory, assume I want to hard set a working path
