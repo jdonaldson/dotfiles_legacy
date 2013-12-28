@@ -26,6 +26,8 @@ export PATH=/usr/local/share:/usr/local/bin:/usr/local/sbin:$PATH
 unamestr=`uname`
 export TERM=xterm-256color
 
+export PGDATA=/usr/local/var/postgres
+
 if [[ "$unamestr" == 'Linux' ]]; then
     alias ack="ack-grep"
     alias gimme="sudo apt-get install"
@@ -110,6 +112,9 @@ alias ssh='ssh -X'
 alias tnuke="killall tmux"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+# add dotfile util bin directory
+export PATH=~/.dotfiles/bin:$PATH
 
 # export HAXE_STD_PATH="/usr/local/lib/haxe/std"
 
