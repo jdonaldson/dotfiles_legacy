@@ -144,6 +144,17 @@ function! ToggleSet(toggle)
     endif
 endfunction
 
+function! ToggleSetValue(toggle, value)
+    let toggle_saved_varname = "g:_toggle_saved_" . a:toggle
+    if exists(toggle_saved_varname)
+        execute "set "   . a:toggle . " = " . toggle_saved_varname
+        execute "unlet " . toggle_saved_varname
+    else
+        execute "let " . toggle_saved_varname . " = " . a:toggle
+        execute "set " . a:toggle . "="  a.value
+    endif
+endfunction
+
 function! DoWindowSwap()
     "If window is already leftmost, ignore it
     if winnr() == 1
@@ -205,12 +216,14 @@ map <leader>a exe ":Ack "
 " Show stuff: <Leader>s + letter
 " refresh screen
 nmap <silent><Leader>ss :redraw!<CR>
-" Show whitespace characters
+" Show/hide whitespace characters
 nmap <silent><Leader>sw :call ToggleSet("list")<CR>
-" show highlights from last search
+" show/hide highlights from last search
 nmap <silent><Leader>sh :call ToggleSet("hlsearch")<CR>
-" show the quickfix window
+" show/hide the quickfix window
 nmap <silent><Leader>sq :call ToggleList("Quickfix List", 'c')<CR>
+" show/hide the foldcolumn
+nmap <silent><Leader>sl :call ToggleSetValue("foldcolumn", 0)<CR>
 
 
 " echo current syntax scope
