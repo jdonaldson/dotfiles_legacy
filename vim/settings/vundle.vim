@@ -94,7 +94,7 @@ Bundle 'Lokaltog/powerline'
 Bundle 'Align'
 Bundle 'jdonaldson/vim-cheat-x-in-y'
 Bundle 'SirVer/ultisnips'
-    let g:UltiSnipsSnippetDirectories=["bundle/UltiSnips/UltiSnips", "bundle/vaxe/ultisnips", "bundle/vim-aura/ultisnips"]
+    let g:UltiSnipsSnippetDirectories=["UltiSnips", "bundle/UltiSnips/UltiSnips", "bundle/vaxe/ultisnips", "bundle/vim-aura/ultisnips"]
     let g:UltiSnipsExpandTrigger="<c-j>"
     let g:UltiSnipsJumpForwardTrigger="<c-j>"
     let g:UltiSnipsJumpBackwardTrigger="<c-k>"

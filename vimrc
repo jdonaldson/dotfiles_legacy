@@ -27,7 +27,6 @@ call vundle#rc(root)
 
 " Vundle configs are stored in a separate file, source it.
 source ~/.vim/settings/vundle.vim
-nmap <Leader>vu :e ~/.vim/settings/vundle.vim<CR>
 
 
 
@@ -219,11 +218,15 @@ nmap <silent><Leader>ss :redraw!<CR>
 " Show/hide whitespace characters
 nmap <silent><Leader>sw :call ToggleSet("list")<CR>
 " show/hide highlights from last search
-nmap <silent><Leader>sh :call ToggleSet("hlsearch")<CR>
+nmap <silent><Leader>sh :nohlsearch<CR>
 " show/hide the quickfix window
 nmap <silent><Leader>sq :call ToggleList("Quickfix List", 'c')<CR>
 " show/hide the foldcolumn
 nmap <silent><Leader>sl :call ToggleSetValue("foldcolumn", 0)<CR>
+" Show the vundle list
+nmap <silent><Leader>sv :e ~/.vim/settings/vundle.vim<CR>
+" Show my personal ultisnips directory
+nmap <silent><Leader>sp :e ~/.vim/UltiSnips<CR>
 
 
 " echo current syntax scope
