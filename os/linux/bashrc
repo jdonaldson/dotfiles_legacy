@@ -1,0 +1,17 @@
+alias ack="ack-grep"
+alias gimme="sudo apt-get install"
+alias isthere="apt-cache search"
+alias updateme="sudo apt-get update"
+alias upgrademe="sudo apt-get upgrade"
+
+alias jslint='~/.npm/jslint/0.2.0/package/bin/jslint.js'
+
+# if I have a local pip install, add it to path
+if [ -d "$HOME/.local/bin" ]; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+
+if [ -f ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh ]; then
+    source ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
+fi
+source ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
