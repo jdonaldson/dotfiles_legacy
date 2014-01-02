@@ -150,7 +150,7 @@ function! ToggleSetValue(toggle, value)
         execute "unlet " . toggle_saved_varname
     else
         execute "let " . toggle_saved_varname . " = " . a:toggle
-        execute "set " . a:toggle . "="  a.value
+        execute "set " . a:toggle . "="  a:value
     endif
 endfunction
 
@@ -212,12 +212,12 @@ map <leader>a exe ":Ack "
 
 
 
-" Show stuff: <Leader>s + letter
+" Show/hide stuff: <Leader>s + letter
 " refresh screen
 nmap <silent><Leader>ss :redraw!<CR>
 " Show/hide whitespace characters
 nmap <silent><Leader>sw :call ToggleSet("list")<CR>
-" show/hide highlights from last search
+" hide highlights from last search
 nmap <silent><Leader>sh :nohlsearch<CR>
 " show/hide the quickfix window
 nmap <silent><Leader>sq :call ToggleList("Quickfix List", 'c')<CR>
@@ -227,6 +227,10 @@ nmap <silent><Leader>sl :call ToggleSetValue("foldcolumn", 0)<CR>
 nmap <silent><Leader>sv :e ~/.vim/settings/vundle.vim<CR>
 " Show my personal ultisnips directory
 nmap <silent><Leader>sp :e ~/.vim/UltiSnips<CR>
+
+"Toggle stuff: <Leader>t + letter
+" toggle paste mode
+nmap <silent><Leader>tp :call ToggleSet("paste")<CR>
 
 
 " echo current syntax scope
