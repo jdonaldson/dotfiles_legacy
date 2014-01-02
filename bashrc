@@ -34,9 +34,9 @@ export TERM=xterm-256color
 export PGDATA=/usr/local/var/postgres
 
 if   [[ "$unamestr" == 'Linux'  ]]; then
-    source ~/os/linux/bashrc
+    source ~/.os/linux/bashrc
 elif [[ "$unamestr" == 'Darwin' ]]; then
-    source ~/os/darwin/bashrc
+    source ~/.os/darwin/bashrc
 fi
 
 alias serve="python -m SimpleHTTPServer 9040"
