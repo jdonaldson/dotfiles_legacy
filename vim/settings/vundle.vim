@@ -24,6 +24,8 @@ Bundle 'altercation/vim-colors-solarized'
 " Bundles that support language-specific tooling and support
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Bundle 'jcfaria/Vim-R-plugin'
+Bundle 'jdonaldson/vim-eco'
+Bundle 'kchmck/vim-coffee-script'
 Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'pangloss/vim-javascript'
 Bundle 'elzr/vim-json'

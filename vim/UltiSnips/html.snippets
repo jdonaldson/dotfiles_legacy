@@ -6,27 +6,27 @@ snippet bootstrap "insert bootstrap js cdn" b
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.js"></script>
 endsnippet
 
-snippet jq "insert jquery cdn" b
+snippet jquery "insert jquery cdn" b
 <script src="//code.jquery.com/jquery-1.9.1.js"></script>
 endsnippet
 
-snippet jqui "insert jquery ui js cdn" b
+snippet jquery "insert jquery ui js cdn" b
 <script src="//code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 endsnippet
 
-snippet jqui "insert jquery ui css cdn" b
-<script src="//code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css"></script>
+snippet jquery "insert jquery ui css cdn" b
+<link href="//code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" rel="stylesheet">
 endsnippet
 
 snippet tocify "insert tocify css cdn" v
-<script src="//cdnjs.bootcss.com/ajax/libs/jquery.tocify/1.7.0/jquery.tocify.css"></script>
+<link href="//cdnjs.bootcss.com/ajax/libs/jquery.tocify/1.7.0/jquery.tocify.css" rel="stylesheet">
 endsnippet
 
 snippet tocify "insert tocify js cdn" v
 <script src="//cdnjs.bootcss.com/ajax/libs/jquery.tocify/1.7.0/jquery.tocify.min.js"></script>
 endsnippet
 
-snippet bstemplate "basic bootstrap cdn template" b
+snippet template "basic bootstrap cdn template" b
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -59,9 +59,8 @@ snippet bstemplate "basic bootstrap cdn template" b
 </html>
 endsnippet
 
-snippet bsheader "bootstrap header" b
+snippet header "bootstrap header" b
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-	<div class="container">
 	<div class="navbar-header">
 		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 		<span class="sr-only">Toggle navigation</span>
@@ -82,7 +81,7 @@ snippet bsheader "bootstrap header" b
 </div>
 endsnippet
 
-snippet bsgrid "bootstrap grid examples" b
+snippet grid "bootstrap grid examples" b
 <h3>Three equal columns</h3>
 <p>Get three equal-width columns <strong>starting at desktops and scaling to large desktops</strong>. On mobile devices, tablets and below, the columns will automatically stack.</p>
 <div class="row">
@@ -187,7 +186,7 @@ snippet bsgrid "bootstrap grid examples" b
 </div>
 endsnippet
 
-snippet bsjumbo "basic bootstrap jumbotron example" b
+snippet jumbo "basic bootstrap jumbotron example" b
 <!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="jumbotron">
 	<div class="container">
@@ -224,7 +223,7 @@ snippet bsjumbo "basic bootstrap jumbotron example" b
 </div> <!-- /container -->
 endsnippet
 
-snippet bssignin "basic bootstrap sign-in" b
+snippet login "basic bootstrap sign-in" b
 <div class="container">
 
 	<form class="form-signin" role="form">
