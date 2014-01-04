@@ -33,7 +33,6 @@ Bundle 'PProvost/vim-markdown-jekyll'
 Bundle 'ap/vim-css-color'
 Bundle 'batsuev/csscomb-vim'
 Bundle 'jdonaldson/vaxe'
-    let g:vaxe_default_parent_search_patterns = ["project.xml", "*.nmml", "build.hxml"]
     let g:vaxe_haxe_version = 3
     let g:vaxe_completion_write_compiler_output = 1
     map <Leader>oh :call vaxe#OpenHxml()<CR>
