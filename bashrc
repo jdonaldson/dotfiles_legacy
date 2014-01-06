@@ -1,14 +1,14 @@
-# auth/creds
-if [ -f $HOME/.auth.sh ]; then
-    source $HOME/.auth.sh
-fi
-
 # company specific config
 if [ -f $HOME/.comrc.sh ]; then
     source $HOME/.comrc.sh
 fi
 
-# private config
+# auth/creds
+if [ -f $HOME/.auth.sh ]; then
+    source $HOME/.auth.sh
+fi
+
+# personal private config
 if [ -f $HOME/.privaterc ]; then
    source $HOME/.privaterc
 fi
@@ -18,9 +18,12 @@ export EMAIL_OBSCURED="jdonaldson[at]gmail[dot]com"
 
 
 # export HISTSIZE=100000
+
+# Git options
 export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_PS1_SHOWSTASHSTATE=1
 export GIT_PS1_SHOWUNTRACKEDFILES=1
+export GIT_EDITOR=vim
 
 
 
@@ -49,7 +52,6 @@ export PATH=$PATH:~/bin
 export CVSEDITOR=vim
 export EDITOR=vim
 export SVN_EDITOR=vim
-export GIT_EDITOR=vim
 
 alias ls='ls -G'
 alias ll='ls -al'
@@ -78,5 +80,4 @@ export JAVA_OPTS=-Xmx2500m
 
 # append to history
 shopt -s histappend
-
 
