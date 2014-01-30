@@ -25,6 +25,7 @@ Bundle 'altercation/vim-colors-solarized'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Bundle 'jcfaria/Vim-R-plugin'
 Bundle 'jdonaldson/vim-eco'
+Bundle 'vim-ruby/vim-ruby'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'pangloss/vim-javascript'
@@ -137,8 +138,12 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'tsaleh/vim-matchit'
 Bundle 'sjl/gundo.vim'
     map <Leader>su :GundoToggle<CR>
+
 Bundle 'scrooloose/nerdtree'
     nmap <silent><Leader>sn :NERDTreeToggle<CR>
+    " Bundle plugin
+    Bundle 'jdonaldson/nerdtree-execute'
+
 Bundle 'closetag.vim'
 Bundle 'christoomey/vim-tmux-navigator'
 
