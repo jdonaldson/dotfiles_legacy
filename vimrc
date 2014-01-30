@@ -28,6 +28,9 @@ call vundle#rc(root)
 " Vundle configs are stored in a separate file, source it.
 source ~/.vim/settings/vundle.vim
 
+" quickly exit insert mode with this combo
+imap jk <Esc>
+
 
 
 
