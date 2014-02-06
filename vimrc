@@ -56,7 +56,6 @@ set wildignore=*.swp,*.bak,*.pyc,*.class,*.sass-cache,*/_site/*
 set title                " change the terminal's title
 set visualbell           " don't beep
 set noerrorbells         " no, seriously, don't beep
-set clipboard=unnamed
 set lazyredraw
 set mouse=a             " use mouse in nvich modes
 set autowrite
