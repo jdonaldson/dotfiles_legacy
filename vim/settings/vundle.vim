@@ -120,16 +120,20 @@ Bundle 'scrooloose/syntastic'
         au BufWinEnter * sign define mysign
         au BufWinEnter * exe "sign place 1337 line=1 name=mysign buffer=" . bufnr('%')
     augroup END
-Bundle 'tpope/vim-commentary'
+
 " Most of Tim Pope's awesome bundles:
+Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
+    Bundle 'jaxbot/github-issues.vim'
+
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-sensible'
 " Bundle 'tpope/vim-sleuth'
 Bundle 'tpope/vim-speeddating'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
+Bundle 'tpope/vim-projectile'
 Bundle 'tpope/vim-dispatch'
     map <Leader>dm :Make<CR>
     
