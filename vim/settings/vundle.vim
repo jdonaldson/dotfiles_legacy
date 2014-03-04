@@ -146,6 +146,7 @@ Bundle 'scrooloose/nerdtree'
 
 Bundle 'closetag.vim'
 Bundle 'christoomey/vim-tmux-navigator'
+Bundle 'gcmt/wildfire.vim'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Bundles that provide vimscript libraries for other bundles
