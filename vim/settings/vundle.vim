@@ -151,6 +151,11 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'closetag.vim'
 Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'kana/vim-fakeclip'
+Bundle 'gcmt/wildfire.vim'
+    au BufEnter,CmdWinEnter * if !empty(&bt) |
+        \ sil! exec "nnoremap <buffer> <CR> <CR>" |
+        \ endif
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Bundles that provide vimscript libraries for other bundles
