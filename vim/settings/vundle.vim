@@ -33,6 +33,8 @@ Bundle 'elzr/vim-json'
 Bundle 'PProvost/vim-markdown-jekyll'
 Bundle 'suan/vim-instant-markdown'
 Bundle 'tpope/vim-markdown'
+Bundle 'jdonaldson/vim-markdown-link-convert'
+    map <Leader>il :call Inline2Ref()<CR>
 Bundle 'ap/vim-css-color'
 Bundle 'batsuev/csscomb-vim'
 Bundle 'jdonaldson/vaxe'
