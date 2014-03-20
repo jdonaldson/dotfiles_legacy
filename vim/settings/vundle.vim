@@ -150,13 +150,9 @@ Bundle 'scrooloose/nerdtree'
 
 Bundle 'closetag.vim'
 Bundle 'christoomey/vim-tmux-navigator'
-<<<<<<< HEAD
 Bundle 'gcmt/wildfire.vim'
-=======
 Bundle 'kana/vim-fakeclip'
 Bundle 'jdonaldson/wildfire.vim'
-
->>>>>>> 8d24ae27d8158ac48baaf2f399800873822d9222
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Bundles that provide vimscript libraries for other bundles
