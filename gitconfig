@@ -20,3 +20,5 @@
 	default = matching
 [github]
 	user = jdonaldson
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
