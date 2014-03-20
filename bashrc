@@ -36,6 +36,7 @@ alias serve="python -m SimpleHTTPServer 9040"
 
 alias munit="haxelib run munit"
 alias mlib="haxelib run mlib"
+export HAXE_STD_PATH="/usr/local/lib/haxe/std"
 
 export PATH=$PATH:~/bin
 export CVSEDITOR=vim
