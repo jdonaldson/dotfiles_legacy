@@ -20,3 +20,8 @@
 	default = matching
 [github]
 	user = jdonaldson
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f

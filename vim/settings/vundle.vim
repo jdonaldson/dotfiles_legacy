@@ -33,6 +33,8 @@ Bundle 'elzr/vim-json'
 Bundle 'PProvost/vim-markdown-jekyll'
 Bundle 'suan/vim-instant-markdown'
 Bundle 'tpope/vim-markdown'
+Bundle 'jdonaldson/vim-markdown-link-convert'
+    map <Leader>il :call Inline2Ref()<CR>
 Bundle 'ap/vim-css-color'
 Bundle 'batsuev/csscomb-vim'
 Bundle 'jdonaldson/vaxe'
@@ -120,16 +122,20 @@ Bundle 'scrooloose/syntastic'
         au BufWinEnter * sign define mysign
         au BufWinEnter * exe "sign place 1337 line=1 name=mysign buffer=" . bufnr('%')
     augroup END
-Bundle 'tpope/vim-commentary'
+
 " Most of Tim Pope's awesome bundles:
+Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
+    Bundle 'jaxbot/github-issues.vim'
+
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-sensible'
 " Bundle 'tpope/vim-sleuth'
 Bundle 'tpope/vim-speeddating'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
+Bundle 'tpope/vim-projectile'
 Bundle 'tpope/vim-dispatch'
     map <Leader>dm :Make<CR>
     
@@ -146,7 +152,9 @@ Bundle 'scrooloose/nerdtree'
 
 Bundle 'closetag.vim'
 Bundle 'christoomey/vim-tmux-navigator'
+Bundle 'gcmt/wildfire.vim'
 Bundle 'kana/vim-fakeclip'
+Bundle 'jdonaldson/wildfire.vim'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Bundles that provide vimscript libraries for other bundles

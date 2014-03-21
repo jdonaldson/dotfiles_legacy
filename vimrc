@@ -74,11 +74,9 @@ syntax on         " syntax highlighting, natch
 
 " better completion popup options
 " highlight Pmenu ctermbg=238 gui=bold
-set completeopt=menuone
 
 "splits!
 set splitright
-set splitbelow
 
 autocmd BufEnter Makefile set noexpandtab | set tabstop=4
 
