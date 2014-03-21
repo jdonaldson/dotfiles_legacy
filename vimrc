@@ -123,7 +123,7 @@ endfunction
 au FocusLost * :wa
 
 " tab through buffers in normal mode
-map <silent> <S-TAB> <C-W>W
+" map <silent> <S-TAB> <C-W>W
 
 " nmap <expr><silent> q winnr() != 1 ? ":q\<CR>" : "q"
 
@@ -193,7 +193,7 @@ nmap <silent> <tab> :wincmd w<CR>
 cmap w!! w !sudo tee % >/dev/null
 
 " insert a newline  below in normal mode
-nnoremap <C-J> hmao<esc>`a
+" nnoremap <C-J> hmao<esc>`a
 
 
 " execute the current line as a shell command, insert
