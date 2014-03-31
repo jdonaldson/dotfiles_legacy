@@ -138,6 +138,9 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'tpope/vim-projectile'
 Bundle 'tpope/vim-dispatch'
     map <Leader>dm :Make<CR>
+    " Use dispatch to execute the current line as a shell command, insert
+    " results below the line
+    nnoremap <Leader>r :exe ':Dispatch '.getline('.') <CR>
     
 Bundle 'tyru/open-browser.vim'
 Bundle 'Valloric/YouCompleteMe'

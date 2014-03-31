@@ -66,6 +66,8 @@ set smartcase
 set gdefault
 set hlsearch
 
+set clipboard+=unnamed
+
 " Experimental
 set nrformats=octal,hex,alpha " increment letters in addition to numbers
 
@@ -192,11 +194,6 @@ cmap w!! w !sudo tee % >/dev/null
 
 " insert a newline  below in normal mode
 nnoremap <C-J> hmao<esc>`a
-
-
-" execute the current line as a shell command, insert
-" results below the line
-nnoremap <Leader>r :exe ':r ! '.getline('.') <CR>
 
 " stamp paste with capital S
 nnoremap S "_diwP"
