@@ -138,6 +138,9 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'tpope/vim-projectile'
 Bundle 'tpope/vim-dispatch'
     map <Leader>dm :Make<CR>
+    " Use dispatch to execute the current line as a shell command, insert
+    " results below the line
+    nnoremap <Leader>r :exe ':Dispatch '.getline('.') <CR>
     
 Bundle 'tyru/open-browser.vim'
 Bundle 'Valloric/YouCompleteMe'
@@ -152,9 +155,8 @@ Bundle 'scrooloose/nerdtree'
 
 Bundle 'closetag.vim'
 Bundle 'christoomey/vim-tmux-navigator'
-Bundle 'gcmt/wildfire.vim'
 Bundle 'kana/vim-fakeclip'
-Bundle 'jdonaldson/wildfire.vim'
+" Bundle 'jdonaldson/wildfire.vim'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Bundles that provide vimscript libraries for other bundles
