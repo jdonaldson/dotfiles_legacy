@@ -150,8 +150,10 @@ Bundle 'sjl/gundo.vim'
 
 Bundle 'scrooloose/nerdtree'
     nmap <silent><Leader>sn :NERDTreeToggle<CR>
+    command! En execute "NERDTree %"
     " Bundle plugin
     Bundle 'jdonaldson/nerdtree-execute'
+
 
 Bundle 'closetag.vim'
 Bundle 'christoomey/vim-tmux-navigator'
