@@ -25,3 +25,7 @@
 [filter "media"]
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
+[include]
+    path = ~/com/sfdc.gitconfig
+[credential]
+	helper = cache --timeout=86400
