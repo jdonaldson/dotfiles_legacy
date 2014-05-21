@@ -159,6 +159,8 @@ Bundle 'closetag.vim'
 Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'kana/vim-fakeclip'
 " Bundle 'jdonaldson/wildfire.vim'
+Bundle 'dharanasoft/rtf-highlight'
+Bundle 'wellle/tmux-complete.vim'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Bundles that provide vimscript libraries for other bundles
