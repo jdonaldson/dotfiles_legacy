@@ -1,0 +1,3 @@
+[submodule "src/git-p4"]
+	path = src/git-p4
+	url = git://github.com/emosesSfdc/git-p4.git
