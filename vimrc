@@ -227,6 +227,10 @@ nmap <silent><Leader>sp :e ~/.vim/UltiSnips<CR>
 nmap <silent><Leader>tp :call ToggleSet("paste")<CR>
 
 
+" Load the current buffer in a new tab
+nnoremap <leader>nt :tabedit %<cr>
+
+
 " echo current syntax scope
 map <Leader>syn :echo "hi<" . synIDattr(synID(line("."), col("."), 1), "name")
             \. "> trans<"

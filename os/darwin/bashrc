@@ -24,7 +24,7 @@ export EC2_HOME="/usr/local/Cellar/ec2-api-tools/1.3-62308/jars"
 if [ -f /usr/local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh ] && [ -n "$TMUX"  ]; then
     source /usr/local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
 fi
-alias xchrome="open '/Applications/Google Chrome.app' --new --args -allow-file-access-from-files"
+alias devchrome="open '/Applications/Google Chrome.app' --new --args -allow-file-access-from-files"
 
 export AUTHOR=`osascript -e "long user name of (system info)"`
 

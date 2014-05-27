@@ -57,6 +57,7 @@ export PATH=~/.dotfiles/bin:$PATH
 
 # hadoop
 export HADOOP_OPTS="-Djava.security.krb5.realm=OX.AC.UK -Djava.security.krb5.kdc=kdc0.ox.ac.uk:kdc1.ox.ac.uk"
+export HADOOP_CONF_DIR=~/.hadoop
 
 # node.js
 export NODE_PATH="/usr/local/lib/node"
