@@ -48,6 +48,7 @@ Bundle 'jdonaldson/vaxe'
 if hostname == "jdonaldson-wsl"
     Bundle 'vim-aura'
 endif
+Bundle 'gerw/vim-latex-suite'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Bundles that provide general editor techniques and features
@@ -100,7 +101,7 @@ Bundle 'Lokaltog/powerline'
 Bundle 'Align'
 Bundle 'jdonaldson/vim-cheat-x-in-y'
 Bundle 'SirVer/ultisnips'
-    let g:UltiSnipsSnippetDirectories=["UltiSnips", "bundle/UltiSnips/UltiSnips", "bundle/vaxe/ultisnips", "bundle/vim-aura/ultisnips"]
+    let g:UltiSnipsSnippetDirectories=["UltiSnips", "bundle/UltiSnips/UltiSnips", "bundle/vim-aura/ultisnips"]
     let g:UltiSnipsExpandTrigger="<c-j>"
     let g:UltiSnipsJumpForwardTrigger="<c-j>"
     let g:UltiSnipsJumpBackwardTrigger="<c-k>"
