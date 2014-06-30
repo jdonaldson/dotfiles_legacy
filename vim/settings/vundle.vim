@@ -4,40 +4,40 @@ filetype off
 " load some bundles depending on where I'm logging from
 let hostname = substitute(system('hostname'), '\n', '', '')
 
-" I use vundle to manage libraries.  It handles the "Bundle" entries below
+" I use vundle to manage libraries.  It handles the "Plugin" entries below
 " If there are bundle-specific configs that I like, I add them under the
 " bundle entry, while also indenting them.
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
 " If a bundle has a slash in it, it's referenceing a github repo:
 " http://www.github/gmarik/vundle
 " If it is a simple name, it's available on vimpscripts.org, and you can find
 " it by searching there.
 
-Bundle 'altercation/vim-colors-solarized'
+Plugin 'altercation/vim-colors-solarized'
     " solarized options
     let g:solarized_termtrans = 1
     set background=dark
     colorscheme solarized
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Bundles that support language-specific tooling and support
+" Plugins that support language-specific tooling and support
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Bundle 'jcfaria/Vim-R-plugin'
-Bundle 'jdonaldson/vim-eco'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'cakebaker/scss-syntax.vim'
-Bundle 'pangloss/vim-javascript'
-Bundle 'elzr/vim-json'
-Bundle 'PProvost/vim-markdown-jekyll'
-Bundle 'suan/vim-instant-markdown'
-Bundle 'tpope/vim-markdown'
-Bundle 'jdonaldson/vim-markdown-link-convert'
+Plugin 'jcfaria/Vim-R-plugin'
+Plugin 'jdonaldson/vim-eco'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'elzr/vim-json'
+Plugin 'PProvost/vim-markdown-jekyll'
+Plugin 'suan/vim-instant-markdown'
+Plugin 'tpope/vim-markdown'
+Plugin 'jdonaldson/vim-markdown-link-convert'
     map <Leader>il :call Inline2Ref()<CR>
-Bundle 'ap/vim-css-color'
-Bundle 'batsuev/csscomb-vim'
-Bundle 'jdonaldson/vaxe'
+Plugin 'ap/vim-css-color'
+Plugin 'batsuev/csscomb-vim'
+Plugin 'jdonaldson/vaxe'
     let g:vaxe_haxe_version = 3
     let g:vaxe_completion_write_compiler_output = 1
     map <Leader>oh :call vaxe#OpenHxml()<CR>
@@ -46,17 +46,17 @@ Bundle 'jdonaldson/vaxe'
     map <Leader>pj :call vaxe#ProjectHxml()<CR>
     map <Leader>jd :call vaxe#JumpToDefinition()<CR>
 if hostname == "jdonaldson-wsl"
-    Bundle 'vim-aura'
+    Plugin 'vim-aura'
 endif
-Bundle 'gerw/vim-latex-suite'
+Plugin 'gerw/vim-latex-suite'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Bundles that provide general editor techniques and features
+" Plugins that provide general editor techniques and features
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Finding stuff
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'goldfeld/vim-seek'
-Bundle 'kien/ctrlp.vim'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'goldfeld/vim-seek'
+Plugin 'kien/ctrlp.vim'
     let g:ctrlp_follow_symlinks = 2
     let g:ctrlp_custom_ignore = '\v(build|bin|test|htdocs|apex|conf|class)\/'
     let g:ctrlp_user_command = 'find %s -type f -follow'
@@ -67,15 +67,15 @@ Bundle 'kien/ctrlp.vim'
         let g:ctrlp_clear_cache_on_exit=0
         let g:ctrlp_max_files = 0
     endif
-Bundle 'mileszs/ack.vim'
+Plugin 'mileszs/ack.vim'
     " nnoremap <Leader>a :Ack<space>
     map <c-@> :Ack<space>
     " use silver searcher instead of ack:
     let g:ackprg = 'ag --follow --nogroup --nocolor --column'
 
-Bundle 'airblade/vim-gitgutter'
-Bundle 'mhinz/vim-startify'
-Bundle 'bling/vim-airline'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'mhinz/vim-startify'
+Plugin 'bling/vim-airline'
     let g:airline_theme = "solarized"
     let g:airline_detect_whitespace=2
     let g:airline_powerline_fonts = 1
@@ -86,7 +86,7 @@ Bundle 'bling/vim-airline'
     let g:airline_branch_prefix = ' '
     let g:airline_readonly_symbol = ''
     let g:airline_linecolumn_prefix = ' '
-Bundle 'majutsushi/tagbar'
+Plugin 'majutsushi/tagbar'
     nmap <silent><Leader>st :TagbarToggle<CR>
     " Extending tabar to support markdown (additionally to the ~/.ctags-file!)
         let g:tagbar_type_markdown = {
@@ -97,24 +97,24 @@ Bundle 'majutsushi/tagbar'
                 \ 'k:Heading_L3'
             \ ]
         \ }
-Bundle 'Lokaltog/powerline'
-Bundle 'Align'
-Bundle 'jdonaldson/vim-cheat-x-in-y'
-Bundle 'SirVer/ultisnips'
+Plugin 'Lokaltog/powerline'
+Plugin 'Align'
+Plugin 'jdonaldson/vim-cheat-x-in-y'
+Plugin 'SirVer/ultisnips'
     let g:UltiSnipsSnippetDirectories=["UltiSnips", "bundle/UltiSnips/UltiSnips", "bundle/vim-aura/ultisnips"]
     let g:UltiSnipsExpandTrigger="<c-j>"
     let g:UltiSnipsJumpForwardTrigger="<c-j>"
     let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 "include perforce if I have a p4 client
 if executable("p4") && getcwd() =~ "blt\\|projectone\\|main\\|patch\\|freeze"
-    Bundle 'vim-scripts/perforce'
+    Plugin 'vim-scripts/perforce'
 endif
-Bundle 'michalliu/sourcebeautify.vim'
-Bundle 'mkitt/browser-refresh.vim'
+Plugin 'michalliu/sourcebeautify.vim'
+Plugin 'mkitt/browser-refresh.vim'
     " browser refresh settings
     let g:RefreshRunningBrowserDefault = 'chrome'
-Bundle 'nathanaelkane/vim-indent-guides'
-Bundle 'scrooloose/syntastic'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'scrooloose/syntastic'
     let g:syntastic_javascript_syntax_checker="gjslint"
     let g:syntastic_error_symbol='✗'
     let g:syntastic_warning_symbol='⚠'
@@ -125,56 +125,56 @@ Bundle 'scrooloose/syntastic'
     augroup END
 
 " Most of Tim Pope's awesome bundles:
-Bundle 'tpope/vim-commentary'
-Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-fugitive'
-    Bundle 'jaxbot/github-issues.vim'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-fugitive'
+    Plugin 'jaxbot/github-issues.vim'
 
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-sensible'
-" Bundle 'tpope/vim-sleuth'
-Bundle 'tpope/vim-speeddating'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-unimpaired'
-Bundle 'tpope/vim-projectile'
-Bundle 'tpope/vim-vinegar'
-Bundle 'tpope/vim-dispatch'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-sensible'
+" Plugin 'tpope/vim-sleuth'
+Plugin 'tpope/vim-speeddating'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'tpope/vim-projectile'
+Plugin 'tpope/vim-vinegar'
+Plugin 'tpope/vim-dispatch'
     map <Leader>dm :Make<CR>
     " Use dispatch to execute the current line as a shell command, insert
     " results below the line
     nnoremap <Leader>r :exe ':Dispatch '.getline('.') <CR>
     
-Bundle 'tyru/open-browser.vim'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'tsaleh/vim-matchit'
-Bundle 'sjl/gundo.vim'
+Plugin 'tyru/open-browser.vim'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'tsaleh/vim-matchit'
+Plugin 'sjl/gundo.vim'
     map <Leader>su :GundoToggle<CR>
 
-Bundle 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
     nmap <silent><Leader>sn :NERDTreeToggle<CR>
     command! En execute "NERDTree %"
-    " Bundle plugin
-    Bundle 'jdonaldson/nerdtree-execute'
+    " Extended feature plugin
+    Plugin 'jdonaldson/nerdtree-execute'
 
 
-Bundle 'closetag.vim'
-Bundle 'christoomey/vim-tmux-navigator'
-Bundle 'kana/vim-fakeclip'
-" Bundle 'jdonaldson/wildfire.vim'
-Bundle 'dharanasoft/rtf-highlight'
-Bundle 'wellle/tmux-complete.vim'
+Plugin 'closetag.vim'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'kana/vim-fakeclip'
+" Plugin 'jdonaldson/wildfire.vim'
+Plugin 'dharanasoft/rtf-highlight'
+Plugin 'wellle/tmux-complete.vim'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Bundles that provide vimscript libraries for other bundles
+" Plugins that provide vimscript libraries for other bundles
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Bundle 'tomtom/tlib_vim'
-Bundle 'vim-scripts/genutils'
-Bundle 'michalliu/jsoncodecs.vim'
-Bundle 'michalliu/jsruntime.vim'
-Bundle 'Shougo/vimproc.vim'
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'L9'
-Bundle 'utl.vim'
+Plugin 'tomtom/tlib_vim'
+Plugin 'vim-scripts/genutils'
+Plugin 'michalliu/jsoncodecs.vim'
+Plugin 'michalliu/jsruntime.vim'
+Plugin 'Shougo/vimproc.vim'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'L9'
+Plugin 'utl.vim'
 
 
 filetype plugin indent on " required!
