@@ -289,3 +289,5 @@ if exists("+undofile")
   set undodir+=~/.vim/undo//
   set undofile
 endif
+
+let g:netrw_liststyle=1
