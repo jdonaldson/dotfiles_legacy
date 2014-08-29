@@ -72,3 +72,7 @@ export JAVA_OPTS=-Xmx2500m
 # append to history
 shopt -s histappend
 
+#tmux
+settitle() {
+	printf "\033k$1\033\\"
+}
