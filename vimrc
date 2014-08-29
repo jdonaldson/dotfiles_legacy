@@ -81,9 +81,9 @@ set splitright
 
 autocmd BufEnter Makefile set noexpandtab | set tabstop=4
 
-" Use 'extra magic' for regex searches
-nnoremap <space> ?
-vnoremap <space> ?
+" too lazy to hit the forward slash
+nnoremap <space> /
+vnoremap <space> /
 
 " Some  general reformatting command(s)
 " strip whitespace at end of line
@@ -183,8 +183,8 @@ endfunction
 
 
 " swaps the current window with the left-most window
-nmap <silent> <expr><CR> &buftype == '' ?  ":call DoWindowSwap()\<CR>" : "\<CR>"
-nmap <silent> <tab> :wincmd w<CR>
+" nmap <silent> <expr><CR> &buftype == '' ?  ":call DoWindowSwap()\<CR>" : "\<CR>"
+" nmap <silent> <tab> :wincmd w<CR>
 
 " MISC KEY MAPPING
 
@@ -289,3 +289,5 @@ if exists("+undofile")
   set undodir+=~/.vim/undo//
   set undofile
 endif
+
+let g:netrw_liststyle=1
