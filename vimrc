@@ -199,8 +199,6 @@ nnoremap S "_diwP"
 
 map <Leader>pc :call ToggleEnablePreview()<CR>
 
-map <leader>a exe ":Ack "
-
 " All of my 'panels'
 "map <Leader>y :YRShow<CR>
 

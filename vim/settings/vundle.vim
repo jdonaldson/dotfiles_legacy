@@ -31,7 +31,7 @@ Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'elzr/vim-json'
 Plugin 'PProvost/vim-markdown-jekyll'
-Plugin 'suan/vim-instant-markdown'
+" Plugin 'suan/vim-instant-markdown'
 Plugin 'tpope/vim-markdown'
 Plugin 'jdonaldson/vim-markdown-link-convert'
     map <Leader>il :call Inline2Ref()<CR>
@@ -98,7 +98,14 @@ Plugin 'majutsushi/tagbar'
             \ ]
         \ }
 Plugin 'Lokaltog/powerline'
-Plugin 'Align'
+" Plugin 'Align'
+Plugin 'junegunn/vim-easy-align'
+    " Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
+    vmap <Enter> <Plug>(EasyAlign)
+    "
+    " Start interactive EasyAlign for a motion/text object (e.g. <Leader>aip)
+    nmap <Leader>a <Plug>(EasyAlign)
+
 Plugin 'jdonaldson/vim-cheat-x-in-y'
 Plugin 'SirVer/ultisnips'
     let g:UltiSnipsSnippetDirectories=["UltiSnips", "bundle/UltiSnips/UltiSnips", "bundle/vim-aura/ultisnips"]
