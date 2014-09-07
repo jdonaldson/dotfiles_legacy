@@ -56,7 +56,7 @@ Plugin 'gerw/vim-latex-suite'
 " Finding stuff
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'goldfeld/vim-seek'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
     let g:ctrlp_follow_symlinks = 2
     let g:ctrlp_custom_ignore = '\v(build|bin|test|htdocs|apex|conf|class)\/'
     let g:ctrlp_user_command = 'find %s -type f -follow'
