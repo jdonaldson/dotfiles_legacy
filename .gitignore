@@ -4,4 +4,6 @@ vim/viminfo*
 vim/viminfz.tmp
 eclim*
 .netrwhist
+config/*
+
 
