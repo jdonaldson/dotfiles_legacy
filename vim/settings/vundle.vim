@@ -31,7 +31,8 @@ Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'elzr/vim-json'
 Plugin 'PProvost/vim-markdown-jekyll'
-" Plugin 'suan/vim-instant-markdown'
+Plugin 'suan/vim-instant-markdown'
+   let g:instant_markdown_slow = 1 
 Plugin 'tpope/vim-markdown'
 Plugin 'jdonaldson/vim-markdown-link-convert'
     map <Leader>il :call Inline2Ref()<CR>
