@@ -135,7 +135,7 @@ Plugin 'scrooloose/syntastic'
 " Most of Tim Pope's awesome bundles:
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-endwise'
-" Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-fugitive'
     " Plugin 'jaxbot/github-issues.vim'
 
 Plugin 'tpope/vim-repeat'
