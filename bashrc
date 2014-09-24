@@ -7,6 +7,9 @@ test -f $HOME/.auth.sh && source $HOME/.auth.sh
 # personal private config
 test -f $HOME/.privaterc && source $HOME/.privaterc
 
+# personal python venv 
+test -d $HOME/.venv_bootstrap && source $HOME/.venv_bootstrap/bin/activate
+
 export EMAIL="jdonaldson@gmail.com"
 export EMAIL_OBSCURED="jdonaldson[at]gmail[dot]com"
 
