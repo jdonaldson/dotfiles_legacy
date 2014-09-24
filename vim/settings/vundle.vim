@@ -108,6 +108,7 @@ Plugin 'junegunn/vim-easy-align'
     nmap <Leader>a <Plug>(EasyAlign)
 
 Plugin 'jdonaldson/vim-cheat-x-in-y'
+Plugin 'honza/vim-snippets'
 Plugin 'SirVer/ultisnips'
     let g:UltiSnipsSnippetDirectories=["UltiSnips", "bundle/UltiSnips/UltiSnips", "bundle/vim-aura/ultisnips"]
     let g:UltiSnipsExpandTrigger="<c-j>"
@@ -135,7 +136,7 @@ Plugin 'scrooloose/syntastic'
 " Most of Tim Pope's awesome bundles:
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-endwise'
-" Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-fugitive'
     " Plugin 'jaxbot/github-issues.vim'
 
 Plugin 'tpope/vim-repeat'
