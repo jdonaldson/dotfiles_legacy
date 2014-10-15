@@ -46,7 +46,7 @@ Plugin 'jdonaldson/vaxe'
     map <Leader>ic :call vaxe#ImportClass()<CR>
     map <Leader>pj :call vaxe#ProjectHxml()<CR>
     map <Leader>jd :call vaxe#JumpToDefinition()<CR>
-if hostname == "jdonaldson-wsl"
+if hostname == "jdonaldson-wsm1.internal.salesforce.com"
     Plugin 'vim-aura'
 endif
 Plugin 'gerw/vim-latex-suite'
