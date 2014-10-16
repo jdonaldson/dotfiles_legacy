@@ -378,3 +378,17 @@ settings = {
   };
   "fe-text" = { actlist_sort = "refnum"; };
 };
+windows = {
+  1 = { immortal = "yes"; name = "(status)"; level = "ALL"; };
+  2 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#haxe";
+        tag = "Freenode";
+      }
+    );
+  };
+};
+mainwindows = { 2 = { first_line = "1"; lines = "67"; }; };
