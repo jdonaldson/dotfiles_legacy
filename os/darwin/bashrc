@@ -2,10 +2,12 @@
 if [ -f `brew --prefix`/etc/profile.d/z.sh ]; then
     . `brew --prefix`/etc/profile.d/z.sh
 fi
+
 alias gimme="brew install"
 alias isthere="brew search"
 alias updateme="brew update"
 alias upgrademe="brew upgrade"
+
 export ANDROID_SDK_ROOT=/usr/local/opt/android-sdk
 
 # export MACOSX_DEPLOYMENT_TARGET=10.8
@@ -24,6 +26,7 @@ export EC2_HOME="/usr/local/Cellar/ec2-api-tools/1.3-62308/jars"
 if [ -f /usr/local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh ] && [ -n "$TMUX"  ]; then
     source /usr/local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
 fi
+
 alias devchrome="open '/Applications/Google Chrome.app' --new --args -allow-file-access-from-files"
 
 export AUTHOR=`osascript -e "long user name of (system info)"`
@@ -31,3 +34,7 @@ export AUTHOR=`osascript -e "long user name of (system info)"`
 authme(){ ssh-keygen -t rsa -C "$@"; }
 authmeonserver(){ ssh $@ "echo `cat ~/.ssh/id_rsa.pub` >> ~/.ssh/authorized_keys"; }
 authtoclipboard(){ pbcopy < ~/.ssh/id_rsa.pub; }
+
+# darwin specific tools are in here
+export PATH=~/.os/darwin/bin/:$PATH
+
