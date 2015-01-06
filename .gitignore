@@ -5,5 +5,7 @@ vim/viminfz.tmp
 eclim*
 .netrwhist
 config/*
+.venv_bootstrap/*
+
 
 
