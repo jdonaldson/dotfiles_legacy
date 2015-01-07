@@ -25,6 +25,7 @@ Plugin 'altercation/vim-colors-solarized'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plugin 'jcfaria/Vim-R-plugin'
 Plugin 'jdonaldson/vim-eco'
+Plugin 'jdonaldson/writeGooder'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'cakebaker/scss-syntax.vim'
