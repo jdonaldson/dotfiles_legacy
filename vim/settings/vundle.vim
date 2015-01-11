@@ -107,6 +107,9 @@ Plugin 'junegunn/vim-easy-align'
     " Start interactive EasyAlign for a motion/text object (e.g. <Leader>aip)
     nmap <Leader>a <Plug>(EasyAlign)
 
+    let g:easy_align_delimiters = {
+                \ 't': { 'pattern': "\<tab>", 'left_margin': 0, 'right_margin': 0 } }
+
 Plugin 'jdonaldson/vim-cheat-x-in-y'
 Plugin 'honza/vim-snippets'
 Plugin 'SirVer/ultisnips'
