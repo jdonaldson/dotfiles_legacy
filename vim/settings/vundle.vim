@@ -34,12 +34,12 @@ Plugin 'elzr/vim-json'
 Plugin 'PProvost/vim-markdown-jekyll'
 Plugin 'suan/vim-instant-markdown'
    let g:instant_markdown_slow = 1 
-Plugin 'tpope/vim-markdown'
+Plugin 'plasticboy/vim-markdown'
 Plugin 'jdonaldson/vim-markdown-link-convert'
     map <Leader>il :call Inline2Ref()<CR>
 Plugin 'ap/vim-css-color'
 Plugin 'batsuev/csscomb-vim'
-Plugin 'jdonaldson/vaxe'
+Plugin 'jdonaldson/vaxel'
     let g:vaxe_haxe_version = 3
     let g:vaxe_completion_write_compiler_output = 1
     map <Leader>oh :call vaxe#OpenHxml()<CR>
