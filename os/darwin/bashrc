@@ -36,5 +36,5 @@ authmeonserver(){ ssh $@ "echo `cat ~/.ssh/id_rsa.pub` >> ~/.ssh/authorized_keys
 authtoclipboard(){ pbcopy < ~/.ssh/id_rsa.pub; }
 
 # darwin specific tools are in here
-export PATH=~/.os/darwin/bin/:$PATH
+export PATH=~/.os/darwin/bin:$PATH
 

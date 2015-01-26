@@ -6,7 +6,7 @@ tmux_conf_theme=powerline_patched_font
 #tmux_conf_battery_symbol_count=5
 
 # or alternatively use an external tool, e.g. https://github.com/Goles/Battery
-#tmux_conf_battery='#(battery -t) '
+tmux_conf_battery='#(rainbarf --battery --remaining --bright) '
 
 # use mouse mode to scroll
 setw -g mode-mouse on
