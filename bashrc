@@ -25,7 +25,7 @@ unamestr=`uname`
 
 # it is the future.  I always have 256 colors.
 export TERM=xterm-256color
-test -e `which vimpager` && export PAGER=`which vimpager`
+test -e vimpager && export PAGER=`which vimpager`
 
 export PGDATA=/usr/local/var/postgres
 

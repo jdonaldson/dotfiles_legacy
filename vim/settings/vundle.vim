@@ -31,11 +31,12 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'pangloss/vim-javascript'
+Plugin 'jsx/jsx.vim'
 Plugin 'elzr/vim-json'
 Plugin 'PProvost/vim-markdown-jekyll'
 Plugin 'suan/vim-instant-markdown'
    let g:instant_markdown_slow = 1 
-Plugin 'tpope/vim-markdown'
+Plugin 'plasticboy/vim-markdown'
 Plugin 'jdonaldson/vim-markdown-link-convert'
     map <Leader>il :call Inline2Ref()<CR>
 Plugin 'ap/vim-css-color'
@@ -65,8 +66,7 @@ Plugin 'Lokaltog/vim-easymotion'
 Plugin 'goldfeld/vim-seek'
 Plugin 'ctrlpvim/ctrlp.vim'
     let g:ctrlp_follow_symlinks = 2
-    let g:ctrlp_custom_ignore = '\v(build|bin|test|htdocs|apex|conf|class)\/'
-    let g:ctrlp_user_command = 'find %s -type f -follow'
+    let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
     if len(argv())==0 || argv()[0] == '.'
         " If I open a directory, assume I want to hard set a working path
         let g:ctrlp_working_path_mode = ''
