@@ -23,6 +23,7 @@ Plugin 'altercation/vim-colors-solarized'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins that support language-specific tooling and support
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plugin 'OCamlPro/ocp-indent'
 Plugin 'jcfaria/Vim-R-plugin'
 Plugin 'jdonaldson/vim-eco'
 Plugin 'jdonaldson/writeGooder'
@@ -39,7 +40,11 @@ Plugin 'jdonaldson/vim-markdown-link-convert'
     map <Leader>il :call Inline2Ref()<CR>
 Plugin 'ap/vim-css-color'
 Plugin 'batsuev/csscomb-vim'
-Plugin 'jdonaldson/vaxe'
+Plugin 'xolox/vim-lua-ftplugin'
+    Plugin 'xolox/vim-misc'
+Plugin 'jdonaldson/vaxel'
+    map <Leader>dh :! ./haxe build.hxml<CR>
+    map <Leader>dl :luafile ~/.vim/bundle/vaxel/lua/vaxel.lua<CR>
     let g:vaxe_haxe_version = 3
     let g:vaxe_completion_write_compiler_output = 1
     map <Leader>oh :call vaxe#OpenHxml()<CR>
@@ -145,7 +150,7 @@ Plugin 'tpope/vim-fugitive'
 
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-sensible'
-" Plugin 'tpope/vim-sleuth'
+Plugin 'tpope/vim-sleuth'
 Plugin 'tpope/vim-speeddating'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
