@@ -7,7 +7,6 @@ let hostname = substitute(system('hostname'), '\n', '', '')
 " I use vim-plug to manage libraries.  It handles the "Plug" entries below
 " If there are bundle-specific configs that I like, I add them under the
 " bundle entry, while also indenting them.
-Plug 'junegunn/vim-plug'
 
 Plug 'altercation/vim-colors-solarized'
     " solarized options
@@ -112,6 +111,8 @@ Plug 'junegunn/vim-easy-align'
     let g:easy_align_delimiters = {
                 \ 't': { 'pattern': "\<tab>", 'left_margin': 0, 'right_margin': 0 } }
 
+Plug 'junegunn/vim-oblique'
+   Plug 'junegunn/vim-pseudocl'
 Plug 'jdonaldson/vim-cheat-x-in-y'
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
