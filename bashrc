@@ -25,7 +25,7 @@ unamestr=`uname`
 
 # it is the future.  I always have 256 colors.
 export TERM=xterm-256color
-test -e `which vimpager` && export PAGER=`which vimpager`
+test -e vimpager && export PAGER=`which vimpager`
 
 export PGDATA=/usr/local/var/postgres
 
@@ -39,7 +39,9 @@ alias serve="python -m SimpleHTTPServer 9040"
 
 alias munit="haxelib run munit"
 alias mlib="haxelib run mlib"
-export HAXE_STD_PATH="/usr/local/lib/haxe/std"
+
+# testing
+test -d  $HOME/Projects/haxe/std && export HAXE_STD_PATH=$HOME/Projects/haxe/std
 
 export PATH=$PATH:~/bin
 export CVSEDITOR=vim
@@ -52,6 +54,7 @@ alias ..='cd ..'
 alias p4_untracked='find . -type f -print0 | xargs -0 p4 fstat >/dev/null'
 alias cdp="cd -P"
 alias ssh='ssh -X'
+alias untar='tar xvjf'
 
 test -s "$HOME/.rvm/scripts/rvm" && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 

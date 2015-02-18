@@ -9,6 +9,7 @@ config/powerline
 .netrwhist
 .hg/
 .metadata
+node_modules/
 .sass-cache
 .tm-autocomplete.hxml
 .tmbuild

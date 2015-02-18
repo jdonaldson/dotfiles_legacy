@@ -1,9 +1,11 @@
 .DS_Store
 vim/bundle/*
 vim/viminfo*
-vim/viminfz.tmp
+vim/viminf*.tmp
 eclim*
 .netrwhist
 config/*
+.venv_bootstrap/*
+
 
 
