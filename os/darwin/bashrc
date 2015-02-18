@@ -35,6 +35,8 @@ authme(){ ssh-keygen -t rsa -C "$@"; }
 authmeonserver(){ ssh $@ "echo `cat ~/.ssh/id_rsa.pub` >> ~/.ssh/authorized_keys"; }
 authtoclipboard(){ pbcopy < ~/.ssh/id_rsa.pub; }
 
+export HBASE_HOME=/usr/local/Cellar/hbase/0.98.9
+
 # darwin specific tools are in here
 export PATH=~/.os/darwin/bin/:$PATH
 
