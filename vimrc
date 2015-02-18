@@ -9,7 +9,7 @@ nnoremap ; :
     nmap <Leader>1 :e $MYVIMRC<CR>
     nmap <Leader>so :so %<CR>
 
-" Now we need to load vundle, it manages all of the extra plugins for vim
+" Now we need to load vim-plug, it manages all of the extra plugins for vim
 " It must be done first
 " Bootstrap
 let root = '~/.vim/bundle'
@@ -25,7 +25,7 @@ call plug#begin(root)
 
 
 
-" Vundle configs are stored in a separate file, source it.
+" bundle configs are stored in a separate file, source it.
 source ~/.vim/settings/bundle.vim
 
 call plug#end()

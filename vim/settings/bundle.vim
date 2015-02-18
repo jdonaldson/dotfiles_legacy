@@ -4,15 +4,10 @@ filetype off
 " load some bundles depending on where I'm logging from
 let hostname = substitute(system('hostname'), '\n', '', '')
 
-" I use vundle to manage libraries.  It handles the "Plug" entries below
+" I use vim-plug to manage libraries.  It handles the "Plug" entries below
 " If there are bundle-specific configs that I like, I add them under the
 " bundle entry, while also indenting them.
-Plug 'gmarik/vundle'
-
-" If a bundle has a slash in it, it's referenceing a github repo:
-" http://www.github/gmarik/vundle
-" If it is a simple name, it's available on vimpscripts.org, and you can find
-" it by searching there.
+Plug 'junegunn/vim-plug'
 
 Plug 'altercation/vim-colors-solarized'
     " solarized options
