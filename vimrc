@@ -13,20 +13,24 @@ nnoremap ; :
 " It must be done first
 " Bootstrap
 let root = '~/.vim/bundle'
-let src = 'http://github.com/gmarik/vundle.git'
+let src = 'http://github.com/junegunn/vim-plug.git'
 
-if !isdirectory(expand(root, 1).'/vundle')
-  exec '!git clone '.src.' '.shellescape(expand(root.'/vundle', 1))
+if !isdirectory(expand(root, 1).'/vim-plug')
+  exec '!git clone '.src.' '.shellescape(expand(root.'/vim-plug', 1))
 endif
 
-exec 'set rtp+='.root.'/vundle'
+exec 'set rtp+='.root.'/vim-plug'
 
-call vundle#rc(root)
+call plug#begin(root)
 
 
 
 " Vundle configs are stored in a separate file, source it.
-source ~/.vim/settings/vundle.vim
+source ~/.vim/settings/bundle.vim
+
+call plug#end()
+
+colorscheme solarized
 
 " quickly exit insert mode with this combo
 imap jk <Esc>
@@ -215,8 +219,8 @@ nmap <silent><Leader>sh :nohlsearch<CR>
 nmap <silent><Leader>sq :call ToggleList("Quickfix List", 'c')<CR>
 " show/hide the foldcolumn
 nmap <silent><Leader>sl :call ToggleSetValue("foldcolumn", 0)<CR>
-" Show the vundle list
-nmap <silent><Leader>sv :e ~/.vim/settings/vundle.vim<CR>
+" Show the bundle list
+nmap <silent><Leader>bb :e ~/.vim/settings/bundle.vim<CR>
 " Show my personal ultisnips directory
 nmap <silent><Leader>sp :e ~/.vim/UltiSnips<CR>
 
