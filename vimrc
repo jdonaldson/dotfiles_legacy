@@ -10,24 +10,9 @@ nnoremap ; :
     nmap <Leader>so :so %<CR>
 
 " Now we need to load vim-plug, it manages all of the extra plugins for vim
-" It must be done first
-" Bootstrap
-let root = '~/.vim/bundle'
-let src = 'http://github.com/junegunn/vim-plug.git'
-
-if !isdirectory(expand(root, 1).'/vim-plug')
-  exec '!git clone '.src.' '.shellescape(expand(root.'/vim-plug', 1))
-endif
-
-exec 'set rtp+='.root.'/vim-plug'
-
-call plug#begin(root)
-
-
-
+call plug#begin("~/.vim/bundle")
 " bundle configs are stored in a separate file, source it.
 source ~/.vim/settings/bundle.vim
-
 call plug#end()
 
 colorscheme solarized
