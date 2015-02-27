@@ -3,7 +3,6 @@ require 'erb'
 
 desc "install the dot files into user's home directory"
 task :install do
-  install_vundle   
   # install_oh_my_zsh
   # switch_to_zsh
   replace_all = false
@@ -74,22 +73,6 @@ def switch_to_zsh
   end
 end
 
-def install_vundle
-  if File.directory?(File.join(ENV['HOME'], ".vim","bundle","vundle"))
-    puts "found ~/.vim/bundle/vundle/"
-  else
-      print "install vundle? [ynq] "
-      case $stdin.gets.chomp
-        when 'y'
-            puts "installing vundle"
-            system %Q{git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle}
-        when 'q'
-            exit
-        else
-            puts "skipping vundle"
-        end
-  end
-end
 def install_oh_my_zsh
   if File.exist?(File.join(ENV['HOME'], ".oh-my-zsh"))
     puts "found ~/.oh-my-zsh"
