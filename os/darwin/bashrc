@@ -38,3 +38,15 @@ authtoclipboard(){ pbcopy < ~/.ssh/id_rsa.pub; }
 # darwin specific tools are in here
 export PATH=~/.os/darwin/bin:$PATH
 
+# Change the TERM environment variable (to get 256 colors) and make Vim
+# connecting to X Server even if running in a terminal emulator (many of
+# the plugin features depend on this).
+if [ "x$DISPLAY" != "x" ]
+then
+    if [ "screen" = "$TERM" ]
+    then
+	export TERM=screen-256color
+    else
+	export TERM=xterm-256color
+    fi
+fi
