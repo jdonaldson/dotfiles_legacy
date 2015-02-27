@@ -6,6 +6,7 @@ eclim*
 .netrwhist
 config/*
 .venv_bootstrap/*
+vim/autoload/plug.vim.old
 
 
 
