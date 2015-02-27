@@ -23,9 +23,7 @@ export GIT_EDITOR=vim
 export PATH=/usr/local/share:/usr/local/bin:/usr/local/sbin:$PATH
 unamestr=`uname`
 
-# it is the future.  I always have 256 colors.
-export TERM=xterm-256color
-test -e vimpager && export PAGER=`which vimpager`
+
 
 export PGDATA=/usr/local/var/postgres
 
