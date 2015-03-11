@@ -176,6 +176,36 @@ Plug 'scrooloose/nerdtree'
 Plug 'closetag.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'kana/vim-fakeclip'
+" Vim-fakeclip {{{2
+let g:fakeclip_no_default_key_mappings=1
+if !has('clipboard')
+  nmap <silent> <leader>y <Plug>(fakeclip-y)
+  nmap <silent> <leader>Y <leader>y$
+  nmap <silent> <leader>yy <Plug>(fakeclip-Y)
+  vmap <silent> <leader>y <Plug>(fakeclip-y)
+  vmap <silent> <leader>Y <Plug>(fakeclip-Y)
+  nmap <silent> <leader>p <Plug>(fakeclip-p)
+  nmap <silent> <leader>P  <Plug>(fakeclip-P)
+  nmap <silent> <leader>gp  <Plug>(fakeclip-gp)
+  nmap <silent> <leader>gP  <Plug>(fakeclip-gP)
+  nmap <silent> <leader>]p  <Plug>(fakeclip-]p)
+  nmap <silent> <leader>]P  <Plug>(fakeclip-]P)
+  nmap <silent> <leader>[p  <Plug>(fakeclip-[p)
+  nmap <silent> <leader>[P  <Plug>(fakeclip-[P)
+  vmap <silent> <leader>p  <Plug>(fakeclip-p)
+  vmap <silent> <leader>P  <Plug>(fakeclip-P)
+  vmap <silent> <leader>gp  <Plug>(fakeclip-gp)
+  vmap <silent> <leader>gP  <Plug>(fakeclip-gP)
+  vmap <silent> <leader>]p  <Plug>(fakeclip-]p)
+  vmap <silent> <leader>]P  <Plug>(fakeclip-]P)
+  vmap <silent> <leader>[p  <Plug>(fakeclip-[p)
+  vmap <silent> <leader>[P  <Plug>(fakeclip-[P)
+"  map! <silent> <C-r>p  <Plug>(fakeclip-insert)
+"  map! <silent> <C-r><C-r>p  <Plug>(fakeclip-insert-r)
+"  map! <silent> <C-r><C-o>p  <Plug>(fakeclip-insert-o)
+"  imap <silent> <C-r><C-p>p  <Plug>(fakeclip-insert-p)
+endif
+
 " Plug 'jdonaldson/wildfire.vim'
 Plug 'dharanasoft/rtf-highlight'
 Plug 'wellle/tmux-complete.vim'
