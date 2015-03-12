@@ -25,3 +25,5 @@ vim/sessions
 vim/swap
 vim/undo
 vim/cache
+ignoreme
+ignoreme.*
