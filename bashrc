@@ -41,7 +41,9 @@ alias mlib="haxelib run mlib"
 # testing
 test -d  $HOME/Projects/haxe/std && export HAXE_STD_PATH=$HOME/Projects/haxe/std
 
-export PATH=$PATH:~/bin
+export PATH=~/bin:$PATH
+# add custom flex sdk path
+export PATH=$PATH:~/flex_sdk/bin
 export CVSEDITOR=vim
 export EDITOR=vim
 export SVN_EDITOR=vim
