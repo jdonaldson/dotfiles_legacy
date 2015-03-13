@@ -20,9 +20,6 @@ colorscheme solarized
 " quickly exit insert mode with this combo
 imap jk <Esc>
 
-
-
-
 "BASIC OPTIONS
 set tags=./tags;/
 set shell=bash

@@ -28,7 +28,7 @@ Plug 'jsx/jsx.vim'
 Plug 'elzr/vim-json'
 Plug 'PProvost/vim-markdown-jekyll'
 Plug 'suan/vim-instant-markdown'
-   let g:instant_markdown_slow = 1 
+   let g:instant_markdown_slow = 1
 Plug 'plasticboy/vim-markdown'
 Plug 'jdonaldson/vim-markdown-link-convert'
     map <Leader>il :call Inline2Ref()<CR>
@@ -50,6 +50,15 @@ if hostname == "jdonaldson-wsm1.internal.salesforce.com"
     Plug 'vim-aura'
 endif
 Plug 'gerw/vim-latex-suite'
+
+" Eclim (installed with an installer)
+ let g:EclimCompletionMethod = 'omnifunc'
+ let g:EclimDefaultFileOpenAction = 'vsplit'
+ let g:EclimJavaSearchSingleResult = 'vsplit'
+ au BufNewFile,BufRead *.java map <buffer><c-p> :LocateFile<CR>
+ au BufNewFile,BufRead *.java map <buffer><c-]> :JavaSearchContext "vsplit"<CR>
+ au BufNewFile,BufRead *.java map <buffer><c-[> "zyiw:exe ":JavaSearch -p ".@z." -x implementors -p vsplit "<CR>
+ au BufNewFile,BufRead *.java map <buffer><c-@> :JavaSearch
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugs that provide general editor techniques and features
@@ -75,6 +84,16 @@ Plug 'mileszs/ack.vim'
 
 Plug 'airblade/vim-gitgutter'
 Plug 'mhinz/vim-startify'
+let g:startify_custom_header = [
+      \' ______   ______            _______  _______  ___   _  _______  ',
+      \' |      | |    _ |          |       ||   _   ||   | | ||       |',
+      \' |  _    ||   | ||          |       ||  |_|  ||   |_| ||    ___|',
+      \' | | |   ||   |_||_         |       ||       ||      _||   |___ ',
+      \' | |_|   ||    __  | ___    |      _||       ||     |_ |    ___|',
+      \' |       ||   |  | ||   |   |     |_ |   _   ||    _  ||   |___ ',
+      \' |______| |___|  |_||___|   |_______||__| |__||___| |_||_______|',
+      \'',
+      \'']
 Plug 'bling/vim-airline'
    let g:airline_theme = "solarized"
    let g:airline_powerline_fonts = 1
