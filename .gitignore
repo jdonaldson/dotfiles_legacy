@@ -7,6 +7,5 @@ eclim*
 config/*
 .venv_bootstrap/*
 vim/autoload/plug.vim.old
-
-
+vim/session
 

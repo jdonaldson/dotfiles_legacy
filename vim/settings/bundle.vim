@@ -28,7 +28,7 @@ Plug 'jsx/jsx.vim'
 Plug 'elzr/vim-json'
 Plug 'PProvost/vim-markdown-jekyll'
 Plug 'suan/vim-instant-markdown'
-   let g:instant_markdown_slow = 1 
+   let g:instant_markdown_slow = 1
 Plug 'plasticboy/vim-markdown'
 Plug 'jdonaldson/vim-markdown-link-convert'
     map <Leader>il :call Inline2Ref()<CR>
@@ -50,6 +50,15 @@ if hostname == "jdonaldson-wsm1.internal.salesforce.com"
     Plug 'vim-aura'
 endif
 Plug 'gerw/vim-latex-suite'
+
+" Eclim (installed with an installer)
+ let g:EclimCompletionMethod = 'omnifunc'
+ let g:EclimDefaultFileOpenAction = 'vsplit'
+ let g:EclimJavaSearchSingleResult = 'vsplit'
+ au BufNewFile,BufRead *.java map <buffer><c-p> :LocateFile<CR>
+ au BufNewFile,BufRead *.java map <buffer><c-]> :JavaSearchContext "vsplit"<CR>
+ au BufNewFile,BufRead *.java map <buffer><c-[> "zyiw:exe ":JavaSearch -p ".@z." -x implementors -p vsplit "<CR>
+ au BufNewFile,BufRead *.java map <buffer><c-@> :JavaSearch
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugs that provide general editor techniques and features
@@ -75,6 +84,16 @@ Plug 'mileszs/ack.vim'
 
 Plug 'airblade/vim-gitgutter'
 Plug 'mhinz/vim-startify'
+let g:startify_custom_header = [
+      \' ______   ______            _______  _______  ___   _  _______  ',
+      \' |      | |    _ |          |       ||   _   ||   | | ||       |',
+      \' |  _    ||   | ||          |       ||  |_|  ||   |_| ||    ___|',
+      \' | | |   ||   |_||_         |       ||       ||      _||   |___ ',
+      \' | |_|   ||    __  | ___    |      _||       ||     |_ |    ___|',
+      \' |       ||   |  | ||   |   |     |_ |   _   ||    _  ||   |___ ',
+      \' |______| |___|  |_||___|   |_______||__| |__||___| |_||_______|',
+      \'',
+      \'']
 Plug 'bling/vim-airline'
    let g:airline_theme = "solarized"
    let g:airline_powerline_fonts = 1
@@ -176,6 +195,36 @@ Plug 'scrooloose/nerdtree'
 Plug 'closetag.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'kana/vim-fakeclip'
+" Vim-fakeclip {{{2
+let g:fakeclip_no_default_key_mappings=1
+if !has('clipboard')
+  nmap <silent> <leader>y <Plug>(fakeclip-y)
+  nmap <silent> <leader>Y <leader>y$
+  nmap <silent> <leader>yy <Plug>(fakeclip-Y)
+  vmap <silent> <leader>y <Plug>(fakeclip-y)
+  vmap <silent> <leader>Y <Plug>(fakeclip-Y)
+  nmap <silent> <leader>p <Plug>(fakeclip-p)
+  nmap <silent> <leader>P  <Plug>(fakeclip-P)
+  nmap <silent> <leader>gp  <Plug>(fakeclip-gp)
+  nmap <silent> <leader>gP  <Plug>(fakeclip-gP)
+  nmap <silent> <leader>]p  <Plug>(fakeclip-]p)
+  nmap <silent> <leader>]P  <Plug>(fakeclip-]P)
+  nmap <silent> <leader>[p  <Plug>(fakeclip-[p)
+  nmap <silent> <leader>[P  <Plug>(fakeclip-[P)
+  vmap <silent> <leader>p  <Plug>(fakeclip-p)
+  vmap <silent> <leader>P  <Plug>(fakeclip-P)
+  vmap <silent> <leader>gp  <Plug>(fakeclip-gp)
+  vmap <silent> <leader>gP  <Plug>(fakeclip-gP)
+  vmap <silent> <leader>]p  <Plug>(fakeclip-]p)
+  vmap <silent> <leader>]P  <Plug>(fakeclip-]P)
+  vmap <silent> <leader>[p  <Plug>(fakeclip-[p)
+  vmap <silent> <leader>[P  <Plug>(fakeclip-[P)
+"  map! <silent> <C-r>p  <Plug>(fakeclip-insert)
+"  map! <silent> <C-r><C-r>p  <Plug>(fakeclip-insert-r)
+"  map! <silent> <C-r><C-o>p  <Plug>(fakeclip-insert-o)
+"  imap <silent> <C-r><C-p>p  <Plug>(fakeclip-insert-p)
+endif
+
 " Plug 'jdonaldson/wildfire.vim'
 Plug 'dharanasoft/rtf-highlight'
 Plug 'wellle/tmux-complete.vim'

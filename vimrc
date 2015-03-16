@@ -20,9 +20,6 @@ colorscheme solarized
 " quickly exit insert mode with this combo
 imap jk <Esc>
 
-
-
-
 "BASIC OPTIONS
 set tags=./tags;/
 set shell=bash
@@ -48,7 +45,7 @@ set noerrorbells         " no, seriously, don't beep
 set lazyredraw
 set mouse=a             " use mouse in nvich modes
 set autowrite
-set clipboard+=unnamed
+set clipboard=unnamed
 
 " These are all options releated to searching
 set ignorecase
