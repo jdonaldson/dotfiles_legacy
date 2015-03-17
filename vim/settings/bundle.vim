@@ -52,6 +52,7 @@ endif
 Plug 'gerw/vim-latex-suite'
 
 " Eclim (installed with an installer)
+ let g:EclimLocateFileScope = 'workspace'
  let g:EclimCompletionMethod = 'omnifunc'
  let g:EclimDefaultFileOpenAction = 'vsplit'
  let g:EclimJavaSearchSingleResult = 'vsplit'
@@ -84,16 +85,18 @@ Plug 'mileszs/ack.vim'
 
 Plug 'airblade/vim-gitgutter'
 Plug 'mhinz/vim-startify'
-let g:startify_custom_header = [
-      \' ______   ______            _______  _______  ___   _  _______  ',
-      \' |      | |    _ |          |       ||   _   ||   | | ||       |',
-      \' |  _    ||   | ||          |       ||  |_|  ||   |_| ||    ___|',
-      \' | | |   ||   |_||_         |       ||       ||      _||   |___ ',
-      \' | |_|   ||    __  | ___    |      _||       ||     |_ |    ___|',
-      \' |       ||   |  | ||   |   |     |_ |   _   ||    _  ||   |___ ',
-      \' |______| |___|  |_||___|   |_______||__| |__||___| |_||_______|',
-      \'',
-      \'']
+  nnoremap <Leader>` :Startify<CR>
+  let g:startify_custom_header = [
+        \' ______   ______            _______  _______  ___   _  _______  ',
+        \' |      | |    _ |          |       ||   _   ||   | | ||       |',
+        \' |  _    ||   | ||          |       ||  |_|  ||   |_| ||    ___|',
+        \' | | |   ||   |_||_         |       ||       ||      _||   |___ ',
+        \' | |_|   ||    __  | ___    |      _||       ||     |_ |    ___|',
+        \' |       ||   |  | ||   |   |     |_ |   _   ||    _  ||   |___ ',
+        \' |______| |___|  |_||___|   |_______||__| |__||___| |_||_______|',
+        \'',
+        \'']
+
 Plug 'bling/vim-airline'
    let g:airline_theme = "solarized"
    let g:airline_powerline_fonts = 1
