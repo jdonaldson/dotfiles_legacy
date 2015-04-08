@@ -36,9 +36,9 @@ Plug 'ap/vim-css-color'
 Plug 'batsuev/csscomb-vim'
 Plug 'xolox/vim-lua-ftplugin'
     Plug 'xolox/vim-misc'
-Plug 'jdonaldson/vaxel'
+Plug 'jdonaldson/vaxe'
     map <Leader>dh :! ./haxe build.hxml<CR>
-    map <Leader>dl :luafile ~/.vim/bundle/vaxel/lua/vaxel.lua<CR>
+    map <Leader>dl :luafile ~/.vim/bundle/vaxe/lua/vaxe.lua<CR>
     let g:vaxe_haxe_version = 3
     let g:vaxe_completion_write_compiler_output = 1
     map <Leader>oh :call vaxe#OpenHxml()<CR>
