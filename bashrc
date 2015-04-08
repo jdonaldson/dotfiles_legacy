@@ -39,7 +39,7 @@ alias munit="haxelib run munit"
 alias mlib="haxelib run mlib"
 
 # testing
-test -d  $HOME/Projects/haxe/std && export HAXE_STD_PATH=$HOME/Projects/haxe/std
+# test -d  $HOME/Projects/haxe/std && export HAXE_STD_PATH=$HOME/Projects/haxe/std
 
 export PATH=~/bin:$PATH
 # add custom flex sdk path
