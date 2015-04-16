@@ -83,6 +83,10 @@ Plug 'mileszs/ack.vim'
     " use silver searcher instead of ack:
     let g:ackprg = 'ag --follow --nogroup --nocolor --column'
 
+Plug 'jdonaldson/vim-metarw-gdrive'
+  Plug 'kana/vim-metarw'
+  Plug 'mattn/webapi-vim'
+
 Plug 'airblade/vim-gitgutter'
 Plug 'mhinz/vim-startify'
   nnoremap <Leader>` :Startify<CR>
