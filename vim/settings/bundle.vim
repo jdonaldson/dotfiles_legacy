@@ -52,13 +52,14 @@ endif
 Plug 'gerw/vim-latex-suite'
 
 " Eclim (installed with an installer)
- let g:EclimLocateFileScope = 'workspace'
+ " let g:EclimLocateFileScope = 'workspace'
  let g:EclimCompletionMethod = 'omnifunc'
  let g:EclimDefaultFileOpenAction = 'vsplit'
  let g:EclimJavaSearchSingleResult = 'vsplit'
  au BufNewFile,BufRead *.java map <buffer><c-p> :LocateFile<CR>
  au BufNewFile,BufRead *.java map <buffer><c-]> :JavaSearchContext "vsplit"<CR>
- au BufNewFile,BufRead *.java map <buffer><c-[> "zyiw:exe ":JavaSearch -p ".@z." -x implementors -p vsplit "<CR>
+ au BufNewFile,BufRead *.java map <buffer><c-[> "zyiw:exe ":JavaSearch -p ".@z." -x references -p vsplit "<CR>
+ au BufNewFile,BufRead *.java map <buffer><c-\> "zyiw:exe ":JavaSearch -p ".@z." -x implementors -p vsplit "<CR>
  au BufNewFile,BufRead *.java map <buffer><c-@> :JavaSearch
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -86,6 +87,7 @@ Plug 'mileszs/ack.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'mhinz/vim-startify'
   nnoremap <Leader>` :Startify<CR>
+  let g:startify_session_persistence = 1
   let g:startify_custom_header = [
         \' ______   ______            _______  _______  ___   _  _______  ',
         \' |      | |    _ |          |       ||   _   ||   | | ||       |',
@@ -196,7 +198,8 @@ Plug 'scrooloose/nerdtree'
 
 
 Plug 'closetag.vim'
-Plug 'christoomey/vim-tmux-navigator'
+" Plug 'christoomey/vim-tmux-navigator'
+
 Plug 'kana/vim-fakeclip'
 " Vim-fakeclip {{{2
 let g:fakeclip_no_default_key_mappings=1
