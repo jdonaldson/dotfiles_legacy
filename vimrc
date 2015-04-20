@@ -78,6 +78,7 @@ nnoremap <Leader>f$ :%s/\s\+$//<CR>:let @/=''<CR>
 "fix line (or visual block lines)
 nnoremap <Leader>fl :normal gqq==<CR>
 vnoremap <Leader>fl :normal gvgqgv=<CR>
+
 " fix operator/type declaration spacing (single space each side) on line
 nnoremap <Leader>fd :call ExpandDelimited()<CR>
 vnoremap <Leader>fd :call ExpandDelimited()<CR>
@@ -93,6 +94,13 @@ autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 :autocmd BufNewFile,BufRead *.md set tw=80
+
+" window navigation tweaks
+set wiw=10
+set wmw=10
+nmap <c-h> <c-w>h<c-w><Bar>
+nmap <c-l> <c-w>l<c-w><Bar>
+
 
 function! ExpandDelimited()
     " new line after opening paren/bracket
@@ -211,8 +219,11 @@ nmap <silent><Leader>sp :e ~/.vim/UltiSnips<CR>
 nmap <silent><Leader>tp :call ToggleSet("paste")<CR>
 
 
+" Shortcuts for working with tabs
 " Load the current buffer in a new tab
-nnoremap <leader>nt :tabedit %<cr>
+nnoremap <leader>tn :tabedit %<cr>
+" close the current tab
+nnoremap <leader>tc :tabclose<cr>
 
 " Reload current buffer
 nnoremap <leader>ee :edit!<cr>
