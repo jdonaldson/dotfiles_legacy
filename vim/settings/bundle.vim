@@ -36,9 +36,9 @@ Plug 'ap/vim-css-color'
 Plug 'batsuev/csscomb-vim'
 Plug 'xolox/vim-lua-ftplugin'
     Plug 'xolox/vim-misc'
-Plug 'jdonaldson/vaxel'
+Plug 'jdonaldson/vaxe'
     map <Leader>dh :! ./haxe build.hxml<CR>
-    map <Leader>dl :luafile ~/.vim/bundle/vaxel/lua/vaxel.lua<CR>
+    map <Leader>dl :luafile ~/.vim/bundle/vaxe/lua/vaxe.lua<CR>
     let g:vaxe_haxe_version = 3
     let g:vaxe_completion_write_compiler_output = 1
     map <Leader>oh :call vaxe#OpenHxml()<CR>
@@ -52,13 +52,14 @@ endif
 Plug 'gerw/vim-latex-suite'
 
 " Eclim (installed with an installer)
- let g:EclimLocateFileScope = 'workspace'
+ " let g:EclimLocateFileScope = 'workspace'
  let g:EclimCompletionMethod = 'omnifunc'
  let g:EclimDefaultFileOpenAction = 'vsplit'
  let g:EclimJavaSearchSingleResult = 'vsplit'
  au BufNewFile,BufRead *.java map <buffer><c-p> :LocateFile<CR>
  au BufNewFile,BufRead *.java map <buffer><c-]> :JavaSearchContext "vsplit"<CR>
- au BufNewFile,BufRead *.java map <buffer><c-[> "zyiw:exe ":JavaSearch -p ".@z." -x implementors -p vsplit "<CR>
+ au BufNewFile,BufRead *.java map <buffer><c-[> "zyiw:exe ":JavaSearch -p ".@z." -x references -p vsplit "<CR>
+ au BufNewFile,BufRead *.java map <buffer><c-\> "zyiw:exe ":JavaSearch -p ".@z." -x implementors -p vsplit "<CR>
  au BufNewFile,BufRead *.java map <buffer><c-@> :JavaSearch
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -83,9 +84,14 @@ Plug 'mileszs/ack.vim'
     " use silver searcher instead of ack:
     let g:ackprg = 'ag --follow --nogroup --nocolor --column'
 
+Plug 'jdonaldson/vim-metarw-gdrive'
+  Plug 'kana/vim-metarw'
+  Plug 'mattn/webapi-vim'
+
 Plug 'airblade/vim-gitgutter'
 Plug 'mhinz/vim-startify'
   nnoremap <Leader>` :Startify<CR>
+  let g:startify_session_persistence = 1
   let g:startify_custom_header = [
         \' ______   ______            _______  _______  ___   _  _______  ',
         \' |      | |    _ |          |       ||   _   ||   | | ||       |',
@@ -196,7 +202,8 @@ Plug 'scrooloose/nerdtree'
 
 
 Plug 'closetag.vim'
-Plug 'christoomey/vim-tmux-navigator'
+" Plug 'christoomey/vim-tmux-navigator'
+
 Plug 'kana/vim-fakeclip'
 " Vim-fakeclip {{{2
 let g:fakeclip_no_default_key_mappings=1
