@@ -196,6 +196,11 @@ map <Leader>pc :call ToggleEnablePreview()<CR>
 " All of my 'panels'
 "map <Leader>y :YRShow<CR>
 
+"folding
+nmap <silent><Leader>fl0 :set foldlevel=0<CR>
+nmap <silent><Leader>fl1 :set foldlevel=1<CR>
+nmap <silent><Leader>fl2 :set foldlevel=2<CR>
+nmap <silent><Leader>fl3 :set foldlevel=3<CR>
 
 
 " Show/hide stuff: <Leader>s + letter

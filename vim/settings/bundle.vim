@@ -25,6 +25,9 @@ Plug 'kchmck/vim-coffee-script'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'jsx/jsx.vim'
+Plug 'lervag/vimtex'
+set makeprg=pdflatex\ %
+
 Plug 'elzr/vim-json'
 Plug 'PProvost/vim-markdown-jekyll'
 Plug 'suan/vim-instant-markdown'
@@ -49,7 +52,7 @@ Plug 'jdonaldson/vaxe'
 if hostname == "jdonaldson-wsm1.internal.salesforce.com"
     Plug 'vim-aura'
 endif
-Plug 'gerw/vim-latex-suite'
+" Plug 'gerw/vim-latex-suite'
 
 " Eclim (installed with an installer)
  " let g:EclimLocateFileScope = 'workspace'

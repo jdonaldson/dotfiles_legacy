@@ -7,8 +7,11 @@ test -f $HOME/.auth.sh && source $HOME/.auth.sh
 # personal private config
 test -f $HOME/.privaterc && source $HOME/.privaterc
 
-# personal python venv 
+# personal python venv
 test -d $HOME/.venv_bootstrap && source $HOME/.venv_bootstrap/bin/activate
+
+# common latex location
+test -d /usr/texbin && export PATH=$PATH:/usr/texbin
 
 export EMAIL="jdonaldson@gmail.com"
 export EMAIL_OBSCURED="jdonaldson[at]gmail[dot]com"
