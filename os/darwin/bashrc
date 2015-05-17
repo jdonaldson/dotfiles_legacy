@@ -5,7 +5,7 @@ fi
 alias gimme="brew install"
 alias isthere="brew search"
 alias updateme="brew update"
-alias upgrademe="brew upgrade"
+alias upgrademe="brew upgrade --all"
 
 export ANDROID_SDK_ROOT=/usr/local/opt/android-sdk
 
