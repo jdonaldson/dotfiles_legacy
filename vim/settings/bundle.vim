@@ -59,6 +59,7 @@ endif
  let g:EclimCompletionMethod = 'omnifunc'
  let g:EclimDefaultFileOpenAction = 'vsplit'
  let g:EclimJavaSearchSingleResult = 'vsplit'
+ let g:EclimProjectKeepLocalHistory = 0
  au BufNewFile,BufRead *.java map <buffer><c-p> :LocateFile<CR>
  au BufNewFile,BufRead *.java map <buffer><c-]> :JavaSearchContext "vsplit"<CR>
  au BufNewFile,BufRead *.java map <buffer><c-[> "zyiw:exe ":JavaSearch -p ".@z." -x references -p vsplit "<CR>
