@@ -1,14 +1,12 @@
-# Justin Donaldson Dot Files
+# Justin Donaldson's Dot Files
 
 These are config files to set up a system the way I like it. I've shamelessly
 copied a lot of stuff from [Ryan Bates](https://github.com/ryanb/dotfiles).
 But, I've changed a lot as well.  For one, I've disabled the zsh related
-configs, and modified the vim configurations to work with vundle.  I've also
+configs, and modified the vim configurations to work with vim-plug.  I've also
 added a lot of misc utility vim plugins, they might be useful to others.
 
-As Ryan notes, this is working on Mac OS X, but it will likely work on Linux as
-well.
-
+I use this set of configs for both my osx and linux machines.
 
 ## Installation
 
