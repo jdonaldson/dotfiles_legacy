@@ -204,6 +204,8 @@ Plug 'scrooloose/nerdtree'
     " Extended feature plugin
     Plug 'jdonaldson/nerdtree-execute'
 
+Plug 'vim-scripts/VisIncr'
+
 
 Plug 'closetag.vim'
 " Plug 'christoomey/vim-tmux-navigator'
