@@ -158,7 +158,6 @@ Plug 'SirVer/ultisnips'
 if executable("p4") && getcwd() =~ "blt\\|projectone\\|main\\|patch\\|freeze"
     Plug 'vim-scripts/perforce'
 endif
-Plug 'michalliu/sourcebeautify.vim'
 Plug 'mkitt/browser-refresh.vim'
     " browser refresh settings
     let g:RefreshRunningBrowserDefault = 'chrome'
@@ -174,21 +173,24 @@ Plug 'scrooloose/syntastic'
     augroup END
 
 " Most of Tim Pope's awesome bundles:
-Plug 'tpope/vim-commentary'
-  " ocaml comments
-  autocmd FileType ocaml set commentstring=(*\ %s\ *)
+
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
-    " Plug 'jaxbot/github-issues.vim'
-
+Plug 'tpope/vim-jdaddy'
+Plug 'tpope/vim-projectile'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-projectile'
 Plug 'tpope/vim-vinegar'
+
+
+Plug 'tpope/vim-commentary'
+  " ocaml comments
+  autocmd FileType ocaml set commentstring=(*\ %s\ *)
+
 Plug 'tpope/vim-dispatch'
     map <Leader>dm :Make<CR>
     " Use dispatch to execute the current line as a shell command, insert
