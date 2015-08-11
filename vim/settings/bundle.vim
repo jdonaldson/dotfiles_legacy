@@ -14,12 +14,13 @@ Plug 'altercation/vim-colors-solarized'
     set background=dark
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Plugs that support language-specific tooling and support
+" Plugs that support file/language-specific tooling and support
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'OCamlPro/ocp-indent'
  autocmd FileType ocaml let b:comment_leader = '(* '
 
 Plug 'jcfaria/Vim-R-plugin'
+Plug 'chrisbra/csv.vim'
 Plug 'jdonaldson/vim-eco'
 Plug 'jdonaldson/writeGooder'
 Plug 'vim-ruby/vim-ruby'
