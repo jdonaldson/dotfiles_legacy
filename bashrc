@@ -32,8 +32,10 @@ export PGDATA=/usr/local/var/postgres
 
 if   [[ "$unamestr" == 'Linux'  ]]; then
     source ~/.os/linux/bashrc
+    export PATH=~/.os/linux/bin:$PATH
 elif [[ "$unamestr" == 'Darwin' ]]; then
     source ~/.os/darwin/bashrc
+    export PATH=~/.os/darwin/bin:$PATH
 fi
 
 alias serve="python -m SimpleHTTPServer 9040"
