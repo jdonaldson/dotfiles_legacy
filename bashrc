@@ -88,3 +88,4 @@ settitle() {
 	printf "\033k$1\033\\"
 }
 
+export HAXE_STD_PATH="/usr/local/lib/haxe/std"

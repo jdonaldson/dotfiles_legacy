@@ -14,10 +14,13 @@ Plug 'altercation/vim-colors-solarized'
     set background=dark
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Plugs that support language-specific tooling and support
+" Plugs that support file/language-specific tooling and support
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'OCamlPro/ocp-indent'
+ autocmd FileType ocaml let b:comment_leader = '(* '
+
 Plug 'jcfaria/Vim-R-plugin'
+Plug 'chrisbra/csv.vim'
 Plug 'jdonaldson/vim-eco'
 Plug 'jdonaldson/writeGooder'
 Plug 'vim-ruby/vim-ruby'
@@ -26,29 +29,29 @@ Plug 'cakebaker/scss-syntax.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'jsx/jsx.vim'
 Plug 'lervag/vimtex'
-set makeprg=pdflatex\ %
+  autocmd FileType latex set makeprg=pdflatex\ %
 
 Plug 'elzr/vim-json'
 Plug 'PProvost/vim-markdown-jekyll'
 Plug 'suan/vim-instant-markdown'
-   let g:instant_markdown_slow = 1
+  let g:instant_markdown_slow = 1
 Plug 'plasticboy/vim-markdown'
 Plug 'jdonaldson/vim-markdown-link-convert'
-    map <Leader>il :call Inline2Ref()<CR>
+  map <Leader>il :call Inline2Ref()<CR>
 Plug 'ap/vim-css-color'
 Plug 'batsuev/csscomb-vim'
 Plug 'xolox/vim-lua-ftplugin'
     Plug 'xolox/vim-misc'
 Plug 'jdonaldson/vaxe'
-    map <Leader>dh :! ./haxe build.hxml<CR>
-    map <Leader>dl :luafile ~/.vim/bundle/vaxe/lua/vaxe.lua<CR>
-    let g:vaxe_haxe_version = 3
-    let g:vaxe_completion_write_compiler_output = 1
-    map <Leader>oh :call vaxe#OpenHxml()<CR>
-    map <Leader>ct :call vaxe#Ctags()<CR>
-    map <Leader>ic :call vaxe#ImportClass()<CR>
-    map <Leader>pj :call vaxe#ProjectHxml()<CR>
-    map <Leader>jd :call vaxe#JumpToDefinition()<CR>
+  map <Leader>dh :! ./haxe build.hxml<CR>
+  map <Leader>dl :luafile ~/.vim/bundle/vaxe/lua/vaxe.lua<CR>
+  let g:vaxe_haxe_version = 3
+  let g:vaxe_completion_write_compiler_output = 1
+  map <Leader>oh :call vaxe#OpenHxml()<CR>
+  map <Leader>ct :call vaxe#Ctags()<CR>
+  map <Leader>ic :call vaxe#ImportClass()<CR>
+  map <Leader>pj :call vaxe#ProjectHxml()<CR>
+  map <Leader>jd :call vaxe#JumpToDefinition()<CR>
 if hostname == "jdonaldson-wsm1.internal.salesforce.com"
     Plug 'vim-aura'
 endif
@@ -168,7 +171,6 @@ Plug 'SirVer/ultisnips'
 if executable("p4") && getcwd() =~ "blt\\|projectone\\|main\\|patch\\|freeze"
     Plug 'vim-scripts/perforce'
 endif
-Plug 'michalliu/sourcebeautify.vim'
 Plug 'mkitt/browser-refresh.vim'
     " browser refresh settings
     let g:RefreshRunningBrowserDefault = 'chrome'
@@ -184,25 +186,30 @@ Plug 'scrooloose/syntastic'
     augroup END
 
 " Most of Tim Pope's awesome bundles:
-Plug 'tpope/vim-commentary'
+
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
-    " Plug 'jaxbot/github-issues.vim'
-
+Plug 'tpope/vim-jdaddy'
+Plug 'tpope/vim-projectile'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-projectile'
 Plug 'tpope/vim-vinegar'
+
+
+Plug 'tpope/vim-commentary'
+  " ocaml comments
+  autocmd FileType ocaml set commentstring=(*\ %s\ *)
+
 Plug 'tpope/vim-dispatch'
     map <Leader>dm :Make<CR>
     " Use dispatch to execute the current line as a shell command, insert
     " results below the line
     nnoremap <Leader>r :exe ':Dispatch '.getline('.') <CR>
-    
+
 Plug 'tyru/open-browser.vim'
 
 
@@ -215,6 +222,8 @@ Plug 'scrooloose/nerdtree'
     command! En execute "NERDTree %"
     " Extended feature plugin
     Plug 'jdonaldson/nerdtree-execute'
+
+Plug 'vim-scripts/VisIncr'
 
 
 Plug 'closetag.vim'
