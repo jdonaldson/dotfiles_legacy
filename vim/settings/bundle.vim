@@ -169,7 +169,8 @@ Plug 'SirVer/ultisnips'
     let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 "include perforce if I have a p4 client
 if executable("p4") && getcwd() =~ "blt\\|projectone\\|main\\|patch\\|freeze"
-    Plug 'vim-scripts/perforce'
+    Plug 'jdonaldson/perforce'
+      let g:p4Depot = 'jdonaldson-wsm1-blt'
 endif
 Plug 'mkitt/browser-refresh.vim'
     " browser refresh settings
