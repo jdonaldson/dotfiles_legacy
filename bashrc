@@ -7,8 +7,6 @@ test -f $HOME/.auth.sh && source $HOME/.auth.sh
 # personal private config
 test -f $HOME/.privaterc && source $HOME/.privaterc
 
-# personal python venv
-test -d $HOME/.venv_bootstrap && source $HOME/.venv_bootstrap/bin/activate
 
 # common latex location
 test -d /usr/texbin && export PATH=$PATH:/usr/texbin
@@ -89,3 +87,6 @@ settitle() {
 }
 
 export HAXE_STD_PATH="/usr/local/lib/haxe/std"
+
+# personal python venv
+test -d $HOME/.venv_bootstrap && source $HOME/.venv_bootstrap/bin/activate
