@@ -198,7 +198,8 @@ Plug 'tpope/vim-dispatch'
 Plug 'tyru/open-browser.vim'
 
 
-Plug 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
+
 Plug 'sjl/gundo.vim'
     map <Leader>su :GundoToggle<CR>
 
@@ -254,7 +255,7 @@ Plug 'tomtom/tlib_vim'
 Plug 'vim-scripts/genutils'
 Plug 'michalliu/jsoncodecs.vim'
 Plug 'michalliu/jsruntime.vim'
-Plug 'Shougo/vimproc.vim'
+Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'L9'
 Plug 'utl.vim'
