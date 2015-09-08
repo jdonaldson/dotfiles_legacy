@@ -189,7 +189,7 @@ cmap w!! w !sudo tee % >/dev/null
 " nnoremap <C-J> hmao<esc>`a
 
 " stamp paste with capital S
-nnoremap S "_diwP"
+nmap <silent><Leader>sp :execute "_diwP"<CR>
 
 map <Leader>pc :call ToggleEnablePreview()<CR>
 
@@ -201,6 +201,7 @@ nmap <silent><Leader>fl0 :set foldlevel=0<CR>
 nmap <silent><Leader>fl1 :set foldlevel=1<CR>
 nmap <silent><Leader>fl2 :set foldlevel=2<CR>
 nmap <silent><Leader>fl3 :set foldlevel=3<CR>
+nmap <silent><Leader>fl4 :set foldlevel=4<CR>
 
 
 " Show/hide stuff: <Leader>s + letter

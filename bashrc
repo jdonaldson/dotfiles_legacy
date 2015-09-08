@@ -7,8 +7,6 @@ test -f $HOME/.auth.sh && source $HOME/.auth.sh
 # personal private config
 test -f $HOME/.privaterc && source $HOME/.privaterc
 
-# personal python venv
-test -d $HOME/.venv_bootstrap && source $HOME/.venv_bootstrap/bin/activate
 
 # common latex location
 test -d /usr/texbin && export PATH=$PATH:/usr/texbin
@@ -32,8 +30,10 @@ export PGDATA=/usr/local/var/postgres
 
 if   [[ "$unamestr" == 'Linux'  ]]; then
     source ~/.os/linux/bashrc
+    export PATH=~/.os/linux/bin:$PATH
 elif [[ "$unamestr" == 'Darwin' ]]; then
     source ~/.os/darwin/bashrc
+    export PATH=~/.os/darwin/bin:$PATH
 fi
 
 alias serve="python -m SimpleHTTPServer 9040"
@@ -86,3 +86,7 @@ settitle() {
 	printf "\033k$1\033\\"
 }
 
+export HAXE_STD_PATH="/usr/local/lib/haxe/std"
+
+# personal python venv
+test -d $HOME/.venv_bootstrap && source $HOME/.venv_bootstrap/bin/activate

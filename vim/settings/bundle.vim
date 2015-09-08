@@ -14,12 +14,13 @@ Plug 'altercation/vim-colors-solarized'
     set background=dark
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Plugs that support language-specific tooling and support
+" Plugs that support file/language-specific tooling and support
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'OCamlPro/ocp-indent'
  autocmd FileType ocaml let b:comment_leader = '(* '
 
 Plug 'jcfaria/Vim-R-plugin'
+Plug 'chrisbra/csv.vim'
 Plug 'jdonaldson/vim-eco'
 Plug 'jdonaldson/writeGooder'
 Plug 'vim-ruby/vim-ruby'
@@ -143,7 +144,19 @@ Plug 'junegunn/vim-easy-align'
     nmap <Leader>a <Plug>(EasyAlign)
 
     let g:easy_align_delimiters = {
-                \ 't': { 'pattern': "\<tab>", 'left_margin': 0, 'right_margin': 0 } }
+                \ '[': {
+                \     'pattern':       '[[\]]',
+                \     'left_margin':   0,
+                \     'right_margin':  0,
+                \     'stick_to_left': 0
+                \   },
+                \ '(': {
+                \     'pattern':       '[()]',
+                \     'left_margin':   0,
+                \     'right_margin':  0,
+                \     'stick_to_left': 0
+                \   }
+                \ }
 
 Plug 'junegunn/vim-oblique'
    Plug 'junegunn/vim-pseudocl'
@@ -156,9 +169,9 @@ Plug 'SirVer/ultisnips'
     let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 "include perforce if I have a p4 client
 if executable("p4") && getcwd() =~ "blt\\|projectone\\|main\\|patch\\|freeze"
-    Plug 'vim-scripts/perforce'
+    Plug 'jdonaldson/perforce'
+      let g:p4Depot = 'jdonaldson-wsm1-blt'
 endif
-Plug 'michalliu/sourcebeautify.vim'
 Plug 'mkitt/browser-refresh.vim'
     " browser refresh settings
     let g:RefreshRunningBrowserDefault = 'chrome'
@@ -174,21 +187,24 @@ Plug 'scrooloose/syntastic'
     augroup END
 
 " Most of Tim Pope's awesome bundles:
-Plug 'tpope/vim-commentary'
-  " ocaml comments
-  autocmd FileType ocaml set commentstring=(*\ %s\ *)
+
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
-    " Plug 'jaxbot/github-issues.vim'
-
+Plug 'tpope/vim-jdaddy'
+Plug 'tpope/vim-projectile'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-projectile'
 Plug 'tpope/vim-vinegar'
+
+
+Plug 'tpope/vim-commentary'
+  " ocaml comments
+  autocmd FileType ocaml set commentstring=(*\ %s\ *)
+
 Plug 'tpope/vim-dispatch'
     map <Leader>dm :Make<CR>
     " Use dispatch to execute the current line as a shell command, insert
@@ -208,6 +224,8 @@ Plug 'scrooloose/nerdtree'
     command! En execute "NERDTree %"
     " Extended feature plugin
     Plug 'jdonaldson/nerdtree-execute'
+
+Plug 'vim-scripts/VisIncr'
 
 
 Plug 'closetag.vim'
