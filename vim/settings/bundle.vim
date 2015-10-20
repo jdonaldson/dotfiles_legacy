@@ -27,17 +27,24 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'kchmck/vim-coffee-script'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'pangloss/vim-javascript'
+Plug 'klen/python-mode'
+Plug 'sophacles/vim-bundle-mako'
 Plug 'jsx/jsx.vim'
+
 Plug 'lervag/vimtex'
   autocmd FileType latex set makeprg=pdflatex\ %
 
 Plug 'elzr/vim-json'
 Plug 'PProvost/vim-markdown-jekyll'
+
 Plug 'suan/vim-instant-markdown'
   let g:instant_markdown_slow = 1
+
 Plug 'plasticboy/vim-markdown'
+
 Plug 'jdonaldson/vim-markdown-link-convert'
   map <Leader>il :call Inline2Ref()<CR>
+
 Plug 'ap/vim-css-color'
 Plug 'batsuev/csscomb-vim'
 Plug 'xolox/vim-lua-ftplugin'
@@ -55,7 +62,6 @@ Plug 'jdonaldson/vaxe'
 if hostname == "jdonaldson-wsm1.internal.salesforce.com"
     Plug 'vim-aura'
 endif
-" Plug 'gerw/vim-latex-suite'
 
 " Eclim (installed with an installer)
  " let g:EclimLocateFileScope = 'workspace'
