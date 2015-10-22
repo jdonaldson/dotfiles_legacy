@@ -8,6 +8,7 @@ let hostname = substitute(system('hostname'), '\n', '', '')
 " If there are bundle-specific configs that I like, I add them under the
 " bundle entry, while also indenting them.
 
+" Start out with my favorite color scheme
 Plug 'altercation/vim-colors-solarized'
     " solarized options
     let g:solarized_termtrans = 1
@@ -30,21 +31,15 @@ Plug 'pangloss/vim-javascript'
 Plug 'klen/python-mode'
 Plug 'sophacles/vim-bundle-mako'
 Plug 'jsx/jsx.vim'
-
 Plug 'lervag/vimtex'
   autocmd FileType latex set makeprg=pdflatex\ %
-
 Plug 'elzr/vim-json'
 Plug 'PProvost/vim-markdown-jekyll'
-
 Plug 'suan/vim-instant-markdown'
   let g:instant_markdown_slow = 1
-
 Plug 'plasticboy/vim-markdown'
-
 Plug 'jdonaldson/vim-markdown-link-convert'
   map <Leader>il :call Inline2Ref()<CR>
-
 Plug 'ap/vim-css-color'
 Plug 'batsuev/csscomb-vim'
 Plug 'xolox/vim-lua-ftplugin'
@@ -62,7 +57,6 @@ Plug 'jdonaldson/vaxe'
 if hostname == "jdonaldson-wsm1.internal.salesforce.com"
     Plug 'vim-aura'
 endif
-
 " Eclim (installed with an installer)
  " let g:EclimLocateFileScope = 'workspace'
  let g:EclimCompletionMethod = 'omnifunc'
@@ -97,9 +91,9 @@ Plug 'mileszs/ack.vim'
     " use silver searcher instead of ack:
     let g:ackprg = 'ag --follow --nogroup --nocolor --column'
 
-Plug 'jdonaldson/vim-metarw-gdrive'
-  Plug 'kana/vim-metarw'
-  Plug 'mattn/webapi-vim'
+" Plug 'jdonaldson/vim-metarw-gdrive'
+"   Plug 'kana/vim-metarw'
+"   Plug 'mattn/webapi-vim'
 
 Plug 'airblade/vim-gitgutter'
 Plug 'mhinz/vim-startify'
@@ -145,10 +139,8 @@ Plug 'Lokaltog/powerline'
 Plug 'junegunn/vim-easy-align'
     " Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
     vmap <Enter> <Plug>(EasyAlign)
-    "
     " Start interactive EasyAlign for a motion/text object (e.g. <Leader>aip)
     nmap <Leader>a <Plug>(EasyAlign)
-
     let g:easy_align_delimiters = {
                 \ '[': {
                 \     'pattern':       '[[\]]',
@@ -205,12 +197,9 @@ Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
-
-
 Plug 'tpope/vim-commentary'
   " ocaml comments
   autocmd FileType ocaml set commentstring=(*\ %s\ *)
-
 Plug 'tpope/vim-dispatch'
     map <Leader>dm :Make<CR>
     " Use dispatch to execute the current line as a shell command, insert
@@ -232,7 +221,6 @@ Plug 'scrooloose/nerdtree'
     Plug 'jdonaldson/nerdtree-execute'
 
 Plug 'vim-scripts/VisIncr'
-
 
 Plug 'closetag.vim'
 " Plug 'christoomey/vim-tmux-navigator'
