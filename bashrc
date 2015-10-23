@@ -59,6 +59,9 @@ alias cdp="cd -P"
 alias ssh='ssh -X'
 alias untar='tar xvjf'
 
+# git aliases
+alias gitactive="git for-each-ref --sort=-committerdate refs/heads/ --format='%(committerdate:short) %(authorname) %(refname:short)'"
+
 test -s "$HOME/.rvm/scripts/rvm" && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 # add dotfile util bin directory
