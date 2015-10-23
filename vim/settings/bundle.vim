@@ -134,7 +134,7 @@ Plug 'majutsushi/tagbar'
                 \ 'k:Heading_L3'
             \ ]
         \ }
-Plug 'Lokaltog/powerline'
+" Plug 'Lokaltog/powerline'
 " Plug 'Align'
 Plug 'junegunn/vim-easy-align'
     " Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
