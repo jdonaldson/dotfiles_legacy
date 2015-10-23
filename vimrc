@@ -189,7 +189,10 @@ cmap w!! w !sudo tee % >/dev/null
 " nnoremap <C-J> hmao<esc>`a
 
 " stamp paste with capital S
-nmap <silent><Leader>sp :execute "_diwP"<CR>
+nmap <silent><Leader>lp :execute ""_diwP"<CR>
+
+
+
 
 map <Leader>pc :call ToggleEnablePreview()<CR>
 

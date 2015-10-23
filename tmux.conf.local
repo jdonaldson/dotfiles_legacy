@@ -8,5 +8,5 @@ tmux_conf_theme=powerline_patched_font
 # or alternatively use an external tool, e.g. https://github.com/Goles/Battery
 tmux_conf_battery='#(rainbarf --battery --remaining --bright) '
 
-# use mouse mode to scroll
-setw -g mode-mouse on
+# set mouse options
+setw -g mouse on

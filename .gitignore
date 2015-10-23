@@ -11,3 +11,14 @@ vim/session
 vim/undo
 vim/backup
 
+bin/ccollab
+bin/ccollabexternaldiff
+bin/chatter.py
+bin/eclipse
+bin/eclipse.sh
+bin/p4collab
+bin/perforcetrigger
+bin/smartbear-diff-shim
+bin/sqldeveloper.sh
+bin/subversiontrigger
+
