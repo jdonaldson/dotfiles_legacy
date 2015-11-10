@@ -92,4 +92,5 @@ settitle() {
 export HAXE_STD_PATH="/usr/local/lib/haxe/std"
 
 # personal python venv
-test -d $HOME/.venv_bootstrap && source $HOME/.venv_bootstrap/bin/activate
+test -d $HOME/.virtualenvs/venv && source $HOME/.virtualenvs/venv/bin/activate
+
