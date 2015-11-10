@@ -54,9 +54,6 @@ Plug 'jdonaldson/vaxe'
   map <Leader>ic :call vaxe#ImportClass()<CR>
   map <Leader>pj :call vaxe#ProjectHxml()<CR>
   map <Leader>jd :call vaxe#JumpToDefinition()<CR>
-if hostname == "jdonaldson-wsm1.internal.salesforce.com"
-    Plug 'vim-aura'
-endif
 " Eclim (installed with an installer)
  " let g:EclimLocateFileScope = 'workspace'
  let g:EclimCompletionMethod = 'omnifunc'
