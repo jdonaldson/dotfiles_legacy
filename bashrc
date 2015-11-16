@@ -94,3 +94,9 @@ export HAXE_STD_PATH="/usr/local/lib/haxe/std"
 # personal python venv
 test -d $HOME/.virtualenvs/venv && source $HOME/.virtualenvs/venv/bin/activate
 
+# use git-prompt  
+if [ -f "$(brew --prefix bash-git-prompt)/share/gitprompt.sh" ]; then
+    GIT_PROMPT_THEME=Default
+    source "$(brew --prefix bash-git-prompt)/share/gitprompt.sh"
+fi
+
