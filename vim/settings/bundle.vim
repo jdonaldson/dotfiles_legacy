@@ -21,6 +21,7 @@ Plug 'OCamlPro/ocp-indent'
  autocmd FileType ocaml let b:comment_leader = '(* '
 
 Plug 'jcfaria/Vim-R-plugin'
+  let vimrplugin_assign = 0
 Plug 'chrisbra/csv.vim'
 Plug 'jdonaldson/vim-eco'
 Plug 'jdonaldson/writeGooder'
