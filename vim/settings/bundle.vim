@@ -17,11 +17,19 @@ Plug 'altercation/vim-colors-solarized'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugs that support file/language-specific tooling and support
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'OCamlPro/ocp-indent'
- autocmd FileType ocaml let b:comment_leader = '(* '
 
+" Ocaml
+Plug 'def-lkb/ocp-indent-vim'
+  let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
+  execute "set rtp+=" . g:opamshare . "/merlin/vim"
+  let g:syntastic_ocaml_checkers = ['merlin']
+  autocmd FileType ocaml exec ":source " . g:opamshare . "/ocp-indent/vim/indent/ocaml.vim"
+  autocmd FileType ocaml let b:comment_leader = '(* '
+
+" R
 Plug 'jcfaria/Vim-R-plugin'
   let vimrplugin_assign = 0
+
 Plug 'chrisbra/csv.vim'
 Plug 'jdonaldson/vim-eco'
 Plug 'jdonaldson/writeGooder'
