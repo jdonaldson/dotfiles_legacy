@@ -215,7 +215,7 @@ Plug 'tpope/vim-dispatch'
 Plug 'tyru/open-browser.vim'
 
 
-Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
+Plug 'Valloric/YouCompleteMe', { 'do': 'python install.py' }
 
 Plug 'sjl/gundo.vim'
     map <Leader>su :GundoToggle<CR>
