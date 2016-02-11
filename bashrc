@@ -20,6 +20,8 @@ export GIT_PS1_SHOWSTASHSTATE=1
 export GIT_PS1_SHOWUNTRACKEDFILES=1
 export GIT_EDITOR=vim
 
+export HOMEBREW_GITHUB_API_TOKEN="6b87cba04969de5a3fb5b7f1119b74861d4e12cc"
+
 # prefer usr/local
 export PATH=/usr/local/share:/usr/local/bin:/usr/local/sbin:$PATH
 unamestr=`uname`
