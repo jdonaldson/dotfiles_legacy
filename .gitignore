@@ -22,3 +22,4 @@ bin/smartbear-diff-shim
 bin/sqldeveloper.sh
 bin/subversiontrigger
 
+os/darwin/bin/domino
