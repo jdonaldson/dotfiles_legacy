@@ -31,6 +31,7 @@ Plug 'jcfaria/Vim-R-plugin'
   let vimrplugin_assign = 0
 
 Plug 'chrisbra/csv.vim'
+Plug 'vim-scripts/gitignore.vim'
 Plug 'jdonaldson/vim-eco'
 Plug 'jdonaldson/writeGooder'
 Plug 'vim-ruby/vim-ruby'
@@ -192,7 +193,6 @@ Plug 'scrooloose/syntastic'
     augroup END
 
 " Most of Tim Pope's awesome bundles:
-
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-jdaddy'
