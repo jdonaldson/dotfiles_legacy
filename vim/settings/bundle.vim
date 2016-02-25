@@ -212,6 +212,13 @@ Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-commentary'
   " ocaml comments
   autocmd FileType ocaml set commentstring=(*\ %s\ *)
+  if maparg('\\','n') ==# '' && maparg('\','n') ==# '' && get(g:, 'commentary_map_backslash', 1)
+    xmap \\  <Plug>Commentary<CR>
+    nmap \\  <CR><Plug>Commentary
+    nmap \\\ <Plug>CommentaryLine<CR>
+    nmap \\u <Plug>CommentaryUndo<CR>
+  endif
+
 Plug 'tpope/vim-dispatch'
     map <Leader>dm :Make<CR>
     " Use dispatch to execute the current line as a shell command, insert
