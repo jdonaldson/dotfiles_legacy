@@ -40,12 +40,15 @@ Plug 'kchmck/vim-coffee-script'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'klen/python-mode'
- let g:pymode_folding = 0
+  let g:pymode_folding = 0
+  autocmd FileType python nmap <Leader>ll  :PymodeLintAuto<cr>
+
 Plug 'sophacles/vim-bundle-mako'
 Plug 'jsx/jsx.vim'
 Plug 'lervag/vimtex'
   autocmd FileType latex set makeprg=pdflatex\ %
 Plug 'elzr/vim-json'
+  command! -range -nargs=0 -bar JsonFormat <line1>,<line2>!python -m json.tool
 Plug 'PProvost/vim-markdown-jekyll'
 Plug 'suan/vim-instant-markdown'
   let g:instant_markdown_slow = 1
