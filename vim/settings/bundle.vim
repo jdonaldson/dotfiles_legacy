@@ -171,7 +171,10 @@ Plug 'junegunn/vim-easy-align'
 
 Plug 'junegunn/vim-oblique'
    Plug 'junegunn/vim-pseudocl'
+
 Plug 'jdonaldson/vim-cheat-x-in-y'
+Plug 'laurentgoudet/vim-howdoi'
+
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
     let g:UltiSnipsSnippetDirectories=["UltiSnips", "bundle/UltiSnips/UltiSnips", "bundle/vim-aura/ultisnips"]
@@ -293,4 +296,5 @@ Plug 'utl.vim'
 
 
 filetype plugin indent on " required!
+
 
