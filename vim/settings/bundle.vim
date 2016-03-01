@@ -25,7 +25,6 @@ Plug 'def-lkb/ocp-indent-vim'
   let g:syntastic_ocaml_checkers = ['merlin']
   autocmd FileType ocaml exec ":source " . g:opamshare . "/ocp-indent/vim/indent/ocaml.vim"
   autocmd FileType ocaml let b:comment_leader = '(* '
-Plug 'the-lambda-church/merlin', {'rtp' : 'vim/merlin'}
 
 " R
 Plug 'jcfaria/Vim-R-plugin'
