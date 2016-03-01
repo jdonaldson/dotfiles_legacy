@@ -1,15 +1,25 @@
-# company specific config
-test -f $HOME/.comrc.sh  && source $HOME/.comrc.sh
+maybeSource(){ 
+   test -f $1 && source $1 
+}
+maybePath(){ 
+   test -d $1 && export PATH=$PATH:$1 
+}
+
+# company specific stuff
+maybeSource $HOME/.comrc.sh
 
 # auth/creds
-test -f $HOME/.auth.sh && source $HOME/.auth.sh
+maybeSource $HOME/.auth.sh
 
 # personal private config
-test -f $HOME/.privaterc && source $HOME/.privaterc
+maybeSource $HOME/.privaterc
 
-
+# Append to path
 # common latex location
-test -d /usr/texbin && export PATH=$PATH:/usr/texbin
+maybePath /usr/texbin
+
+# opam system bin
+maybePath $HOME/.opam/system/bin
 
 export EMAIL="jdonaldson@gmail.com"
 export EMAIL_OBSCURED="jdonaldson[at]gmail[dot]com"
@@ -113,3 +123,10 @@ stablehaxe(){
    export STABLE_HAXE_STD_PATH=$STABLE_HAXE_STD_PATH;
 }
 
+function frameworkpython {
+    if [[ ! -z "$VIRTUAL_ENV" ]]; then
+        PYTHONHOME=$VIRTUAL_ENV /usr/local/bin/python "$@"
+    else
+        /usr/local/bin/python "$@"
+    fi
+}
