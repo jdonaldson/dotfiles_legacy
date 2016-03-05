@@ -19,12 +19,12 @@ Plug 'altercation/vim-colors-solarized'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Ocaml
-Plug 'def-lkb/ocp-indent-vim'
-  let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
-  execute "set rtp+=" . g:opamshare . "/merlin/vim"
-  let g:syntastic_ocaml_checkers = ['merlin']
-  autocmd FileType ocaml exec ":source " . g:opamshare . "/ocp-indent/vim/indent/ocaml.vim"
-  autocmd FileType ocaml let b:comment_leader = '(* '
+" Plug 'def-lkb/ocp-indent-vim'
+"   let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
+"   execute "set rtp+=" . g:opamshare . "/merlin/vim"
+"   let g:syntastic_ocaml_checkers = ['merlin']
+"   autocmd FileType ocaml exec ":source " . g:opamshare . "/ocp-indent/vim/indent/ocaml.vim"
+"   autocmd FileType ocaml let b:comment_leader = '(* '
 
 " R
 Plug 'jcfaria/Vim-R-plugin'
@@ -52,6 +52,7 @@ Plug 'PProvost/vim-markdown-jekyll'
 Plug 'suan/vim-instant-markdown'
   let g:instant_markdown_slow = 1
 Plug 'plasticboy/vim-markdown'
+  let g:vim_markdown_folding_disabled = 1
 Plug 'jdonaldson/vim-markdown-link-convert'
   map <Leader>il :call Inline2Ref()<CR>
 Plug 'ap/vim-css-color'
@@ -68,17 +69,18 @@ Plug 'jdonaldson/vaxe'
   map <Leader>ic :call vaxe#ImportClass()<CR>
   map <Leader>pj :call vaxe#ProjectHxml()<CR>
   map <Leader>jd :call vaxe#JumpToDefinition()<CR>
+
 " Eclim (installed with an installer)
  " let g:EclimLocateFileScope = 'workspace'
- let g:EclimCompletionMethod = 'omnifunc'
- let g:EclimDefaultFileOpenAction = 'vsplit'
- let g:EclimJavaSearchSingleResult = 'vsplit'
- let g:EclimProjectKeepLocalHistory = 0
- au BufNewFile,BufRead *.java map <buffer><c-p> :LocateFile<CR>
- au BufNewFile,BufRead *.java map <buffer><c-]> :JavaSearchContext "vsplit"<CR>
- au BufNewFile,BufRead *.java map <buffer><c-[> "zyiw:exe ":JavaSearch -p ".@z." -x references -p vsplit "<CR>
- au BufNewFile,BufRead *.java map <buffer><c-\> "zyiw:exe ":JavaSearch -p ".@z." -x implementors -p vsplit "<CR>
- au BufNewFile,BufRead *.java map <buffer><c-@> :JavaSearch
+ " let g:EclimCompletionMethod = 'omnifunc'
+ " let g:EclimDefaultFileOpenAction = 'vsplit'
+ " let g:EclimJavaSearchSingleResult = 'vsplit'
+ " let g:EclimProjectKeepLocalHistory = 0
+ " au BufNewFile,BufRead *.java map <buffer><c-p> :LocateFile<CR>
+ " au BufNewFile,BufRead *.java map <buffer><c-]> :JavaSearchContext "vsplit"<CR>
+ " au BufNewFile,BufRead *.java map <buffer><c-[> "zyiw:exe ":JavaSearch -p ".@z." -x references -p vsplit "<CR>
+ " au BufNewFile,BufRead *.java map <buffer><c-\> "zyiw:exe ":JavaSearch -p ".@z." -x implementors -p vsplit "<CR>
+ " au BufNewFile,BufRead *.java map <buffer><c-@> :JavaSearch
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugs that provide general editor techniques and features
@@ -231,6 +233,10 @@ Plug 'tyru/open-browser.vim'
 
 
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
+    let g:ycm_server_keep_logfiles = 1
+    let g:ycm_server_use_vim_stdout = 1
+    let g:ycm_server_log_level = 'debug'
+    let g:ycm_cache_omnifunc=1 
 
 Plug 'sjl/gundo.vim'
     map <Leader>su :GundoToggle<CR>
