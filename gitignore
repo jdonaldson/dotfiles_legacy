@@ -27,5 +27,6 @@ vim/undo
 vim/cache
 ignoreme
 ignoreme.*
-.ropeproject/*
+.ropeproject
 .bash-git-rc
+
