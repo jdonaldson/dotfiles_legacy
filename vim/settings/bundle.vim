@@ -244,8 +244,6 @@ Plug 'sjl/gundo.vim'
 Plug 'scrooloose/nerdtree'
     nmap <silent><Leader>sn :NERDTreeToggle<CR>
     command! En execute "NERDTree %"
-    " Extended feature plugin
-    Plug 'jdonaldson/nerdtree-execute'
 
 Plug 'vim-scripts/VisIncr'
 
@@ -299,7 +297,13 @@ Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'L9'
 Plug 'utl.vim'
 
+Plug 'ryanoasis/vim-devicons'
+  Plug 'ryanoasis/nerd-fonts', {'do': './install.sh'}
+  set encoding=utf-8
+  let g:airline_powerline_fonts=1
+
 
 filetype plugin indent on " required!
+
 
 
