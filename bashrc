@@ -120,7 +120,7 @@ devhaxe(){
 }
 stablehaxe(){
    export PATH=$STABLE_HAXE_PATH;
-   export STABLE_HAXE_STD_PATH=$STABLE_HAXE_STD_PATH;
+   export HAXE_STD_PATH=$STABLE_HAXE_STD_PATH;
 }
 
 function frameworkpython {
