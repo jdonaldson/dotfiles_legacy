@@ -298,9 +298,8 @@ Plug 'L9'
 Plug 'utl.vim'
 
 Plug 'ryanoasis/vim-devicons'
-  Plug 'ryanoasis/nerd-fonts', {'do': './install.sh'}
-  set encoding=utf-8
-  let g:airline_powerline_fonts=1
+ set encoding=utf-8
+ let g:airline_powerline_fonts=1
 
 
 filetype plugin indent on " required!
