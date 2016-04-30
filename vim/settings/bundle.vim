@@ -38,7 +38,7 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'kchmck/vim-coffee-script'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'pangloss/vim-javascript'
-Plug 'klen/python-mode'
+Plug 'klen/python-mode', { 'branch': 'develop' }
   let g:pymode_folding = 0
   autocmd FileType python nmap <Leader>ll  :PymodeLintAuto<cr>
 
