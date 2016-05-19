@@ -131,3 +131,7 @@ function frameworkpython {
         /usr/local/bin/python "$@"
     fi
 }
+
+# source torch if I have it
+maybeSource /Users/jdonaldson/torch/install/bin/torch-activate
+
