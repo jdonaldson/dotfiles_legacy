@@ -133,5 +133,7 @@ function frameworkpython {
 }
 
 # source torch if I have it
-maybeSource /Users/jdonaldson/torch/install/bin/torch-activate
+maybeSource $HOME/torch/install/bin/torch-activate
+
+maybePath $HOME/src/flex_sdk_4.6/bin
 
