@@ -30,6 +30,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'jcfaria/Vim-R-plugin'
   let vimrplugin_assign = 0
 
+Plug 'chikamichi/mediawiki.vim'
 Plug 'chrisbra/csv.vim'
 Plug 'vim-scripts/gitignore.vim'
 Plug 'jdonaldson/vim-eco'
@@ -178,7 +179,7 @@ Plug 'laurentgoudet/vim-howdoi'
 
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
-    let g:UltiSnipsSnippetDirectories=["UltiSnips", "bundle/UltiSnips/UltiSnips", "bundle/vim-aura/ultisnips"]
+    let g:UltiSnipsSnippetDirectories=["UltiSnips", "bundle/UltiSnips/UltiSnips"]
     let g:UltiSnipsExpandTrigger="<c-j>"
     let g:UltiSnipsJumpForwardTrigger="<c-j>"
     let g:UltiSnipsJumpBackwardTrigger="<c-k>"

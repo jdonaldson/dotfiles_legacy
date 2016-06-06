@@ -15,7 +15,6 @@ node_modules/
 .tmbuild
 .tmbuild
 .vimrc
-*.pyc
 _cache
 _site/
 haxedoc.xml
@@ -27,6 +26,9 @@ vim/undo
 vim/cache
 ignoreme
 ignoreme.*
-.ropeproject
 .bash-git-rc
 
+# python
+.ipynb_checkpoints/
+*.pyc
+.ropeproject
