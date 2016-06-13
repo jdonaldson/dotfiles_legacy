@@ -50,9 +50,7 @@ alias serve="python -m SimpleHTTPServer 9040"
 
 alias munit="haxelib run munit"
 alias mlib="haxelib run mlib"
-
-# testing
-# test -d  $HOME/Projects/haxe/std && export HAXE_STD_PATH=$HOME/Projects/haxe/std
+alias untar="tar xvzf"
 
 export PATH=~/bin:$PATH
 # add custom flex sdk path
