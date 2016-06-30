@@ -1,8 +1,8 @@
-maybeSource(){ 
-   test -f $1 && source $1 
+maybeSource(){
+   test -f $1 && source $1
 }
-maybePath(){ 
-   test -d $1 && export PATH=$PATH:$1 
+maybePath(){
+   test -d $1 && export PATH=$PATH:$1
 }
 
 # company specific stuff
@@ -66,6 +66,11 @@ alias p4_untracked='find . -type f -print0 | xargs -0 p4 fstat >/dev/null'
 alias cdp="cd -P"
 alias ssh='ssh -X'
 alias untar='tar xvjf'
+
+# radio
+alias limbik="mplayer -playlist http://yp.shoutcast.com/sbin/tunein-station.pls?id=249295" # Limbik frequencies
+alias npr="mplayer -playlist http://minnesota.publicradio.org/tools/play/streams/news.pls" # MPR News
+
 
 # git aliases
 alias gitactive="git for-each-ref --sort=-committerdate refs/heads/ --format='%(committerdate:short) %(authorname) %(refname:short)'"
