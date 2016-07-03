@@ -297,4 +297,8 @@ if exists("+undofile")
   set undofile
 endif
 
+
+
+:command Thtml :%!tidy -q -i --show-errors 0
+
 let g:netrw_liststyle=1
