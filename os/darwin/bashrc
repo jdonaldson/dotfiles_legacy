@@ -36,8 +36,11 @@ authtoclipboard(){ pbcopy < ~/.ssh/id_rsa.pub; }
 
 export HBASE_HOME=/usr/local/Cellar/hbase/0.98.9
 
+# latex stuff
+export PATH=/Library/TeX/Distributions/.DefaultTeX/Contents/Programs/texbin:$PATH
+
 # darwin specific tools are in here
-export PATH=~/.os/darwin/bin:/usr/texbin:$PATH
+maybePath ~/.os/darwin/bin:/usr/texbin
 
 # Change the TERM environment variable (to get 256 colors) and make Vim
 # connecting to X Server even if running in a terminal emulator (many of
