@@ -1,7 +1,11 @@
 maybeSource(){
    test -f $1 && source $1
 }
+
 maybePath(){
+   test -d $1 && export PATH=$1:$PATH
+}
+maybePathAppend(){
    test -d $1 && export PATH=$PATH:$1
 }
 
@@ -20,6 +24,9 @@ maybePath /usr/texbin
 
 # opam system bin
 maybePath $HOME/.opam/system/bin
+
+# personal venv
+maybeSource $HOME/.virtualenvs/venv/bin/activate
 
 export EMAIL="jdonaldson@gmail.com"
 export EMAIL_OBSCURED="jdonaldson[at]gmail[dot]com"
@@ -53,8 +60,10 @@ alias mlib="haxelib run mlib"
 alias untar="tar xvzf"
 
 export PATH=~/bin:$PATH
+
 # add custom flex sdk path
-export PATH=$PATH:~/flex_sdk/bin
+maybePath ~/flex_sdk/bin
+
 export CVSEDITOR=vim
 export EDITOR=vim
 export SVN_EDITOR=vim
@@ -70,7 +79,6 @@ alias untar='tar xvjf'
 # radio
 alias limbik="mplayer -playlist http://yp.shoutcast.com/sbin/tunein-station.pls?id=249295" # Limbik frequencies
 alias npr="mplayer -playlist http://minnesota.publicradio.org/tools/play/streams/news.pls" # MPR News
-
 
 # git aliases
 alias gitactive="git for-each-ref --sort=-committerdate refs/heads/ --format='%(committerdate:short) %(authorname) %(refname:short)'"
@@ -102,13 +110,10 @@ export PATH=/usr/local/openresty/nginx/sbin:$PATH
 
 #tmux
 settitle() {
-	printf "\033k$1\033\\"
+   printf "\033k$1\033\\"
 }
 
 export HAXE_STD_PATH="/usr/local/lib/haxe/std"
-
-# personal python venv
-test -d $HOME/.virtualenvs/venv && source $HOME/.virtualenvs/venv/bin/activate
 
 # use git-prompt
 if [ -f "$(brew --prefix bash-git-prompt)/share/gitprompt.sh" ]; then
