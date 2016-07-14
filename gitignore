@@ -32,3 +32,4 @@ ignoreme.*
 .ipynb_checkpoints/
 *.pyc
 .ropeproject
+.env/
