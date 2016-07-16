@@ -1,6 +1,13 @@
 "  great overview of the rationale behind some of these options is given
-
 " here: http://stevelosh.com/blog/2010/09/coming-home-to-vim/
+
+" add ~/.vim to rtp
+if has('nvim')
+  let s:editor_root=expand("~/.nvim")
+  let &rtp = &rtp . ',' . s:editor_root
+  let viminfopath='~/.config/nvim/shada/main.shada'
+  let &viminfo .= ',n' . escape(viminfopath, ',')
+endif
 
 " First, make the leader and command characters easier to type
 let mapleader=","
@@ -8,6 +15,7 @@ nnoremap ; :
 " Add some commands to quickly open or source this file
     nmap <Leader>1 :e $MYVIMRC<CR>
     nmap <Leader>so :so %<CR>
+
 
 " Now we need to load vim-plug, it manages all of the extra plugins for vim
 call plug#begin("~/.vim/bundle")
@@ -302,3 +310,4 @@ endif
 :command Thtml :%!tidy -q -i --show-errors 0
 
 let g:netrw_liststyle=1
+

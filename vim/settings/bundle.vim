@@ -110,19 +110,6 @@ Plug 'mileszs/ack.vim'
 "   Plug 'mattn/webapi-vim'
 
 Plug 'airblade/vim-gitgutter'
-Plug 'mhinz/vim-startify'
-  nnoremap <Leader>` :Startify<CR>
-  let g:startify_session_persistence = 1
-  let g:startify_custom_header = [
-        \' ______   ______            _______  _______  ___   _  _______  ',
-        \' |      | |    _ |          |       ||   _   ||   | | ||       |',
-        \' |  _    ||   | ||          |       ||  |_|  ||   |_| ||    ___|',
-        \' | | |   ||   |_||_         |       ||       ||      _||   |___ ',
-        \' | |_|   ||    __  | ___    |      _||       ||     |_ |    ___|',
-        \' |       ||   |  | ||   |   |     |_ |   _   ||    _  ||   |___ ',
-        \' |______| |___|  |_||___|   |_______||__| |__||___| |_||_______|',
-        \'',
-        \'']
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
