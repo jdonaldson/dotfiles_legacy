@@ -119,6 +119,8 @@ export HAXE_STD_PATH="/usr/local/lib/haxe/std"
 if [ -f "$(brew --prefix bash-git-prompt)/share/gitprompt.sh" ]; then
     GIT_PROMPT_THEME=Default
     source "$(brew --prefix bash-git-prompt)/share/gitprompt.sh"
+    export GIT_PS1_SHOWDIRTYSTATE=
+    export GIT_PS1_SHOWUNTRACKEDFILES=
 fi
 
 devhaxe(){
