@@ -12,3 +12,8 @@ tmux_conf_battery_symbol_count=5
 setw -g mouse on
 bind -n WheelUpPane if-shell -F -t = "#{mouse_any_flag}" "send-keys -M" "if -Ft= '#{pane_in_mode}' 'send-keys -M' 'select-pane -t=; copy-mode -e; send-keys -M'"
 bind -n WheelDownPane select-pane -t= \; send-keys -M
+
+
+# window navigation
+bind -r h previous-window # select previous window
+bind -r l next-window     # select next window
