@@ -19,12 +19,13 @@ Plug 'altercation/vim-colors-solarized'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Ocaml
-Plug 'def-lkb/ocp-indent-vim'
-  let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
-  execute "set rtp+=" . g:opamshare . "/merlin/vim"
-  let g:syntastic_ocaml_checkers = ['merlin']
-  autocmd FileType ocaml exec ":source " . g:opamshare . "/ocp-indent/vim/indent/ocaml.vim"
-  autocmd FileType ocaml let b:comment_leader = '(* '
+" Plug 'def-lkb/ocp-indent-vim'
+"   let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
+"   execute "set rtp+=" . g:opamshare . "/merlin/vim"
+"   let g:syntastic_ocaml_checkers = ['merlin']
+"   autocmd FileType ocaml exec ":source " . g:opamshare . "/ocp-indent/vim/indent/ocaml.vim"
+"   autocmd FileType ocaml let b:comment_leader = '(* '
+"   autocmd FileType ocaml set expandtab 
 
 " R
 Plug 'jcfaria/Vim-R-plugin'
