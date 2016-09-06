@@ -18,7 +18,7 @@
 	dstat = "!git diff --stat"
 	addnw=!sh -c 'git diff -U0 -w --no-color "$@" | git apply --cached --ignore-whitespace --unidiff-zero -'
 [push]
-	default = matching
+	default = current
 [github]
 	user = jdonaldson
 [url "ssh://git@github.com/"]
