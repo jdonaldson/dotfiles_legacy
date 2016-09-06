@@ -1,5 +1,5 @@
 maybeSource(){
-   test -f $1 && source $1
+   test -f $1 && . $1
 }
 
 maybePath(){
@@ -143,7 +143,5 @@ function frameworkpython {
 }
 
 # source torch if I have it
-maybeSource $HOME/torch/install/bin/torch-activate
-
-maybePath $HOME/src/flex_sdk_4.6/bin
+# maybeSource $HOME/torch/install/bin/torch-activate
 
