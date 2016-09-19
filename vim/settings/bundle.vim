@@ -27,6 +27,7 @@ Plug 'altercation/vim-colors-solarized'
 "   autocmd FileType ocaml let b:comment_leader = '(* '
 "   autocmd FileType ocaml set expandtab 
 
+
 " R
 Plug 'jcfaria/Vim-R-plugin'
   let vimrplugin_assign = 0
@@ -205,12 +206,13 @@ Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-commentary'
   " ocaml comments
   autocmd FileType ocaml set commentstring=(*\ %s\ *)
-  if maparg('\\','n') ==# '' && maparg('\','n') ==# '' && get(g:, 'commentary_map_backslash', 1)
-    xmap \\  <Plug>Commentary<CR>
-    nmap \\  <CR><Plug>Commentary
-    nmap \\\ <Plug>CommentaryLine<CR>
-    nmap \\u <Plug>CommentaryUndo<CR>
-  endif
+    set ts=4
+    if maparg('\\','n') ==# '' && maparg('\','n') ==# '' && get(g:, 'commentary_map_backslash', 1)
+      xmap \\  <Plug>Commentary<CR>
+      nmap \\  <CR><Plug>Commentary
+      nmap \\\ <Plug>CommentaryLine<CR>
+      nmap \\u <Plug>CommentaryUndo<CR>
+    endif
 
 Plug 'tpope/vim-dispatch'
     map <Leader>dm :Make<CR>
