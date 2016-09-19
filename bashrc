@@ -62,7 +62,7 @@ alias untar="tar xvzf"
 export PATH=~/bin:$PATH
 
 # add custom flex sdk path
-maybePath ~/flex_sdk/bin
+# maybePath ~/flex_sdk/bin
 
 export CVSEDITOR=vim
 export EDITOR=vim
