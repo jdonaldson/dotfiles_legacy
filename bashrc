@@ -112,12 +112,31 @@ export PATH=/usr/local/openresty/nginx/sbin:$PATH
 settitle() {
    printf "\033k$1\033\\"
 }
+takeover() {
+    # create a temporary session that displays the "how to go back" message
+    tmp='takeover temp session'
+    if ! tmux has-session -t "$tmp"; then
+        tmux new-session -d -s "$tmp"
+        tmux set-option -t "$tmp" set-remain-on-exit on
+        tmux new-window -kt "$tmp":0 \
+            'echo "Use Prefix + L (i.e. ^B L) to return to session."'
+    fi
+
+    # switch any clients attached to the target session to the temp session
+    session="$1"
+    for client in $(tmux list-clients -t "$session" | cut -f 1 -d :); do
+        tmux switch-client -c "$client" -t "$tmp"
+    done
+
+    # attach to the target session
+    tmux attach -t "$session"
+}
 
 export HAXE_STD_PATH="/usr/local/lib/haxe/std"
 
 # use git-prompt
 if [ -f "$(brew --prefix bash-git-prompt)/share/gitprompt.sh" ]; then
-    GIT_PROMPT_THEME=Default
+    GIT_PROMPT_THEME="Custom"
     source "$(brew --prefix bash-git-prompt)/share/gitprompt.sh"
     export GIT_PS1_SHOWDIRTYSTATE=
     export GIT_PS1_SHOWUNTRACKEDFILES=
