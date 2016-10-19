@@ -41,9 +41,10 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'kchmck/vim-coffee-script'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'pangloss/vim-javascript'
-Plug 'klen/python-mode', { 'branch': 'develop' }
-  let g:pymode_folding = 0
-  autocmd FileType python nmap <Leader>ll  :PymodeLintAuto<cr>
+" Plug 'klen/python-mode', { 'branch': 'develop' }
+"   let g:pymode_folding = 0
+"   let g:pymode_rope_lookup_project = 0
+"   autocmd FileType python nmap <Leader>ll  :PymodeLintAuto<cr>
 
 Plug 'sophacles/vim-bundle-mako'
 Plug 'jsx/jsx.vim'
@@ -204,6 +205,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-ragtag'
   " ocaml comments
   autocmd FileType ocaml set commentstring=(*\ %s\ *)
     set ts=4

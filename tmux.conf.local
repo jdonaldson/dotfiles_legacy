@@ -5,6 +5,9 @@ tmux_conf_theme=powerline_patched_font
 tmux_conf_battery_symbol=heart
 tmux_conf_battery_symbol_count=5
 
+# resize the window if I'm "claiming" it from a new remote
+set-window-option -g aggressive-resize
+
 # or alternatively use an external tool, e.g. https://github.com/Goles/Battery
 # tmux_conf_battery='#(rainbarf --battery --remaining --bright) '
 
