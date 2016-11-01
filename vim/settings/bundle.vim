@@ -165,7 +165,7 @@ Plug 'junegunn/vim-oblique'
    Plug 'junegunn/vim-pseudocl'
 
 Plug 'jdonaldson/vim-cheat-x-in-y'
-Plug 'laurentgoudet/vim-howdoi'
+Plug 'morinatsu/vim-howdoi'
 
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
