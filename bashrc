@@ -164,3 +164,4 @@ function frameworkpython {
 # source torch if I have it
 # maybeSource $HOME/torch/install/bin/torch-activate
 
+maybeSource ~/.bash-git-prompt/gitprompt.sh
