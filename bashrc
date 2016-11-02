@@ -132,6 +132,10 @@ takeover() {
     tmux attach -t "$session"
 }
 
+function ssht () {
+   /usr/bin/ssh -t $@ "tmux attach || tmux new";
+}
+
 export HAXE_STD_PATH="/usr/local/lib/haxe/std"
 
 # use git-prompt
