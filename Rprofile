@@ -1,6 +1,5 @@
 # change csv defaults that drive me nuts 
 options(stringsAsFactors=F, row.names=F)
-options(repos=structure(c(CRAN="http://cran.fhcrc.org/")))
     
 .First <- function(){
  cat("\nGettin my R on: ", date(), "\n") 
