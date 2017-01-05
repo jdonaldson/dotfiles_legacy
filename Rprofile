@@ -2,11 +2,11 @@
 options(stringsAsFactors=F, row.names=F)
     
 .First <- function(){
- cat("\nGettin my R on: ", date(), "\n") 
+ # cat("\nGettin my R on: ", date(), "\n") 
 }
 
 .Last <- function(){ 
- cat("\nGoodye R:  ", date(), "\n")
+ # cat("\nGoodye R:  ", date(), "\n")
 }
 
 # dead simple read from compressed csv... If one filename is given, assume 
