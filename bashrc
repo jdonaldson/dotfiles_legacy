@@ -169,3 +169,5 @@ function frameworkpython {
 # maybeSource $HOME/torch/install/bin/torch-activate
 
 maybeSource ~/.bash-git-prompt/gitprompt.sh
+devhaxe
+if which luaver > /dev/null; then . `which luaver`; fi
