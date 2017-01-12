@@ -132,6 +132,10 @@ takeover() {
     tmux attach -t "$session"
 }
 
+function ssht () {
+   /usr/bin/ssh -t $@ "tmux attach || tmux new";
+}
+
 export HAXE_STD_PATH="/usr/local/lib/haxe/std"
 
 # use git-prompt
@@ -164,3 +168,15 @@ function frameworkpython {
 # source torch if I have it
 # maybeSource $HOME/torch/install/bin/torch-activate
 
+maybeSource ~/.bash-git-prompt/gitprompt.sh
+devhaxe
+
+luadeps(){
+   luarocks install lrexlib-pcre
+   luarocks install environ
+   luarocks install luasocket
+   luarocks install environ
+   luarocks install luv
+}
+
+source ~/env/bin/activate

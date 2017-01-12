@@ -1,13 +1,12 @@
 # change csv defaults that drive me nuts 
 options(stringsAsFactors=F, row.names=F)
-options(repos=structure(c(CRAN="http://cran.fhcrc.org/")))
     
 .First <- function(){
- cat("\nGettin my R on: ", date(), "\n") 
+ # cat("\nGettin my R on: ", date(), "\n") 
 }
 
 .Last <- function(){ 
- cat("\nGoodye R:  ", date(), "\n")
+ # cat("\nGoodye R:  ", date(), "\n")
 }
 
 # dead simple read from compressed csv... If one filename is given, assume 
