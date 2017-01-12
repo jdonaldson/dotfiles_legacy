@@ -101,7 +101,10 @@ autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
-:autocmd BufNewFile,BufRead *.md set tw=80
+autocmd BufNewFile,BufRead *.md set tw=80
+autocmd BufNewFile,BufRead *.py set tabstop=2 | set shiftwidth=2
+
+
 
 " window navigation tweaks
 set wiw=10
