@@ -170,4 +170,13 @@ function frameworkpython {
 
 maybeSource ~/.bash-git-prompt/gitprompt.sh
 devhaxe
-if which luaver > /dev/null; then . `which luaver`; fi
+
+luadeps(){
+   luarocks install lrexlib-pcre
+   luarocks install environ
+   luarocks install luasocket
+   luarocks install environ
+   luarocks install luv
+}
+
+source ~/env/bin/activate
