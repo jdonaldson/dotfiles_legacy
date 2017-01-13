@@ -134,7 +134,7 @@ takeover() {
 
 function ssht () {
    tmux set-option prefix2 C-b
-   tmux setenv TMUX_B=1
+   tmux setenv TMUX_B 1
    tmux source-file ~/.tmux.conf
    /usr/bin/ssh -t $@ "tmux attach || tmux new"
    tmux set-option prefix2 C-a
