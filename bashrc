@@ -138,7 +138,8 @@ function ssht () {
    tmux source-file ~/.tmux.conf
    /usr/bin/ssh -t $@ "tmux attach || tmux new"
    tmux set-option prefix2 C-a
-   tmux -u setenv TMUX_B
+   tmux setenv -u TMUX_B
+   tmux source-file ~/.tmux.conf
 }
 
 export HAXE_STD_PATH="/usr/local/lib/haxe/std"
