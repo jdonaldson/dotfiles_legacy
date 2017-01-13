@@ -23,9 +23,9 @@ bind -r l next-window     # select next window
 
 bind -n S-up \
 	send-keys M-F12 \; \
-	set -qg status-bg colour25 \; \
+	set -qg session-bg colour199 \; \
 	set -qg prefix C-b
 bind -n S-down \
 	send-keys M-F11 \; \
-	set -qg status-bg colour40 \; \
+	set -qg session-bg colour226 \; \
 	set -qg prefix C-a
