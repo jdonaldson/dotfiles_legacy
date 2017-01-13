@@ -133,7 +133,9 @@ takeover() {
 }
 
 function ssht () {
-   /usr/bin/ssh -t $@ "tmux attach || tmux new";
+   tmux set-option prefix2 C-b
+   /usr/bin/ssh -t $@ "tmux attach || tmux new"
+   tmux set-option prefix2 C-a
 }
 
 export HAXE_STD_PATH="/usr/local/lib/haxe/std"
@@ -179,4 +181,3 @@ luadeps(){
    luarocks install luv
 }
 
-source ~/env/bin/activate
