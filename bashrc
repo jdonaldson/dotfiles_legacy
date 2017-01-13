@@ -134,8 +134,10 @@ takeover() {
 
 function ssht () {
    tmux set-option prefix2 C-b
+   export TMUX_B=1
    /usr/bin/ssh -t $@ "tmux attach || tmux new"
    tmux set-option prefix2 C-a
+   unset TMUX_B
 }
 
 export HAXE_STD_PATH="/usr/local/lib/haxe/std"
