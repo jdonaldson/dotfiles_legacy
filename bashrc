@@ -183,5 +183,9 @@ luadeps(){
    luarocks install luasocket
    luarocks install environ
    luarocks install luv
+   luarocks install luabitop
 }
 
+maybeSource ~/env/bin/activate
+
+export HEROKU_POSTGRESQL_PUCE_URL="postgresql://localhost:5432/dos1qugqrnttm"
