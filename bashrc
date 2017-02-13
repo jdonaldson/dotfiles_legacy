@@ -181,7 +181,6 @@ luadeps(){
    luarocks install lrexlib-pcre
    luarocks install environ
    luarocks install luasocket
-   luarocks install environ
    luarocks install luv
    luarocks install luabitop
 }

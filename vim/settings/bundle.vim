@@ -105,6 +105,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mileszs/ack.vim'
     " nnoremap <Leader>a :Ack<space>
     map <c-@> :Ack<space>
+    map <c-space> :Ack<space>
     " use silver searcher instead of ack:
     let g:ackprg = 'ag --follow --nogroup --nocolor --column'
 
