@@ -4,7 +4,6 @@ vim/viminfo*
 vim/viminf*.tmp
 eclim*
 .netrwhist
-config/*
 .venv_bootstrap/*
 vim/autoload/plug.vim.old
 vim/session
@@ -23,3 +22,5 @@ bin/sqldeveloper.sh
 bin/subversiontrigger
 
 os/darwin/bin/domino
+config/wireshark
+config/nvim/shada
