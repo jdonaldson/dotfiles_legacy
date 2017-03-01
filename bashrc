@@ -25,8 +25,6 @@ maybePath /usr/texbin
 # opam system bin
 maybePath $HOME/.opam/system/bin
 
-# personal venv
-maybeSource $HOME/.virtualenvs/venv/bin/activate
 
 export EMAIL="jdonaldson@gmail.com"
 export EMAIL_OBSCURED="jdonaldson[at]gmail[dot]com"
@@ -191,3 +189,6 @@ maybeSource ~/env/bin/activate
 export HEROKU_POSTGRESQL_PUCE_URL="postgresql://localhost:5432/jdonaldson"
 
 maybePathAppend /usr/local/openresty/bin
+
+# personal venv
+maybeSource $HOME/.virtualenvs/venv/bin/activate
