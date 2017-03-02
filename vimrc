@@ -105,6 +105,8 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 autocmd BufNewFile,BufRead *.md set tw=80
 autocmd BufNewFile,BufRead *.py set tabstop=2 | set shiftwidth=2
 
+autocmd BufNewFile,BufRead *.Rpres setf markdown 
+
 
 
 " window navigation tweaks
@@ -311,7 +313,8 @@ endif
 
 
 
-:command Thtml :%!tidy -q -i --show-errors 0
+
+command! Thtml :%!tidy -q -i --show-errors 0
 
 let g:netrw_liststyle=1
 
