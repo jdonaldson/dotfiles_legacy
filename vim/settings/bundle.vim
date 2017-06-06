@@ -241,7 +241,7 @@ Plug 'scrooloose/nerdtree'
 
 Plug 'vim-scripts/VisIncr'
 
-Plug 'closetag.vim'
+Plug 'alvan/vim-closetag'
 " Plug 'christoomey/vim-tmux-navigator'
 
 Plug 'kana/vim-fakeclip'
@@ -288,8 +288,8 @@ Plug 'michalliu/jsoncodecs.vim'
 Plug 'michalliu/jsruntime.vim'
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'L9'
-Plug 'utl.vim'
+Plug 'vim-scripts/L9'
+Plug 'vim-scripts/utl.vim'
 
 Plug 'ryanoasis/vim-devicons'
  set encoding=utf-8

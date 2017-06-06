@@ -193,3 +193,6 @@ maybePathAppend /usr/local/openresty/bin
 
 # personal venv
 maybeSource $HOME/.virtualenvs/venv/bin/activate
+
+maybePath /usr/local/opt/go/libexec/bin
+export EINSTEIN_DEBUG=1
