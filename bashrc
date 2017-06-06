@@ -140,8 +140,6 @@ function ssht () {
    tmux source-file ~/.tmux.conf
 }
 
-export HAXE_STD_PATH="/usr/local/lib/haxe/std"
-
 # use git-prompt
 if [ -f "$(brew --prefix bash-git-prompt)/share/gitprompt.sh" ]; then
     GIT_PROMPT_THEME="Custom"
@@ -149,6 +147,9 @@ if [ -f "$(brew --prefix bash-git-prompt)/share/gitprompt.sh" ]; then
     export GIT_PS1_SHOWDIRTYSTATE=
     export GIT_PS1_SHOWUNTRACKEDFILES=
 fi
+
+# git bash completion
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
 devhaxe(){
    export STABLE_HAXE_PATH=$PATH;
