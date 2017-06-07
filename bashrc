@@ -152,6 +152,7 @@ fi
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
 devhaxe(){
+   export FD_OUTPUT=1
    export STABLE_HAXE_PATH=$PATH;
    export STABLE_HAXE_STD_PATH=$HAXE_STD_PATH;
    export HAXE_STD_PATH=$HOME/Projects/haxe/std
