@@ -19,13 +19,13 @@ Plug 'altercation/vim-colors-solarized'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Ocaml
-" Plug 'def-lkb/ocp-indent-vim'
-"   let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
-"   execute "set rtp+=" . g:opamshare . "/merlin/vim"
-"   let g:syntastic_ocaml_checkers = ['merlin']
-"   autocmd FileType ocaml exec ":source " . g:opamshare . "/ocp-indent/vim/indent/ocaml.vim"
-"   autocmd FileType ocaml let b:comment_leader = '(* '
-"   autocmd FileType ocaml set expandtab 
+Plug 'def-lkb/ocp-indent-vim'
+  let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
+  execute "set rtp+=" . g:opamshare . "/merlin/vim"
+  let g:syntastic_ocaml_checkers = ['merlin']
+  autocmd FileType ocaml exec ":source " . g:opamshare . "/ocp-indent/vim/indent/ocaml.vim"
+  autocmd FileType ocaml let b:comment_leader = '(* '
+  autocmd FileType ocaml set expandtab 
 
 
 " R
@@ -131,7 +131,7 @@ Plug 'vim-airline/vim-airline-themes'
    let g:airline_symbols.linenr = ''
 Plug 'majutsushi/tagbar'
     nmap <silent><Leader>st :TagbarToggle<CR>
-    " Extending tabar to support markdown (additionally to the ~/.ctags-file!)
+    " Extending tagbar to support markdown (additionally to the ~/.ctags-file!)
         let g:tagbar_type_markdown = {
             \ 'ctagstype' : 'markdown',
             \ 'kinds' : [
@@ -192,6 +192,8 @@ Plug 'scrooloose/syntastic'
         au BufWinEnter * sign define mysign
         au BufWinEnter * exe "sign place 1337 line=1 name=mysign buffer=" . bufnr('%')
     augroup END
+
+Plug 'editorconfig/editorconfig-vim'
 
 " Most of Tim Pope's awesome bundles:
 Plug 'tpope/vim-endwise'
