@@ -94,7 +94,7 @@ Plug 'Lokaltog/vim-easymotion'
 Plug 'goldfeld/vim-seek'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-map <Leader>ff :Files<CR>
+map <c-p> :Files<CR>
 
 
 " Plug 'ctrlpvim/ctrlp.vim'
