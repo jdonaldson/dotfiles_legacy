@@ -25,7 +25,7 @@ Plug 'def-lkb/ocp-indent-vim'
   let g:syntastic_ocaml_checkers = ['merlin']
   autocmd FileType ocaml exec ":source " . g:opamshare . "/ocp-indent/vim/indent/ocaml.vim"
   autocmd FileType ocaml let b:comment_leader = '(* '
-  autocmd FileType ocaml set expandtab 
+  autocmd FileType ocaml set expandtab
 
 
 " R
@@ -92,16 +92,22 @@ Plug 'jdonaldson/vaxe'
 " Finding stuff
 Plug 'Lokaltog/vim-easymotion'
 Plug 'goldfeld/vim-seek'
-Plug 'ctrlpvim/ctrlp.vim'
-    let g:ctrlp_follow_symlinks = 2
-    let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
-    if len(argv())==0 || argv()[0] == '.'
-        " If I open a directory, assume I want to hard set a working path
-        let g:ctrlp_working_path_mode = ''
-        let g:ctrlp_use_caching=1
-        let g:ctrlp_clear_cache_on_exit=0
-        let g:ctrlp_max_files = 0
-    endif
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+map <Leader>ff :Files<CR>
+
+
+" Plug 'ctrlpvim/ctrlp.vim'
+"     let g:ctrlp_follow_symlinks = 2
+"     let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+"     if len(argv())==0 || argv()[0] == '.'
+"         " If I open a directory, assume I want to hard set a working path
+"         let g:ctrlp_working_path_mode = ''
+"         let g:ctrlp_use_caching=1
+"         let g:ctrlp_clear_cache_on_exit=0
+"         let g:ctrlp_max_files = 0
+"     endif
+
 Plug 'mileszs/ack.vim'
     " nnoremap <Leader>a :Ack<space>
     map <c-@> :Ack<space>
@@ -232,7 +238,7 @@ Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
     let g:ycm_server_keep_logfiles = 1
     let g:ycm_server_use_vim_stdout = 1
     let g:ycm_server_log_level = 'debug'
-    let g:ycm_cache_omnifunc=1 
+    let g:ycm_cache_omnifunc=1
 
 Plug 'sjl/gundo.vim'
     map <Leader>su :GundoToggle<CR>

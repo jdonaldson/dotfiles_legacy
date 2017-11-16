@@ -195,3 +195,6 @@ maybeSource $HOME/.virtualenvs/venv/bin/activate
 
 maybePath /usr/local/opt/go/libexec/bin
 export EINSTEIN_DEBUG=1
+alias love="/Applications/love.app/Contents/MacOS/love"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
