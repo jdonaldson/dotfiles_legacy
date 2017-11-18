@@ -22,10 +22,6 @@ maybeSource $HOME/.privaterc
 # common latex location
 maybePath /usr/texbin
 
-# # opam system bin
-# maybePath $HOME/.opam/system/bin
-
-
 export EMAIL="jdonaldson@gmail.com"
 export EMAIL_OBSCURED="jdonaldson[at]gmail[dot]com"
 
@@ -53,8 +49,6 @@ fi
 
 alias serve="python -m SimpleHTTPServer 9040"
 
-alias munit="haxelib run munit"
-alias mlib="haxelib run mlib"
 alias untar="tar xvzf"
 
 export PATH=~/bin:$PATH
@@ -179,22 +173,19 @@ luadeps(){
    luarocks install lrexlib-pcre
    luarocks install environ
    luarocks install luasocket
-   luarocks install environ
    luarocks install luv
    luarocks install luabitop
 }
 
 maybeSource ~/env/bin/activate
-
-export HEROKU_POSTGRESQL_PUCE_URL="postgresql://localhost:5432/jdonaldson"
-
 maybePathAppend /usr/local/openresty/bin
 
 # personal venv
 maybeSource $HOME/.virtualenvs/venv/bin/activate
 
 maybePath /usr/local/opt/go/libexec/bin
-export EINSTEIN_DEBUG=1
-alias love="/Applications/love.app/Contents/MacOS/love"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+source $HOME/.cargo/env
+export OCAMLPARAM="safe-string=0,_"

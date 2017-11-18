@@ -54,3 +54,5 @@ then
 	export TERM=xterm-256color
     fi
 fi
+
+alias love="/Applications/love.app/Contents/MacOS/love"
