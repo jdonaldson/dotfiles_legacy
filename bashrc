@@ -22,8 +22,8 @@ maybeSource $HOME/.privaterc
 # common latex location
 maybePath /usr/texbin
 
-# opam system bin
-maybePath $HOME/.opam/system/bin
+# # opam system bin
+# maybePath $HOME/.opam/system/bin
 
 
 export EMAIL="jdonaldson@gmail.com"
