@@ -33,3 +33,4 @@ ignoreme.*
 *.pyc
 .ropeproject
 .env/
+.vscode/

@@ -24,3 +24,7 @@ bin/subversiontrigger
 os/darwin/bin/domino
 config/wireshark
 config/nvim/shada
+config/configstore/
+config/inkscape/
+config/gtk*
+config/htop/
