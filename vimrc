@@ -28,38 +28,43 @@ colorscheme solarized
 " quickly exit insert mode with this combo
 imap jk <Esc>
 
+"
 "BASIC OPTIONS
-set tags=./tags;/
-set shell=bash
-set encoding=utf-8
+
+set autowrite
+set cindent      " useful for python
+set copyindent   " copy the previous indentation on autoindenting
+set expandtab    " expand tabs to spaces
+set hidden       " hide the old buffer when switching
+set lazyredraw
 set nocompatible
-set number        " show line numbers
-set nowrap        " don't wrap lines
-set ts=4     " a tab is four spaces
+set noerrorbells " no, seriously, don't beep
+set nowrap       " don't wrap lines
+set number       " always show line numbers
+set shiftround   " use multiple of shiftwidth when indenting with '<' and '>'
+set smartindent
+set title        " change the terminal's title
+set visualbell   " don't beep
+set ignorecase   " search : ignore case
+set smartcase    " search : smart case
+set gdefault     " search : default
+set hlsearch     " search : highlight
+
+                    " PARAMETER OPTIONS
+set mouse=a         " use mouse in nvich modes
+set clipboard=unnamed
+set encoding=utf-8
+set tw=0
+set shell=bash
+set undolevels=1000 " use many muchos levels of undo
+set ts=4            " a tab is four spaces
+set tags=./tags;/
 set sts=4
 set sw=4
-set expandtab " expand tabs to spaces
-set copyindent    " copy the previous indentation on autoindenting
-set smartindent
-set cindent       " useful for python
-set number        " always show line numbers
-set shiftround    " use multiple of shiftwidth when indenting with '<' and '>'
-set hidden               " hide the old buffer when switching
-set undolevels=1000      " use many muchos levels of undo
-set wildignore=*.swp,*.bak,*.pyc,*.class,*.sass-cache,*/_site/*
-set title                " change the terminal's title
-set visualbell           " don't beep
-set noerrorbells         " no, seriously, don't beep
-set lazyredraw
-set mouse=a             " use mouse in nvich modes
-set autowrite
-set clipboard=unnamed
 
-" These are all options releated to searching
-set ignorecase
-set smartcase
-set gdefault
-set hlsearch
+" Ignore all files like this
+set wildignore=*.swp,*.bak,*.pyc,*.class,*.sass-cache,*/_site/*
+
 
 " Experimental
 set nrformats=octal,hex,alpha " increment letters in addition to numbers
@@ -105,7 +110,7 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 autocmd BufNewFile,BufRead *.md set tw=80
 autocmd BufNewFile,BufRead *.py set tabstop=2 | set shiftwidth=2
 
-autocmd BufNewFile,BufRead *.Rpres setf markdown 
+autocmd BufNewFile,BufRead *.Rpres setf markdown
 
 
 
