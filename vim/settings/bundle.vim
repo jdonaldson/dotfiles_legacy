@@ -53,12 +53,12 @@ Plug 'lervag/vimtex'
 Plug 'elzr/vim-json'
   command! -range -nargs=0 -bar JsonFormat <line1>,<line2>!python -m json.tool
 Plug 'PProvost/vim-markdown-jekyll'
-Plug 'suan/vim-instant-markdown'
-  let g:instant_markdown_slow = 1
+
 Plug 'plasticboy/vim-markdown'
   let g:vim_markdown_folding_disabled = 1
 Plug 'jdonaldson/vim-markdown-link-convert'
   map <Leader>il :call Inline2Ref()<CR>
+
 Plug 'ap/vim-css-color'
 Plug 'batsuev/csscomb-vim'
 Plug 'xolox/vim-lua-ftplugin'
