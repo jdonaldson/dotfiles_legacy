@@ -187,5 +187,5 @@ maybePath /usr/local/opt/go/libexec/bin
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-source $HOME/.cargo/env
+maybeSource $HOME/.cargo/env
 export OCAMLPARAM="safe-string=0,_"
