@@ -48,6 +48,7 @@ elif [[ "$unamestr" == 'Darwin' ]]; then
 fi
 
 alias serve="python -m SimpleHTTPServer 9040"
+alias travix="haxelib run travix"
 
 alias untar="tar xvzf"
 

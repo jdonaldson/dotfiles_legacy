@@ -285,11 +285,11 @@
 	<key>NSWindow Frame Preferences</key>
 	<string>476 392 924 485 0 0 1440 877 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>2201 436 918 401 1440 -540 2560 1417 </string>
+	<string>278 388 796 473 0 0 1440 877 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>99 293 592 584 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1440 900 0 0 1440 878 </string>
+	<string>0 490 851 387 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>358 452 570 402 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -924,7 +924,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Transparency</key>
-			<real>0.18075305103550299</real>
+			<real>0.0</real>
 			<key>Unlimited Scrollback</key>
 			<true/>
 			<key>Use Bold Font</key>
@@ -1635,6 +1635,8 @@
 	<real>477896536.96611601</real>
 	<key>NoSyncTimeOfLastPromoDownload</key>
 	<real>494018679.60849398</real>
+	<key>OnlyWhenMoreTabs</key>
+	<false/>
 	<key>PMPrintingExpandedStateForPrint2</key>
 	<false/>
 	<key>PasteTabToStringTabStopSize</key>
@@ -1676,6 +1678,8 @@
 	<string>~/.iterm2/</string>
 	<key>Print In Black And White</key>
 	<true/>
+	<key>PromptOnQuit</key>
+	<false/>
 	<key>SUAutomaticallyUpdate</key>
 	<true/>
 	<key>SUEnableAutomaticChecks</key>
@@ -1687,11 +1691,13 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-12-31T23:25:46Z</date>
+	<date>2018-02-04T17:51:55Z</date>
 	<key>ShowFullScreenTabBar</key>
 	<true/>
 	<key>UKCrashReporterLastCrashReportDate</key>
 	<real>1415942016</real>
+	<key>UseLayers</key>
+	<true/>
 	<key>UseLionStyleFullscreen</key>
 	<false/>
 	<key>WordCharacters</key>
