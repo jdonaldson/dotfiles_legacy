@@ -33,12 +33,12 @@ export GIT_EDITOR=vim
 
 # prefer usr/local
 export PATH=/usr/local/share:/usr/local/bin:/usr/local/sbin:$PATH
-unamestr=`uname`
 
 
 
 export PGDATA=/usr/local/var/postgres
 
+unamestr=`uname`
 if   [[ "$unamestr" == 'Linux'  ]]; then
     source ~/.os/linux/bashrc
     export PATH=~/.os/linux/bin:$PATH
