@@ -175,7 +175,7 @@ luadeps(){
    luarocks install luabitop
 }
 
-maybeSource ~/env/bin/activate
+maybeSource ~/hererocks/bin/activate
 maybePathAppend /usr/local/openresty/bin
 
 # personal venv

@@ -1,32 +1,5 @@
 source ~/.bashrc
+source ~/.bash_profile_ext.sh
 
-maybeSource(){
-   test -f $1 && . $1
-}
-
-maybePath(){
-   test -d $1 && export PATH=$1:$PATH
-}
-maybePathAppend(){
-   test -d $1 && export PATH=$PATH:$1
-}
-
-# only default to tmux if I'm not in an ssh session
-# if [ -z "$SSH_CLIENT" ] && [ -z "$SSH_TTY" ]; then
-#     [[ -z $TMUX ]] && tmux new-session -A -s main
-# fi
-
-test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
-
-if [ -f `brew --prefix`/etc/bash_completion ]; then
-    . `brew --prefix`/etc/bash_completion
-fi
-
-maybePath "${HOME}/.cargo/bin"
-
-# OPAM configuration
-. "${HOME}/.opam/opam-init/init.sh" > /dev/null 2> /dev/null || true
-eval `opam config env`
-
-# conda
-maybePath "${HOME}/anaconda3/bin"
+# added by Anaconda3 5.1.0 installer
+export PATH="/Users/jdonaldson/anaconda3/bin:$PATH"
