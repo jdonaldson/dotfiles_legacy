@@ -73,9 +73,6 @@ alias untar='tar xvjf'
 alias limbik="mplayer -playlist http://yp.shoutcast.com/sbin/tunein-station.pls?id=249295" # Limbik frequencies
 alias npr="mplayer -playlist http://minnesota.publicradio.org/tools/play/streams/news.pls" # MPR News
 
-# git aliases
-alias gitactive="git for-each-ref --sort=-committerdate refs/heads/ --format='%(committerdate:short) %(authorname) %(refname:short)'"
-
 test -s "$HOME/.rvm/scripts/rvm" && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 # add dotfile util bin directory
