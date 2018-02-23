@@ -323,3 +323,5 @@ command! Thtml :%!tidy -q -i --show-errors 0
 
 let g:netrw_liststyle=1
 
+hi QuickFixLine term=reverse ctermbg=52
+
