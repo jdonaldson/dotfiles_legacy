@@ -26,5 +26,16 @@ config/wireshark
 config/nvim/shada
 config/configstore/
 config/inkscape/
+
+# ubuntu stuff
 config/gtk*
 config/htop/
+config/dconf
+config/enchant
+config/evolution
+config/ibus
+config/monitors.xml
+config/nautilus
+config/pulse
+config/user-dirs.dirs
+config/user-dirs.locale
