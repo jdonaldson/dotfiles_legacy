@@ -62,7 +62,7 @@ export EDITOR=vim
 export SVN_EDITOR=vim
 
 alias ls='ls -G'
-alias ll='ls -al'
+alias ll='ls -alG'
 alias ..='cd ..'
 alias p4_untracked='find . -type f -print0 | xargs -0 p4 fstat >/dev/null'
 alias cdp="cd -P"
