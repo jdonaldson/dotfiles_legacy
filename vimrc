@@ -52,7 +52,7 @@ set hlsearch     " search : highlight
 
                     " PARAMETER OPTIONS
 set mouse=a         " use mouse in nvich modes
-set clipboard=unnamed
+set clipboard+=unnamedplus
 set encoding=utf-8
 set tw=0
 set shell=bash
@@ -106,6 +106,7 @@ autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType python set expandtab
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+autocmd FileType haxe set noautoindent
 
 autocmd BufNewFile,BufRead *.md set tw=80
 autocmd BufNewFile,BufRead *.py set tabstop=2 | set shiftwidth=2
