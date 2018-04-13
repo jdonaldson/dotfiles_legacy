@@ -187,3 +187,5 @@ maybePath /usr/local/opt/go/libexec/bin
 
 maybeSource $HOME/.cargo/env
 export OCAMLPARAM="safe-string=0,_"
+
+alias syncintent="rsync -a dljjd:Projects/intent ~/Projects/"
