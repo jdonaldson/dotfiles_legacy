@@ -173,7 +173,7 @@ Plug 'junegunn/vim-oblique'
 
 Plug 'jdonaldson/vim-cheat-x-in-y'
 
-Plugin 'kristijanhusak/vim-carbon-now-sh'
+Plug 'kristijanhusak/vim-carbon-now-sh'
 
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
