@@ -174,6 +174,7 @@ Plug 'junegunn/vim-oblique'
 Plug 'jdonaldson/vim-cheat-x-in-y'
 
 Plug 'kristijanhusak/vim-carbon-now-sh'
+  let g:carbon_now_sh_browser="/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome"
 
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
