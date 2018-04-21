@@ -70,9 +70,9 @@ alias ssh='ssh -X'
 alias untar='tar xvjf'
 
 # radio
-alias limbik= "mplayer -playlist http://yp.shoutcast.com/sbin/tunein-station.pls?id=249295" # Limbik frequencies
-alias npr= "mplayer -playlist http://minnesota.publicradio.org/tools/play/streams/news.pls" # MPR News
-alias kexp= "mplayer http://kexp-mp3-128.streamguys1.com/kexp128.mp3"
+alias limbik="mplayer -playlist http://yp.shoutcast.com/sbin/tunein-station.pls?id=249295" # Limbik frequencies
+alias npr="mplayer -playlist http://minnesota.publicradio.org/tools/play/streams/news.pls" # MPR News
+alias kexp="mplayer http://kexp-mp3-128.streamguys1.com/kexp128.mp3"
 
 test -s "$HOME/.rvm/scripts/rvm" && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
