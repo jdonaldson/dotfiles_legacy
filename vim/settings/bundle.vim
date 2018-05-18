@@ -236,7 +236,7 @@ Plug 'tpope/vim-dispatch'
 Plug 'tyru/open-browser.vim'
 
 
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
+Plug 'Valloric/YouCompleteMe', { 'do': '/usr/local/bin/python3 install.py --clang-completer' }
     let g:ycm_server_keep_logfiles = 1
     let g:ycm_server_use_vim_stdout = 1
     let g:ycm_server_log_level = 'debug'
