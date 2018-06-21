@@ -18,6 +18,8 @@ maybeSource $HOME/.auth.sh
 # personal private config
 maybeSource $HOME/.privaterc
 
+maybeSource /usr/local/etc/bash_completion
+
 # Append to path
 # common latex location
 maybePath /usr/texbin
@@ -68,6 +70,7 @@ alias p4_untracked='find . -type f -print0 | xargs -0 p4 fstat >/dev/null'
 alias cdp="cd -P"
 alias ssh='ssh -X'
 alias untar='tar xvjf'
+alias vim='nvim'
 
 # radio
 alias radio_limbik="mplayer -playlist http://yp.shoutcast.com/sbin/tunein-station.pls?id=249295" # Limbik frequencies
@@ -180,11 +183,11 @@ maybeSource ~/hererocks/bin/activate
 maybePathAppend /usr/local/openresty/bin
 
 # personal venv
-maybeSource $HOME/.virtualenvs/venv/bin/activate
+# maybeSource $HOME/.virtualenvs/venv/bin/activate
 
 maybePath /usr/local/opt/go/libexec/bin
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+maybeSource .fzf.bash
 
 maybeSource $HOME/.cargo/env
 export OCAMLPARAM="safe-string=0,_"
@@ -193,3 +196,4 @@ alias syncintent="rsync -a dljjd:Projects/deep_intent ~/Projects/"
 
 alias ts2hx="neko ~/Projects/ts2hx/run.n"
 
+eval "$(rbenv init -)" 2>/dev/null
