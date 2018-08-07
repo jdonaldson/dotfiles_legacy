@@ -22,7 +22,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'def-lkb/ocp-indent-vim'
   let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
   execute "set rtp+=" . g:opamshare . "/merlin/vim"
-  " let g:syntastic_ocaml_checkers = ['merlin']
+  let g:syntastic_ocaml_checkers = ['merlin']
   autocmd FileType ocaml exec ":source " . g:opamshare . "/ocp-indent/vim/indent/ocaml.vim"
   autocmd FileType ocaml let b:comment_leader = '(* '
   autocmd FileType ocaml set expandtab
@@ -63,38 +63,28 @@ Plug 'ap/vim-css-color'
 Plug 'batsuev/csscomb-vim'
 Plug 'xolox/vim-lua-ftplugin'
     Plug 'xolox/vim-misc'
+Plug 'jdonaldson/vaxe'
+  map <Leader>dh :! ./haxe build.hxml<CR>
+  map <Leader>dl :luafile ~/.vim/bundle/vaxe/lua/vaxe.lua<CR>
+  let g:vaxe_haxe_version = 3
+  let g:vaxe_completion_write_compiler_output = 1
+  map <Leader>oh :call vaxe#OpenHxml()<CR>
+  map <Leader>ct :call vaxe#Ctags()<CR>
+  map <Leader>ic :call vaxe#ImportClass()<CR>
+  map <Leader>pj :call vaxe#ProjectHxml()<CR>
+  map <Leader>jd :call vaxe#JumpToDefinition()<CR>
 
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch' : 'next',
-    \ 'do'     : 'bash install.sh',
-    \ }
-  let g:LanguageClient_autoStart = 1
-  let g:LanguageClient_loadSettings = 1
-  let g:LanguageClient_loggingLevel = 'DEBUG'
-  let g:LanguageClient_loggingFile = '/tmp/LanguageClient.log'
-  nnoremap <c-]> :call LanguageClient#textDocument_definition()<CR>
-
-Plug 'jdonaldson/vaxe', {
-    \ 'branch' : 'neovaxe',
-    \ 'do'     : 'bash install.sh',
-    \ }
-map <Leader>cm :call LanguageClient_contextMenu()<CR>
-
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
-let g:deoplete#enable_at_startup = 1
-
-Plug 'Shougo/echodoc'
-  set cmdheight=8
-  set cmdheight=2
-  let g:echodoc_enable_at_startup = 1
-
-
+" Eclim (installed with an installer)
+ " let g:EclimLocateFileScope = 'workspace'
+ " let g:EclimCompletionMethod = 'omnifunc'
+ " let g:EclimDefaultFileOpenAction = 'vsplit'
+ " let g:EclimJavaSearchSingleResult = 'vsplit'
+ " let g:EclimProjectKeepLocalHistory = 0
+ " au BufNewFile,BufRead *.java map <buffer><c-p> :LocateFile<CR>
+ " au BufNewFile,BufRead *.java map <buffer><c-]> :JavaSearchContext "vsplit"<CR>
+ " au BufNewFile,BufRead *.java map <buffer><c-[> "zyiw:exe ":JavaSearch -p ".@z." -x references -p vsplit "<CR>
+ " au BufNewFile,BufRead *.java map <buffer><c-\> "zyiw:exe ":JavaSearch -p ".@z." -x implementors -p vsplit "<CR>
+ " au BufNewFile,BufRead *.java map <buffer><c-@> :JavaSearch
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugs that provide general editor techniques and features
@@ -186,6 +176,12 @@ Plug 'jdonaldson/vim-cheat-x-in-y'
 Plug 'kristijanhusak/vim-carbon-now-sh'
   let g:carbon_now_sh_browser="/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome"
 
+Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips'
+    let g:UltiSnipsSnippetDirectories=["UltiSnips", "bundle/UltiSnips/UltiSnips"]
+    let g:UltiSnipsExpandTrigger="<c-j>"
+    let g:UltiSnipsJumpForwardTrigger="<c-j>"
+    let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 "include perforce if I have a p4 client
 if executable("p4") && getcwd() =~ "blt\\|projectone\\|main\\|patch\\|freeze"
     Plug 'jdonaldson/perforce'
@@ -195,15 +191,15 @@ Plug 'mkitt/browser-refresh.vim'
     " browser refresh settings
     let g:RefreshRunningBrowserDefault = 'chrome'
 Plug 'nathanaelkane/vim-indent-guides'
-" Plug 'scrooloose/syntastic'
-    " let g:syntastic_javascript_syntax_checker="gjslint"
-    " let g:syntastic_error_symbol='✗'
-    " let g:syntastic_warning_symbol='⚠'
+Plug 'scrooloose/syntastic'
+    let g:syntastic_javascript_syntax_checker="gjslint"
+    let g:syntastic_error_symbol='✗'
+    let g:syntastic_warning_symbol='⚠'
     " syntastic gutter
-    " augroup syn_gutter
-    "     au BufWinEnter * sign define mysign
-    "     au BufWinEnter * exe "sign place 1337 line=1 name=mysign buffer=" . bufnr('%')
-    " augroup END
+    augroup syn_gutter
+        au BufWinEnter * sign define mysign
+        au BufWinEnter * exe "sign place 1337 line=1 name=mysign buffer=" . bufnr('%')
+    augroup END
 
 Plug 'editorconfig/editorconfig-vim'
 
@@ -239,13 +235,12 @@ Plug 'tpope/vim-dispatch'
 
 Plug 'tyru/open-browser.vim'
 
-Plug 'honza/vim-snippets'
-Plug 'SirVer/ultisnips'
-    let g:UltiSnipsSnippetDirectories=["UltiSnips", "bundle/UltiSnips/UltiSnips"]
-    let g:UltiSnipsExpandTrigger="<tab>"
-    let g:UltiSnipsJumpForwardTrigger="<tab>"
-    let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
+Plug 'Valloric/YouCompleteMe', { 'do': '/usr/local/bin/python3 install.py --clang-completer' }
+    let g:ycm_server_keep_logfiles = 1
+    let g:ycm_server_use_vim_stdout = 1
+    let g:ycm_server_log_level = 'debug'
+    let g:ycm_cache_omnifunc=1
 
 Plug 'sjl/gundo.vim'
     map <Leader>su :GundoToggle<CR>
@@ -292,7 +287,7 @@ endif
 
 " Plug 'jdonaldson/wildfire.vim'
 Plug 'dharanasoft/rtf-highlight'
-" Plug 'wellle/tmux-complete.vim'
+Plug 'wellle/tmux-complete.vim'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugs that provide vimscript libraries for other bundles
