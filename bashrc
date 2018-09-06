@@ -197,3 +197,5 @@ alias syncintent="rsync -a dljjd:Projects/deep_intent ~/Projects/"
 alias ts2hx="neko ~/Projects/ts2hx/run.n"
 
 eval "$(rbenv init -)" 2>/dev/null
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
