@@ -40,6 +40,7 @@ set lazyredraw
 set nocompatible
 set noerrorbells " no, seriously, don't beep
 set nowrap       " don't wrap lines
+set formatoptions-=t " really don't wrap lines
 set number       " always show line numbers
 set shiftround   " use multiple of shiftwidth when indenting with '<' and '>'
 set smartindent
