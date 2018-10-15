@@ -17,6 +17,8 @@ bind -n WheelUpPane if-shell -F -t = "#{mouse_any_flag}" "send-keys -M" "if -Ft=
 bind -n WheelDownPane select-pane -t= \; send-keys -M
 
 
+bind y split-window -v -c "#{pane_current_path}"
+
 # window navigation
 bind -r h previous-window # select previous window
 bind -r l next-window     # select next window
