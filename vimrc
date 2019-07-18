@@ -26,7 +26,7 @@ call plug#end()
 colorscheme solarized
 
 " quickly exit insert mode with this combo
-imap jk <Esc>
+" imap jk <Esc>
 
 "
 "BASIC OPTIONS
@@ -110,7 +110,6 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 autocmd FileType haxe set noautoindent
 
 autocmd BufNewFile,BufRead *.md set tw=80
-autocmd BufNewFile,BufRead *.py set tabstop=2 | set shiftwidth=2
 
 autocmd BufNewFile,BufRead *.Rpres setf markdown
 
@@ -327,3 +326,4 @@ let g:netrw_liststyle=1
 
 hi QuickFixLine term=reverse ctermbg=52
 
+set nofoldenable
