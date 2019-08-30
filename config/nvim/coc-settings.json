@@ -1,0 +1,14 @@
+{
+    "codeLens.enable": true,
+    "diagnostic.virtualTextPrefix": "◀ ",
+    "diagnostic.messageTarget": "echo",
+    "suggest.noselect": false,
+    "suggest.snippetIndicator": "►",
+    "languageserver": {
+        "lua": {
+            "command": "lua-lsp",
+            "filetypes": ["lua"]
+        }
+    },
+    "git.enableGutters": true
+}
