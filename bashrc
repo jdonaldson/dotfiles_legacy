@@ -198,4 +198,6 @@ alias ts2hx="neko ~/Projects/ts2hx/run.n"
 
 eval "$(rbenv init -)" 2>/dev/null
 
+export AIRFLOW_HOME=~/airflow
+
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
