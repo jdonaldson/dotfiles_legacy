@@ -1,6 +1,7 @@
 "  great overview of the rationale behind some of these options is given
 " here: http://stevelosh.com/blog/2010/09/coming-home-to-vim/
 
+" trigger InsertLeave with Ctrl-C (:h i_Ctrl-c)
 inoremap <C-C> <Esc>
 
 " add ~/.vim to rtp
@@ -14,14 +15,15 @@ endif
 " First, make the leader and command characters easier to type
 let mapleader=","
 nnoremap ; :
+
 " Add some commands to quickly open or source this file
-    nmap <Leader>1 :e $MYVIMRC<CR>
+nmap <Leader>1 :e $MYVIMRC<CR>
 
 
 " Now we need to load vim-plug, it manages all of the extra plugins for vim
 call plug#begin("~/.vim/bundle")
-" bundle configs are stored in a separate file, source it.
-source ~/.vim/settings/bundle.vim
+    " bundle configs are stored in a separate file, source it.
+    source ~/.vim/settings/bundle.vim
 call plug#end()
 
 colorscheme gruvbox
@@ -37,26 +39,30 @@ set expandtab    " expand tabs to spaces
 set hidden       " hide the old buffer when switching
 set lazyredraw
 set nocompatible
-set noerrorbells " no, seriously, don't beep
 set nowrap       " don't wrap lines
 set formatoptions-=t " really don't wrap lines
 set number       " always show line numbers
 set shiftround   " use multiple of shiftwidth when indenting with '<' and '>'
 set smartindent
 set title        " change the terminal's title
+
+" Silence
+set noerrorbells " no, seriously, don't beep
 set visualbell   " don't beep
+
+" Search
 set ignorecase   " search : ignore case
 set smartcase    " search : smart case
 set gdefault     " search : default
 set hlsearch     " search : highlight
 
-                    " PARAMETER OPTIONS
+" Parameter options
 set mouse=a         " use mouse in nvich modes
 set clipboard+=unnamedplus
 set encoding=utf-8
 set tw=0
 set shell=bash
-set undolevels=1000 " use many muchos levels of undo
+set undolevels=1000
 set ts=4            " a tab is four spaces
 set tags=./tags;/
 set sts=4
@@ -66,10 +72,11 @@ set sw=4
 set wildignore=*.swp,*.bak,*.pyc,*.class,*.sass-cache,*/_site/*
 
 
-" Experimental
-set nrformats=octal,hex,alpha " increment letters in addition to numbers
+" increment letters in addition to numbers
+set nrformats=octal,hex,alpha
 
-syntax on  " syntax highlighting, natch
+" syntax highlighting
+syntax on
 
 "splits go to the right
 set splitright
@@ -114,10 +121,6 @@ function! ToggleSetValue(toggle, value)
     endif
 endfunction
 
-
-" swaps the current window with the left-most window
-" nmap <silent> <expr><CR> &buftype == '' ?  ":call DoWindowSwap()\<CR>" : "\<CR>"
-" nmap <silent> <tab> :wincmd w<CR>
 
 " MISC KEY MAPPING
 
