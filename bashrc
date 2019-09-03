@@ -49,7 +49,7 @@ elif [[ "$unamestr" == 'Darwin' ]]; then
     export PATH=~/.os/darwin/bin:$PATH
 fi
 
-alias serve="python -m SimpleHTTPServer 9040"
+alias serve="python -m http.server"
 alias travix="haxelib run travix"
 
 alias untar="tar xvzf"
@@ -182,8 +182,10 @@ luadeps(){
 maybeSource ~/hererocks/bin/activate
 maybePathAppend /usr/local/openresty/bin
 
+export PATH=/usr/local/opt/python/libexec/bin:$PATH
+
 # personal venv
-# maybeSource $HOME/.virtualenvs/venv/bin/activate
+maybeSource $HOME/venv/bin/activate
 
 maybePath /usr/local/opt/go/libexec/bin
 
@@ -199,5 +201,6 @@ alias ts2hx="neko ~/Projects/ts2hx/run.n"
 eval "$(rbenv init -)" 2>/dev/null
 
 export AIRFLOW_HOME=~/airflow
+export GPG_TTY=$(tty)
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
