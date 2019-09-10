@@ -54,6 +54,10 @@ alias travix="haxelib run travix"
 
 alias untar="tar xvzf"
 
+alias arec="asciinema rec"
+alias aplay="asciinema play"
+
+
 export PATH=~/bin:$PATH
 
 # add custom flex sdk path
