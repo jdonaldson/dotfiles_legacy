@@ -1,8 +1,9 @@
 "  great overview of the rationale behind some of these options is given
 " here: http://stevelosh.com/blog/2010/09/coming-home-to-vim/
 
-" trigger InsertLeave with Ctrl-C (:h i_Ctrl-c)
-inoremap <C-C> <Esc>
+
+" Make neovim use vimrc
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " add ~/.vim to rtp
 if has('nvim')
@@ -12,33 +13,59 @@ if has('nvim')
   let &viminfo .= ',n' . escape(viminfopath, ',')
 endif
 
-" First, make the leader and command characters easier to type
-let mapleader=","
-nnoremap ; :
-
-" Add some commands to quickly open or source this file
-nmap <Leader>1 :e $MYVIMRC<CR>
-
-
-" Now we need to load vim-plug, it manages all of the extra plugins for vim
+" Handle vimplug bundles
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin("~/.vim/bundle")
-    " bundle configs are stored in a separate file, source it.
     source ~/.vim/settings/bundle.vim
 call plug#end()
 
+
+" Default Command overrides
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" These are ergonomic overrides for common vim triggers.  I rely heavily on
+" search and leader based triggers, so these get key triggers that are easy to
+" hit.
+
+" You need to use the escape key quite often in vim, and on some modern
+" keyboards it's a bit uncomfortable to reach.  Ctrl-c works mostly the same
+" as escape, and this function makes it perform identically (:h ctrl-c)
+inoremap <C-C> <Esc>
+
+" I rely heavily on searching to navigate files (rather than directional
+" arrows or word/character movements).  Remap search (/) to the spacebar since
+" it's a lot easier to hit and I use search movements very often:
+nnoremap <space> /
+vnoremap <space> /
+
+" The default leader character (;) is also a bit hard to hit, so I use comma.
+" http://learnvimscriptthehardway.stevelosh.com/chapters/06.html
+let mapleader=","
+nnoremap ; :
+
+
+" Bookmarks for configuration
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" edit my vimrc
+nmap <Leader>1 :e $MYVIMRC<CR>
+" edit my bundle configuration
+nmap <Leader>2 :e ~/.vim/settings/bundle.vim<CR>
+
+" Color options
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 colorscheme gruvbox
 " colorscheme flattened_dark
 " colorscheme molokai
 
 "BASIC OPTIONS
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" these are the 'simple boolean flag' configurations
 
+set nocompatible
 set autowrite
-set cindent      " useful for python
-set copyindent   " copy the previous indentation on autoindenting
 set expandtab    " expand tabs to spaces
 set hidden       " hide the old buffer when switching
 set lazyredraw
-set nocompatible
 set nowrap       " don't wrap lines
 set formatoptions-=t " really don't wrap lines
 set number       " always show line numbers
@@ -47,8 +74,8 @@ set smartindent
 set title        " change the terminal's title
 
 " Silence
-set noerrorbells " no, seriously, don't beep
 set visualbell   " don't beep
+set noerrorbells " no, seriously, don't beep
 
 " Search
 set ignorecase   " search : ignore case
@@ -63,42 +90,30 @@ set encoding=utf-8
 set tw=0
 set shell=bash
 set undolevels=1000
-set ts=4            " a tab is four spaces
-set tags=./tags;/
+set ts=4            " a tab is four spaces by default
 set sts=4
 set sw=4
 
 " Ignore all files like this
 set wildignore=*.swp,*.bak,*.pyc,*.class,*.sass-cache,*/_site/*
 
-
-" increment letters in addition to numbers
-set nrformats=octal,hex,alpha
-
 " syntax highlighting
 syntax on
 
-"splits go to the right
-set splitright
+set splitright "splits go to the right
 
-" too lazy to hit the forward slash
-nnoremap <space> /
-vnoremap <space> /
-
-" Some  general reformatting command(s)
-" strip whitespace at end of line
-nnoremap <Leader>f$ :%s/\s\+$//<CR>:let @/=''<CR>
-
-
-"GLOBAL AUTOMATIC ACTIONS
 " autosave on lost focus
 au FocusLost * :wa
 
+" give a nice color column that helps show an 80 character width
 if exists('+colorcolumn')
   set colorcolumn=80
 else
     au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 endif
+
+
+" utility methods helping to set/unset arbitrary options
 
 function! ToggleSet(toggle)
     execute "let x = &".a:toggle
@@ -122,18 +137,21 @@ function! ToggleSetValue(toggle, value)
 endfunction
 
 
-" MISC KEY MAPPING
+" Misc. Commands/Triggers
+
+command! Thtml :%!tidy -q -i --show-errors 0
+
+" strip whitespace at end of line
+nnoremap <Leader>f$ :%s/\s\+$//<CR>:let @/=''<CR>
 
 " force write a file
 cmap w!! w !sudo tee % >/dev/null
 
-" Show/hide stuff: <Leader>s + letter
+" Show/hide stuff:
 " refresh screen
 nmap <silent><Leader>ss :redraw!<CR>
 " hide highlights from last search
 nmap <silent><Leader>sh :nohlsearch<CR>
-" Show the bundle list
-nmap <silent><Leader>bb :e ~/.vim/settings/bundle.vim<CR>
 
 "Toggle stuff: <Leader>t + letter
 " toggle paste mode
@@ -162,7 +180,6 @@ set backupdir-=.
 set backupdir+=.
 set backupdir-=~/
 set backupdir^=~/.vim/backup/
-set backupdir^=./.vim-backup/
 set backup
 
 " Save your swp files to a less annoying place than the current directory.
@@ -192,8 +209,8 @@ if exists("+undofile")
   set undofile
 endif
 
-command! Thtml :%!tidy -q -i --show-errors 0
 
+" set the default listing style (one file per line with time stamp info)
 let g:netrw_liststyle=1
 
 set nofoldenable
