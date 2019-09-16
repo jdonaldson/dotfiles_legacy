@@ -13,13 +13,6 @@ if has('nvim')
   let &viminfo .= ',n' . escape(viminfopath, ',')
 endif
 
-" Handle vimplug bundles
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-call plug#begin("~/.vim/bundle")
-    source ~/.vim/settings/bundle.vim
-call plug#end()
-
-
 " Default Command overrides
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " These are ergonomic overrides for common vim triggers.  I rely heavily on
@@ -42,7 +35,6 @@ vnoremap <space> /
 let mapleader=","
 nnoremap ; :
 
-
 " Bookmarks for configuration
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -51,11 +43,6 @@ nmap <Leader>1 :e $MYVIMRC<CR>
 " edit my bundle configuration
 nmap <Leader>2 :e ~/.vim/settings/bundle.vim<CR>
 
-" Color options
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-colorscheme gruvbox
-" colorscheme flattened_dark
-" colorscheme molokai
 
 "BASIC OPTIONS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -96,9 +83,6 @@ set sw=4
 
 " Ignore all files like this
 set wildignore=*.swp,*.bak,*.pyc,*.class,*.sass-cache,*/_site/*
-
-" syntax highlighting
-syntax on
 
 set splitright "splits go to the right
 
@@ -214,6 +198,20 @@ endif
 let g:netrw_liststyle=1
 
 set nofoldenable
+
+" Handle vimplug bundles
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+call plug#begin("~/.vim/bundle")
+    source ~/.vim/settings/bundle.vim
+call plug#end()
+
+" Color options
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" These depend on installed bundles
+"
+colorscheme gruvbox
+" colorscheme flattened_dark
+" colorscheme molokai
 
 " transparent background
 highlight Normal ctermbg=NONE

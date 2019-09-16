@@ -8,6 +8,8 @@ let hostname = substitute(system('hostname'), '\n', '', '')
 " If there are bundle-specific configs that I like, I add them under the
 " bundle entry, while also indenting them.
 
+Plug 'adelarsq/vim-hackernews'
+
 Plug 'morhetz/gruvbox'
 " Plug 'romainl/flattened'
 " Plug 'tomasr/molokai'
@@ -25,7 +27,7 @@ Plug 'tpope/vim-dispatch'
     map <Leader>dm :Make<CR>
     " Use dispatch to execute the current line as a shell command, insert
     " results below the line
-    nnoremap <Leader>r :exe ':Dispatch '.getline('.') <CR>
+    map <Leader>r :exe ':Dispatch '.getline('.') <CR>
 
 Plug 'tpope/vim-commentary'
  xmap \\  <Plug>Commentary<CR>
@@ -34,44 +36,43 @@ Plug 'tpope/vim-commentary'
  nmap \\u <Plug>CommentaryUndo<CR>
 
 
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-    map <c-p> :Files<CR>
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Plugs that support file/language-specific tooling and support
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+    Plug 'junegunn/fzf.vim'
+        map <c-p> :Files<CR>
+
+Plug 'jremmen/vim-ripgrep'
+  nmap <Leader><space> :Rg<space>
 
 Plug 'ryanoasis/vim-devicons'
  set encoding=utf-8
  let g:airline_powerline_fonts=1
 
 Plug 'scrooloose/nerdtree'
-    nmap <silent><Leader>sn :NERDTreeToggle<CR>
-    command! En execute "NERDTree %"
-
 
 " Plug 'airblade/vim-gitgutter'
 
 Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugs that support file/language-specific tooling and support
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-Plug 'prabirshrestha/async.vim'
-Plug 'prabirshrestha/vim-lsp'
-
-
-Plug 'jremmen/vim-ripgrep'
-    nnoremap <Leader><space> :Rg<space>
+" Plug 'prabirshrestha/vim-lsp'
+"     Plug 'prabirshrestha/async.vim'
 
 Plug 'jdonaldson/vaxe', {'branch' : 'neovaxe', 'do' : 'sh install.sh'}
     let g:vaxe_enable_code_lens = 1
+
 Plug 'neoclide/coc.nvim'
     " let g:coc_node_args = ['--nolazy', '--inspect-brk=6045']
-    let g:coc_global_extensions = ['coc-snippets']
+    let g:coc_global_extensions = ['coc-snippets', 'coc-python']
     let g:coc_force_debug = 1
     let g:airline#extensions#coc#enabled = 1
-    nnoremap <Leader>cl :CocList<CR>
-    nnoremap <Leader>clc :CocList commands<CR>
+    nmap <Leader>cl :CocList<CR>
+    nmap <Leader>clc :CocList commands<CR>
+    nmap <Leader>3 :CocList<CR>
+    nmap <Leader>4 :CocList commands<CR>
 
 
   " " if hidden is not set, TextEdit might fail.
@@ -135,9 +136,9 @@ Plug 'neoclide/coc.nvim'
   " " Remap for rename current word
   " nmap <leader>rn <Plug>(coc-rename)
 
-  " " " Remap for format selected region
-  " " xmap <leader>f  <Plug>(coc-format-selected)
-  " " nmap <leader>f  <Plug>(coc-format-selected)
+  " Remap for format selected region
+  xmap <Leader>f  <Plug>(coc-format-selected)
+  nmap <Leader>f  <Plug>(coc-format-selected)
 
   " " Setup formatexpr specified filetype(s).
   " autocmd FileType haxe setl formatexpr=CocAction('formatSelected')
@@ -193,6 +194,5 @@ Plug 'SirVer/ultisnips'
     " let g:UltiSnipsExpandTrigger="<tab>"
     " let g:UltiSnipsJumpForwardTrigger="<tab>"
     " let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-
 
 filetype plugin indent on " required!
