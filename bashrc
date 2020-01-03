@@ -24,6 +24,8 @@ maybeSource /usr/local/etc/bash_completion
 # common latex location
 maybePath /usr/texbin
 
+# export NEKOPATH="$HOME/local/lib/neko/":"$HOME/local/bin/"
+
 export EMAIL="jdonaldson@gmail.com"
 export EMAIL_OBSCURED="jdonaldson[at]gmail[dot]com"
 
@@ -149,17 +151,6 @@ function ssht () {
 # git bash completion
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
-devhaxe(){
-   export FD_OUTPUT=1
-   export STABLE_HAXE_PATH=$PATH;
-   export STABLE_HAXE_STD_PATH=$HAXE_STD_PATH;
-   export HAXE_STD_PATH=$HOME/Projects/haxe/std
-   export PATH=$HOME/Projects/haxe:$PATH
-}
-stablehaxe(){
-   export PATH=$STABLE_HAXE_PATH;
-   export HAXE_STD_PATH=$STABLE_HAXE_STD_PATH;
-}
 
 function frameworkpython {
     if [[ ! -z "$VIRTUAL_ENV" ]]; then
@@ -173,15 +164,6 @@ function frameworkpython {
 # maybeSource $HOME/torch/install/bin/torch-activate
 
 maybeSource ~/.bash-git-prompt/gitprompt.sh
-devhaxe
-
-luadeps(){
-   luarocks install lrexlib-pcre
-   luarocks install environ
-   luarocks install luasocket
-   luarocks install luv
-   luarocks install luabitop
-}
 
 maybeSource ~/hererocks/bin/activate
 maybePathAppend /usr/local/openresty/bin
@@ -199,8 +181,6 @@ maybeSource $HOME/.cargo/env
 export OCAMLPARAM="safe-string=0,_"
 
 alias syncintent="rsync -a dljjd:Projects/deep_intent ~/Projects/"
-
-alias ts2hx="neko ~/Projects/ts2hx/run.n"
 
 eval "$(rbenv init -)" 2>/dev/null
 
