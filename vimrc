@@ -201,17 +201,5 @@ set nofoldenable
 
 " Handle vimplug bundles
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-call plug#begin("~/.vim/bundle")
     source ~/.vim/settings/bundle.vim
-call plug#end()
 
-" Color options
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" These depend on installed bundles
-"
-colorscheme gruvbox
-" colorscheme flattened_dark
-" colorscheme molokai
-
-" transparent background
-highlight Normal ctermbg=NONE
