@@ -1,3 +1,4 @@
+call plug#begin("~/.vim/bundle")
 syntax enable
 filetype off
 
@@ -15,6 +16,7 @@ Plug 'morhetz/gruvbox'
 " Plug 'tomasr/molokai'
 
 Plug 'jreybert/vimagit'
+Plug 'tpope/vim-fugitive'
 Plug 'editorconfig/editorconfig-vim'
 
 
@@ -37,9 +39,17 @@ Plug 'tpope/vim-commentary'
 
 
 
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-    Plug 'junegunn/fzf.vim'
-        map <c-p> :Files<CR>
+Plug 'junegunn/fzf.vim'
+    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+        map <C-P> :Files<CR>
+        map <C-[> :Buffers<CR>
+
+Plug 'junegunn/vim-easy-align'
+    " Start interactive EasyAlign in visual mode (e.g. vipga)
+    xmap ga <Plug>(EasyAlign)
+
+    " Start interactive EasyAlign for a motion/text object (e.g. gaip)
+    nmap ga <Plug>(EasyAlign)
 
 Plug 'jremmen/vim-ripgrep'
   nmap <Leader><space> :Rg<space>
@@ -54,18 +64,26 @@ Plug 'scrooloose/nerdtree'
 
 Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
+
+Plug 'jdonaldson/vim-cheat-x-in-y'
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugs that support file/language-specific tooling and support
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 
 " Plug 'prabirshrestha/vim-lsp'
 "     Plug 'prabirshrestha/async.vim'
 
 Plug 'jdonaldson/vaxe', {'branch' : 'neovaxe', 'do' : 'sh install.sh'}
     let g:vaxe_enable_code_lens = 1
+    " let g:vaxe_lsp_args = ["--inspect-brk=6045"]
+
+Plug 'zchee/vim-flatbuffers'
 
 Plug 'neoclide/coc.nvim'
-    " let g:coc_node_args = ['--nolazy', '--inspect-brk=6045']
+    " let g:coc_node_args = ['--nolazy', '--inspect=6044']
     let g:coc_global_extensions = ['coc-snippets', 'coc-python']
     let g:coc_force_debug = 1
     let g:airline#extensions#coc#enabled = 1
@@ -112,10 +130,10 @@ Plug 'neoclide/coc.nvim'
   " nmap <silent> ]c <Plug>(coc-diagnostic-next)
 
   " " Remap keys for gotos
-  " nmap <silent> gd <Plug>(coc-definition)
-  " nmap <silent> gy <Plug>(coc-type-definition)
-  " nmap <silent> gi <Plug>(coc-implementation)
-  " nmap <silent> gr <Plug>(coc-references)
+  nmap <silent> gd <Plug>(coc-definition)
+  nmap <silent> gy <Plug>(coc-type-definition)
+  nmap <silent> gi <Plug>(coc-implementation)
+  nmap <silent> gr <Plug>(coc-references)
 
   " " Use K to show documentation in preview window
   nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -196,3 +214,9 @@ Plug 'SirVer/ultisnips'
     " let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 filetype plugin indent on " required!
+call plug#end()
+
+" set these after the plugins are set
+colorscheme gruvbox
+    " transparent background
+    highlight Normal ctermbg=NONE
