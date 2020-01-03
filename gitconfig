@@ -28,8 +28,6 @@
 	insteadOf = https://github.com/
 [url "ssh://git@git.soma.salesforce.com/"]
 	insteadOf = https://git.soma.salesforce.com/
-[url "ssh://git@github.salesforceiq.com/"]
-	insteadOf = https://github.salesforceiq.com/
 [filter "media"]
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
@@ -37,3 +35,5 @@
 	helper = cache --timeout=86400
 [includeIf "gitdir:~/Projects/com/"]
 	path = ~/.com/.gitconfig
+[gpg]
+	program = gpg
