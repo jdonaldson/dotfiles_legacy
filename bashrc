@@ -188,3 +188,5 @@ export AIRFLOW_HOME=~/airflow
 export GPG_TTY=$(tty)
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+maybeSource /Users/jdonaldson/Library/Preferences/org.dystroy.broot/launcher/bash/br
