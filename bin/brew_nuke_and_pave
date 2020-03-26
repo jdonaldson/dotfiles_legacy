@@ -1,0 +1,7 @@
+brew list \
+  | while read package; do echo -n "$package "; echo $(brew deps $package); done \
+  | awk 'NF == 1 {print $1, $1} NF > 1 {for (dep=1; dep<=NF; dep++) print $1, $dep}' \
+  | tsort \
+  | tail -r \
+  | REINSTALL_LIST=$(while read package; do echo -n "$package "; done) \
+  | brew reinstall $REINSTALL_LIST
