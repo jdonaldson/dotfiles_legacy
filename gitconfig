@@ -2,6 +2,7 @@
 	excludesfile = ~/.gitignore
 	quotepath = false
 	autocrlf = input
+    editor=nvim
 [user]
 	name = Justin Donaldson
 	email = jdonaldson@gmail.com
@@ -18,12 +19,12 @@
 	dstat = "!git diff --stat"
 	addnw = !sh -c 'git diff -U0 -w --no-color "$@" | git apply --cached --ignore-whitespace --unidiff-zero -'
 	active = "!git for-each-ref --sort=-committerdate refs/heads/ --format='%(committerdate:short) %(authorname) %(refname:short)'"
-	co = checkout
+	co = checkout --recurse-submodules
 [push]
 	default = current
 	gpgsign = if-asked
- [github]
- 	user = jdonaldson
+[github]
+    user = jdonaldson
 [url "ssh://git@github.com/"]
 	insteadOf = https://github.com/
 [url "ssh://git@git.soma.salesforce.com/"]
