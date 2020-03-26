@@ -203,3 +203,5 @@ set nofoldenable
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     source ~/.vim/settings/bundle.vim
 
+
+let g:python3_host_prog = "/Users/jdonaldson/opt/miniconda3/bin/python3"
