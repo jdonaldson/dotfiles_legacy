@@ -26,7 +26,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
 
 Plug 'tpope/vim-dispatch'
-    map <Leader>dm :Make<CR>
+    map <Leader>dm :make<CR>
     " Use dispatch to execute the current line as a shell command, insert
     " results below the line
     map <Leader>r :exe ':Dispatch '.getline('.') <CR>
@@ -91,7 +91,10 @@ Plug 'neoclide/coc.nvim'
     nmap <Leader>clc :CocList commands<CR>
     nmap <Leader>3 :CocList<CR>
     nmap <Leader>4 :CocList commands<CR>
-
+    " configure pythonPath to use my userspace python env
+    autocmd FileType python call coc#config('python', {
+    \   'pythonPath': split(execute('!which python'), '\n')[-1]
+    \ })
 
   " " if hidden is not set, TextEdit might fail.
   set hidden
@@ -220,3 +223,4 @@ call plug#end()
 colorscheme gruvbox
     " transparent background
     highlight Normal ctermbg=NONE
+
