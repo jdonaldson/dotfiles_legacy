@@ -33,7 +33,7 @@ export EMAIL_OBSCURED="jdonaldson[at]gmail[dot]com"
 export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_PS1_SHOWSTASHSTATE=1
 export GIT_PS1_SHOWUNTRACKEDFILES=1
-export GIT_EDITOR=vim
+export GIT_EDITOR=nvim
 
 # prefer usr/local
 export PATH=/usr/local/share:/usr/local/bin:/usr/local/sbin:$PATH
@@ -52,7 +52,7 @@ elif [[ "$unamestr" == 'Darwin' ]]; then
 fi
 
 alias serve="python -m http.server"
-alias travix="haxelib run travix"
+# alias travix="haxelib run travix"
 
 alias untar="tar xvzf"
 
@@ -168,8 +168,6 @@ maybeSource ~/.bash-git-prompt/gitprompt.sh
 maybeSource ~/hererocks/bin/activate
 maybePathAppend /usr/local/openresty/bin
 
-export PATH=/usr/local/opt/python/libexec/bin:$PATH
-
 # personal venv
 maybeSource $HOME/venv/bin/activate
 
@@ -190,3 +188,4 @@ export GPG_TTY=$(tty)
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 maybeSource /Users/jdonaldson/Library/Preferences/org.dystroy.broot/launcher/bash/br
+maybePath /Users/jdonaldson/Projects/haxe
