@@ -26,7 +26,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
 
 Plug 'tpope/vim-dispatch'
-    map <Leader>dm :make<CR>
+    map <Leader>dm :Make<CR>
     " Use dispatch to execute the current line as a shell command, insert
     " results below the line
     map <Leader>r :exe ':Dispatch '.getline('.') <CR>
@@ -79,6 +79,11 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 Plug 'jdonaldson/vaxe', {'branch' : 'neovaxe', 'do' : 'sh install.sh'}
     let g:vaxe_enable_code_lens = 1
     " let g:vaxe_lsp_args = ["--inspect-brk=6045"]
+
+Plug 'Chiel92/vim-autoformat'
+    autocmd FileType haxe :Autoformat<CR>
+    map <Leader>ff :Autoformat<CR>
+
 
 Plug 'zchee/vim-flatbuffers'
 
