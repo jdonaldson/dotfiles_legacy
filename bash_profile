@@ -21,3 +21,6 @@ else
 fi
 unset __conda_setup
 # <<< conda init <<<
+
+# update PATH to include personal bin if it exists
+[ -d "$HOME/bin" ] && PATH="$HOME/bin:$PATH"
