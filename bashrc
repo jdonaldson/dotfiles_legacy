@@ -24,6 +24,8 @@ maybeSource /usr/local/etc/bash_completion
 # common latex location
 maybePath /usr/texbin
 
+maybeSource ~/Projects/com/blt/env.sh
+
 # export NEKOPATH="$HOME/local/lib/neko/":"$HOME/local/bin/"
 
 export EMAIL="jdonaldson@gmail.com"
