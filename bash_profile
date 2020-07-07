@@ -5,6 +5,9 @@ source ~/.bash_profile_ext.sh
 . /Users/jdonaldson/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
 export PATH="/usr/local/opt/openssl/bin:$PATH"
 
+# hush now
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
 # added by Miniconda3 4.7.12 installer
 # >>> conda init >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -24,3 +27,5 @@ unset __conda_setup
 
 # update PATH to include personal bin if it exists
 [ -d "$HOME/bin" ] && PATH="$HOME/bin:$PATH"
+
+
