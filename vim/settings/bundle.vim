@@ -9,6 +9,7 @@ let hostname = substitute(system('hostname'), '\n', '', '')
 " If there are bundle-specific configs that I like, I add them under the
 " bundle entry, while also indenting them.
 
+Plug 'chrisbra/csv.vim'
 Plug 'adelarsq/vim-hackernews'
 
 Plug 'morhetz/gruvbox'
@@ -59,6 +60,7 @@ Plug 'ryanoasis/vim-devicons'
  let g:airline_powerline_fonts=1
 
 Plug 'scrooloose/nerdtree'
+    Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " Plug 'airblade/vim-gitgutter'
 
@@ -71,6 +73,10 @@ Plug 'jdonaldson/vim-cheat-x-in-y'
 " Plugs that support file/language-specific tooling and support
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+Plug 'jdonaldson/peg.vim'
+
+Plug 'hashivim/vim-terraform'
+
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 
 " Plug 'prabirshrestha/vim-lsp'
@@ -81,13 +87,13 @@ Plug 'jdonaldson/vaxe', {'branch' : 'neovaxe', 'do' : 'sh install.sh'}
     " let g:vaxe_lsp_args = ["--inspect-brk=6045"]
 
 Plug 'Chiel92/vim-autoformat'
-    autocmd FileType haxe :Autoformat<CR>
+    " autocmd FileType haxe :Autoformat<CR>
     map <Leader>ff :Autoformat<CR>
 
 
 Plug 'zchee/vim-flatbuffers'
 
-Plug 'neoclide/coc.nvim'
+Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
     " let g:coc_node_args = ['--nolazy', '--inspect=6044']
     let g:coc_global_extensions = ['coc-snippets', 'coc-python']
     let g:coc_force_debug = 1
