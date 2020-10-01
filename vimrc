@@ -204,6 +204,8 @@ set nofoldenable
     source ~/.vim/settings/bundle.vim
 
 
-if exists("/Users/jdonaldson/opt/miniconda3/bin/python3")
-    let g:python3_host_prog = "/Users/jdonaldson/opt/miniconda3/bin/python3"
+if exists("/Users/jdonaldson/opt/miniconda3/envs/pynvim/bin/python3")
+    let g:python3_host_prog = "/Users/jdonaldson/opt/miniconda3/envs/pynvim/bin/python3"
 endif
+
+command! Jsonf :execute '%!python -m json.tool'
