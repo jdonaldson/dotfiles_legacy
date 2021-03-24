@@ -18,6 +18,9 @@ Plug 'morhetz/gruvbox'
 
 Plug 'jreybert/vimagit'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
+    let g:github_enterprise_urls=["https://git.soma.salesforce.com"]
+
 Plug 'editorconfig/editorconfig-vim'
 
 
@@ -69,9 +72,12 @@ Plug 'vim-airline/vim-airline'
 
 Plug 'jdonaldson/vim-cheat-x-in-y'
 
+Plug 'Rasukarusan/vim-block-paste'
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugs that support file/language-specific tooling and support
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'puremourning/vimspector'
 
 Plug 'jdonaldson/peg.vim'
 
@@ -92,6 +98,13 @@ Plug 'Chiel92/vim-autoformat'
 
 
 Plug 'zchee/vim-flatbuffers'
+
+Plug 'psf/black', { 'branch': 'stable' }
+    " autocmd BufWritePre *.py execute ':Black'
+
+Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
+    let  g:pydocstring_formatter = 'numpy'
+
 
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
     " let g:coc_node_args = ['--nolazy', '--inspect=6044']
