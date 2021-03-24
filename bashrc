@@ -24,9 +24,12 @@ maybeSource /usr/local/etc/bash_completion
 # common latex location
 maybePath /usr/texbin
 
-maybeSource ~/Projects/com/blt/env.sh
+maybePath ~/.local/bin
+
+# maybeSource ~/Projects/com/blt/env.sh
 
 # export NEKOPATH="$HOME/local/lib/neko/":"$HOME/local/bin/"
+
 
 export EMAIL="jdonaldson@gmail.com"
 export EMAIL_OBSCURED="jdonaldson[at]gmail[dot]com"
@@ -190,4 +193,14 @@ export GPG_TTY=$(tty)
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 maybeSource /Users/jdonaldson/Library/Preferences/org.dystroy.broot/launcher/bash/br
-maybePath /Users/jdonaldson/Projects/haxe
+# maybePath /Users/jdonaldson/Projects/haxe
+
+
+maybePath /usr/local/opt/ruby/bin
+maybePath "/usr/local/Cellar/ruby/1.9.3-p194/bin"
+
+# maybeSource ~/env/bin/activate
+# maybePath ~/Projects/kleiner_dev/bin
+
+maybePath /usr/local/opt/openjdk@11/bin
+export JAVA_HOME=/usr/local/opt/openjdk@11

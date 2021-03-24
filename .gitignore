@@ -26,6 +26,12 @@ config/wireshark
 config/nvim/shada
 config/configstore/
 config/inkscape/
+config/.mono
+bin/dockertags
+bin/gib
+bin/khamake
+bin/khanew
+bin/pbcopy
 
 # ubuntu stuff
 config/gtk*
