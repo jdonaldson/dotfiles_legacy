@@ -77,7 +77,7 @@ Plug 'Rasukarusan/vim-block-paste'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugs that support file/language-specific tooling and support
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'puremourning/vimspector'
+" Plug 'puremourning/vimspector'
 
 Plug 'jdonaldson/peg.vim'
 
@@ -88,8 +88,8 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 " Plug 'prabirshrestha/vim-lsp'
 "     Plug 'prabirshrestha/async.vim'
 
-Plug 'jdonaldson/vaxe', {'branch' : 'neovaxe', 'do' : 'sh install.sh'}
-    let g:vaxe_enable_code_lens = 1
+" Plug 'jdonaldson/vaxe', {'branch' : 'neovaxe', 'do' : 'sh install.sh'}
+"     let g:vaxe_enable_code_lens = 1
     " let g:vaxe_lsp_args = ["--inspect-brk=6045"]
 
 Plug 'Chiel92/vim-autoformat'
