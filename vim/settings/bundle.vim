@@ -101,6 +101,8 @@ Plug 'zchee/vim-flatbuffers'
 
 Plug 'psf/black', { 'branch': 'stable' }
     " autocmd BufWritePre *.py execute ':Black'
+    "
+Plug 'fisadev/vim-isort'
 
 Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
     let  g:pydocstring_formatter = 'numpy'

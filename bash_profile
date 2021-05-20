@@ -9,26 +9,6 @@ export PATH="/usr/local/opt/openssl/bin:$PATH"
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
 # added by Miniconda3 4.7.12 installer
-# >>> conda init >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$(CONDA_REPORT_ERRORS=false '/Users/jdonaldson/opt/miniconda3/bin/conda' shell.bash hook 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    \eval "$__conda_setup"
-else
-    if [ -f "/Users/jdonaldson/opt/miniconda3/etc/profile.d/conda.sh" ]; then
-# . "/Users/jdonaldson/opt/miniconda3/etc/profile.d/conda.sh"  # commented out by conda initialize
-        CONDA_CHANGEPS1=false conda activate base
-    else
-        \export PATH="/Users/jdonaldson/opt/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda init <<<
-
-# update PATH to include personal bin if it exists
-[ -d "$HOME/bin" ] && PATH="$HOME/bin:$PATH"
-
-
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!

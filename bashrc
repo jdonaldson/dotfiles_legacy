@@ -202,5 +202,5 @@ maybePath "/usr/local/Cellar/ruby/1.9.3-p194/bin"
 # maybeSource ~/env/bin/activate
 # maybePath ~/Projects/kleiner_dev/bin
 
-maybePath /usr/local/opt/openjdk@11/bin
-export JAVA_HOME=/usr/local/opt/openjdk@11
+
+source /Users/jdonaldson/.bootstrap_rc
