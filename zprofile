@@ -1,2 +1,2 @@
-eval "$(/opt/homebrew/bin/brew shellenv)"
+eval "$(env brew shellenv)"
 alias vim='nvim'
