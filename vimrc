@@ -204,8 +204,6 @@ set nofoldenable
     source ~/.vim/settings/bundle.vim
 
 
-if filereadable("/usr/local/bin/python3")
-    let g:python3_host_prog = "/usr/local/bin/python3"
-endif
+let g:python3_host_prog = "/usr/local/bin/python3"
 
 command! Jsonf :execute '%!python -m json.tool'

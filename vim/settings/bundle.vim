@@ -236,8 +236,8 @@ Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
   " " " Resume latest coc list
   " " nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
-Plug 'SirVer/ultisnips'
-    let g:UltiSnipsSnippetDirectories=["UltiSnips", "bundle/UltiSnips/UltiSnips"]
+" Plug 'SirVer/ultisnips'
+"     let g:UltiSnipsSnippetDirectories=["UltiSnips", "bundle/UltiSnips/UltiSnips"]
     " let g:UltiSnipsExpandTrigger="<tab>"
     " let g:UltiSnipsJumpForwardTrigger="<tab>"
     " let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
