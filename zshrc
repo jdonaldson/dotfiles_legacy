@@ -5,6 +5,9 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+alias vim=nvim
+
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Source Prezto.
@@ -15,3 +18,11 @@ fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+[[ ! -f ~/.bash_profile ]] || source ~/.bash_profile
+
+if [[ -n "$PS1" ]] && [[ -z "$TMUX" ]] && [[ -n "$SSH_CONNECTION" ]]; then
+  tmux attach-session -t ssh_tmux || tmux new-session -s ssh_tmux
+fi
+
+[[ ! -f ~/miniconda3/bin/activate ]] || source ~/miniconda3/bin/activate
