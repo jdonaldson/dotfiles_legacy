@@ -21,8 +21,8 @@ fi
 
 [[ ! -f ~/.bash_profile ]] || source ~/.bash_profile
 
-if [[ -n "$PS1" ]] && [[ -z "$TMUX" ]] && [[ -n "$SSH_CONNECTION" ]]; then
-  tmux attach-session -t ssh_tmux || tmux new-session -s ssh_tmux
+if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+  tmux new-session -A -s $HOST
 fi
 
 [[ ! -f ~/miniconda3/bin/activate ]] || source ~/miniconda3/bin/activate
