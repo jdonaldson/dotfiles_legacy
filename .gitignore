@@ -9,6 +9,7 @@ vim/autoload/plug.vim.old
 vim/session
 vim/undo
 vim/backup
+vim/plugged
 
 bin/ccollab
 bin/ccollabexternaldiff

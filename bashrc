@@ -204,3 +204,4 @@ maybePath "/usr/local/Cellar/ruby/1.9.3-p194/bin"
 
 
 source /Users/jdonaldson/.bootstrap_rc
+export FORCE_SESSION_ID="00DRM0000005pwz!AQIAQDeQ4hgDGeG4lvr1npqIzyeRo_4Ni8mk52H2YkWMvzeuolVeLOoLKykTuxkaany8c6uzcK.VR6LwcN0u.r9f_ZBuK6IT"
